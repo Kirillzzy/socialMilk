@@ -62,7 +62,7 @@ extension ChatsViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "fromChatsToChatLineSegue"{
             if let chat = sender as? ChatClass{
-                let vc = segue.destination as! ChatLineViewController
+                let vc = segue.destination as! ChatVKViewController
                 vc.chat = chat
             }
         }

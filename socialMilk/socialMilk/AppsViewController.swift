@@ -17,16 +17,18 @@ class AppsViewController: UIViewController {
     }
 
     @IBAction func vkButtonPressed(_ sender: Any) {
-        //performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+        performSegue(withIdentifier: "fromAppsToChatLineSegue", sender: sender)
     }
 
 }
 
+
+
 extension AppsViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "fromAppsToChatLineSegue"{
-           
-        }
+            _ = segue.destination as! VKChooseViewController
+        }   
     }
 }
 

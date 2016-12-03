@@ -49,10 +49,47 @@
             </objects>
             <point key="canvasLocation" x="1532" y="178.56071964017991"/>
         </scene>
-        <!--Chat Line View Controller-->
+        <!--Choose View Controller-->
+        <scene sceneID="jEk-cd-hat">
+            <objects>
+                <viewController id="iCl-Xp-tc4" customClass="VKChooseViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U6e-Kg-JgO"/>
+                        <viewControllerLayoutGuide type="bottom" id="C8D-xw-DzR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qfC-7K-V5p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nsb-oE-qqd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="iCl-Xp-tc4" id="JaV-Cm-xuJ"/>
+                                    <outlet property="delegate" destination="iCl-Xp-tc4" id="6rg-8K-67d"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Nsb-oE-qqd" firstAttribute="leading" secondItem="qfC-7K-V5p" secondAttribute="leading" id="79i-pV-Vqt"/>
+                            <constraint firstItem="Nsb-oE-qqd" firstAttribute="top" secondItem="qfC-7K-V5p" secondAttribute="top" id="Aap-dV-IuI"/>
+                            <constraint firstItem="C8D-xw-DzR" firstAttribute="top" secondItem="Nsb-oE-qqd" secondAttribute="bottom" id="N7X-5g-56t"/>
+                            <constraint firstAttribute="trailing" secondItem="Nsb-oE-qqd" secondAttribute="trailing" id="fvZ-s6-qg1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="groupsTableView" destination="Nsb-oE-qqd" id="v15-qZ-AIu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rL0-O2-enB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2328.8000000000002" y="-753.37331334332839"/>
+        </scene>
+        <!--ChatVK View Controller-->
         <scene sceneID="9ig-jW-ozb">
             <objects>
-                <viewController id="jn4-cn-3O4" customClass="ChatLineViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jn4-cn-3O4" customClass="ChatVKViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1oF-Gp-RpS"/>
                         <viewControllerLayoutGuide type="bottom" id="J9J-2W-bW4"/>
@@ -137,7 +174,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="uut-pu-I0J"/>
                     <connections>
-                        <segue destination="jn4-cn-3O4" kind="show" identifier="fromAppsToChatLineSegue" id="9r8-DC-wHV"/>
+                        <segue destination="iCl-Xp-tc4" kind="show" identifier="fromAppsToChatLineSegue" id="yUW-Yy-g4Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cT-Pa-FjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -202,7 +239,4 @@
             <point key="canvasLocation" x="592.79999999999995" y="-476.31184407796104"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="9r8-DC-wHV"/>
-    </inferredMetricsTieBreakers>
 </document>

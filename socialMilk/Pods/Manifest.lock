@@ -1,0 +1,31 @@
+PODS:
+  - SDWebImage (4.0.0-beta2):
+    - SDWebImage/Core (= 4.0.0-beta2)
+  - SDWebImage/Core (4.0.0-beta2)
+  - SwiftyVK (2.0.1)
+
+DEPENDENCIES:
+  - SDWebImage (from `https://github.com/rs/SDWebImage.git`)
+  - SwiftyVK (from `https://github.com/WE-St0r/SwiftyVK.git`)
+
+EXTERNAL SOURCES:
+  SDWebImage:
+    :git: https://github.com/rs/SDWebImage.git
+  SwiftyVK:
+    :git: https://github.com/WE-St0r/SwiftyVK.git
+
+CHECKOUT OPTIONS:
+  SDWebImage:
+    :commit: 032ab1dd6d633ed30b8850eddc27f7073191f317
+    :git: https://github.com/rs/SDWebImage.git
+  SwiftyVK:
+    :commit: e7d649a1ca1b4bad4e5630a750491f7791ea07a7
+    :git: https://github.com/WE-St0r/SwiftyVK.git
+
+SPEC CHECKSUMS:
+  SDWebImage: e379f33106cf8d6766f970c0ef1c3fb609c94d78
+  SwiftyVK: 555c309aa25aaf24453117c977be85a7b7908075
+
+PODFILE CHECKSUM: 70f50602be3f4cbb869f8f2a43e7d994fb3a84f3
+
+COCOAPODS: 1.1.0.rc.3

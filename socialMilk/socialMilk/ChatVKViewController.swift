@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ChatLineViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ChatVKViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var messagesTableView: UITableView!
 
     var chat = ChatClass()
+    private let vk: VKManager = VKManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,7 @@ class ChatLineViewController: UIViewController, UITableViewDelegate, UITableView
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    //load new messages
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return chat.messages.count
