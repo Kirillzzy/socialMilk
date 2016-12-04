@@ -12,13 +12,6 @@ import SwiftyVK
 
 class VKManager: VKDelegate{
     
-    var groupsAndPeople = [ChooseGroupClass]()
-    var status: Bool = false{
-        didSet{
-            let inst = VKChooseViewController.sharedInstance
-            inst.status = self.status
-        }
-    }
     
     init(){
         VK.configure(withAppId: Constants.appId, delegate: self)
@@ -31,7 +24,6 @@ class VKManager: VKDelegate{
     
     func vkDidAuthorizeWith(parameters: Dictionary<String, String>) {
         print("Autorized")
-        GroupsPeopleGet()
     }
     
     func vkAutorizationFailedWith(error: AuthError) {
@@ -115,7 +107,9 @@ class VKManager: VKDelegate{
     
     
     
-    func GroupsPeopleGet(){
+    func GroupsPeopleGet() -> [ChooseGroupClass]{
+        var groupsAndPeople = [ChooseGroupClass]()
+        var status = false
         /// ----- groups
         _ = VK.API.Groups.get().send(
             onSuccess:  { response in
@@ -123,7 +117,7 @@ class VKManager: VKDelegate{
                 for group in response["items"].arrayValue{
                     let person = ChooseGroupClass()
                     person.id = group.stringValue
-                    self.groupsAndPeople.append(person)
+                    groupsAndPeople.append(person)
                     groups.append(person)
                 }
                 self.getNameAndPhotoLinkGroup(groups: groups)
@@ -139,17 +133,63 @@ class VKManager: VKDelegate{
             ]).send(
             onSuccess:  { response in
                 for group in response["items"].arrayValue{
-                    self.groupsAndPeople.append(ChooseGroupClass(title: group["first_name"].stringValue + " " + group["last_name"].stringValue,
+                    groupsAndPeople.append(ChooseGroupClass(title: group["first_name"].stringValue + " " + group["last_name"].stringValue,
                                                                  photoLink: group["photo_100"].stringValue,
-                                                                 id: group["id"].stringValue))
+                                                                 id: group["id"].stringValue, isGroup: false))
                 }
                 
-                self.status = true
+                status = true
         },
             onError: {
                 error in print("SwiftyVK: FriendsGet fail \n \(error)")
+                status = true
         })
         
+        while(!status){}
+        return groupsAndPeople
+    }
+    
+    
+    func WallGet(group: ChooseGroupClass) -> [VKPost]{
+        var posts = [VKPost]()
+        var status = false
+        var id = group.id
+        if group.isGroup{
+            id = "-" + id
+        }
+        _ = VK.API.Wall.get([
+            VK.Arg.ownerId: "\(id)",
+            VK.Arg.count: "100"]).send(
+                onSuccess:  { response in
+                    for post in response["items"].arrayValue{
+                        var hasLink = false
+                        var hasVideo = false
+                        for att in post["attachments"].arrayValue{
+                            if att["type"].stringValue == "video"{
+                                hasVideo = true
+                            }
+                            if att["type"].stringValue == "link"{
+                                hasLink = true
+                            }
+                        }
+                        
+                        posts.append(VKPost(id: post["id"].stringValue,
+                                            text: post["text"].stringValue,
+                                            date: post["date"].stringValue,
+                                            group: group,
+                                            hasLink: hasLink,
+                                            hasVideo: hasVideo))
+                    }
+                    status = true
+            },
+                onError: {
+                    error in print("SwiftyVK: WallGet fail \n \(error)")
+                    status = true
+            })
+    
+        while(!status){}
+        return posts
+
     }
     
 }

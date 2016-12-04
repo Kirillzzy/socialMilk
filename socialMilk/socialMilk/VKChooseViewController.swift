@@ -14,12 +14,8 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var groupsTableView: UITableView!
     
     private let vk: VKManager = VKManager.sharedInstance
-    var status: Bool = false{
-        didSet{
-            //reloadTableView()
-        }
-    }
-
+    var groupsAndPeople = [ChooseGroupClass]()
+    var checked = [String: ChooseGroupClass?]()
 
     override func loadView() {
         super.loadView()
@@ -30,25 +26,26 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
         groupsTableView.rowHeight = CGFloat(60)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        reloadTableView()
-        print(status)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        groupsAndPeople = vk.GroupsPeopleGet()
+        let when = DispatchTime.now() + 0.2
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            self.reloadTableView()
+        }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        var checkedItems = [ChooseGroupClass]()
-        for i in 0..<groupsTableView.numberOfRows(inSection: 0){
-            let cell = groupsTableView.cellForRow(at: IndexPath(row: i, section: 0)) as? GroupsTableViewCell
-            if cell == nil{
-                continue
-            }
-            if cell?.checkButton.currentImage == #imageLiteral(resourceName: "checkBoxSet"){
-                checkedItems.append(vk.groupsAndPeople[i])
+        var checkedItems = [VKCheckedPost]()
+        for item in checked{
+            if item.value != nil{
+                checkedItems.append(VKCheckedPost(lastCheckedPostId: "0", group: item.value!))
             }
         }
         WorkingVk.sources = checkedItems
+        //WorkingVk.checkNewPosts()
     }
     
     static let sharedInstance: VKChooseViewController = {
@@ -71,14 +68,18 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vk.groupsAndPeople.count
+        return groupsAndPeople.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = groupsTableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupsTableViewCell
-        cell.mainImageVIew.sd_setImage(with: URL(string: vk.groupsAndPeople[indexPath.row].photoLink))
-        cell.titleLabel.text = vk.groupsAndPeople[indexPath.row].title
-        
+        cell.mainImageVIew.sd_setImage(with: URL(string: groupsAndPeople[indexPath.row].photoLink))
+        cell.titleLabel.text = groupsAndPeople[indexPath.row].title
+        if checked[String(indexPath.row)] != nil{
+            cell.checkButton.setImage(#imageLiteral(resourceName: "checkBoxSet"), for: .normal)
+        } else{
+            cell.checkButton.setImage(nil, for: .normal)
+        }
         return cell
     }
     
@@ -87,8 +88,10 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = groupsTableView.cellForRow(at: indexPath) as! GroupsTableViewCell
         if cell.checkButton.currentImage != #imageLiteral(resourceName: "checkBoxSet"){
             cell.checkButton.setImage(#imageLiteral(resourceName: "checkBoxSet"), for: .normal)
+            self.checked[String(indexPath.row)] = self.groupsAndPeople[indexPath.row]
         } else{
             cell.checkButton.setImage(nil, for: .normal)
+            self.checked[String(indexPath.row)] = nil
         }
     }
     

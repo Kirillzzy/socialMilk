@@ -18,7 +18,7 @@ class ChatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         chatsTableView.rowHeight = CGFloat(95)
-        chats.append(ChatClass(chatTitle: "TEST KIRILL", messages: [MessageClass(head: "Lol", message: "TEst test first commit", time: NSDate())]))
+        chats.append(ChatClass(chatTitle: "VK", messages: WorkingVk.createChatByMessages()))
         reloadTableView()
     }
     

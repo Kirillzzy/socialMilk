@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7B2EE7A41DF46E34009F6968 /* WorkingVk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2EE7A31DF46E34009F6968 /* WorkingVk.swift */; };
+		7B39A83B1DF47EA90077BBB6 /* VKCheckedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B39A83A1DF47EA90077BBB6 /* VKCheckedPost.swift */; };
+		7B39A83D1DF4A1500077BBB6 /* VKPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B39A83C1DF4A1500077BBB6 /* VKPost.swift */; };
 		7BF0F43A1DF1E50B00285298 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF0F4391DF1E50B00285298 /* AppDelegate.swift */; };
 		7BF0F43C1DF1E50B00285298 /* AppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF0F43B1DF1E50B00285298 /* AppsViewController.swift */; };
 		7BF0F43F1DF1E50B00285298 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF0F43D1DF1E50B00285298 /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 /* Begin PBXFileReference section */
 		3C680469C18A3008203EE1E9 /* Pods_socialMilk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_socialMilk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B2EE7A31DF46E34009F6968 /* WorkingVk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingVk.swift; sourceTree = "<group>"; };
+		7B39A83A1DF47EA90077BBB6 /* VKCheckedPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKCheckedPost.swift; sourceTree = "<group>"; };
+		7B39A83C1DF4A1500077BBB6 /* VKPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKPost.swift; sourceTree = "<group>"; };
 		7BF0F4361DF1E50B00285298 /* socialMilk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = socialMilk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF0F4391DF1E50B00285298 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BF0F43B1DF1E50B00285298 /* AppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 				7BF0F45D1DF3314F00285298 /* VKManager.swift */,
 				7BF0F4611DF3327900285298 /* Constants.swift */,
 				7B2EE7A31DF46E34009F6968 /* WorkingVk.swift */,
+				7B39A83A1DF47EA90077BBB6 /* VKCheckedPost.swift */,
+				7B39A83C1DF4A1500077BBB6 /* VKPost.swift */,
 			);
 			name = InitialClasses;
 			sourceTree = "<group>";
@@ -307,8 +313,10 @@
 				7BF0F46B1DF36B1F00285298 /* ChooseGroupClass.swift in Sources */,
 				7BF0F4541DF1F48500285298 /* MessageClass.swift in Sources */,
 				7BF0F4571DF2036800285298 /* ChatTableViewCell.swift in Sources */,
+				7B39A83D1DF4A1500077BBB6 /* VKPost.swift in Sources */,
 				7BF0F4521DF1F42400285298 /* ChatClass.swift in Sources */,
 				7BF0F44E1DF1EA9D00285298 /* SettingsViewController.swift in Sources */,
+				7B39A83B1DF47EA90077BBB6 /* VKCheckedPost.swift in Sources */,
 				7B2EE7A41DF46E34009F6968 /* WorkingVk.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,6 +361,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -403,6 +412,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -432,6 +442,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F6C580B4AE3B5A14E39255DD /* Pods-socialMilk.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KH2KDZEEE3;
 				INFOPLIST_FILE = socialMilk/Info.plist;
@@ -446,6 +457,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8483424513B008EF6C051F9 /* Pods-socialMilk.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KH2KDZEEE3;
 				INFOPLIST_FILE = socialMilk/Info.plist;

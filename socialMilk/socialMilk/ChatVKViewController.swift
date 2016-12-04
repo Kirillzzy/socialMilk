@@ -42,7 +42,7 @@ class ChatVKViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = messagesTableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessageTableViewCell
-        cell.timeLabel.text = "00:00"
+        cell.timeLabel.text = WorkingVk.translateNSDateToString(date: chat.messages[indexPath.row].time)
         cell.descriptionLabel.text = chat.messages[indexPath.row].message
         cell.titleLabel.text = chat.messages[indexPath.row].head
         return cell

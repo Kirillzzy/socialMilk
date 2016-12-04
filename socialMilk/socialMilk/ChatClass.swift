@@ -18,5 +18,6 @@ class ChatClass {
         self.messages = messages
     }
     
-    init(){}
+    init(){}    
+    
 }
