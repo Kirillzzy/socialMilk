@@ -15,7 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        //VK.process(url: url, options: options)
+        let app = options[.sourceApplication] as? String
+        VK.process(url: url, sourceApplication: app)
         return true
     }
     

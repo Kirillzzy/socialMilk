@@ -17,7 +17,7 @@ class GroupsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         mainImageVIew.layer.masksToBounds = true
-        mainImageVIew.layer.cornerRadius = 50
+        mainImageVIew.layer.cornerRadius = 35
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

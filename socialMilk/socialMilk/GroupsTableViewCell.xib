@@ -16,23 +16,27 @@
             <rect key="frame" x="0.0" y="0.0" width="339" height="70"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="339" height="70"/>
+                <rect key="frame" x="0.0" y="0.0" width="339" height="69.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lZM-jk-8Sh">
-                        <rect key="frame" x="1" y="1" width="70" height="67"/>
+                        <rect key="frame" x="1" y="1" width="70" height="67.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="70" id="nip-kw-Tvg"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zF-F0-hzj">
-                        <rect key="frame" x="79" y="8" width="66" height="54"/>
+                        <rect key="frame" x="79" y="8" width="224" height="54"/>
                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tna-qP-3Nu">
-                        <rect key="frame" x="153" y="21" width="178" height="27"/>
+                        <rect key="frame" x="311" y="25" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="2fU-6I-Cyp"/>
+                            <constraint firstAttribute="width" constant="20" id="Ias-OG-JQP"/>
+                        </constraints>
                         <connections>
                             <action selector="checkButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="p3E-RR-jSx"/>
                         </connections>
@@ -40,14 +44,14 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="8zF-F0-hzj" secondAttribute="bottom" constant="-0.5" id="5SU-si-12b"/>
-                    <constraint firstItem="Tna-qP-3Nu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="13" id="InR-He-oBt"/>
+                    <constraint firstItem="Tna-qP-3Nu" firstAttribute="leading" secondItem="8zF-F0-hzj" secondAttribute="trailing" constant="8" id="BnF-Oj-bZd"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Tna-qP-3Nu" secondAttribute="trailing" id="ObS-Q5-t9l"/>
+                    <constraint firstItem="Tna-qP-3Nu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="17" id="ToU-w7-alB"/>
                     <constraint firstItem="lZM-jk-8Sh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="1" id="Y9p-vH-nT6"/>
                     <constraint firstAttribute="bottom" secondItem="lZM-jk-8Sh" secondAttribute="bottom" constant="1" id="dnH-4d-pMH"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Tna-qP-3Nu" secondAttribute="bottom" constant="14" id="eJp-re-CsG"/>
                     <constraint firstItem="lZM-jk-8Sh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="1" id="i0d-BW-WWO"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Tna-qP-3Nu" secondAttribute="trailing" id="lvs-LM-9m9"/>
                     <constraint firstAttribute="topMargin" secondItem="8zF-F0-hzj" secondAttribute="top" id="noo-Bu-meN"/>
-                    <constraint firstItem="Tna-qP-3Nu" firstAttribute="leading" secondItem="8zF-F0-hzj" secondAttribute="trailing" constant="8" id="oC4-DC-Uhd"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Tna-qP-3Nu" secondAttribute="bottom" constant="16.5" id="xA3-DU-Li9"/>
                     <constraint firstItem="8zF-F0-hzj" firstAttribute="leading" secondItem="lZM-jk-8Sh" secondAttribute="trailing" constant="8" id="zTN-ok-scm"/>
                 </constraints>
             </tableViewCellContentView>
