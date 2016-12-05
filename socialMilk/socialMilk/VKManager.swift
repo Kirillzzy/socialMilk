@@ -159,7 +159,7 @@ class VKManager: VKDelegate{
         }
         _ = VK.API.Wall.get([
             VK.Arg.ownerId: "\(id)",
-            VK.Arg.count: "100"]).send(
+            VK.Arg.count: "20"]).send(
                 onSuccess:  { response in
                     for post in response["items"].arrayValue{
                         var hasLink = false

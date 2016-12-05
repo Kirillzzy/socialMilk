@@ -13,6 +13,7 @@ class AppsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        Init.Init()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -25,8 +26,6 @@ class AppsViewController: UIViewController {
     }
 
 }
-
-
 
 extension AppsViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

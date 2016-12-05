@@ -1,10 +1,16 @@
 PODS:
+  - Realm (2.1.0):
+    - Realm/Headers (= 2.1.0)
+  - Realm/Headers (2.1.0)
+  - RealmSwift (2.1.0):
+    - Realm (= 2.1.0)
   - SDWebImage (4.0.0-beta2):
     - SDWebImage/Core (= 4.0.0-beta2)
   - SDWebImage/Core (4.0.0-beta2)
   - SwiftyVK (2.0.1)
 
 DEPENDENCIES:
+  - RealmSwift
   - SDWebImage (from `https://github.com/rs/SDWebImage.git`)
   - SwiftyVK (from `https://github.com/WE-St0r/SwiftyVK.git`)
 
@@ -23,9 +29,11 @@ CHECKOUT OPTIONS:
     :git: https://github.com/WE-St0r/SwiftyVK.git
 
 SPEC CHECKSUMS:
+  Realm: bc829ad0ef3d4eea70c34cfcc3b1704d18d50df1
+  RealmSwift: a4d4abbf0088c337cab5b738054395842e4b3052
   SDWebImage: e379f33106cf8d6766f970c0ef1c3fb609c94d78
   SwiftyVK: 555c309aa25aaf24453117c977be85a7b7908075
 
-PODFILE CHECKSUM: 70f50602be3f4cbb869f8f2a43e7d994fb3a84f3
+PODFILE CHECKSUM: 9082793d90f012fbe8602084e44928bd2bf8cac6
 
 COCOAPODS: 1.1.0.rc.3

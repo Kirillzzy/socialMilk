@@ -17,8 +17,24 @@ class ChatVKViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        messagesTableView.rowHeight = CGFloat(120)
+        self.messagesTableView.estimatedRowHeight = 80
+        self.messagesTableView.rowHeight = UITableViewAutomaticDimension
         reloadTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        chat.messages = WorkingVk.createChatByMessages()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let numberOfSections = messagesTableView.numberOfSections
+        let numberOfRows = messagesTableView.numberOfRows(inSection: numberOfSections - 1)
+        if numberOfRows > 0 {
+            let indexPath = IndexPath(row: numberOfRows - 1, section: numberOfSections - 1)
+            messagesTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: true)
+        }
     }
     
     func reloadTableView(){
@@ -52,9 +68,5 @@ class ChatVKViewController: UIViewController, UITableViewDelegate, UITableViewDa
         messagesTableView.deselectRow(at: indexPath, animated: true)
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-    {
-        return 120
-    }
 
 }

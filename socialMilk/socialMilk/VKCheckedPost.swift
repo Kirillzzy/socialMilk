@@ -10,7 +10,7 @@ import Foundation
 
 
 class VKCheckedPost{
-    var lastCheckedPostId = ""
+    var lastCheckedPostId = "0"
     var group = ChooseGroupClass()
     
     init(lastCheckedPostId: String, group: ChooseGroupClass){

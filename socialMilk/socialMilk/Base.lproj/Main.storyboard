@@ -125,7 +125,7 @@
             </objects>
             <point key="canvasLocation" x="2328.8000000000002" y="-96.7016491754123"/>
         </scene>
-        <!--Item-->
+        <!--Settings-->
         <scene sceneID="7bm-R3-hUZ">
             <objects>
                 <viewController id="rPI-Yj-nHt" customClass="SettingsViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
@@ -136,13 +136,29 @@
                     <view key="view" contentMode="scaleToFill" id="yXF-qb-cmb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here will be settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUB-x6-4WX">
+                                <rect key="frame" x="16" y="20" width="343" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="aqx-kI-H1d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="UUB-x6-4WX" secondAttribute="leading" id="7mc-v3-3Qp"/>
+                            <constraint firstItem="UUB-x6-4WX" firstAttribute="top" secondItem="2Mf-ZO-eah" secondAttribute="bottom" id="FYq-gf-YWd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UUB-x6-4WX" secondAttribute="trailing" id="rwC-9X-cMZ"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="TaP-LA-EDn"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="TaP-LA-EDn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgl-4c-84l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-162" y="625"/>
+            <point key="canvasLocation" x="-162.40000000000001" y="624.73763118440786"/>
         </scene>
         <!--Apps View Controller-->
         <scene sceneID="GeN-7q-jj7">
@@ -156,21 +172,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qu8-01-UU8">
-                                <rect key="frame" x="16" y="72" width="67" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qu8-01-UU8">
+                                <rect key="frame" x="16" y="72" width="70" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="67" id="Dxa-VJ-6Fe"/>
-                                    <constraint firstAttribute="height" constant="37" id="Tt2-Sc-Sn6"/>
+                                    <constraint firstAttribute="width" constant="70" id="Dxa-VJ-6Fe"/>
+                                    <constraint firstAttribute="height" constant="70" id="Tt2-Sc-Sn6"/>
                                 </constraints>
-                                <state key="normal" title="VK"/>
+                                <state key="normal" image="vkLogo"/>
                                 <connections>
                                     <action selector="vkButtonPressed:" destination="b23-kG-7vb" eventType="touchUpInside" id="IUn-ek-iTB"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on VK logo to register your groups for next interaction and then go to chats" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbW-Wg-owP">
+                                <rect key="frame" x="16" y="150" width="343" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="i52-Iv-JsB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="mbW-Wg-owP" secondAttribute="trailing" id="4m1-bL-PsH"/>
                             <constraint firstItem="Qu8-01-UU8" firstAttribute="top" secondItem="uJf-K6-MFW" secondAttribute="bottom" constant="8" id="8ug-wz-DsE"/>
+                            <constraint firstItem="mbW-Wg-owP" firstAttribute="top" secondItem="Qu8-01-UU8" secondAttribute="bottom" constant="8" id="A1E-dA-sD4"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="mbW-Wg-owP" secondAttribute="leading" id="Bzb-gx-Xbv"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Qu8-01-UU8" secondAttribute="leading" id="hT1-zi-wkt"/>
                         </constraints>
                     </view>
@@ -202,11 +230,11 @@
             </objects>
             <point key="canvasLocation" x="-359" y="-149"/>
         </scene>
-        <!--Item 2-->
+        <!--Chats-->
         <scene sceneID="zG6-EJ-WJ6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HQO-ge-yHe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="FbY-N7-agr"/>
+                    <tabBarItem key="tabBarItem" title="Chats" id="FbY-N7-agr"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="a0F-Cz-bON">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -221,11 +249,11 @@
             </objects>
             <point key="canvasLocation" x="592.79999999999995" y="178.56071964017991"/>
         </scene>
-        <!--Item 1-->
+        <!--Apps-->
         <scene sceneID="Sb6-XM-NLC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="34g-LE-XB5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="aXu-wL-Yat"/>
+                    <tabBarItem key="tabBarItem" title="Apps" id="aXu-wL-Yat"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="atR-7E-1nd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -241,4 +269,7 @@
             <point key="canvasLocation" x="592.79999999999995" y="-476.31184407796104"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="vkLogo" width="256" height="256"/>
+    </resources>
 </document>

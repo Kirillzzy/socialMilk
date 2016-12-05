@@ -29,7 +29,7 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         groupsAndPeople = vk.GroupsPeopleGet()
-        let when = DispatchTime.now() + 0.2
+        let when = DispatchTime.now() + 0.3
         DispatchQueue.main.asyncAfter(deadline: when) {
             self.reloadTableView()
         }
@@ -37,6 +37,9 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+//        if checked.count > 2{
+//            return
+//        }
         super.viewWillDisappear(animated)
         var checkedItems = [VKCheckedPost]()
         for item in checked{
@@ -45,7 +48,7 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
         WorkingVk.sources = checkedItems
-        //WorkingVk.checkNewPosts()
+        WorkingVk.updateSources()
     }
     
     static let sharedInstance: VKChooseViewController = {

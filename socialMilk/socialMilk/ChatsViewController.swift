@@ -18,7 +18,12 @@ class ChatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         chatsTableView.rowHeight = CGFloat(95)
-        chats.append(ChatClass(chatTitle: "VK", messages: WorkingVk.createChatByMessages()))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        chats.removeAll()
+        chats.append(ChatClass(chatTitle: "VK"))
         reloadTableView()
     }
     
@@ -43,9 +48,9 @@ class ChatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = chatsTableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! ChatTableViewCell
         cell.mainImageView.image = #imageLiteral(resourceName: "vkLogo") // type struct of socials
-        cell.timeLabel.text = "00:00" // date
+        cell.timeLabel.text = "Time" // date
         cell.titleLabel.text = chats[indexPath.row].chatTitle
-        cell.descriptionLabel.text = "Test"
+        cell.descriptionLabel.text = "Click to see notifications or wait"
         return cell
     }
     

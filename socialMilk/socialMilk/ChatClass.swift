@@ -13,9 +13,8 @@ class ChatClass {
     var messages = [MessageClass]()
     var chatTitle: String = ""
     
-    init(chatTitle: String, messages: [MessageClass]){
+    init(chatTitle: String){
         self.chatTitle = chatTitle
-        self.messages = messages
     }
     
     init(){}    

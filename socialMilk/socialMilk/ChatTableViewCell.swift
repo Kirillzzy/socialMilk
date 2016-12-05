@@ -19,7 +19,7 @@ class ChatTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         mainImageView.layer.masksToBounds = true
-        mainImageView.layer.cornerRadius = 50
+        //mainImageView.layer.cornerRadius = 50
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
