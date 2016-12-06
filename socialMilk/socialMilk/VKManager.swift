@@ -164,12 +164,16 @@ class VKManager: VKDelegate{
                     for post in response["items"].arrayValue{
                         var hasLink = false
                         var hasVideo = false
+                        var hasPhoto = false
                         for att in post["attachments"].arrayValue{
                             if att["type"].stringValue == "video"{
                                 hasVideo = true
                             }
                             if att["type"].stringValue == "link"{
                                 hasLink = true
+                            }
+                            if att["type"].stringValue == "photo"{
+                                hasPhoto = true
                             }
                         }
                         
@@ -178,7 +182,8 @@ class VKManager: VKDelegate{
                                             date: post["date"].stringValue,
                                             group: group,
                                             hasLink: hasLink,
-                                            hasVideo: hasVideo))
+                                            hasVideo: hasVideo,
+                                            hasPhoto: hasPhoto))
                     }
                     status = true
             },

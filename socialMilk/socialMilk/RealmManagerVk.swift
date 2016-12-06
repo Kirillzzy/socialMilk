@@ -24,16 +24,12 @@ extension RealmManagerVk{
     static func saveNewVKPost(post: VKPostRealm){
         let realm = try! Realm()
         let posts = realm.objects(VKPostRealm.self).filter({$0.groupId == post.groupId})
-        if posts.count >= 20 && posts.count > 0{
-            var minPost = VKPostRealm()
-            minPost.date = "0"
-            for post in posts{
-                if minPost.date == "0" || post.date < minPost.date{
-                    minPost = post
+        if posts.count >= 2000 && posts.count > 0{
+            let minPosts = posts.sorted(by: {$0.date < $1.date})
+            for i in 0..<1000{
+                try! realm.write {
+                    realm.delete(minPosts[i])
                 }
-            }
-            try! realm.write {
-                realm.delete(minPost)
             }
         }
         try! realm.write {
@@ -57,6 +53,7 @@ extension RealmManagerVk{
         newPost.groupTitle = post.group.title
         newPost.groupIsGroup = post.group.isGroup
         newPost.groupPhotoLink = post.group.photoLink
+        newPost.hasPhoto = post.hasPhoto
         newPost.text = post.text
         return newPost
     }
@@ -69,7 +66,10 @@ extension RealmManagerVk{
         return VKPost(id: post.id,
                       text: post.text,
                       date: post.date,
-                      group: group, hasLink: post.hasLink, hasVideo: post.hasVideo)
+                      group: group,
+                      hasLink: post.hasLink,
+                      hasVideo: post.hasVideo,
+                      hasPhoto: post.hasPhoto)
     }
     
     

@@ -18,6 +18,7 @@ class ChatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         chatsTableView.rowHeight = CGFloat(95)
+        _ = VKManager.sharedInstance
     }
     
     override func viewWillAppear(_ animated: Bool) {

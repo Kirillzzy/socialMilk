@@ -16,6 +16,7 @@ class VKPostRealm: Object{
     dynamic var date: String = ""
     dynamic var hasLink: Bool = false
     dynamic var hasVideo: Bool = false
+    dynamic var hasPhoto: Bool = false
     dynamic var url: String = ""
     dynamic var groupTitle: String = ""
     dynamic var groupId: String = ""

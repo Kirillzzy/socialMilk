@@ -153,9 +153,9 @@
 				7BF0F4611DF3327900285298 /* Constants.swift */,
 				7B2EE7A31DF46E34009F6968 /* WorkingVk.swift */,
 				7B39A83A1DF47EA90077BBB6 /* VKCheckedPost.swift */,
+				7B39A8461DF5CE690077BBB6 /* VKCheckedPostRealm.swift */,
 				7B39A83C1DF4A1500077BBB6 /* VKPost.swift */,
 				7B39A8421DF5C9730077BBB6 /* VKPostRealm.swift */,
-				7B39A8461DF5CE690077BBB6 /* VKCheckedPostRealm.swift */,
 				7B39A8481DF5FBB80077BBB6 /* Init.swift */,
 			);
 			name = InitialClasses;

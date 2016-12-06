@@ -85,6 +85,9 @@ final class WorkingVk{
         let posts = WorkingVk.getPosts()
         for post in posts{
             let message = MessageClass(head: post.group.title, message: post.text, time: WorkingVk.translateUnixTime(time: Int(post.date)!))
+            if post.hasPhoto {
+                message.message += "\nHas Photo"
+            }
             if post.hasLink {
                 message.message += "\nHas Link"
             }

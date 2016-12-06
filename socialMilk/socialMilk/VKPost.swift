@@ -16,16 +16,18 @@ class VKPost{
     var group: ChooseGroupClass = ChooseGroupClass()
     var hasLink: Bool = false
     var hasVideo: Bool = false
+    var hasPhoto: Bool = false
     
     var url: String = "" // make url
     
-    init(id: String, text: String, date: String, group: ChooseGroupClass, hasLink: Bool, hasVideo: Bool){
+    init(id: String, text: String, date: String, group: ChooseGroupClass, hasLink: Bool, hasVideo: Bool, hasPhoto: Bool){
         self.id = id
         self.text = text
         self.date = date
         self.group = group
         self.hasLink = hasLink
         self.hasVideo = hasVideo
+        self.hasPhoto = hasPhoto
     }
     
     init(){}
