@@ -11,6 +11,8 @@ import UIKit
 class ChatVKViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var messagesTableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var activityView: UIView!
 
     var chat = ChatClass()
     private let vk: VKManager = VKManager()
@@ -19,28 +21,38 @@ class ChatVKViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         self.messagesTableView.estimatedRowHeight = 80
         self.messagesTableView.rowHeight = UITableViewAutomaticDimension
-        reloadTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        chat.messages = WorkingVk.createChatByMessages()
+        DispatchQueue.global(qos: .background).async {
+            self.chat.messages = WorkingVk.createChatByMessages()
+            DispatchQueue.main.async {
+                self.activityIndicator.hidesWhenStopped = true
+                self.activityView.isHidden = true
+                self.activityIndicator.stopAnimating()
+                self.reloadTableView()
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let numberOfSections = messagesTableView.numberOfSections
-        let numberOfRows = messagesTableView.numberOfRows(inSection: numberOfSections - 1)
-        if numberOfRows > 0 {
-            let indexPath = IndexPath(row: numberOfRows - 1, section: numberOfSections - 1)
-            messagesTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: true)
-        }
+        activityIndicator.startAnimating()
     }
     
     func reloadTableView(){
         self.messagesTableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageCell")
         self.reloadUI()
+        let numberOfSections = messagesTableView.numberOfSections
+        let numberOfRows = messagesTableView.numberOfRows(inSection: numberOfSections - 1)
+        if numberOfRows > 0 {
+            let indexPath = IndexPath(row: numberOfRows - 1, section: numberOfSections - 1)
+            messagesTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: false)
+        }
     }
+    
+    
     
     func reloadUI(){
         self.messagesTableView.reloadData()

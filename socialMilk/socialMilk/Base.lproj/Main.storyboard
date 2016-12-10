@@ -108,16 +108,35 @@
                                     <outlet property="delegate" destination="jn4-cn-3O4" id="cBn-Ge-HW5"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jGs-2w-7ix">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ryd-Ds-au3">
+                                        <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Ryd-Ds-au3" firstAttribute="centerX" secondItem="jGs-2w-7ix" secondAttribute="centerX" id="SZ1-n0-DJs"/>
+                                    <constraint firstItem="Ryd-Ds-au3" firstAttribute="centerY" secondItem="jGs-2w-7ix" secondAttribute="centerY" id="rrC-fA-hi8"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="tMV-lA-fk0" secondAttribute="trailing" id="9pD-VS-exD"/>
                             <constraint firstAttribute="bottom" secondItem="tMV-lA-fk0" secondAttribute="bottom" id="Bgb-Yx-RcD"/>
+                            <constraint firstAttribute="trailing" secondItem="jGs-2w-7ix" secondAttribute="trailing" id="H4P-3c-QPW"/>
+                            <constraint firstItem="jGs-2w-7ix" firstAttribute="top" secondItem="TJg-7d-tsD" secondAttribute="top" id="j1p-qh-6wa"/>
                             <constraint firstItem="tMV-lA-fk0" firstAttribute="leading" secondItem="TJg-7d-tsD" secondAttribute="leading" id="lYB-ZD-OfR"/>
+                            <constraint firstItem="jGs-2w-7ix" firstAttribute="leading" secondItem="TJg-7d-tsD" secondAttribute="leading" id="opm-PT-0oj"/>
                             <constraint firstItem="tMV-lA-fk0" firstAttribute="top" secondItem="TJg-7d-tsD" secondAttribute="top" id="scB-Z3-gwU"/>
+                            <constraint firstAttribute="bottom" secondItem="jGs-2w-7ix" secondAttribute="bottom" id="v6Q-me-X2U"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="Ryd-Ds-au3" id="42b-YB-ENe"/>
+                        <outlet property="activityView" destination="jGs-2w-7ix" id="jrq-H3-UGy"/>
                         <outlet property="messagesTableView" destination="tMV-lA-fk0" id="jTa-cV-s9l"/>
                     </connections>
                 </viewController>
