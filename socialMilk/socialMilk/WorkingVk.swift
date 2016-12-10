@@ -84,7 +84,7 @@ final class WorkingVk{
         var mess = [MessageClass]()
         let posts = WorkingVk.getPosts()
         for post in posts{
-            let message = MessageClass(head: post.group.title, message: post.text, time: WorkingVk.translateUnixTime(time: Int(post.date)!))
+            let message = MessageClass(head: post.group.title, message: post.text, time: WorkingVk.translateUnixTime(time: Int(post.date)!), url: post.url)
             if post.hasPhoto {
                 message.message += "\nHas Photo"
             }
@@ -94,6 +94,7 @@ final class WorkingVk{
             if post.hasVideo {
                 message.message += "\nHas Video"
             }
+            message.message += "\n\n" + post.url
             mess.append(message)
         }
         return mess

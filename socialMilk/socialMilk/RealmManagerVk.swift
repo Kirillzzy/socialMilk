@@ -55,6 +55,7 @@ extension RealmManagerVk{
         newPost.groupPhotoLink = post.group.photoLink
         newPost.hasPhoto = post.hasPhoto
         newPost.text = post.text
+        newPost.url = post.url
         return newPost
     }
     

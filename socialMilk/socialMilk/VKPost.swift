@@ -17,8 +17,8 @@ class VKPost{
     var hasLink: Bool = false
     var hasVideo: Bool = false
     var hasPhoto: Bool = false
+    var url: String = ""
     
-    var url: String = "" // make url
     
     init(id: String, text: String, date: String, group: ChooseGroupClass, hasLink: Bool, hasVideo: Bool, hasPhoto: Bool){
         self.id = id
@@ -28,6 +28,7 @@ class VKPost{
         self.hasLink = hasLink
         self.hasVideo = hasVideo
         self.hasPhoto = hasPhoto
+        self.url = ("vk.com/public" + group.id + "?w=wall-" + group.id + "_" + self.id)
     }
     
     init(){}

@@ -13,10 +13,12 @@ class MessageClass {
     var head: String = ""
     var message: String = ""
     var time: NSDate = NSDate()
+    var url: String = ""
     
-    init(head: String, message: String, time: NSDate){
+    init(head: String, message: String, time: NSDate, url: String){
         self.head = head
         self.message = message
         self.time = time
+        self.url = url
     }
 }
