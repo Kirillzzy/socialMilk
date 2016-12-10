@@ -38,7 +38,7 @@ final class WorkingVk{
         return String(hour + ":" + minutes)
     }
     
-    private static func checkNewPosts() -> [VKPost]{
+    static func checkNewPosts() -> [VKPost]{
         var lastPosts: [VKPost] = [VKPost]()
         for source in sources{
             var posts = vk.WallGet(group: source.group)

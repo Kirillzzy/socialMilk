@@ -12,10 +12,13 @@ import SDWebImage
 class VKChooseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var groupsTableView: UITableView!
+    @IBOutlet weak var activityView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private let vk: VKManager = VKManager.sharedInstance
     var groupsAndPeople = [ChooseGroupClass]()
     var checked = [String: ChooseGroupClass?]()
+    var checkedItems = [VKCheckedPost]()
 
     override func loadView() {
         super.loadView()
@@ -29,8 +32,27 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         groupsAndPeople = vk.GroupsPeopleGet()
-        let when = DispatchTime.now() + 0.3
+        let sources = WorkingVk.sources
+        for source in sources{
+            let newSource = ChooseGroupClass(title: source.group.title,
+                                            photoLink: source.group.photoLink,
+                                            id: source.group.id,
+                                            isGroup: source.group.isGroup)
+            
+            for i in 0..<groupsAndPeople.count{
+                if groupsAndPeople[i].id == newSource.id{
+                    checked[String(i)] = newSource
+                    break
+                }
+            }
+            checkedItems.append(source)
+        }
+        activityIndicator.startAnimating()
+        let when = DispatchTime.now() + 0.5
         DispatchQueue.main.asyncAfter(deadline: when) {
+            self.activityIndicator.hidesWhenStopped = true
+            self.activityView.isHidden = true
+            self.activityIndicator.stopAnimating()
             self.reloadTableView()
         }
         
@@ -41,13 +63,17 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
 //            return
 //        }
         super.viewWillDisappear(animated)
-        var checkedItems = [VKCheckedPost]()
         for item in checked{
             if item.value != nil{
-                checkedItems.append(VKCheckedPost(lastCheckedPostId: "0", group: item.value!))
+                if (checkedItems.filter({$0.group.id == item.value?.id})).count == 0{
+                    checkedItems.append(VKCheckedPost(lastCheckedPostId: "0", group: item.value!))
+                }
             }
         }
         WorkingVk.sources = checkedItems
+        DispatchQueue.global(qos: .background).async {
+            _ = WorkingVk.checkNewPosts()
+        }
         WorkingVk.updateSources()
     }
     
@@ -94,7 +120,14 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
             self.checked[String(indexPath.row)] = self.groupsAndPeople[indexPath.row]
         } else{
             cell.checkButton.setImage(nil, for: .normal)
+            for i in 0..<self.checkedItems.count{
+                if self.checkedItems[i].group.id == self.checked[String(indexPath.row)]??.id{
+                    self.checkedItems.remove(at: i)
+                    break
+                }
+            }
             self.checked[String(indexPath.row)] = nil
+            
         }
     }
     

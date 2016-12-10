@@ -69,18 +69,37 @@
                                     <outlet property="delegate" destination="iCl-Xp-tc4" id="6rg-8K-67d"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0CF-sp-Ics">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="N3p-Wj-drL">
+                                        <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="N3p-Wj-drL" firstAttribute="centerX" secondItem="0CF-sp-Ics" secondAttribute="centerX" id="WvD-ha-wOv"/>
+                                    <constraint firstItem="N3p-Wj-drL" firstAttribute="centerY" secondItem="0CF-sp-Ics" secondAttribute="centerY" id="dgg-Xn-cjm"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Nsb-oE-qqd" firstAttribute="leading" secondItem="qfC-7K-V5p" secondAttribute="leading" id="79i-pV-Vqt"/>
+                            <constraint firstAttribute="trailing" secondItem="0CF-sp-Ics" secondAttribute="trailing" id="7ld-Jh-iQf"/>
                             <constraint firstItem="Nsb-oE-qqd" firstAttribute="top" secondItem="qfC-7K-V5p" secondAttribute="top" id="Aap-dV-IuI"/>
                             <constraint firstAttribute="bottom" secondItem="Nsb-oE-qqd" secondAttribute="bottom" id="Nzh-Lh-Jof"/>
+                            <constraint firstAttribute="bottom" secondItem="0CF-sp-Ics" secondAttribute="bottom" id="UAh-OO-ulr"/>
+                            <constraint firstItem="0CF-sp-Ics" firstAttribute="top" secondItem="qfC-7K-V5p" secondAttribute="top" id="ZnA-DF-iuY"/>
                             <constraint firstAttribute="trailing" secondItem="Nsb-oE-qqd" secondAttribute="trailing" id="fvZ-s6-qg1"/>
+                            <constraint firstItem="0CF-sp-Ics" firstAttribute="leading" secondItem="qfC-7K-V5p" secondAttribute="leading" id="srH-x2-PVm"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="N3p-Wj-drL" id="68T-vf-Njz"/>
+                        <outlet property="activityView" destination="0CF-sp-Ics" id="xfV-xr-DdP"/>
                         <outlet property="groupsTableView" destination="Nsb-oE-qqd" id="v15-qZ-AIu"/>
                     </connections>
                 </viewController>
