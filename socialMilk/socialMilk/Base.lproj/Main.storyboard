@@ -107,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="2328.8000000000002" y="-753.37331334332839"/>
         </scene>
-        <!--ChatVK View Controller-->
+        <!--Notifications-->
         <scene sceneID="9ig-jW-ozb">
             <objects>
-                <viewController id="jn4-cn-3O4" customClass="ChatVKViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Notifications" id="jn4-cn-3O4" customClass="ChatVKViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1oF-Gp-RpS"/>
                         <viewControllerLayoutGuide type="bottom" id="J9J-2W-bW4"/>
@@ -192,7 +192,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="UUB-x6-4WX" secondAttribute="trailing" id="rwC-9X-cMZ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="TaP-LA-EDn"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="TaP-LA-EDn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgl-4c-84l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -272,7 +272,7 @@
         <scene sceneID="zG6-EJ-WJ6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HQO-ge-yHe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chats" id="FbY-N7-agr"/>
+                    <tabBarItem key="tabBarItem" title="Chats" image="chatsIcon" id="FbY-N7-agr"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="a0F-Cz-bON">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -291,7 +291,7 @@
         <scene sceneID="Sb6-XM-NLC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="34g-LE-XB5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Apps" id="aXu-wL-Yat"/>
+                    <tabBarItem key="tabBarItem" title="Apps" image="appsIcon" id="aXu-wL-Yat"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="atR-7E-1nd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -308,6 +308,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="appsIcon" width="28" height="28"/>
+        <image name="chatsIcon" width="28" height="28"/>
+        <image name="settings" width="28" height="28"/>
         <image name="vkLogo" width="256" height="256"/>
     </resources>
 </document>
