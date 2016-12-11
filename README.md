@@ -4,3 +4,5 @@ An app is getting notifications from different social networks and interacting w
 ![alt tag](https://github.com/Kirillzzy/socialMilk/blob/master/groups.png)
 ![alt tag](https://github.com/Kirillzzy/socialMilk/blob/master/chats.png)
 ![alt tag](https://github.com/Kirillzzy/socialMilk/blob/master/notifications.png)
+![alt tag](https://github.com/Kirillzzy/socialMilk/blob/master/apps.png)
+
