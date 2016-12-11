@@ -165,15 +165,21 @@ class VKManager: VKDelegate{
                         var hasLink = false
                         var hasVideo = false
                         var hasPhoto = false
+                        var linkLink = ""
+                        var photoLink = ""
+                        var videoLink = ""
                         for att in post["attachments"].arrayValue{
-                            if att["type"].stringValue == "video"{
+                            if att["type"].stringValue == "video" && hasVideo == false{
                                 hasVideo = true
+                                videoLink = att["video", "photo_320"].stringValue
                             }
-                            if att["type"].stringValue == "link"{
+                            if att["type"].stringValue == "link" && hasLink == false{
                                 hasLink = true
+                                linkLink = att["link", "photo", "photo_604"].stringValue
                             }
-                            if att["type"].stringValue == "photo"{
+                            if att["type"].stringValue == "photo" && hasPhoto == false{
                                 hasPhoto = true
+                                photoLink = att["photo", "photo_604"].stringValue
                             }
                         }
                         
@@ -183,7 +189,10 @@ class VKManager: VKDelegate{
                                             group: group,
                                             hasLink: hasLink,
                                             hasVideo: hasVideo,
-                                            hasPhoto: hasPhoto))
+                                            hasPhoto: hasPhoto,
+                                            linkLink: linkLink,
+                                            photoLink: photoLink,
+                                            videoLink: videoLink))
                     }
                     status = true
             },

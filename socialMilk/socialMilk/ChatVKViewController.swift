@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ChatVKViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -73,6 +74,13 @@ class ChatVKViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.timeLabel.text = WorkingVk.translateNSDateToString(date: chat.messages[indexPath.row].time)
         cell.descriptionLabel.text = chat.messages[indexPath.row].message
         cell.titleLabel.text = chat.messages[indexPath.row].head
+        cell.imageImageView.sd_setImage(with: URL(string: chat.messages[indexPath.row].post.group.photoLink))
+        if chat.messages[indexPath.row].post.hasPhoto{
+            cell.photoImageImageView.sd_setImage(with: URL(string: chat.messages[indexPath.row].post.photoLink))
+        }else{
+            cell.photoImageImageView.isHidden = true
+            cell.photoImageImageView.frame = CGRect(x: 0, y: 0, width: CGFloat(0), height: CGFloat(0))
+        }
         return cell
     }
     

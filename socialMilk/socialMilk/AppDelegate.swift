@@ -9,11 +9,14 @@
 import UIKit
 import SwiftyVK
 
+var vkDelegateReference: VKDelegate?
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    @available(iOS 9.0, *)
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         let app = options[.sourceApplication] as? String
         VK.process(url: url, sourceApplication: app)
@@ -26,7 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        vkDelegateReference = VKManager.sharedInstance
+        Init.Init()
         return true
     }
 

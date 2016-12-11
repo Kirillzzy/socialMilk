@@ -126,8 +126,7 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
                     break
                 }
             }
-            self.checked[String(indexPath.row)] = nil
-            
+            self.checked.removeValue(forKey: String(indexPath.row))
         }
     }
     

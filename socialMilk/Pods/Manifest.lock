@@ -22,10 +22,10 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SDWebImage:
-    :commit: 032ab1dd6d633ed30b8850eddc27f7073191f317
+    :commit: 5ea33a709579a28437176faf3b62e91d7532ebbc
     :git: https://github.com/rs/SDWebImage.git
   SwiftyVK:
-    :commit: e7d649a1ca1b4bad4e5630a750491f7791ea07a7
+    :commit: 12f891cfa5121df6a17cfb9c24a924c7ac0de74a
     :git: https://github.com/WE-St0r/SwiftyVK.git
 
 SPEC CHECKSUMS:

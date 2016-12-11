@@ -13,14 +13,8 @@ class AppsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Init.Init()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        _ = VKManager.sharedInstance
-    }
-
     @IBAction func vkButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "fromAppsToChatLineSegue", sender: sender)
     }

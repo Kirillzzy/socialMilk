@@ -22,5 +22,7 @@ class VKPostRealm: Object{
     dynamic var groupId: String = ""
     dynamic var groupPhotoLink: String = ""
     dynamic var groupIsGroup: Bool = true
-    
+    dynamic var linkLink: String = ""
+    dynamic var photoLink: String = ""
+    dynamic var videoLink: String = ""
 }

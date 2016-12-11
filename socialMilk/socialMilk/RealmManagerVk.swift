@@ -56,6 +56,9 @@ extension RealmManagerVk{
         newPost.hasPhoto = post.hasPhoto
         newPost.text = post.text
         newPost.url = post.url
+        newPost.linkLink = post.linkLink
+        newPost.photoLink = post.photoLink
+        newPost.videoLink = post.videoLink
         return newPost
     }
     
@@ -70,7 +73,10 @@ extension RealmManagerVk{
                       group: group,
                       hasLink: post.hasLink,
                       hasVideo: post.hasVideo,
-                      hasPhoto: post.hasPhoto)
+                      hasPhoto: post.hasPhoto,
+                      linkLink: post.linkLink,
+                      photoLink: post.photoLink,
+                      videoLink: post.videoLink)
     }
     
     
