@@ -15,7 +15,6 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var activityView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    private let vk: VKManager = VKManager.sharedInstance
     var groupsAndPeople = [ChooseGroupClass]()
     var checked = [String: ChooseGroupClass?]()
     var checkedItems = [VKCheckedPost]()
@@ -31,7 +30,7 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        groupsAndPeople = vk.GroupsPeopleGet()
+        groupsAndPeople = VKManagerWorker.GroupsPeopleGet()
         let sources = WorkingVk.sources
         for source in sources{
             let newSource = ChooseGroupClass(title: source.group.title,

@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import SwiftyVK
 
 final class Init{
     static func Init(){
+        VKManagerWorker.authorize()
         RealmManagerVk.printRealmPath()
         WorkingVk.sources = RealmManagerVk.getVKCheckedPosts()
     }

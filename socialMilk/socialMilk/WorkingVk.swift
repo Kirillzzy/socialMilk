@@ -11,7 +11,6 @@ import Foundation
 
 final class WorkingVk{
     static var sources = [VKCheckedPost]()
-    private static let vk = VKManager.sharedInstance
     
     
     static func updateSources(){
@@ -41,7 +40,7 @@ final class WorkingVk{
     static func checkNewPosts() -> [VKPost]{
         var lastPosts: [VKPost] = [VKPost]()
         for source in sources{
-            var posts = vk.WallGet(group: source.group)
+            var posts = VKManagerWorker.WallGet(group: source.group)
             posts.sort(by: {post1, post2 in Int(post1.date)! > Int(post2.date)!})
             if source.lastCheckedPostId != "0"{
                 for post in posts{
