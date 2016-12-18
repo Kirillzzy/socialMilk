@@ -34,7 +34,6 @@ class LoginViewController: UIViewController {
 extension LoginViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "fromLoginSegue"{
-
         }
     }
 }

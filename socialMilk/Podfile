@@ -4,4 +4,5 @@ target 'socialMilk' do
 pod 'SwiftyVK', :git => 'https://github.com/WE-St0r/SwiftyVK.git'
 pod 'SDWebImage', :git => 'https://github.com/rs/SDWebImage.git'
 pod 'RealmSwift'
+pod 'SwiftyJSON'
 end

@@ -221,7 +221,7 @@
                                     <action selector="vkButtonPressed:" destination="b23-kG-7vb" eventType="touchUpInside" id="IUn-ek-iTB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on VK logo to register your groups for next interaction and then go to chats" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbW-Wg-owP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on VK/Twitter logo to register your groups for next interaction and then go to chats" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbW-Wg-owP">
                                 <rect key="frame" x="16" y="150" width="343" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="i52-Iv-JsB"/>
@@ -230,10 +230,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5e-oo-pAY">
+                                <rect key="frame" x="124" y="72" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="RKC-Th-h1o"/>
+                                    <constraint firstAttribute="width" constant="70" id="jYb-bt-SRU"/>
+                                </constraints>
+                                <state key="normal" image="twitterLogo"/>
+                                <connections>
+                                    <action selector="vkButtonPressed:" destination="b23-kG-7vb" eventType="touchUpInside" id="tfm-JE-DcH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="F5e-oo-pAY" firstAttribute="top" secondItem="uJf-K6-MFW" secondAttribute="bottom" constant="8" id="05Q-qE-b7w"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mbW-Wg-owP" secondAttribute="trailing" id="4m1-bL-PsH"/>
+                            <constraint firstItem="F5e-oo-pAY" firstAttribute="leading" secondItem="Qu8-01-UU8" secondAttribute="trailing" constant="38" id="5EY-ZU-rm0"/>
                             <constraint firstItem="Qu8-01-UU8" firstAttribute="top" secondItem="uJf-K6-MFW" secondAttribute="bottom" constant="8" id="8ug-wz-DsE"/>
                             <constraint firstItem="mbW-Wg-owP" firstAttribute="top" secondItem="Qu8-01-UU8" secondAttribute="bottom" constant="8" id="A1E-dA-sD4"/>
                             <constraint firstAttribute="leadingMargin" secondItem="mbW-Wg-owP" secondAttribute="leading" id="Bzb-gx-Xbv"/>
@@ -381,6 +394,7 @@
         <image name="appsIcon" width="28" height="28"/>
         <image name="chatsIcon" width="28" height="28"/>
         <image name="settings" width="28" height="28"/>
+        <image name="twitterLogo" width="256" height="256"/>
         <image name="vkLogo" width="256" height="256"/>
     </resources>
 </document>

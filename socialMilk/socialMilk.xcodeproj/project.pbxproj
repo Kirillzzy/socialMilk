@@ -39,12 +39,15 @@
 		7BF0F46B1DF36B1F00285298 /* ChooseGroupClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF0F46A1DF36B1F00285298 /* ChooseGroupClass.swift */; };
 		7BF0F46F1DF3798900285298 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF0F46E1DF3798900285298 /* SDWebImage.framework */; };
 		8A0ACB7F1E0678D30071A7F6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0ACB7E1E0678D30071A7F6 /* Constants.swift */; };
+		8AC326221E0716860014835D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC326211E0716860014835D /* SwiftyJSON.framework */; };
 		8AE60E781E06DD1600A9662F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE60E741E06DD1600A9662F /* Fabric.framework */; };
 		8AE60E791E06DD1600A9662F /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE60E751E06DD1600A9662F /* TwitterKit.framework */; };
 		8AE60E7A1E06DD1600A9662F /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8AE60E761E06DD1600A9662F /* TwitterKitResources.bundle */; };
 		8AE60E7B1E06DD1600A9662F /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE60E771E06DD1600A9662F /* TwitterCore.framework */; };
 		8AE60E7D1E06EE2F00A9662F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60E7C1E06EE2F00A9662F /* LoginViewController.swift */; };
 		8AE60E7F1E06F2CE00A9662F /* TwitterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60E7E1E06F2CE00A9662F /* TwitterManager.swift */; };
+		8AE60E811E06FC1D00A9662F /* TweetPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60E801E06FC1D00A9662F /* TweetPost.swift */; };
+		8AE60E831E06FC5700A9662F /* TweetPostRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60E821E06FC5700A9662F /* TweetPostRealm.swift */; };
 		FE9FD86F3619F02F115020EB /* Pods_socialMilk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C680469C18A3008203EE1E9 /* Pods_socialMilk.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,12 +87,15 @@
 		7BF0F46A1DF36B1F00285298 /* ChooseGroupClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseGroupClass.swift; sourceTree = "<group>"; };
 		7BF0F46E1DF3798900285298 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "../../../../Library/Developer/Xcode/DerivedData/socialMilk-adrtdxgusxucxfcfjyiujrvhvldu/Build/Products/Debug-iphonesimulator/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
 		8A0ACB7E1E0678D30071A7F6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8AC326211E0716860014835D /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../Library/Developer/Xcode/DerivedData/socialMilk-efyrgjzfhqusodaldjlwejjisfes/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		8AE60E741E06DD1600A9662F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		8AE60E751E06DD1600A9662F /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		8AE60E761E06DD1600A9662F /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
 		8AE60E771E06DD1600A9662F /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		8AE60E7C1E06EE2F00A9662F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8AE60E7E1E06F2CE00A9662F /* TwitterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterManager.swift; sourceTree = "<group>"; };
+		8AE60E801E06FC1D00A9662F /* TweetPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetPost.swift; sourceTree = "<group>"; };
+		8AE60E821E06FC5700A9662F /* TweetPostRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetPostRealm.swift; sourceTree = "<group>"; };
 		C8483424513B008EF6C051F9 /* Pods-socialMilk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialMilk.release.xcconfig"; path = "Pods/Target Support Files/Pods-socialMilk/Pods-socialMilk.release.xcconfig"; sourceTree = "<group>"; };
 		F6C580B4AE3B5A14E39255DD /* Pods-socialMilk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialMilk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-socialMilk/Pods-socialMilk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AC326221E0716860014835D /* SwiftyJSON.framework in Frameworks */,
 				7B39A8411DF5C9550077BBB6 /* Realm.framework in Frameworks */,
 				7B39A83F1DF5C9510077BBB6 /* RealmSwift.framework in Frameworks */,
 				7BF0F46F1DF3798900285298 /* SDWebImage.framework in Frameworks */,
@@ -178,6 +185,8 @@
 				7B39A8461DF5CE690077BBB6 /* VKCheckedPostRealm.swift */,
 				7B39A83C1DF4A1500077BBB6 /* VKPost.swift */,
 				7B39A8421DF5C9730077BBB6 /* VKPostRealm.swift */,
+				8AE60E801E06FC1D00A9662F /* TweetPost.swift */,
+				8AE60E821E06FC5700A9662F /* TweetPostRealm.swift */,
 				7B39A8481DF5FBB80077BBB6 /* Init.swift */,
 				8A0ACB7E1E0678D30071A7F6 /* Constants.swift */,
 			);
@@ -209,6 +218,7 @@
 		C1DE064BC00740E057D27DE9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8AC326211E0716860014835D /* SwiftyJSON.framework */,
 				7B39A8401DF5C9550077BBB6 /* Realm.framework */,
 				7B39A83E1DF5C9510077BBB6 /* RealmSwift.framework */,
 				7BF0F46E1DF3798900285298 /* SDWebImage.framework */,
@@ -371,6 +381,7 @@
 				7BF0F44C1DF1E80000285298 /* ChatsViewController.swift in Sources */,
 				7B8A91811DFF298C0014D78D /* VKManagerWorker.swift in Sources */,
 				7BF0F4681DF35D2900285298 /* GroupsTableViewCell.swift in Sources */,
+				8AE60E811E06FC1D00A9662F /* TweetPost.swift in Sources */,
 				7B39A8491DF5FBB80077BBB6 /* Init.swift in Sources */,
 				7B39A8451DF5CB8E0077BBB6 /* RealmManagerVk.swift in Sources */,
 				8AE60E7F1E06F2CE00A9662F /* TwitterManager.swift in Sources */,
@@ -380,6 +391,7 @@
 				7BF0F4571DF2036800285298 /* ChatTableViewCell.swift in Sources */,
 				7B39A83D1DF4A1500077BBB6 /* VKPost.swift in Sources */,
 				7BF0F4521DF1F42400285298 /* ChatClass.swift in Sources */,
+				8AE60E831E06FC5700A9662F /* TweetPostRealm.swift in Sources */,
 				7BF0F44E1DF1EA9D00285298 /* SettingsViewController.swift in Sources */,
 				7B39A83B1DF47EA90077BBB6 /* VKCheckedPost.swift in Sources */,
 				7B39A8431DF5C9730077BBB6 /* VKPostRealm.swift in Sources */,

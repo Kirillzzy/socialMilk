@@ -14,6 +14,7 @@ class AppsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        TwitterManager.loadFollowing()
     }
     
     @IBAction func vkButtonPressed(_ sender: Any) {

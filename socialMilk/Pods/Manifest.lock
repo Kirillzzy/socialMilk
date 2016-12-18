@@ -7,11 +7,13 @@ PODS:
   - SDWebImage (4.0.0-beta2):
     - SDWebImage/Core (= 4.0.0-beta2)
   - SDWebImage/Core (4.0.0-beta2)
+  - SwiftyJSON (3.1.3)
   - SwiftyVK (2.0.1)
 
 DEPENDENCIES:
   - RealmSwift
   - SDWebImage (from `https://github.com/rs/SDWebImage.git`)
+  - SwiftyJSON
   - SwiftyVK (from `https://github.com/WE-St0r/SwiftyVK.git`)
 
 EXTERNAL SOURCES:
@@ -32,8 +34,9 @@ SPEC CHECKSUMS:
   Realm: a55959c0b171a5fe5267406d17f314fec3cefaae
   RealmSwift: 749fd955bf8d6471c21d218b9389a47aaeccfe3f
   SDWebImage: e379f33106cf8d6766f970c0ef1c3fb609c94d78
+  SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
   SwiftyVK: 555c309aa25aaf24453117c977be85a7b7908075
 
-PODFILE CHECKSUM: 9082793d90f012fbe8602084e44928bd2bf8cac6
+PODFILE CHECKSUM: '06138d6b5f8b424efc4d6286225b020b13e1bdbf'
 
 COCOAPODS: 1.2.0.beta.1
