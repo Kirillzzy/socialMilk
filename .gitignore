@@ -1,2 +1,3 @@
 *.lock
 Constants.swift
+.DS_Store
