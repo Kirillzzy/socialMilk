@@ -33,12 +33,18 @@
 		7BF0F45C1DF2038000285298 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BF0F45A1DF2038000285298 /* MessageTableViewCell.xib */; };
 		7BF0F45E1DF3314F00285298 /* VKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF0F45D1DF3314F00285298 /* VKManager.swift */; };
 		7BF0F4601DF3316000285298 /* SwiftyVK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF0F45F1DF3316000285298 /* SwiftyVK.framework */; };
-		7BF0F4621DF3327900285298 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF0F4611DF3327900285298 /* Constants.swift */; };
 		7BF0F4641DF3516A00285298 /* VKChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF0F4631DF3516A00285298 /* VKChooseViewController.swift */; };
 		7BF0F4681DF35D2900285298 /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF0F4661DF35D2900285298 /* GroupsTableViewCell.swift */; };
 		7BF0F4691DF35D2900285298 /* GroupsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BF0F4671DF35D2900285298 /* GroupsTableViewCell.xib */; };
 		7BF0F46B1DF36B1F00285298 /* ChooseGroupClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF0F46A1DF36B1F00285298 /* ChooseGroupClass.swift */; };
 		7BF0F46F1DF3798900285298 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF0F46E1DF3798900285298 /* SDWebImage.framework */; };
+		8A0ACB7F1E0678D30071A7F6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0ACB7E1E0678D30071A7F6 /* Constants.swift */; };
+		8AE60E781E06DD1600A9662F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE60E741E06DD1600A9662F /* Fabric.framework */; };
+		8AE60E791E06DD1600A9662F /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE60E751E06DD1600A9662F /* TwitterKit.framework */; };
+		8AE60E7A1E06DD1600A9662F /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8AE60E761E06DD1600A9662F /* TwitterKitResources.bundle */; };
+		8AE60E7B1E06DD1600A9662F /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE60E771E06DD1600A9662F /* TwitterCore.framework */; };
+		8AE60E7D1E06EE2F00A9662F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60E7C1E06EE2F00A9662F /* LoginViewController.swift */; };
+		8AE60E7F1E06F2CE00A9662F /* TwitterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60E7E1E06F2CE00A9662F /* TwitterManager.swift */; };
 		FE9FD86F3619F02F115020EB /* Pods_socialMilk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C680469C18A3008203EE1E9 /* Pods_socialMilk.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,12 +78,18 @@
 		7BF0F45A1DF2038000285298 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 		7BF0F45D1DF3314F00285298 /* VKManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKManager.swift; sourceTree = "<group>"; };
 		7BF0F45F1DF3316000285298 /* SwiftyVK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyVK.framework; path = "../../../../Library/Developer/Xcode/DerivedData/socialMilk-adrtdxgusxucxfcfjyiujrvhvldu/Build/Products/Debug-iphonesimulator/SwiftyVK/SwiftyVK.framework"; sourceTree = "<group>"; };
-		7BF0F4611DF3327900285298 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7BF0F4631DF3516A00285298 /* VKChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKChooseViewController.swift; sourceTree = "<group>"; };
 		7BF0F4661DF35D2900285298 /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
 		7BF0F4671DF35D2900285298 /* GroupsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupsTableViewCell.xib; sourceTree = "<group>"; };
 		7BF0F46A1DF36B1F00285298 /* ChooseGroupClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseGroupClass.swift; sourceTree = "<group>"; };
 		7BF0F46E1DF3798900285298 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "../../../../Library/Developer/Xcode/DerivedData/socialMilk-adrtdxgusxucxfcfjyiujrvhvldu/Build/Products/Debug-iphonesimulator/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
+		8A0ACB7E1E0678D30071A7F6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8AE60E741E06DD1600A9662F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		8AE60E751E06DD1600A9662F /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		8AE60E761E06DD1600A9662F /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
+		8AE60E771E06DD1600A9662F /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		8AE60E7C1E06EE2F00A9662F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8AE60E7E1E06F2CE00A9662F /* TwitterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterManager.swift; sourceTree = "<group>"; };
 		C8483424513B008EF6C051F9 /* Pods-socialMilk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialMilk.release.xcconfig"; path = "Pods/Target Support Files/Pods-socialMilk/Pods-socialMilk.release.xcconfig"; sourceTree = "<group>"; };
 		F6C580B4AE3B5A14E39255DD /* Pods-socialMilk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialMilk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-socialMilk/Pods-socialMilk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +104,9 @@
 				7BF0F46F1DF3798900285298 /* SDWebImage.framework in Frameworks */,
 				7BF0F4601DF3316000285298 /* SwiftyVK.framework in Frameworks */,
 				FE9FD86F3619F02F115020EB /* Pods_socialMilk.framework in Frameworks */,
+				8AE60E7B1E06DD1600A9662F /* TwitterCore.framework in Frameworks */,
+				8AE60E781E06DD1600A9662F /* Fabric.framework in Frameworks */,
+				8AE60E791E06DD1600A9662F /* TwitterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +135,10 @@
 			isa = PBXGroup;
 			children = (
 				7BF0F4391DF1E50B00285298 /* AppDelegate.swift */,
+				8AE60E741E06DD1600A9662F /* Fabric.framework */,
+				8AE60E751E06DD1600A9662F /* TwitterKit.framework */,
+				8AE60E761E06DD1600A9662F /* TwitterKitResources.bundle */,
+				8AE60E771E06DD1600A9662F /* TwitterCore.framework */,
 				7BF0F4651DF35CFC00285298 /* Cells */,
 				7BF0F46C1DF36BD800285298 /* InitialClasses */,
 				7BF0F46D1DF36C2200285298 /* View Controllers */,
@@ -151,15 +170,16 @@
 				7BF0F46A1DF36B1F00285298 /* ChooseGroupClass.swift */,
 				7BF0F4531DF1F48500285298 /* MessageClass.swift */,
 				7BF0F45D1DF3314F00285298 /* VKManager.swift */,
+				8AE60E7E1E06F2CE00A9662F /* TwitterManager.swift */,
 				7B8A91801DFF298C0014D78D /* VKManagerWorker.swift */,
 				7B39A8441DF5CB8E0077BBB6 /* RealmManagerVk.swift */,
-				7BF0F4611DF3327900285298 /* Constants.swift */,
 				7B2EE7A31DF46E34009F6968 /* WorkingVk.swift */,
 				7B39A83A1DF47EA90077BBB6 /* VKCheckedPost.swift */,
 				7B39A8461DF5CE690077BBB6 /* VKCheckedPostRealm.swift */,
 				7B39A83C1DF4A1500077BBB6 /* VKPost.swift */,
 				7B39A8421DF5C9730077BBB6 /* VKPostRealm.swift */,
 				7B39A8481DF5FBB80077BBB6 /* Init.swift */,
+				8A0ACB7E1E0678D30071A7F6 /* Constants.swift */,
 			);
 			name = InitialClasses;
 			sourceTree = "<group>";
@@ -172,6 +192,7 @@
 				7BF0F44F1DF1EE9A00285298 /* ChatVKViewController.swift */,
 				7BF0F44D1DF1EA9D00285298 /* SettingsViewController.swift */,
 				7BF0F4631DF3516A00285298 /* VKChooseViewController.swift */,
+				8AE60E7C1E06EE2F00A9662F /* LoginViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -210,6 +231,7 @@
 				7BF0F4341DF1E50B00285298 /* Resources */,
 				B44DB497F5FFF3EEF13F4641 /* [CP] Embed Pods Frameworks */,
 				88A3DA3484ED0AB27D813E7C /* [CP] Copy Pods Resources */,
+				8AE60E731E06DCA400A9662F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -261,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BF0F4441DF1E50B00285298 /* LaunchScreen.storyboard in Resources */,
+				8AE60E7A1E06DD1600A9662F /* TwitterKitResources.bundle in Resources */,
 				7BF0F4691DF35D2900285298 /* GroupsTableViewCell.xib in Resources */,
 				7BF0F4581DF2036800285298 /* ChatTableViewCell.xib in Resources */,
 				7BF0F45C1DF2038000285298 /* MessageTableViewCell.xib in Resources */,
@@ -286,6 +309,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-socialMilk/Pods-socialMilk-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		8AE60E731E06DCA400A9662F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 8902b0494a64ef0619b295ca4a818d4c2191835d 20fce116880d8ca43ef0896255a6588dd6a9e7fe790d3392ca3d6ede516f55cc";
 		};
 		B44DB497F5FFF3EEF13F4641 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -325,8 +361,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BF0F43C1DF1E50B00285298 /* AppsViewController.swift in Sources */,
-				7BF0F4621DF3327900285298 /* Constants.swift in Sources */,
+				8A0ACB7F1E0678D30071A7F6 /* Constants.swift in Sources */,
 				7B39A8471DF5CE690077BBB6 /* VKCheckedPostRealm.swift in Sources */,
+				8AE60E7D1E06EE2F00A9662F /* LoginViewController.swift in Sources */,
 				7BF0F4501DF1EE9A00285298 /* ChatVKViewController.swift in Sources */,
 				7BF0F45E1DF3314F00285298 /* VKManager.swift in Sources */,
 				7BF0F4641DF3516A00285298 /* VKChooseViewController.swift in Sources */,
@@ -336,6 +373,7 @@
 				7BF0F4681DF35D2900285298 /* GroupsTableViewCell.swift in Sources */,
 				7B39A8491DF5FBB80077BBB6 /* Init.swift in Sources */,
 				7B39A8451DF5CB8E0077BBB6 /* RealmManagerVk.swift in Sources */,
+				8AE60E7F1E06F2CE00A9662F /* TwitterManager.swift in Sources */,
 				7BF0F43A1DF1E50B00285298 /* AppDelegate.swift in Sources */,
 				7BF0F46B1DF36B1F00285298 /* ChooseGroupClass.swift in Sources */,
 				7BF0F4541DF1F48500285298 /* MessageClass.swift in Sources */,
@@ -477,6 +515,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/RealmSwift",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Realm",
+					"$(PROJECT_DIR)/socialMilk",
 				);
 				INFOPLIST_FILE = socialMilk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -497,6 +536,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/RealmSwift",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Realm",
+					"$(PROJECT_DIR)/socialMilk",
 				);
 				INFOPLIST_FILE = socialMilk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

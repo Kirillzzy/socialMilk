@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AB3-Af-7pP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nw7-hp-iPg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -266,7 +266,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YfH-hq-n2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-359" y="-149"/>
+            <point key="canvasLocation" x="-553" y="-148"/>
         </scene>
         <!--Chats-->
         <scene sceneID="zG6-EJ-WJ6">
@@ -286,6 +286,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SD9-Du-jwR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="592.79999999999995" y="178.56071964017991"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="L9m-1t-Upq">
+            <objects>
+                <viewController id="nw7-hp-iPg" customClass="LoginViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ArA-Ry-Jxr"/>
+                        <viewControllerLayoutGuide type="bottom" id="Rp0-Bq-mBR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Eq-ql-2sA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oua-gl-pst">
+                                <rect key="frame" x="16" y="45" width="343" height="36"/>
+                                <color key="backgroundColor" red="0.34205731749534607" green="0.51003962755203247" blue="0.70529305934906006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Login VK">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginVKButtonPressed:" destination="nw7-hp-iPg" eventType="touchUpInside" id="MWa-ON-iyj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBO-KU-0kw">
+                                <rect key="frame" x="16" y="102" width="343" height="36"/>
+                                <color key="backgroundColor" red="0.31500020623207092" green="0.66942018270492554" blue="0.94374459981918335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Login Twitter">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginTwitterButtonPressed:" destination="nw7-hp-iPg" eventType="touchUpInside" id="YoR-tL-vHK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yok-6z-goa">
+                                <rect key="frame" x="16" y="602" width="343" height="45"/>
+                                <color key="backgroundColor" red="0.34205731750000001" green="0.51003962759999999" blue="0.70529305929999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="OXi-1d-G6B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="nw7-hp-iPg" eventType="touchUpInside" id="YpC-2W-J94"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="yok-6z-goa" secondAttribute="trailing" id="7uY-Mc-Ouj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KBO-KU-0kw" secondAttribute="trailing" id="CgS-3u-I1A"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Oua-gl-pst" secondAttribute="trailing" id="KgZ-Fq-e6A"/>
+                            <constraint firstItem="KBO-KU-0kw" firstAttribute="top" secondItem="Oua-gl-pst" secondAttribute="bottom" constant="21" id="PE3-lu-C9C"/>
+                            <constraint firstItem="Rp0-Bq-mBR" firstAttribute="top" secondItem="yok-6z-goa" secondAttribute="bottom" constant="20" id="XgO-eb-DDd"/>
+                            <constraint firstItem="Oua-gl-pst" firstAttribute="top" secondItem="ArA-Ry-Jxr" secondAttribute="bottom" constant="25" id="Yzs-cw-wch"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="yok-6z-goa" secondAttribute="leading" id="adt-7x-0Yd"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Oua-gl-pst" secondAttribute="leading" id="e4o-3w-nyM"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="KBO-KU-0kw" secondAttribute="leading" id="pn3-mx-xvV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="AB3-Af-7pP" kind="show" identifier="fromLoginSegue" id="Btb-Ae-gja"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="47n-7h-pR5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1370.4000000000001" y="-149.77511244377811"/>
         </scene>
         <!--Apps-->
         <scene sceneID="Sb6-XM-NLC">

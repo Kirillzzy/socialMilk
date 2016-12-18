@@ -20,36 +20,16 @@ final class VKManagerWorker{
         print("SwiftyVK: authorize")
     }
     
-    
+    class func checkState() -> VK.States{
+        return VK.state
+    }
+
     
     class func logout() {
         VK.logOut()
         print("SwiftyVK: LogOut")
     }
     
-    
-    
-    class func captcha() {
-        _ = VK.API.custom(method: "captcha.force").send(
-            onSuccess: {
-                response in print("SwiftyVK: Captcha success \n \(response)")
-            },
-            onError: {
-                error in print("SwiftyVK: Captcha fail \n \(error)")
-        })
-    }
-    
-    
-    
-    class func validation() {
-        _ = VK.API.custom(method: "account.testValidation").send(
-            onSuccess:  {
-                response in print("SwiftyVK: Captcha success \n \(response)")
-            },
-            onError: {
-                error in print("SwiftyVK: Captcha fail \n \(error)")
-        })
-    }
 
     
     class func NotificationsGet(){

@@ -13,7 +13,7 @@ import SwiftyVK
 class VKManager: VKDelegate{
     
     init(){
-        VK.configure(withAppId: Constants.appId, delegate: self)
+        VK.configure(withAppId: Constants.VKappID, delegate: self)
     }
     
     func vkWillAuthorize() -> Set<VK.Scope> {

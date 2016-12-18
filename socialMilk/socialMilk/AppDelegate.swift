@@ -8,6 +8,8 @@
 
 import UIKit
 import SwiftyVK
+import Fabric
+import TwitterKit
 
 var vkDelegateReference: VKDelegate?
 
@@ -16,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    @available(iOS 9.0, *)
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         let app = options[.sourceApplication] as? String
         VK.process(url: url, sourceApplication: app)
@@ -27,10 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         VK.process(url: url, sourceApplication: sourceApplication)
         return true
     }
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        vkDelegateReference = VKManager()
-        Init.Init()
+        Fabric.with([Twitter.self])
+        //Init.Init()
         return true
     }
 
