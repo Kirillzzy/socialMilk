@@ -10,5 +10,7 @@ import Foundation
 
 
 class WorkingTwitter{
+    static var sources = [TweetCheckedPost]()
     
+    //write this class and other is easy
 }

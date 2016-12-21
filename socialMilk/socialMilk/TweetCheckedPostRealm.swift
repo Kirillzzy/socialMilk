@@ -7,7 +7,13 @@
 //
 
 import Foundation
+import RealmSwift
 
-class TweetCheckedPostRealm{
-    
+class TweetCheckedPostRealm: Object{
+    dynamic var lastCheckedTweetId: String = ""
+    dynamic var userTitle: String = ""
+    dynamic var userPhotoLink: String = ""
+    dynamic var userId: String = ""
+    dynamic var userDescription: String = ""
+    dynamic var userScreenName: String = ""
 }

@@ -9,5 +9,14 @@
 import Foundation
 
 class TweetCheckedPost{
+    var lastCheckedTweetId = "0"
+    var user = TwitterChooseGroupClass()
     
+    init(lastCheckedTweetId: String, user: TwitterChooseGroupClass){
+        self.lastCheckedTweetId = lastCheckedTweetId
+        self.user = user
+    }
+    
+    init(){}
+
 }

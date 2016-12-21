@@ -17,4 +17,6 @@ class VKCheckedPost{
         self.lastCheckedPostId = lastCheckedPostId
         self.group = group
     }
+    
+    init(){}
 }
