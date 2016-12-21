@@ -154,15 +154,15 @@ final class VKManagerWorker{
                         var photoLink = ""
                         var videoLink = ""
                         for att in post["attachments"].arrayValue{
-                            if att["type"].stringValue == "video" && hasVideo == false{
+                            if att["type"].stringValue == "video" && !hasVideo{
                                 hasVideo = true
                                 videoLink = att["video", "photo_320"].stringValue
                             }
-                            if att["type"].stringValue == "link" && hasLink == false{
+                            if att["type"].stringValue == "link" && !hasLink{
                                 hasLink = true
                                 linkLink = att["link", "photo", "photo_604"].stringValue
                             }
-                            if att["type"].stringValue == "photo" && hasPhoto == false{
+                            if att["type"].stringValue == "photo" && !hasPhoto{
                                 hasPhoto = true
                                 photoLink = att["photo", "photo_604"].stringValue
                             }

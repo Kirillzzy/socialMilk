@@ -51,7 +51,8 @@ final class TwitterManager{
                     people.append(TwitterChooseGroupClass(title: person["name"].stringValue,
                                                           photoLink: person["profile_image_url_https"].stringValue,
                                                           id: person["id"].stringValue,
-                                                          description: person["description"].stringValue))
+                                                          description: person["description"].stringValue,
+                                                          screenName: person["screen_name"].stringValue))
                 }
                 print("People recieved: \(people.count)")
                 callback(people)
@@ -62,7 +63,73 @@ final class TwitterManager{
             }
         }
 
-
+    }
+    
+    class func loadTweetsByUser(user: TwitterChooseGroupClass, callback: @escaping (_ tweets: [TweetPost]?) -> Void){
+        var tweets = [TweetPost]()
+        let client = TWTRAPIClient.withCurrentUser()
+        let statusesShowEndpoint = "https://api.twitter.com/1.1/statuses/user_timeline.json"
+        let params = ["user_id": user.id, "count": "1000"]
+        
+        var clientError : NSError?
+        let request = client.urlRequest(withMethod: "GET", url: statusesShowEndpoint, parameters: params, error: &clientError)
+        
+        client.sendTwitterRequest(request){ (response, data, connectionError) -> Void in
+            if connectionError != nil {
+                print("Error: \(connectionError)")
+            }
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: [])
+                let js = JSON(json)
+                for tweet in js.arrayValue{
+                    var hasLink = false
+                    var hasVideo = false
+                    var hasPhoto = false
+                    var linkLink = ""
+                    var photoLink = ""
+                    var videoLink = ""
+                    for media in tweet["entities"]["media"].arrayValue{
+                        if media["type"].stringValue == "photo" && !hasPhoto{
+                            hasPhoto = true
+                            photoLink = media["url"].stringValue
+                        }
+                        else if media["type"].stringValue == "video" && !hasVideo{
+                            hasVideo = true
+                            videoLink = media["url"].stringValue
+                        }
+                    }
+                    for link in tweet["entities"]["urls"].arrayValue{
+                        hasLink = true
+                        linkLink = link["url"].stringValue
+                        break
+                    }
+                    tweets.append(TweetPost(user: user,
+                                            text: tweet["text"].stringValue,
+                                            date: tweet["created_at"].stringValue,
+                                            id: tweet["id"].stringValue,
+                                            hasLink: hasLink,
+                                            hasPhoto: hasPhoto,
+                                            hasVideo: hasVideo,
+                                            linkLink: linkLink,
+                                            photoLink: photoLink,
+                                            videoLink: videoLink))
+                }
+                callback(tweets)
+            } catch let jsonError as NSError {
+                print("json error: \(jsonError.localizedDescription)")
+                callback(nil)
+            }
+        }
     }
     
 }
+
+
+
+
+
+
+
+
+

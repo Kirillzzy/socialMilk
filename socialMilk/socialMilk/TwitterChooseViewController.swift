@@ -21,7 +21,7 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        TwitterManager.loadFollowing(callback: {people in
+        TwitterManager.loadFollowing(callback: { people in
             if let peo = people{
                 self.people = peo
             }
@@ -61,6 +61,7 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         peopleTableView.deselectRow(at: indexPath, animated: true)
+        
 //        let cell = groupsTableView.cellForRow(at: indexPath) as! GroupsTableViewCell
 //        if cell.checkButton.currentImage != #imageLiteral(resourceName: "checkBoxSet"){
 //            cell.checkButton.setImage(#imageLiteral(resourceName: "checkBoxSet"), for: .normal)

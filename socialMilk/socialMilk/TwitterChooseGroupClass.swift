@@ -14,12 +14,14 @@ class TwitterChooseGroupClass{
     var photoLink: String = ""
     var id: String = ""
     var description: String = ""
+    var screenName: String = ""
     
-    init(title: String, photoLink: String, id: String, description: String){
+    init(title: String, photoLink: String, id: String, description: String, screenName: String){
         self.title = title
         self.photoLink = photoLink
         self.id = id
         self.description = description
+        self.screenName = screenName
     }
     
     init(){}
