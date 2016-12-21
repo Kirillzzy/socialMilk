@@ -13,7 +13,7 @@ class VKPost{
     var id: String = ""
     var text: String = ""
     var date: String = ""
-    var group: ChooseGroupClass = ChooseGroupClass()
+    var group: VKChooseGroupClass = VKChooseGroupClass()
     var hasLink: Bool = false
     var hasVideo: Bool = false
     var hasPhoto: Bool = false
@@ -23,7 +23,7 @@ class VKPost{
     var videoLink: String = ""
     
     
-    init(id: String, text: String, date: String, group: ChooseGroupClass, hasLink: Bool, hasVideo: Bool,
+    init(id: String, text: String, date: String, group: VKChooseGroupClass, hasLink: Bool, hasVideo: Bool,
          hasPhoto: Bool, linkLink: String, photoLink: String, videoLink: String){
         self.id = id
         self.text = text

@@ -63,7 +63,7 @@ extension RealmManagerVk{
     }
     
     static func encodeRealmVkPostToJust(post: VKPostRealm) -> VKPost{
-        let group = ChooseGroupClass(title: post.groupTitle,
+        let group = VKChooseGroupClass(title: post.groupTitle,
                                      photoLink: post.groupPhotoLink,
                                      id: post.groupId,
                                      isGroup: post.groupIsGroup)
@@ -110,7 +110,7 @@ extension RealmManagerVk{
                                     newGroupIsGroup: Bool){
         let realm = try! Realm()
         let updatingPost = encodeVKCheckedPostToRealm(post: VKCheckedPost(lastCheckedPostId: newLastCheckedPostId,
-                                                                          group: ChooseGroupClass(title: newGroupTitle,
+                                                                          group: VKChooseGroupClass(title: newGroupTitle,
                                                                                                   photoLink: newGroupPhotoLink,
                                                                                                   id: newGroupId,
                                                                                                   isGroup: newGroupIsGroup)))
@@ -151,7 +151,7 @@ extension RealmManagerVk{
     }
     
     static func encodeRealmVkCheckedPostToJust(post: VKCheckedPostRealm) -> VKCheckedPost{
-        let group = ChooseGroupClass(title: post.groupTitle,
+        let group = VKChooseGroupClass(title: post.groupTitle,
                                      photoLink: post.groupPhotoLink,
                                      id: post.groupId,
                                      isGroup: post.groupIsGroup)

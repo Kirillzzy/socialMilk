@@ -10,6 +10,7 @@ import Foundation
 
 
 class ChatClass {
+    
     var messages = [MessageClass]()
     var chatTitle: String = ""
     

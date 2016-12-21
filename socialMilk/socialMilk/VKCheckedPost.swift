@@ -11,9 +11,9 @@ import Foundation
 
 class VKCheckedPost{
     var lastCheckedPostId = "0"
-    var group = ChooseGroupClass()
+    var group = VKChooseGroupClass()
     
-    init(lastCheckedPostId: String, group: ChooseGroupClass){
+    init(lastCheckedPostId: String, group: VKChooseGroupClass){
         self.lastCheckedPostId = lastCheckedPostId
         self.group = group
     }

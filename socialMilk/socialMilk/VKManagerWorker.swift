@@ -55,7 +55,7 @@ final class VKManagerWorker{
         })
     }
     
-    class func getNameAndPhotoLink(user: ChooseGroupClass){
+    class func getNameAndPhotoLink(user: VKChooseGroupClass){
         _ = VK.API.Users.get([
             .userIDs: "\(user.id)",
             .fields: "photo_100"]).send(
@@ -70,7 +70,7 @@ final class VKManagerWorker{
     
     
     
-    class func getNameAndPhotoLinkGroup(groups: [ChooseGroupClass]){
+    class func getNameAndPhotoLinkGroup(groups: [VKChooseGroupClass]){
         var strGroups = ""
         for group in groups{
             strGroups += group.id + ","
@@ -92,15 +92,15 @@ final class VKManagerWorker{
     
     
     
-    class func GroupsPeopleGet() -> [ChooseGroupClass]{
-        var groupsAndPeople = [ChooseGroupClass]()
+    class func GroupsPeopleGet() -> [VKChooseGroupClass]{
+        var groupsAndPeople = [VKChooseGroupClass]()
         var status = false
         /// ----- groups
         _ = VK.API.Groups.get().send(
             onSuccess:  { response in
-                var groups = [ChooseGroupClass]()
+                var groups = [VKChooseGroupClass]()
                 for group in response["items"].arrayValue{
-                    let person = ChooseGroupClass()
+                    let person = VKChooseGroupClass()
                     person.id = group.stringValue
                     groupsAndPeople.append(person)
                     groups.append(person)
@@ -118,7 +118,7 @@ final class VKManagerWorker{
             ]).send(
                 onSuccess:  { response in
                     for group in response["items"].arrayValue{
-                        groupsAndPeople.append(ChooseGroupClass(title: group["first_name"].stringValue + " " + group["last_name"].stringValue,
+                        groupsAndPeople.append(VKChooseGroupClass(title: group["first_name"].stringValue + " " + group["last_name"].stringValue,
                                                                 photoLink: group["photo_100"].stringValue,
                                                                 id: group["id"].stringValue, isGroup: false))
                     }
@@ -135,7 +135,7 @@ final class VKManagerWorker{
     }
     
     
-    class func WallGet(group: ChooseGroupClass) -> [VKPost]{
+    class func WallGet(group: VKChooseGroupClass) -> [VKPost]{
         var posts = [VKPost]()
         var status = false
         var id = group.id

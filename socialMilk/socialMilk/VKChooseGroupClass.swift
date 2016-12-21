@@ -9,7 +9,7 @@
 import Foundation
 
 
-class ChooseGroupClass{
+class VKChooseGroupClass{
     var title: String = ""
     var id: String = ""
     var photoLink: String = ""

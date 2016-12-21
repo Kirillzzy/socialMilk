@@ -28,16 +28,15 @@ final class TwitterManager{
     }
     
     
-    class func loadFollowing(){
+    class func loadFollowing(callback: @escaping (_ people: [TwitterChooseGroupClass]?) -> Void){
+        var people = [TwitterChooseGroupClass]()
         let client = TWTRAPIClient.withCurrentUser()
         let statusesShowEndpoint = "https://api.twitter.com/1.1/friends/list.json"
-        var cursor = -1
-        var params = ["screen_name": userName,
+        let cursor = -1
+        let params = ["screen_name": userName,
                       "count": "200",
                       "cursor": "\(cursor)"]
         var clientError : NSError?
-        
-        
         let request = client.urlRequest(withMethod: "GET", url: statusesShowEndpoint, parameters: params, error: &clientError)
         
         client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
@@ -48,33 +47,21 @@ final class TwitterManager{
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: [])
                 let js = JSON(json)
-                print(js)
-                print(js["users"].arrayObject!.count)
+                for person in js["users"].arrayValue{
+                    people.append(TwitterChooseGroupClass(title: person["name"].stringValue,
+                                                          photoLink: person["profile_image_url_https"].stringValue,
+                                                          id: person["id"].stringValue,
+                                                          description: person["description"].stringValue))
+                }
+                print("People recieved: \(people.count)")
+                callback(people)
                 
             } catch let jsonError as NSError {
                 print("json error: \(jsonError.localizedDescription)")
+                callback(nil)
             }
         }
-        cursor += 200
-        params = ["screen_name": userName,
-                  "count": "200",
-                  "cursor": "\(cursor)"]
-        
-        client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
-            if connectionError != nil {
-                print("Error: \(connectionError)")
-            }
-            
-            do {
-                let json = try JSONSerialization.jsonObject(with: data!, options: [])
-                let js = JSON(json)
-                print(js)
-                print(js["users"].arrayObject!.count)
-                
-            } catch let jsonError as NSError {
-                print("json error: \(jsonError.localizedDescription)")
-            }
-        }
+
 
     }
     

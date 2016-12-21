@@ -15,8 +15,8 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var activityView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    var groupsAndPeople = [ChooseGroupClass]()
-    var checked = [String: ChooseGroupClass?]()
+    var groupsAndPeople = [VKChooseGroupClass]()
+    var checked = [String: VKChooseGroupClass?]()
     var checkedItems = [VKCheckedPost]()
 
     override func loadView() {
@@ -33,7 +33,7 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
         groupsAndPeople = VKManagerWorker.GroupsPeopleGet()
         let sources = WorkingVk.sources
         for source in sources{
-            let newSource = ChooseGroupClass(title: source.group.title,
+            let newSource = VKChooseGroupClass(title: source.group.title,
                                             photoLink: source.group.photoLink,
                                             id: source.group.id,
                                             isGroup: source.group.isGroup)
@@ -76,10 +76,6 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
         WorkingVk.updateSources()
     }
     
-    static let sharedInstance: VKChooseViewController = {
-        let instance = VKChooseViewController()
-        return instance
-    }()
     
     func reloadTableView(){
         self.groupsTableView.register(UINib(nibName: "GroupsTableViewCell", bundle: nil), forCellReuseIdentifier: "GroupCell")

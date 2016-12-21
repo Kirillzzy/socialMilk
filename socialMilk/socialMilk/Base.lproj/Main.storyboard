@@ -105,7 +105,45 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rL0-O2-enB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2328.8000000000002" y="-753.37331334332839"/>
+            <point key="canvasLocation" x="2329" y="-851"/>
+        </scene>
+        <!--Twitter Choose View Controller-->
+        <scene sceneID="WwU-46-jO8">
+            <objects>
+                <viewController id="96q-IY-gn4" customClass="TwitterChooseViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ufl-tF-RRx"/>
+                        <viewControllerLayoutGuide type="bottom" id="BIW-bM-gfN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NwX-2f-i4g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Wa-mw-hrV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="96q-IY-gn4" id="bPH-NV-c5t"/>
+                                    <outlet property="delegate" destination="96q-IY-gn4" id="Zwa-JE-v3C"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="5Wa-mw-hrV" secondAttribute="trailing" id="ARz-he-dz2"/>
+                            <constraint firstAttribute="bottom" secondItem="5Wa-mw-hrV" secondAttribute="bottom" id="Aff-wY-sib"/>
+                            <constraint firstItem="5Wa-mw-hrV" firstAttribute="leading" secondItem="NwX-2f-i4g" secondAttribute="leading" id="H15-oR-lj8"/>
+                            <constraint firstItem="5Wa-mw-hrV" firstAttribute="top" secondItem="NwX-2f-i4g" secondAttribute="top" id="xKI-XY-UK2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="PeopleTableView" destination="5Wa-mw-hrV" id="jIV-NL-Ldn"/>
+                        <outlet property="peopleTableView" destination="5Wa-mw-hrV" id="e7X-vp-riZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cDJ-Rr-w3Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3020" y="-851.42428785607206"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="9ig-jW-ozb">
@@ -219,6 +257,7 @@
                                 <state key="normal" image="vkLogo"/>
                                 <connections>
                                     <action selector="vkButtonPressed:" destination="b23-kG-7vb" eventType="touchUpInside" id="IUn-ek-iTB"/>
+                                    <segue destination="iCl-Xp-tc4" kind="show" identifier="fromVKToChatLineSegue" id="FXl-GB-RYx"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on VK/Twitter logo to register your groups for next interaction and then go to chats" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbW-Wg-owP">
@@ -238,7 +277,9 @@
                                 </constraints>
                                 <state key="normal" image="twitterLogo"/>
                                 <connections>
+                                    <action selector="twitterButtonPressed:" destination="b23-kG-7vb" eventType="touchUpInside" id="Tlk-u2-gzY"/>
                                     <action selector="vkButtonPressed:" destination="b23-kG-7vb" eventType="touchUpInside" id="tfm-JE-DcH"/>
+                                    <segue destination="96q-IY-gn4" kind="show" id="sor-GQ-KBu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -254,9 +295,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uut-pu-I0J"/>
-                    <connections>
-                        <segue destination="iCl-Xp-tc4" kind="show" identifier="fromAppsToChatLineSegue" id="yUW-Yy-g4Q"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cT-Pa-FjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

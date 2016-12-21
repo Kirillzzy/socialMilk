@@ -14,20 +14,23 @@ class AppsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        TwitterManager.loadFollowing()
     }
     
     @IBAction func vkButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "fromAppsToChatLineSegue", sender: sender)
+        //performSegue(withIdentifier: "fromAppsToChatLineSegue", sender: sender)
+    }
+    
+    @IBAction func twitterButtonPressed(_ sender: Any) {
+        
     }
 
 }
 
-extension AppsViewController{
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "fromAppsToChatLineSegue"{
-            _ = segue.destination as! VKChooseViewController
-        }   
-    }
-}
+//extension AppsViewController{
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "fromAppsToChatLineSegue"{
+//            _ = segue.destination as! VKChooseViewController
+//        }   
+//    }
+//}
 
