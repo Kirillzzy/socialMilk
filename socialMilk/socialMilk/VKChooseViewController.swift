@@ -30,7 +30,8 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        groupsAndPeople = VKManagerWorker.GroupsPeopleGet()
+        self.activityIndicator.startAnimating()
+        self.groupsAndPeople = VKManagerWorker.GroupsPeopleGet()
         let sources = WorkingVk.sources
         for source in sources{
             let newSource = VKChooseGroupClass(title: source.group.title,
@@ -38,15 +39,14 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
                                             id: source.group.id,
                                             isGroup: source.group.isGroup)
             
-            for i in 0..<groupsAndPeople.count{
-                if groupsAndPeople[i].id == newSource.id{
-                    checked[String(i)] = newSource
+            for i in 0..<self.groupsAndPeople.count{
+                if self.groupsAndPeople[i].id == newSource.id{
+                    self.checked[String(i)] = newSource
                     break
                 }
             }
-            checkedItems.append(source)
+            self.checkedItems.append(source)
         }
-        activityIndicator.startAnimating()
         let when = DispatchTime.now() + 0.5
         DispatchQueue.main.asyncAfter(deadline: when) {
             self.activityIndicator.hidesWhenStopped = true
@@ -54,7 +54,6 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
             self.activityIndicator.stopAnimating()
             self.reloadTableView()
         }
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

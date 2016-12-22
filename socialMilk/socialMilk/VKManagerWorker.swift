@@ -32,29 +32,6 @@ final class VKManagerWorker{
     
 
     
-    class func NotificationsGet(){
-        _ = VK.API.Notifications.get([
-            .count: "30"
-            ]).send(
-                onSuccess:  { response in
-                    print(response)
-            },
-                onError: {
-                    error in print("SwiftyVK: NotificationsGet fail \n \(error)")
-            })
-        
-    }
-    
-    class func NewsGet(){
-        _ = VK.API.NewsFeed.get().send(
-            onSuccess:  { response in
-                print(response)
-        },
-            onError: {
-                error in print("SwiftyVK: NewsGet fail \n \(error)")
-        })
-    }
-    
     class func getNameAndPhotoLink(user: VKChooseGroupClass){
         _ = VK.API.Users.get([
             .userIDs: "\(user.id)",
@@ -109,6 +86,7 @@ final class VKManagerWorker{
         },
             onError: {
                 error in print("SwiftyVK: GroupsGet fail \n \(error)")
+                status  = true
         })
         
         
@@ -122,22 +100,21 @@ final class VKManagerWorker{
                                                                 photoLink: group["photo_100"].stringValue,
                                                                 id: group["id"].stringValue, isGroup: false))
                     }
-                    
                     status = true
             },
                 onError: {
                     error in print("SwiftyVK: FriendsGet fail \n \(error)")
-                    status = true
+                    status  = true
             })
         
         while(!status){}
         return groupsAndPeople
+        
     }
     
     
-    class func WallGet(group: VKChooseGroupClass) -> [VKPost]{
+    class func WallGet(group: VKChooseGroupClass, callback: @escaping (_ posts: [VKPost]?) -> Void){
         var posts = [VKPost]()
-        var status = false
         var id = group.id
         if group.isGroup{
             id = "-" + id
@@ -179,16 +156,12 @@ final class VKManagerWorker{
                                             photoLink: photoLink,
                                             videoLink: videoLink))
                     }
-                    status = true
+                    callback(posts)
             },
                 onError: {
                     error in print("SwiftyVK: WallGet fail \n \(error)")
-                    status = true
+                    callback(nil)
             })
-        
-        while(!status){}
-        return posts
-        
     }
     
 }

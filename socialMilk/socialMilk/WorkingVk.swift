@@ -39,28 +39,34 @@ final class WorkingVk{
     
     static func checkNewPosts() -> [VKPost]{
         var lastPosts: [VKPost] = [VKPost]()
+        var count = 0
         for source in sources{
-            var posts = VKManagerWorker.WallGet(group: source.group)
-            posts.sort(by: {post1, post2 in Int(post1.date)! > Int(post2.date)!})
-            if source.lastCheckedPostId != "0"{
-                for post in posts{
-                    if post.id == source.lastCheckedPostId{
-                        break
+            VKManagerWorker.WallGet(group: source.group, callback: { posts in
+                if posts != nil{
+                    var pos = posts!
+                    pos.sort(by: {post1, post2 in Int(post1.date)! > Int(post2.date)!})
+                    if source.lastCheckedPostId != "0"{
+                        for post in pos{
+                            if post.id == source.lastCheckedPostId{
+                                break
+                            }
+                            lastPosts.append(post)
+                        }
                     }
-                    lastPosts.append(post)
+                    if pos.count > 0{
+                        RealmManagerVk.updateVKCheckedPost(post: RealmManagerVk.encodeVKCheckedPostToRealm(post: source),
+                                                           newLastCheckedPostId: pos[0].id,
+                                                           newGroupId: source.group.id,
+                                                           newGroupTitle: source.group.title,
+                                                           newGroupPhotoLink: source.group.photoLink,
+                                                           newGroupIsGroup: source.group.isGroup)
+                        source.lastCheckedPostId = pos[0].id
+                    }
                 }
-            }
-            if posts.count > 0{
-                RealmManagerVk.updateVKCheckedPost(post: RealmManagerVk.encodeVKCheckedPostToRealm(post: source),
-                                                   newLastCheckedPostId: posts[0].id,
-                                                   newGroupId: source.group.id,
-                                                   newGroupTitle: source.group.title,
-                                                   newGroupPhotoLink: source.group.photoLink,
-                                                   newGroupIsGroup: source.group.isGroup)
-                source.lastCheckedPostId = posts[0].id
-            }
-            //print(source.group.title, posts.count)
+                count += 1
+            })
         }
+        while(count != sources.count){}
         for post in lastPosts{
             RealmManagerVk.saveNewVKPost(post: RealmManagerVk.encodeVKPostToRealm(post: post))
         }
