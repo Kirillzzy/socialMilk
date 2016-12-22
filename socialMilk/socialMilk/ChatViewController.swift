@@ -9,14 +9,13 @@
 import UIKit
 import SDWebImage
 
-class ChatVKViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var activityView: UIView!
 
     var chat = ChatClass()
-    private let vk: VKManager = VKManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +26,11 @@ class ChatVKViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         DispatchQueue.global(qos: .background).async {
-            self.chat.messages = WorkingVk.createChatByMessages()
+            if self.chat.chatTitle == "VK" {
+                self.chat.messages = WorkingVk.createChatByMessages()
+            }else if self.chat.chatTitle == "Twitter"{
+                self.chat.messages = WorkingTwitter.createChatByMessages()
+            }
             DispatchQueue.main.async {
                 self.activityIndicator.hidesWhenStopped = true
                 self.activityView.isHidden = true
@@ -71,15 +74,30 @@ class ChatVKViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = messagesTableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessageTableViewCell
-        cell.timeLabel.text = WorkingVk.translateNSDateToString(date: chat.messages[indexPath.row].time)
-        cell.descriptionLabel.text = chat.messages[indexPath.row].message
-        cell.titleLabel.text = chat.messages[indexPath.row].head
-        cell.imageImageView.sd_setImage(with: URL(string: chat.messages[indexPath.row].post.group.photoLink))
-        if chat.messages[indexPath.row].post.hasPhoto{
-            cell.photoImageImageView.sd_setImage(with: URL(string: chat.messages[indexPath.row].post.photoLink))
-        }else{
-            cell.photoImageImageView.isHidden = true
-            cell.photoImageImageView.frame = CGRect(x: 0, y: 0, width: CGFloat(0), height: CGFloat(0))
+        if self.chat.chatTitle == "VK" {
+            cell.timeLabel.text = WorkingVk.translateNSDateToString(date: chat.messages[indexPath.row].timeNSDate)
+            cell.descriptionLabel.text = chat.messages[indexPath.row].message
+            cell.titleLabel.text = chat.messages[indexPath.row].head
+            cell.imageImageView.sd_setImage(with: URL(string: chat.messages[indexPath.row].post.group.photoLink))
+//            if chat.messages[indexPath.row].post.hasPhoto{
+//                cell.photoImageImageView.sd_setImage(with: URL(string: chat.messages[indexPath.row].post.photoLink))
+//            }else{
+//                cell.photoImageImageView.isHidden = true
+//                cell.photoImageImageView.frame = CGRect(x: 0, y: 0, width: CGFloat(0), height: CGFloat(0))
+//            }
+        }
+        else if self.chat.chatTitle == "Twitter" {
+            cell.timeLabel.text = chat.messages[indexPath.row].timeString
+            cell.descriptionLabel.text = chat.messages[indexPath.row].message
+            cell.titleLabel.text = chat.messages[indexPath.row].head
+            cell.imageImageView.sd_setImage(with: URL(string: chat.messages[indexPath.row].tweet.user.photoLink))
+//            if chat.messages[indexPath.row].tweet.hasPhoto{
+//                cell.photoImageImageView.sd_setImage(with: URL(string: chat.messages[indexPath.row].tweet.photoLink))
+//            }else{
+//                cell.photoImageImageView.isHidden = true
+//                cell.photoImageImageView.frame = CGRect(x: 0, y: 0, width: CGFloat(0), height: CGFloat(0))
+//            }
+
         }
         return cell
     }

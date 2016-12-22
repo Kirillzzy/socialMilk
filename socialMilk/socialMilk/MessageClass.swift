@@ -12,15 +12,25 @@ import Foundation
 class MessageClass {
     var head: String = ""
     var message: String = ""
-    var time: NSDate = NSDate()
+    var timeString: String = ""
+    var timeNSDate: NSDate!
     var url: String = ""
-    var post: VKPost = VKPost()
+    var post = VKPost()
+    var tweet = TweetPost()
     
-    init(head: String, message: String, time: NSDate, url: String, post: VKPost){
+    init(head: String, message: String, timeNSDate: NSDate, url: String, post: VKPost){
         self.head = head
         self.message = message
-        self.time = time
+        self.timeNSDate = timeNSDate
         self.url = url
         self.post = post
+    }
+    
+    init(head: String, message: String, timeString: String, url: String, tweet: TweetPost){
+        self.head = head
+        self.message = message
+        self.timeString = timeString
+        self.url = url
+        self.tweet = tweet
     }
 }

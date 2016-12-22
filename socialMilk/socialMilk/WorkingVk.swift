@@ -85,7 +85,7 @@ final class WorkingVk{
         for post in posts{
             let message = MessageClass(head: post.group.title,
                                        message: post.text,
-                                       time: WorkingVk.translateUnixTime(time: Int(post.date)!),
+                                       timeNSDate: WorkingVk.translateUnixTime(time: Int(post.date)!),
                                        url: post.url,
                                        post: post)
 //            if post.hasPhoto {

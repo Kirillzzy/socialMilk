@@ -119,25 +119,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Wa-mw-hrV">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Wa-mw-hrV">
+                                <rect key="frame" x="0.0" y="110" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="96q-IY-gn4" id="bPH-NV-c5t"/>
                                     <outlet property="delegate" destination="96q-IY-gn4" id="Zwa-JE-v3C"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rw-w5-Y72">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5Be-h6-JKV">
+                                        <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="5Be-h6-JKV" firstAttribute="centerY" secondItem="4rw-w5-Y72" secondAttribute="centerY" id="BEr-y5-73K"/>
+                                    <constraint firstItem="5Be-h6-JKV" firstAttribute="centerX" secondItem="4rw-w5-Y72" secondAttribute="centerX" id="dgo-tx-QAf"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="4rw-w5-Y72" firstAttribute="top" secondItem="NwX-2f-i4g" secondAttribute="top" id="36x-EV-2cY"/>
+                            <constraint firstAttribute="trailing" secondItem="4rw-w5-Y72" secondAttribute="trailing" id="ABd-ZC-LYY"/>
                             <constraint firstAttribute="trailing" secondItem="5Wa-mw-hrV" secondAttribute="trailing" id="ARz-he-dz2"/>
                             <constraint firstAttribute="bottom" secondItem="5Wa-mw-hrV" secondAttribute="bottom" id="Aff-wY-sib"/>
                             <constraint firstItem="5Wa-mw-hrV" firstAttribute="leading" secondItem="NwX-2f-i4g" secondAttribute="leading" id="H15-oR-lj8"/>
+                            <constraint firstItem="4rw-w5-Y72" firstAttribute="leading" secondItem="NwX-2f-i4g" secondAttribute="leading" id="NBU-rS-QVK"/>
                             <constraint firstItem="5Wa-mw-hrV" firstAttribute="top" secondItem="NwX-2f-i4g" secondAttribute="top" id="xKI-XY-UK2"/>
+                            <constraint firstAttribute="bottom" secondItem="4rw-w5-Y72" secondAttribute="bottom" id="yTn-aX-cHJ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="PeopleTableView" destination="5Wa-mw-hrV" id="jIV-NL-Ldn"/>
+                        <outlet property="activityIndicator" destination="5Be-h6-JKV" id="X7R-y8-ffj"/>
+                        <outlet property="activityView" destination="4rw-w5-Y72" id="IJ7-OC-l86"/>
                         <outlet property="peopleTableView" destination="5Wa-mw-hrV" id="e7X-vp-riZ"/>
                     </connections>
                 </viewController>
@@ -148,7 +167,7 @@
         <!--Notifications-->
         <scene sceneID="9ig-jW-ozb">
             <objects>
-                <viewController title="Notifications" id="jn4-cn-3O4" customClass="ChatVKViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Notifications" id="jn4-cn-3O4" customClass="ChatViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1oF-Gp-RpS"/>
                         <viewControllerLayoutGuide type="bottom" id="J9J-2W-bW4"/>

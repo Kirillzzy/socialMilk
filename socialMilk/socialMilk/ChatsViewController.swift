@@ -24,7 +24,15 @@ class ChatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         chats.removeAll()
-        chats.append(ChatClass(chatTitle: "VK"))
+        chats.append(ChatClass(chatTitle: "VK",
+                               chatImage: #imageLiteral(resourceName: "vkLogo"),
+                               chatTime: "Time",
+                               chatDescription: "Click to see notifications or wait"))
+        
+        chats.append(ChatClass(chatTitle: "Twitter",
+                               chatImage: #imageLiteral(resourceName: "twitterLogo"),
+                               chatTime: "Time",
+                               chatDescription: "Click to see notifications or wait"))
         reloadTableView()
     }
     
@@ -48,10 +56,10 @@ class ChatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = chatsTableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! ChatTableViewCell
-        cell.mainImageView.image = #imageLiteral(resourceName: "vkLogo") // type struct of socials
-        cell.timeLabel.text = "Time" // date
+        cell.mainImageView.image = chats[indexPath.row].chatImage
+        cell.timeLabel.text = chats[indexPath.row].chatTime
         cell.titleLabel.text = chats[indexPath.row].chatTitle
-        cell.descriptionLabel.text = "Click to see notifications or wait"
+        cell.descriptionLabel.text = chats[indexPath.row].chatDescription
         return cell
     }
     
@@ -68,7 +76,7 @@ extension ChatsViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "fromChatsToChatLineSegue"{
             if let chat = sender as? ChatClass{
-                let vc = segue.destination as! ChatVKViewController
+                let vc = segue.destination as! ChatViewController
                 vc.chat = chat
             }
         }

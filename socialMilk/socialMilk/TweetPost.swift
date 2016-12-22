@@ -25,7 +25,7 @@ class TweetPost{
          hasVideo: Bool, linkLink: String, photoLink: String, videoLink: String){
         self.user = user
         self.text = text
-        self.date = date
+        self.date = WorkingTwitter.translateTwitterTimeToString(time: date)
         self.id = id
         self.hasLink = hasLink
         self.hasPhoto = hasPhoto
