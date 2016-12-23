@@ -33,7 +33,7 @@ class TweetPost{
         self.linkLink = linkLink
         self.videoLink = videoLink
         self.photoLink = photoLink
-        self.url = "https://twitter.com/\(self.user.screenName)/status/\(self.id)"
+        self.url = "twitter.com/\(self.user.screenName)/status/\(self.id)"
     }
     
     init(){}
