@@ -45,6 +45,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         activityIndicator.startAnimating()
     }
     
+    
     func reloadTableView(){
         self.messagesTableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageCell")
         self.reloadUI()
