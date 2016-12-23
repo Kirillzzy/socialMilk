@@ -42,10 +42,17 @@ class WorkingTwitter{
             return time
         }
         let month: String = months[date[1]]!
-        let day: String = date[2]
+        var day: String = date[2]
         let concreteTime: String = date[3]
         var time = concreteTime.components(separatedBy: ":")
-        return "\(month).\(day) \(time[0]):\(time[1])"
+        var hours = String(Int(time[0])! + 3)
+        if day.characters.count == 1{
+            day = "0" + day
+        }
+        if hours.characters.count == 1{
+            hours = "0" + hours
+        }
+        return "\(month).\(day) \(hours):\(time[1])"
     }
     
     static func checkNewTweets() -> [TweetPost]{
