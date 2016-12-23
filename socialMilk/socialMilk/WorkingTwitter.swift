@@ -48,6 +48,7 @@ class WorkingTwitter{
         var hours = Int(time[0])! + 3
         if hours > 23{
             hours = hours - 24
+            day = String(Int(day)! + 1)
         }
         var stringHours = String(hours)
         
