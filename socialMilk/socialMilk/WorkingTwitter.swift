@@ -21,11 +21,31 @@ class WorkingTwitter{
     
     //Sat Aug 25 17:26:51 +0000 2012
     
+    static let months = [
+        "Jan": "01",
+        "Feb": "02",
+        "Mar": "03",
+        "Apr": "04",
+        "May": "05",
+        "Jun": "06",
+        "Jul": "07",
+        "Aug": "08",
+        "Sep": "09",
+        "Oct": "10",
+        "Nov": "11",
+        "Dec": "12"
+    ]
+    
     static func translateTwitterTimeToString(time: String) -> String{
         var date = time.components(separatedBy: " ")
+        if date.count <= 2{
+            return time
+        }
+        let month: String = months[date[1]]!
+        let day: String = date[2]
         let concreteTime: String = date[3]
-        date = concreteTime.components(separatedBy: ":")
-        return "\(date[0]):\(date[1])"
+        var time = concreteTime.components(separatedBy: ":")
+        return "\(month).\(day) \(time[0]):\(time[1])"
     }
     
     static func checkNewTweets() -> [TweetPost]{

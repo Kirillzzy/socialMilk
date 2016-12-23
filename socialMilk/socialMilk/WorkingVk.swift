@@ -28,13 +28,21 @@ final class WorkingVk{
         let calendar = NSCalendar.current
         var hour = String(calendar.component(.hour, from: date as Date))
         var minutes = String(calendar.component(.minute, from: date as Date))
+        var day = String(calendar.component(.day, from: date as Date))
+        var month = String(calendar.component(.month, from: date as Date))
         if hour.characters.count == 1{
             hour = "0" + hour
         }
         if minutes.characters.count == 1{
             minutes = "0" + minutes
         }
-        return String(hour + ":" + minutes)
+        if day.characters.count == 1{
+            day = "0" + day
+        }
+        if month.characters.count == 1{
+            month = "0" + month
+        }
+        return "\(month).\(day) \(hour):\(minutes)"
     }
     
     static func checkNewPosts() -> [VKPost]{
