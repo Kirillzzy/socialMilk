@@ -93,6 +93,7 @@ final class TwitterManager{
                         if media["type"].stringValue == "photo" && !hasPhoto{
                             hasPhoto = true
                             photoLink = media["media_url"].stringValue
+                            photoLink = photoLink.replacingOccurrences(of: "http://", with: "https://")
                         }
                         else if media["type"].stringValue == "video" && !hasVideo{
                             hasVideo = true

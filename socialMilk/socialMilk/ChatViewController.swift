@@ -95,7 +95,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.imageImageView.sd_setImage(with: URL(string: chat.messages[indexPath.row].tweet.user.photoLink))
             if chat.messages[indexPath.row].tweet.hasPhoto{
                 cell.heightConstraint.constant = heightOfImage
-                print(URL(string: chat.messages[indexPath.row].tweet.photoLink)!)
                 cell.photoImageImageView.sd_setImage(with: URL(string: chat.messages[indexPath.row].tweet.photoLink)!)
             }else{
                 cell.heightConstraint.constant = 0
