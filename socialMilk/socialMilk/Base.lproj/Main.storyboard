@@ -273,7 +273,7 @@
                                     <constraint firstAttribute="width" constant="70" id="Dxa-VJ-6Fe"/>
                                     <constraint firstAttribute="height" constant="70" id="Tt2-Sc-Sn6"/>
                                 </constraints>
-                                <state key="normal" image="vkLogo"/>
+                                <state key="normal" image="vkLogoBlack"/>
                                 <connections>
                                     <action selector="vkButtonPressed:" destination="b23-kG-7vb" eventType="touchUpInside" id="IUn-ek-iTB"/>
                                     <segue destination="iCl-Xp-tc4" kind="show" identifier="fromVKToChatLineSegue" id="FXl-GB-RYx"/>
@@ -431,7 +431,7 @@
         <scene sceneID="Sb6-XM-NLC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="34g-LE-XB5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Apps" image="appsIcon" id="aXu-wL-Yat"/>
+                    <tabBarItem key="tabBarItem" title="Apps" image="cubs" id="aXu-wL-Yat"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="atR-7E-1nd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -448,10 +448,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="appsIcon" width="28" height="28"/>
-        <image name="chatsIcon" width="28" height="28"/>
+        <image name="chatsIcon" width="44" height="28"/>
+        <image name="cubs" width="28" height="28"/>
         <image name="settings" width="28" height="28"/>
-        <image name="twitterLogo" width="256" height="256"/>
-        <image name="vkLogo" width="256" height="256"/>
+        <image name="twitterLogo" width="512" height="512"/>
+        <image name="vkLogoBlack" width="512" height="512"/>
     </resources>
 </document>

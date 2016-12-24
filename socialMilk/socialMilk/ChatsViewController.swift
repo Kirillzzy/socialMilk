@@ -25,7 +25,7 @@ class ChatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewWillAppear(animated)
         chats.removeAll()
         chats.append(ChatClass(chatTitle: "VK",
-                               chatImage: #imageLiteral(resourceName: "vkLogo"),
+                               chatImage: #imageLiteral(resourceName: "vkLogoBlack"),
                                chatTime: "Time",
                                chatDescription: "Click to see notifications or wait"))
         
