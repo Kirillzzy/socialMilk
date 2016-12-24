@@ -118,16 +118,7 @@ class WorkingTwitter{
                                        timeString: WorkingTwitter.translateTwitterTimeToString(time: tweet.date),
                                        url: tweet.url,
                                        tweet: tweet)
-            //            if post.hasPhoto {
-            //                message.message += "\nHas Photo"
-            //            }
-            //            if post.hasLink {
-            //                message.message += "\nHas Link"
-            //            }
-            //            if post.hasVideo {
-            //                message.message += "\nHas Video"
-            //            }
-            //message.message += "\n" + tweet.url
+
             mess.append(message)
         }
         mess.sort(by: {tweet1, tweet2 in tweet1.timeString < tweet2.timeString})

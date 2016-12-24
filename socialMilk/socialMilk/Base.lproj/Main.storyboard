@@ -342,7 +342,7 @@
         <scene sceneID="zG6-EJ-WJ6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HQO-ge-yHe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chats" image="chatsIcon" id="FbY-N7-agr"/>
+                    <tabBarItem key="tabBarItem" title="Chats" image="chats" id="FbY-N7-agr"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="a0F-Cz-bON">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -431,7 +431,7 @@
         <scene sceneID="Sb6-XM-NLC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="34g-LE-XB5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Apps" image="cubs" id="aXu-wL-Yat"/>
+                    <tabBarItem key="tabBarItem" title="Apps" image="boxes" id="aXu-wL-Yat"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="atR-7E-1nd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -448,9 +448,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chatsIcon" width="44" height="28"/>
-        <image name="cubs" width="28" height="28"/>
-        <image name="settings" width="28" height="28"/>
+        <image name="boxes" width="25" height="25"/>
+        <image name="chats" width="25" height="25"/>
+        <image name="settings" width="25" height="25"/>
         <image name="twitterLogo" width="512" height="512"/>
         <image name="vkLogoBlack" width="512" height="512"/>
     </resources>
