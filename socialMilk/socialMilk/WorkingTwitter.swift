@@ -38,9 +38,6 @@ class WorkingTwitter{
     
     static func translateTwitterTimeToString(time: String) -> String{
         var date = time.components(separatedBy: " ")
-        if date.count <= 2{
-            return time
-        }
         let month: String = months[date[1]]!
         var day: String = date[2]
         let concreteTime: String = date[3]
@@ -106,7 +103,6 @@ class WorkingTwitter{
             oldTweets.append(RealmManagerTwitter.encodeRealmTweetPostToJust(tweet: tweet))
         }
         oldTweets.append(contentsOf: checkNewTweets())
-        oldTweets.sort(by: {tweet1, tweet2 in tweet1.date < tweet2.date})
         return oldTweets
     }
     
@@ -119,7 +115,7 @@ class WorkingTwitter{
         for tweet in tweets{
             let message = MessageClass(head: tweet.user.title,
                                        message: tweet.text,
-                                       timeString: tweet.date,
+                                       timeString: WorkingTwitter.translateTwitterTimeToString(time: tweet.date),
                                        url: tweet.url,
                                        tweet: tweet)
             //            if post.hasPhoto {
@@ -134,6 +130,7 @@ class WorkingTwitter{
             //message.message += "\n" + tweet.url
             mess.append(message)
         }
+        mess.sort(by: {tweet1, tweet2 in tweet1.timeString < tweet2.timeString})
         return mess
     }
 
