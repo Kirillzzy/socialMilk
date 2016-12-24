@@ -14,11 +14,14 @@ class MessageTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var imageImageView: UIImageView!
     @IBOutlet weak var photoImageImageView: UIImageView!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         imageImageView.layer.masksToBounds = true
         imageImageView.layer.cornerRadius = 5
+        photoImageImageView.layer.masksToBounds = true
+        //photoImageImageView.contentMode = UIViewContentMode.top
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

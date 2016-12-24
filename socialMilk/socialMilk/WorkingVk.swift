@@ -111,7 +111,7 @@ final class WorkingVk{
 //            if post.hasVideo {
 //                message.message += "\nHas Video"
 //            }
-            message.message += "\n" + post.url
+            //message.message += "\n" + post.url
             mess.append(message)
         }
         return mess

@@ -29,7 +29,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71n-6V-e1g">
-                        <rect key="frame" x="8" y="51" width="333" height="21"/>
+                        <rect key="frame" x="8" y="51" width="333" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -51,10 +51,11 @@
                             <constraint firstAttribute="width" constant="35" id="toU-O9-EPw"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R4U-1J-zYc">
-                        <rect key="frame" x="8" y="80" width="333" height="220"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R4U-1J-zYc">
+                        <rect key="frame" x="8" y="79" width="333" height="220"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="333" id="RUO-5G-DUz"/>
+                            <constraint firstAttribute="height" constant="220" id="goz-7C-bbk"/>
                         </constraints>
                     </imageView>
                 </subviews>
@@ -77,6 +78,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="descriptionLabel" destination="71n-6V-e1g" id="DjR-kI-61I"/>
+                <outlet property="heightConstraint" destination="goz-7C-bbk" id="3e9-9R-zR4"/>
                 <outlet property="imageImageView" destination="3Ur-af-htB" id="Dhc-ct-1iy"/>
                 <outlet property="photoImageImageView" destination="R4U-1J-zYc" id="z5e-pq-sRO"/>
                 <outlet property="timeLabel" destination="oqr-pr-56u" id="6WH-88-Dxu"/>

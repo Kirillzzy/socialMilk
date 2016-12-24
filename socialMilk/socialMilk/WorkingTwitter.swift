@@ -131,7 +131,7 @@ class WorkingTwitter{
             //            if post.hasVideo {
             //                message.message += "\nHas Video"
             //            }
-            message.message += "\n" + tweet.url
+            //message.message += "\n" + tweet.url
             mess.append(message)
         }
         return mess

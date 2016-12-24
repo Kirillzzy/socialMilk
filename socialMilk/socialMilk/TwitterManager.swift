@@ -92,11 +92,11 @@ final class TwitterManager{
                     for media in tweet["entities"]["media"].arrayValue{
                         if media["type"].stringValue == "photo" && !hasPhoto{
                             hasPhoto = true
-                            photoLink = media["url"].stringValue
+                            photoLink = media["media_url"].stringValue
                         }
                         else if media["type"].stringValue == "video" && !hasVideo{
                             hasVideo = true
-                            videoLink = media["url"].stringValue
+                            videoLink = media["media_url"].stringValue
                         }
                     }
                     for link in tweet["entities"]["urls"].arrayValue{

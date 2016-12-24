@@ -45,7 +45,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         activityIndicator.startAnimating()
     }
     
-    
     func reloadTableView(){
         self.messagesTableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageCell")
         self.reloadUI()
@@ -67,7 +66,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    //load new messages
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return chat.messages.count
@@ -75,29 +74,32 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = messagesTableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessageTableViewCell
+        let heightOfImage: CGFloat = 350
         if self.chat.chatTitle == "VK" {
             cell.timeLabel.text = WorkingVk.translateNSDateToString(date: chat.messages[indexPath.row].timeNSDate)
             cell.descriptionLabel.text = chat.messages[indexPath.row].message
             cell.titleLabel.text = chat.messages[indexPath.row].head
             cell.imageImageView.sd_setImage(with: URL(string: chat.messages[indexPath.row].post.group.photoLink))
-//            if chat.messages[indexPath.row].post.hasPhoto{
-//                cell.photoImageImageView.sd_setImage(with: URL(string: chat.messages[indexPath.row].post.photoLink))
-//            }else{
-//                cell.photoImageImageView.isHidden = true
-//                cell.photoImageImageView.frame = CGRect(x: 0, y: 0, width: CGFloat(0), height: CGFloat(0))
-//            }
+            if chat.messages[indexPath.row].post.hasPhoto{
+                cell.heightConstraint.constant = heightOfImage
+                cell.photoImageImageView.sd_setImage(with: URL(string: chat.messages[indexPath.row].post.photoLink)!)
+            }else{
+                cell.heightConstraint.constant = 0
+            }
+
         }
         else if self.chat.chatTitle == "Twitter" {
             cell.timeLabel.text = chat.messages[indexPath.row].timeString
             cell.descriptionLabel.text = chat.messages[indexPath.row].message
             cell.titleLabel.text = chat.messages[indexPath.row].head
             cell.imageImageView.sd_setImage(with: URL(string: chat.messages[indexPath.row].tweet.user.photoLink))
-//            if chat.messages[indexPath.row].tweet.hasPhoto{
-//                cell.photoImageImageView.sd_setImage(with: URL(string: chat.messages[indexPath.row].tweet.photoLink))
-//            }else{
-//                cell.photoImageImageView.isHidden = true
-//                cell.photoImageImageView.frame = CGRect(x: 0, y: 0, width: CGFloat(0), height: CGFloat(0))
-//            }
+            if chat.messages[indexPath.row].tweet.hasPhoto{
+                cell.heightConstraint.constant = heightOfImage
+                print(URL(string: chat.messages[indexPath.row].tweet.photoLink)!)
+                cell.photoImageImageView.sd_setImage(with: URL(string: chat.messages[indexPath.row].tweet.photoLink)!)
+            }else{
+                cell.heightConstraint.constant = 0
+            }
 
         }
         return cell
