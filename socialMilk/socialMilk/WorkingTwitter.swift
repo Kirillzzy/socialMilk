@@ -65,7 +65,8 @@ class WorkingTwitter{
             TwitterManager.loadTweetsByUser(user: source.user, callback: { tweets in
                 if tweets != nil{
                     var twees = tweets!
-                    twees.sort(by: {tweet1, tweet2 in tweet1.date > tweet2.date})
+                    twees.sort(by: {tweet1, tweet2 in WorkingTwitter.translateTwitterTimeToString(time: tweet1.date) >
+                        WorkingTwitter.translateTwitterTimeToString(time: tweet2.date)})
                     if source.lastCheckedTweetId != "0"{
                         for tweet in twees{
                             if tweet.id == source.lastCheckedTweetId{
