@@ -13,6 +13,7 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var groupsTableView: UITableView!
     @IBOutlet weak var activityView: UIView!
+    @IBOutlet weak var backViewButton: UIBarButtonItem!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var groupsAndPeople = [VKChooseGroupClass]()
@@ -122,6 +123,11 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
             }
             self.checked.removeValue(forKey: String(indexPath.row))
         }
+        if self.checked.count > 10{
+            backViewButton.isEnabled = false
+        }else{
+            backViewButton.isEnabled = true
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
@@ -129,5 +135,8 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
         return 70
     }
 
+    @IBAction func backViewButtonPressed(_ sender: Any) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
 
 }

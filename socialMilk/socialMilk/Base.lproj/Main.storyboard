@@ -96,10 +96,18 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="lu5-r4-hqw">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Apps" id="w7i-x9-OYp">
+                            <connections>
+                                <action selector="backViewButtonPressed:" destination="iCl-Xp-tc4" id="zJp-OP-3IN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="activityIndicator" destination="N3p-Wj-drL" id="68T-vf-Njz"/>
                         <outlet property="activityView" destination="0CF-sp-Ics" id="xfV-xr-DdP"/>
+                        <outlet property="backViewButton" destination="w7i-x9-OYp" id="CZS-eF-AvK"/>
                         <outlet property="groupsTableView" destination="Nsb-oE-qqd" id="v15-qZ-AIu"/>
                     </connections>
                 </viewController>
@@ -153,10 +161,18 @@
                             <constraint firstAttribute="bottom" secondItem="4rw-w5-Y72" secondAttribute="bottom" id="yTn-aX-cHJ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="h3L-MQ-PtU">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Apps" id="RET-gA-yJh">
+                            <connections>
+                                <action selector="backViewButtonPressed:" destination="96q-IY-gn4" id="WBF-lD-ZH0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="PeopleTableView" destination="5Wa-mw-hrV" id="jIV-NL-Ldn"/>
                         <outlet property="activityIndicator" destination="5Be-h6-JKV" id="X7R-y8-ffj"/>
                         <outlet property="activityView" destination="4rw-w5-Y72" id="IJ7-OC-l86"/>
+                        <outlet property="backViewButton" destination="RET-gA-yJh" id="CYu-0h-QCy"/>
                         <outlet property="peopleTableView" destination="5Wa-mw-hrV" id="e7X-vp-riZ"/>
                     </connections>
                 </viewController>

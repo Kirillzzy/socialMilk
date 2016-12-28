@@ -28,14 +28,14 @@ final class TwitterManager{
     }
     
     
-    class func loadFollowing(callback: @escaping (_ people: [TwitterChooseGroupClass]?) -> Void){
+    
+    class func loadLastFollowing(cursor: String, callback: @escaping (_ people: [TwitterChooseGroupClass]?, _ nextCursor: String?) -> Void){
         var people = [TwitterChooseGroupClass]()
         let client = TWTRAPIClient.withCurrentUser()
         let statusesShowEndpoint = "https://api.twitter.com/1.1/friends/list.json"
-        let cursor = -1
         let params = ["screen_name": userName,
                       "count": "200",
-                      "cursor": "\(cursor)"]
+                      "cursor": cursor]
         var clientError : NSError?
         let request = client.urlRequest(withMethod: "GET", url: statusesShowEndpoint, parameters: params, error: &clientError)
         
@@ -54,15 +54,14 @@ final class TwitterManager{
                                                           description: person["description"].stringValue,
                                                           screenName: person["screen_name"].stringValue))
                 }
-                print("People recieved: \(people.count)")
-                callback(people)
+                //print("People recieved: \(people.count)")
+                callback(people, js["next_cursor_str"].stringValue)
                 
             } catch let jsonError as NSError {
                 print("json error: \(jsonError.localizedDescription)")
-                callback(nil)
+                callback(nil, nil)
             }
         }
-
     }
     
     class func loadTweetsByUser(user: TwitterChooseGroupClass, callback: @escaping (_ tweets: [TweetPost]?) -> Void){
@@ -125,12 +124,4 @@ final class TwitterManager{
     }
     
 }
-
-
-
-
-
-
-
-
 

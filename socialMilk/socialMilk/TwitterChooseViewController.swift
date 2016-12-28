@@ -12,11 +12,15 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
     
     @IBOutlet weak var peopleTableView: UITableView!
     @IBOutlet weak var activityView: UIView!
+    @IBOutlet weak var backViewButton: UIBarButtonItem!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     
     var people = [TwitterChooseGroupClass]()
     var checked = [String: TwitterChooseGroupClass?]()
     var checkedItems = [TweetCheckedPost]()
+    let defaultCursor = "-1"
+    var lastCursor: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,49 +29,13 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let sources = WorkingTwitter.sources
-        activityIndicator.startAnimating()
-        TwitterManager.loadFollowing(callback: { people in
-            if let peo = people{
-                self.people = peo
-                for source in sources{
-                    let newSource = TwitterChooseGroupClass(title: source.user.title,
-                                                            photoLink: source.user.photoLink,
-                                                            id: source.user.id,
-                                                            description: source.user.description,
-                                                            screenName: source.user.screenName)
-                    
-                    for i in 0..<self.people.count{
-                        if self.people[i].id == newSource.id{
-                            self.checked[String(i)] = newSource
-                            break
-                        }
-                    }
-                    self.checkedItems.append(source)
-                }
-            }
-            
-            self.activityIndicator.hidesWhenStopped = true
-            self.activityView.isHidden = true
-            self.activityIndicator.stopAnimating()
-            self.reloadTableView()
-        })
+        lastCursor = defaultCursor
+        updatePeopleAndSources()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        for item in checked{
-            if item.value != nil{
-                if (checkedItems.filter({$0.user.id == item.value?.id})).count == 0{
-                    checkedItems.append(TweetCheckedPost(lastCheckedTweetId: "0", user: item.value!))
-                }
-            }
-        }
-        WorkingTwitter.sources = checkedItems
-        DispatchQueue.global(qos: .background).async {
-            _ = WorkingTwitter.checkNewTweets()
-        }
-        WorkingTwitter.updateSources()
+        saveCheckedItems()
     }
     
     func reloadTableView(){
@@ -96,6 +64,11 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
         } else{
             cell.checkButton.setImage(nil, for: .normal)
         }
+        
+        if indexPath.row == people.count - 1 && lastCursor != "-1"{
+            updatePeopleAndSources()
+        }
+        
         return cell
     }
     
@@ -115,6 +88,11 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
             }
             self.checked.removeValue(forKey: String(indexPath.row))
         }
+        if self.checked.count > 12{
+            backViewButton.isEnabled = false
+        }else{
+            backViewButton.isEnabled = true
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
@@ -122,5 +100,58 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
         return 70
     }
 
+    @IBAction func backViewButtonPressed(_ sender: Any) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    func saveCheckedItems(){
+        for item in checked{
+            if item.value != nil{
+                if (checkedItems.filter({$0.user.id == item.value?.id})).count == 0{
+                    checkedItems.append(TweetCheckedPost(lastCheckedTweetId: "0", user: item.value!))
+                }
+            }
+        }
+        WorkingTwitter.sources = checkedItems
+        DispatchQueue.global(qos: .background).async {
+            _ = WorkingTwitter.checkNewTweets()
+        }
+        WorkingTwitter.updateSources()
+    }
+    
+    func updatePeopleAndSources(){
+        let sources = WorkingTwitter.sources
+        activityIndicator.startAnimating()
+        TwitterManager.loadLastFollowing(cursor: lastCursor, callback: { people, cursor in
+            if let peo = people{
+                self.lastCursor = cursor!
+                for source in sources{
+                    let newSource = TwitterChooseGroupClass(title: source.user.title,
+                                                            photoLink: source.user.photoLink,
+                                                            id: source.user.id,
+                                                            description: source.user.description,
+                                                            screenName: source.user.screenName)
+                    
+                    for i in 0..<peo.count{
+                        if peo[i].id == newSource.id{
+                            self.checked[String(self.people.count + i)] = newSource
+                            break
+                        }
+                    }
+                    self.checkedItems.append(source)
+                }
+                self.people.append(contentsOf: peo)
+                if peo.count < 200{
+                    self.lastCursor = "-1"
+                }
+            }
+            
+            self.activityIndicator.hidesWhenStopped = true
+            self.activityView.isHidden = true
+            self.activityIndicator.stopAnimating()
+            self.reloadTableView()
+        })
+    }
 
 }
