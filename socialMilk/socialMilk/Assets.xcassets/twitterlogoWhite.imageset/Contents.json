@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "vkLogo.png",
+      "filename" : "twitterlogoWhite.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "vkLogo@2x.png",
+      "filename" : "twitterlogoWhite@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "vkLogo@3x.png",
+      "filename" : "twitterlogoWhite@3x.png",
       "scale" : "3x"
     }
   ],

@@ -25,13 +25,13 @@ class ChatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewWillAppear(animated)
         chats.removeAll()
         chats.append(ChatClass(chatTitle: "VK",
-                               chatImage: #imageLiteral(resourceName: "vkLogoBlack"),
-                               chatTime: "Time",
+                               chatImage: #imageLiteral(resourceName: "vkLogoBlackBig"),
+                               chatTime: "",
                                chatDescription: "Click to see notifications or wait"))
         
         chats.append(ChatClass(chatTitle: "Twitter",
                                chatImage: #imageLiteral(resourceName: "twitterLogo"),
-                               chatTime: "Time",
+                               chatTime: "",
                                chatDescription: "Click to see notifications or wait"))
         reloadTableView()
     }

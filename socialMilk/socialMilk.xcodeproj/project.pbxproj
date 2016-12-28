@@ -38,6 +38,7 @@
 		7BF0F4691DF35D2900285298 /* GroupsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BF0F4671DF35D2900285298 /* GroupsTableViewCell.xib */; };
 		7BF0F46B1DF36B1F00285298 /* VKChooseGroupClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF0F46A1DF36B1F00285298 /* VKChooseGroupClass.swift */; };
 		7BF0F46F1DF3798900285298 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF0F46E1DF3798900285298 /* SDWebImage.framework */; };
+		8A02C6191E14718600DC4CB9 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A02C6181E14718600DC4CB9 /* WebViewController.swift */; };
 		8A0ACB7F1E0678D30071A7F6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0ACB7E1E0678D30071A7F6 /* Constants.swift */; };
 		8A49B8EE1E0AF1C2008B6ECA /* TwitterChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49B8ED1E0AF1C2008B6ECA /* TwitterChooseViewController.swift */; };
 		8A49B8F01E0AF3A9008B6ECA /* TwitterChooseGroupClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49B8EF1E0AF3A9008B6ECA /* TwitterChooseGroupClass.swift */; };
@@ -92,6 +93,7 @@
 		7BF0F4671DF35D2900285298 /* GroupsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupsTableViewCell.xib; sourceTree = "<group>"; };
 		7BF0F46A1DF36B1F00285298 /* VKChooseGroupClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKChooseGroupClass.swift; sourceTree = "<group>"; };
 		7BF0F46E1DF3798900285298 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "../../../../Library/Developer/Xcode/DerivedData/socialMilk-adrtdxgusxucxfcfjyiujrvhvldu/Build/Products/Debug-iphonesimulator/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
+		8A02C6181E14718600DC4CB9 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		8A0ACB7E1E0678D30071A7F6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8A49B8ED1E0AF1C2008B6ECA /* TwitterChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterChooseViewController.swift; sourceTree = "<group>"; };
 		8A49B8EF1E0AF3A9008B6ECA /* TwitterChooseGroupClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterChooseGroupClass.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				7BF0F4631DF3516A00285298 /* VKChooseViewController.swift */,
 				8A49B8ED1E0AF1C2008B6ECA /* TwitterChooseViewController.swift */,
 				8AE60E7C1E06EE2F00A9662F /* LoginViewController.swift */,
+				8A02C6181E14718600DC4CB9 /* WebViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BF0F43C1DF1E50B00285298 /* AppsViewController.swift in Sources */,
+				8A02C6191E14718600DC4CB9 /* WebViewController.swift in Sources */,
 				8A0ACB7F1E0678D30071A7F6 /* Constants.swift in Sources */,
 				8A49B8F21E0B0146008B6ECA /* RealmManagerTwitter.swift in Sources */,
 				7B39A8471DF5CE690077BBB6 /* VKCheckedPostRealm.swift in Sources */,

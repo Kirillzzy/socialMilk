@@ -7,25 +7,35 @@
 //
 
 import UIKit
+import SwiftyVK
 
 class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        VK.logIn()
+        TwitterManager.login()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        gotoNext()
     }
     
     @IBAction func loginVKButtonPressed(_ sender: Any) {
-        vkDelegateReference = VKManager()
+        VK.logIn()
     }
 
     @IBAction func loginTwitterButtonPressed(_ sender: Any) {
         TwitterManager.login()
     }
     
-    
     @IBAction func nextButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "fromLoginSegue", sender: sender)
+        gotoNext()
+    }
+    
+    func gotoNext(){
+        performSegue(withIdentifier: "fromLoginSegue", sender: true)
     }
 
 }

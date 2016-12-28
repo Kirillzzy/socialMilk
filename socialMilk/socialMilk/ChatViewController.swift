@@ -106,13 +106,20 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         messagesTableView.deselectRow(at: indexPath, animated: true)
-        let url = URL(string: "http://" + chat.messages[indexPath.row].url)!
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url, options: [:])
-        } else {
-            UIApplication.shared.openURL(url)
-        }
+        let url = URL(string: "https://" + chat.messages[indexPath.row].url)!
+        performSegue(withIdentifier: "gotoWeb", sender: url)
     }
 
 
+}
+
+extension ChatViewController{
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gotoWeb"{
+            if let www = sender as? URL{
+                let vc = segue.destination as! WebViewController
+                vc.url = www
+            }
+        }
+    }
 }
