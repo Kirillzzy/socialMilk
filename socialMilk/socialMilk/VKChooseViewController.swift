@@ -31,49 +31,12 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.activityIndicator.startAnimating()
-        self.groupsAndPeople = VKManagerWorker.GroupsPeopleGet()
-        let sources = WorkingVk.sources
-        for source in sources{
-            let newSource = VKChooseGroupClass(title: source.group.title,
-                                            photoLink: source.group.photoLink,
-                                            id: source.group.id,
-                                            isGroup: source.group.isGroup)
-            
-            for i in 0..<self.groupsAndPeople.count{
-                if self.groupsAndPeople[i].id == newSource.id{
-                    self.checked[String(i)] = newSource
-                    break
-                }
-            }
-            self.checkedItems.append(source)
-        }
-        let when = DispatchTime.now() + 0.5
-        DispatchQueue.main.asyncAfter(deadline: when) {
-            self.activityIndicator.hidesWhenStopped = true
-            self.activityView.isHidden = true
-            self.activityIndicator.stopAnimating()
-            self.reloadTableView()
-        }
+        updatePeopleAndSources()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-//        if checked.count > 2{
-//            return
-//        }
         super.viewWillDisappear(animated)
-        for item in checked{
-            if item.value != nil{
-                if (checkedItems.filter({$0.group.id == item.value?.id})).count == 0{
-                    checkedItems.append(VKCheckedPost(lastCheckedPostId: "0", group: item.value!))
-                }
-            }
-        }
-        WorkingVk.sources = checkedItems
-        DispatchQueue.global(qos: .background).async {
-            _ = WorkingVk.checkNewPosts()
-        }
-        WorkingVk.updateSources()
+        saveCheckedItems()
     }
     
     
@@ -128,6 +91,7 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
         }else{
             backViewButton.isEnabled = true
         }
+        updateSelfTitle()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
@@ -137,6 +101,53 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBAction func backViewButtonPressed(_ sender: Any) {
         _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    func updatePeopleAndSources(){
+        self.activityIndicator.startAnimating()
+        self.groupsAndPeople = VKManagerWorker.GroupsPeopleGet()
+        let sources = WorkingVk.sources
+        for source in sources{
+            let newSource = VKChooseGroupClass(title: source.group.title,
+                                               photoLink: source.group.photoLink,
+                                               id: source.group.id,
+                                               isGroup: source.group.isGroup)
+            
+            for i in 0..<self.groupsAndPeople.count{
+                if self.groupsAndPeople[i].id == newSource.id{
+                    self.checked[String(i)] = newSource
+                    break
+                }
+            }
+            self.checkedItems.append(source)
+        }
+        let when = DispatchTime.now() + 0.5
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            self.activityIndicator.hidesWhenStopped = true
+            self.activityView.isHidden = true
+            self.activityIndicator.stopAnimating()
+            self.reloadTableView()
+            self.updateSelfTitle()
+        }
+    }
+    
+    func saveCheckedItems(){
+        for item in checked{
+            if item.value != nil{
+                if (checkedItems.filter({$0.group.id == item.value?.id})).count == 0{
+                    checkedItems.append(VKCheckedPost(lastCheckedPostId: "0", group: item.value!))
+                }
+            }
+        }
+        WorkingVk.sources = checkedItems
+        DispatchQueue.global(qos: .background).async {
+            _ = WorkingVk.checkNewPosts()
+        }
+        WorkingVk.updateSources()
+    }
+    
+    func updateSelfTitle(){
+        self.title = "Checked: \(checked.count)"
     }
 
 }

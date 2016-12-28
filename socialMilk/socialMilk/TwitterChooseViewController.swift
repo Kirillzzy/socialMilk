@@ -93,6 +93,7 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
         }else{
             backViewButton.isEnabled = true
         }
+        updateSelfTitle()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
@@ -151,7 +152,13 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
             self.activityView.isHidden = true
             self.activityIndicator.stopAnimating()
             self.reloadTableView()
+            self.updateSelfTitle()
         })
     }
+    
+    func updateSelfTitle(){
+        self.title = "Checked: \(checked.count)"
+    }
+
 
 }

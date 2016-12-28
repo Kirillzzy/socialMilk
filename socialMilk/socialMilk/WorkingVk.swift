@@ -42,7 +42,7 @@ final class WorkingVk{
         if month.characters.count == 1{
             month = "0" + month
         }
-        return "\(month).\(day) \(hour):\(minutes)"
+        return "\(day).\(month) \(hour):\(minutes)"
     }
     
     static func checkNewPosts() -> [VKPost]{
