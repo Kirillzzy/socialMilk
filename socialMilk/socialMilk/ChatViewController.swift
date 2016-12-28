@@ -25,19 +25,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        DispatchQueue.global(qos: .background).async {
-            if self.chat.chatTitle == "VK" {
-                self.chat.messages = WorkingVk.createChatByMessages()
-            }else if self.chat.chatTitle == "Twitter"{
-                self.chat.messages = WorkingTwitter.createChatByMessages()
-            }
-            DispatchQueue.main.async {
-                self.activityIndicator.hidesWhenStopped = true
-                self.activityView.isHidden = true
-                self.activityIndicator.stopAnimating()
-                self.reloadTableView()
-            }
-        }
+        loadNews()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,7 +43,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             messagesTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: false)
         }
     }
-    
     
     
     func reloadUI(){
@@ -108,6 +95,25 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         messagesTableView.deselectRow(at: indexPath, animated: true)
         let url = URL(string: "https://" + chat.messages[indexPath.row].url)!
         performSegue(withIdentifier: "gotoWeb", sender: url)
+    }
+    
+    
+    func loadNews(){
+        //self.activityView.isHidden = true
+        DispatchQueue.global(qos: .background).async {
+            if self.chat.chatTitle == "VK" {
+                self.chat.messages = WorkingVk.createChatByMessages()
+            }else if self.chat.chatTitle == "Twitter"{
+                self.chat.messages = WorkingTwitter.createChatByMessages()
+            }
+            DispatchQueue.main.async {
+                self.activityIndicator.hidesWhenStopped = true
+                self.activityView.isHidden = true
+                self.activityIndicator.stopAnimating()
+                self.reloadTableView()
+            }
+        }
+
     }
 
 

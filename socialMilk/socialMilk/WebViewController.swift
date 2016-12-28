@@ -20,6 +20,10 @@ class WebViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        loadWeb()
+    }
+    
+    func loadWeb(){
         if let url = url{
             let req = URLRequest(url: url)
             webView.loadRequest(req)
