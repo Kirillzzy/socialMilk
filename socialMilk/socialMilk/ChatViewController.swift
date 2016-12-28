@@ -89,7 +89,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         }
         else if self.chat.chatTitle == "Twitter" {
-            cell.timeLabel.text = chat.messages[indexPath.row].timeString
+            cell.timeLabel.text = WorkingVk.translateNSDateToString(date: chat.messages[indexPath.row].timeNSDate)
             cell.descriptionLabel.text = chat.messages[indexPath.row].message
             cell.titleLabel.text = chat.messages[indexPath.row].head
             cell.imageImageView.sd_setImage(with: URL(string: chat.messages[indexPath.row].tweet.user.photoLink))

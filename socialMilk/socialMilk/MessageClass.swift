@@ -12,7 +12,6 @@ import Foundation
 class MessageClass {
     var head: String = ""
     var message: String = ""
-    var timeString: String = ""
     var timeNSDate: NSDate!
     var url: String = ""
     var post = VKPost()
@@ -26,10 +25,10 @@ class MessageClass {
         self.post = post
     }
     
-    init(head: String, message: String, timeString: String, url: String, tweet: TweetPost){
+    init(head: String, message: String, timeNSDate: NSDate, url: String, tweet: TweetPost){
         self.head = head
         self.message = message
-        self.timeString = timeString
+        self.timeNSDate = timeNSDate
         self.url = url
         self.tweet = tweet
     }

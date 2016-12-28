@@ -6,7 +6,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             scope = "0"
@@ -16,7 +16,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.SwiftErrorBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No">
          </BreakpointContent>
@@ -28,11 +28,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "socialMilk/WorkingTwitter.swift"
-            timestampString = "504368001.288475"
+            timestampString = "504648637.540682"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "getTweets()"
             landmarkType = "7">
             <Locations>
@@ -76,43 +76,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "socialMilk/WorkingTwitter.swift"
-            timestampString = "504368001.288475"
+            timestampString = "504648637.540682"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "WorkingTwitter"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "socialMilk/WorkingTwitter.swift"
-            timestampString = "504307238.008782"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "translateTwitterTimeToString(time:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "socialMilk/WorkingTwitter.swift"
-            timestampString = "504368001.288475"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "checkNewTweets()"
             landmarkType = "7">
             <Locations>
@@ -156,11 +124,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "socialMilk/WorkingTwitter.swift"
-            timestampString = "504307238.008782"
+            timestampString = "504648637.540682"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "checkNewTweets()"
             landmarkType = "7">
          </BreakpointContent>
@@ -172,13 +140,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "socialMilk/WorkingTwitter.swift"
-            timestampString = "504368001.288475"
+            timestampString = "504648637.540682"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "getTweets()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static socialMilk.WorkingTwitter.getTweets () -&gt; Swift.Array&lt;socialMilk.TweetPost&gt;"
+                  moduleName = "socialMilk"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kirillaveryanov/Documents/xcodeProjects/socialMilk/socialMilk/socialMilk/WorkingTwitter.swift"
+                  timestampString = "504648968.669802"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "316">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static socialMilk.WorkingTwitter.(getTweets () -&gt; Swift.Array&lt;socialMilk.TweetPost&gt;).(closure #1)"
+                  moduleName = "socialMilk"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kirillaveryanov/Documents/xcodeProjects/socialMilk/socialMilk/socialMilk/WorkingTwitter.swift"
+                  timestampString = "504648968.672503"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -204,11 +204,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "socialMilk/WorkingVk.swift"
-            timestampString = "504294817.482347"
+            timestampString = "504647053.327811"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "createChatByMessages()"
             landmarkType = "7">
          </BreakpointContent>
@@ -268,11 +268,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "socialMilk/WorkingTwitter.swift"
-            timestampString = "504368001.288475"
+            timestampString = "504648637.540682"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "createChatByMessages()"
             landmarkType = "7">
          </BreakpointContent>
@@ -284,11 +284,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "socialMilk/WorkingTwitter.swift"
-            timestampString = "504368001.288475"
+            timestampString = "504648637.540682"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "createChatByMessages()"
             landmarkType = "7">
          </BreakpointContent>
@@ -300,11 +300,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "socialMilk/WorkingTwitter.swift"
-            timestampString = "504368001.288475"
+            timestampString = "504648637.540682"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "checkNewTweets()"
             landmarkType = "7">
          </BreakpointContent>
@@ -316,11 +316,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "socialMilk/WorkingTwitter.swift"
-            timestampString = "504368001.288475"
+            timestampString = "504648637.540682"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "checkNewTweets()"
             landmarkType = "7">
          </BreakpointContent>
@@ -332,12 +332,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "socialMilk/WorkingTwitter.swift"
-            timestampString = "504368001.288475"
+            timestampString = "504648637.540682"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "checkNewTweets()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "socialMilk/TwitterChooseViewController.swift"
+            timestampString = "504647484.341436"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "saveCheckedItems()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "socialMilk/TwitterChooseViewController.swift"
+            timestampString = "504647485.83046"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "saveCheckedItems()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "socialMilk/TwitterManager.swift"
+            timestampString = "504647508.043345"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "loadTweetsByUser(user:callback:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -102,16 +102,7 @@ final class WorkingVk{
                                        timeNSDate: WorkingVk.translateUnixTime(time: Int(post.date)!),
                                        url: post.url,
                                        post: post)
-//            if post.hasPhoto {
-//                message.message += "\nHas Photo"
-//            }
-//            if post.hasLink {
-//                message.message += "\nHas Link"
-//            }
-//            if post.hasVideo {
-//                message.message += "\nHas Video"
-//            }
-            //message.message += "\n" + post.url
+            
             mess.append(message)
         }
         return mess

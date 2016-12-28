@@ -106,7 +106,7 @@ final class TwitterManager{
                     }
                     tweets.append(TweetPost(user: user,
                                             text: tweet["text"].stringValue,
-                                            date: tweet["created_at"].stringValue,
+                                            date: WorkingTwitter.translateTwitterTimeToUnix(time: tweet["created_at"].stringValue),
                                             id: tweet["id"].stringValue,
                                             hasLink: hasLink,
                                             hasPhoto: hasPhoto,
