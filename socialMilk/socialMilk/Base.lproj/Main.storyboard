@@ -226,14 +226,14 @@
                         <outlet property="activityView" destination="jGs-2w-7ix" id="jrq-H3-UGy"/>
                         <outlet property="mainImageView" destination="Fic-yG-OTV" id="eTY-Yv-kCZ"/>
                         <outlet property="messagesTableView" destination="tMV-lA-fk0" id="jTa-cV-s9l"/>
-                        <segue destination="BM4-Ae-fu7" kind="show" identifier="gotoWeb" id="cek-42-GhH"/>
+                        <segue destination="BM4-Ae-fu7" kind="show" identifier="gotoWeb" id="zlY-w4-Jrc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c1s-rk-KiA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2328.8000000000002" y="-96.7016491754123"/>
         </scene>
-        <!--Web View Controller-->
+        <!--Page-->
         <scene sceneID="O2F-Aq-MeW">
             <objects>
                 <viewController id="BM4-Ae-fu7" customClass="WebViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
@@ -258,7 +258,7 @@
                             <constraint firstAttribute="trailing" secondItem="fgC-2L-fSv" secondAttribute="trailing" id="lGR-6Q-Kx0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="e33-KT-gUB">
+                    <navigationItem key="navigationItem" title="Page" id="e33-KT-gUB">
                         <barButtonItem key="rightBarButtonItem" image="webIcon" id="DQc-H6-3R7">
                             <connections>
                                 <action selector="webButtonPressed:" destination="BM4-Ae-fu7" id="vu0-z8-Gog"/>
