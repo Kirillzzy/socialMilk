@@ -30,12 +30,26 @@ final class WorkingVk{
         var minutes = String(calendar.component(.minute, from: date as Date))
         var day = String(calendar.component(.day, from: date as Date))
         var month = String(calendar.component(.month, from: date as Date))
+        
+        let todayDate = Date()
+        let todayDay = String(calendar.component(.day, from: todayDate as Date))
+        let todayMonth = String(calendar.component(.month, from: date as Date))
+        
         if hour.characters.count == 1{
             hour = "0" + hour
         }
         if minutes.characters.count == 1{
             minutes = "0" + minutes
         }
+        
+        if todayDay == day && todayMonth == month{
+            return "Today \(hour):\(minutes)"
+        }
+        
+        if String(Int(todayDay)! - 1) == day && todayMonth == month{
+            return "Yesterday \(hour):\(minutes)"
+        }
+        
         if day.characters.count == 1{
             day = "0" + day
         }

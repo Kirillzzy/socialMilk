@@ -188,11 +188,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "socialMilk/WorkingVk.swift"
-            timestampString = "504294733.882774"
+            timestampString = "504709206.593982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "getPosts()"
             landmarkType = "7">
          </BreakpointContent>
@@ -204,11 +204,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "socialMilk/WorkingVk.swift"
-            timestampString = "504647053.327811"
+            timestampString = "504709206.593982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "createChatByMessages()"
             landmarkType = "7">
          </BreakpointContent>
@@ -220,11 +220,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "socialMilk/ChatViewController.swift"
-            timestampString = "504658116.707328"
+            timestampString = "504698502.000679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -236,11 +236,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "socialMilk/ChatViewController.swift"
-            timestampString = "504658116.707328"
+            timestampString = "504698502.000679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -370,6 +370,22 @@
             startingLineNumber = "117"
             endingLineNumber = "117"
             landmarkName = "loadTweetsByUser(user:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "socialMilk/ChatViewController.swift"
+            timestampString = "504711957.045484"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

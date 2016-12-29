@@ -7,23 +7,20 @@
 //
 
 import UIKit
-import SwiftyVK
+
 
 class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        VK.logIn()
-        TwitterManager.login()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        gotoNext()
     }
     
     @IBAction func loginVKButtonPressed(_ sender: Any) {
-        VK.logIn()
+        _ = VKManager.sharedInstance
     }
 
     @IBAction func loginTwitterButtonPressed(_ sender: Any) {

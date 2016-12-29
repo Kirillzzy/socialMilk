@@ -14,6 +14,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var activityView: UIView!
+    @IBOutlet weak var mainImageView: UIImageView!
 
     var chat = ChatClass()
     
@@ -21,6 +22,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         self.messagesTableView.estimatedRowHeight = 80
         self.messagesTableView.rowHeight = UITableViewAutomaticDimension
+        mainImageView.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,6 +90,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
 
         }
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(imageTapped(gesture:)))
+        cell.photoImageImageView.isUserInteractionEnabled = true
+        cell.photoImageImageView.addGestureRecognizer(tapGestureRecognizer)
         return cell
     }
     
@@ -115,7 +120,12 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
 
     }
-
+    
+    func imageTapped(gesture: UITapGestureRecognizer){
+        if gesture.state == .ended{
+            
+        }
+    }
 
 }
 

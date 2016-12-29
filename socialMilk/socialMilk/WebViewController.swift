@@ -29,5 +29,12 @@ class WebViewController: UIViewController {
             webView.loadRequest(req)
         }
     }
+    @IBAction func webButtonPressed(_ sender: Any) {
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url!, options: [:])
+        } else {
+            UIApplication.shared.openURL(url!)
+        }
+    }
 
 }

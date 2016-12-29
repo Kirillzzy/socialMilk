@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Chats View Controller-->
+        <!--Chats-->
         <scene sceneID="RLQ-OO-WJY">
             <objects>
                 <viewController id="jQB-AQ-kin" customClass="ChatsViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
@@ -39,7 +39,7 @@
                             <constraint firstAttribute="bottom" secondItem="zfo-hH-9vr" secondAttribute="bottom" id="tA2-RE-m2w"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="9Jg-JA-3le"/>
+                    <navigationItem key="navigationItem" title="Chats" id="9Jg-JA-3le"/>
                     <connections>
                         <outlet property="chatsTableView" destination="zfo-hH-9vr" id="iKU-Cb-raC"/>
                         <segue destination="jn4-cn-3O4" kind="show" identifier="fromChatsToChatLineSegue" id="9bm-8f-UNu"/>
@@ -184,7 +184,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tMV-lA-fk0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tMV-lA-fk0">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -199,14 +199,21 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ryd-Ds-au3">
                                 <rect key="frame" x="177" y="323" width="20" height="20"/>
                             </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fic-yG-OTV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="tMV-lA-fk0" secondAttribute="trailing" id="9pD-VS-exD"/>
                             <constraint firstAttribute="bottom" secondItem="tMV-lA-fk0" secondAttribute="bottom" id="Bgb-Yx-RcD"/>
+                            <constraint firstAttribute="trailing" secondItem="Fic-yG-OTV" secondAttribute="trailing" id="Gb6-kc-fon"/>
                             <constraint firstAttribute="trailing" secondItem="jGs-2w-7ix" secondAttribute="trailing" id="H4P-3c-QPW"/>
+                            <constraint firstAttribute="bottom" secondItem="Fic-yG-OTV" secondAttribute="bottom" id="LOR-Jc-KnA"/>
+                            <constraint firstItem="Fic-yG-OTV" firstAttribute="leading" secondItem="TJg-7d-tsD" secondAttribute="leading" id="MqI-0Q-dyL"/>
                             <constraint firstItem="Ryd-Ds-au3" firstAttribute="centerY" secondItem="jGs-2w-7ix" secondAttribute="centerY" id="eua-hG-aIj"/>
                             <constraint firstItem="jGs-2w-7ix" firstAttribute="top" secondItem="TJg-7d-tsD" secondAttribute="top" id="j1p-qh-6wa"/>
+                            <constraint firstItem="Fic-yG-OTV" firstAttribute="top" secondItem="TJg-7d-tsD" secondAttribute="top" id="jvJ-l8-SBn"/>
                             <constraint firstItem="tMV-lA-fk0" firstAttribute="leading" secondItem="TJg-7d-tsD" secondAttribute="leading" id="lYB-ZD-OfR"/>
                             <constraint firstItem="jGs-2w-7ix" firstAttribute="leading" secondItem="TJg-7d-tsD" secondAttribute="leading" id="opm-PT-0oj"/>
                             <constraint firstItem="tMV-lA-fk0" firstAttribute="top" secondItem="TJg-7d-tsD" secondAttribute="top" id="scB-Z3-gwU"/>
@@ -217,6 +224,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="Ryd-Ds-au3" id="42b-YB-ENe"/>
                         <outlet property="activityView" destination="jGs-2w-7ix" id="jrq-H3-UGy"/>
+                        <outlet property="mainImageView" destination="Fic-yG-OTV" id="eTY-Yv-kCZ"/>
                         <outlet property="messagesTableView" destination="tMV-lA-fk0" id="jTa-cV-s9l"/>
                         <segue destination="BM4-Ae-fu7" kind="show" identifier="gotoWeb" id="cek-42-GhH"/>
                     </connections>
@@ -250,6 +258,13 @@
                             <constraint firstAttribute="trailing" secondItem="fgC-2L-fSv" secondAttribute="trailing" id="lGR-6Q-Kx0"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="e33-KT-gUB">
+                        <barButtonItem key="rightBarButtonItem" image="webIcon" id="DQc-H6-3R7">
+                            <connections>
+                                <action selector="webButtonPressed:" destination="BM4-Ae-fu7" id="vu0-z8-Gog"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="webView" destination="fgC-2L-fSv" id="t5O-mn-xGT"/>
                     </connections>
@@ -293,7 +308,7 @@
             </objects>
             <point key="canvasLocation" x="-162.40000000000001" y="624.73763118440786"/>
         </scene>
-        <!--Apps View Controller-->
+        <!--Apps-->
         <scene sceneID="GeN-7q-jj7">
             <objects>
                 <viewController id="b23-kG-7vb" customClass="AppsViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
@@ -317,15 +332,6 @@
                                     <segue destination="iCl-Xp-tc4" kind="show" identifier="fromVKToChatLineSegue" id="FXl-GB-RYx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on VK/Twitter logo to register your groups for next interaction and then go to chats" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbW-Wg-owP">
-                                <rect key="frame" x="16" y="150" width="343" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="i52-Iv-JsB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5e-oo-pAY">
                                 <rect key="frame" x="124" y="72" width="70" height="70"/>
                                 <constraints>
@@ -339,19 +345,38 @@
                                     <segue destination="96q-IY-gn4" kind="show" id="sor-GQ-KBu"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRu-jD-6mp">
+                                <rect key="frame" x="16" y="137" width="70" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Fvw-HX-0ta"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uY8-UP-Ygs">
+                                <rect key="frame" x="124" y="137" width="70" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Bpo-77-WEm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="F5e-oo-pAY" firstAttribute="top" secondItem="uJf-K6-MFW" secondAttribute="bottom" constant="8" id="05Q-qE-b7w"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mbW-Wg-owP" secondAttribute="trailing" id="4m1-bL-PsH"/>
                             <constraint firstItem="F5e-oo-pAY" firstAttribute="leading" secondItem="Qu8-01-UU8" secondAttribute="trailing" constant="38" id="5EY-ZU-rm0"/>
+                            <constraint firstItem="uY8-UP-Ygs" firstAttribute="leading" secondItem="sRu-jD-6mp" secondAttribute="trailing" constant="38" id="6oo-m0-iqH"/>
                             <constraint firstItem="Qu8-01-UU8" firstAttribute="top" secondItem="uJf-K6-MFW" secondAttribute="bottom" constant="8" id="8ug-wz-DsE"/>
-                            <constraint firstItem="mbW-Wg-owP" firstAttribute="top" secondItem="Qu8-01-UU8" secondAttribute="bottom" constant="8" id="A1E-dA-sD4"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="mbW-Wg-owP" secondAttribute="leading" id="Bzb-gx-Xbv"/>
+                            <constraint firstItem="sRu-jD-6mp" firstAttribute="top" secondItem="Qu8-01-UU8" secondAttribute="bottom" constant="-5" id="Fhi-KO-Uak"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Qu8-01-UU8" secondAttribute="leading" id="hT1-zi-wkt"/>
+                            <constraint firstItem="uY8-UP-Ygs" firstAttribute="top" secondItem="F5e-oo-pAY" secondAttribute="bottom" constant="-5" id="pnA-55-H1N"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="sRu-jD-6mp" secondAttribute="leading" id="tI2-Cq-fbG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="uut-pu-I0J"/>
+                    <navigationItem key="navigationItem" title="Apps" id="uut-pu-I0J"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cT-Pa-FjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -497,5 +522,6 @@
         <image name="twitterlogoWhite" width="25" height="25"/>
         <image name="vkLogo" width="25" height="25"/>
         <image name="vkLogoBlackBig" width="512" height="512"/>
+        <image name="webIcon" width="25" height="25"/>
     </resources>
 </document>

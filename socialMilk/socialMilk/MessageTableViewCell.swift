@@ -21,6 +21,7 @@ class MessageTableViewCell: UITableViewCell {
         imageImageView.layer.masksToBounds = true
         imageImageView.layer.cornerRadius = 5
         photoImageImageView.layer.masksToBounds = true
+        photoImageImageView.layer.cornerRadius = 5
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
