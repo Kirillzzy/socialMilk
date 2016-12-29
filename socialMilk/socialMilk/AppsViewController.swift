@@ -9,8 +9,10 @@
 import UIKit
 import SwiftyVK
 
-class AppsViewController: UIViewController {
+class AppsViewController: UIViewController, UIScrollViewDelegate {
     
+    @IBOutlet weak var scrollVIew: UIScrollView!
+    var chats = [ChatClass]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,5 +24,8 @@ class AppsViewController: UIViewController {
     @IBAction func twitterButtonPressed(_ sender: Any) {
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        scrollVIew.contentSize = CGSize(width:10, height:10)
+    }
 }
-

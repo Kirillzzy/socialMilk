@@ -21,6 +21,12 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
     var checkedItems = [TweetCheckedPost]()
     let defaultCursor = "-1"
     var lastCursor: String = ""
+    
+    var numOfChecked: Int = 0{
+        didSet{
+            updateSelfTitle()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +37,7 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
         super.viewDidAppear(animated)
         lastCursor = defaultCursor
         updatePeopleAndSources()
+        numOfChecked = WorkingTwitter.sources.count
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -78,6 +85,7 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
         if cell.checkButton.currentImage != #imageLiteral(resourceName: "checkBoxSet"){
             cell.checkButton.setImage(#imageLiteral(resourceName: "checkBoxSet"), for: .normal)
             self.checked[String(indexPath.row)] = self.people[indexPath.row]
+            numOfChecked += 1
         } else{
             cell.checkButton.setImage(nil, for: .normal)
             for i in 0..<self.checkedItems.count{
@@ -87,13 +95,13 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
                 }
             }
             self.checked.removeValue(forKey: String(indexPath.row))
+            numOfChecked -= 1
         }
-        if self.checked.count > 12{
+        if self.checked.count > 10{
             backViewButton.isEnabled = false
         }else{
             backViewButton.isEnabled = true
         }
-        updateSelfTitle()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
@@ -152,12 +160,11 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
             self.activityView.isHidden = true
             self.activityIndicator.stopAnimating()
             self.reloadTableView()
-            self.updateSelfTitle()
         })
     }
     
     func updateSelfTitle(){
-        self.title = "Checked: \(checked.count)"
+        self.title = "Checked: \(numOfChecked)"
     }
 
 

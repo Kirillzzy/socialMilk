@@ -8,16 +8,62 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
 
+struct settings{
+    var image: UIImage
+    var text: String
+    var nameOfSegue: String
+    
+    init(image: UIImage, text: String, nameOfSegue: String){
+        self.image = image
+        self.text = text
+        self.nameOfSegue = nameOfSegue
+    }
+}
+
+
+class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    @IBOutlet weak var settingsTableView: UITableView!
+    var settingsArray = [settings]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.settingsTableView.estimatedRowHeight = 50
+        addFirstProperties()
+        self.settingsTableView.register(UINib(nibName: "SettingsChooseTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingsCell")
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return settingsArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = settingsTableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath) as! SettingsChooseTableViewCell
+        cell.imageImageView.image = settingsArray[indexPath.row].image
+        cell.settingsTextLabel.text = settingsArray[indexPath.row].text
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        settingsTableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: settingsArray[indexPath.row].nameOfSegue, sender: true)
+    }
+    
+    
+    func addFirstProperties(){
+        settingsArray.append(settings(image: #imageLiteral(resourceName: "vkLogoBlackBig"),
+                                      text: "Choose groups from VK",
+                                      nameOfSegue: "gotoChooseVK"))
+        settingsArray.append(settings(image: #imageLiteral(resourceName: "twitterLogo"),
+                                      text: "Choose people from Twitter",
+                                      nameOfSegue: "gotoChooseTwitter"))
+    }
 
 }
+
