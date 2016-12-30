@@ -56,6 +56,8 @@
 		8AE60E811E06FC1D00A9662F /* TweetPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60E801E06FC1D00A9662F /* TweetPost.swift */; };
 		8AE60E831E06FC5700A9662F /* TweetPostRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60E821E06FC5700A9662F /* TweetPostRealm.swift */; };
 		8AEF725E1E16741F00332FB5 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEF725D1E16741F00332FB5 /* SetupViewController.swift */; };
+		8AEF72601E16D44300332FB5 /* ChooseViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEF725F1E16D44300332FB5 /* ChooseViewControllerProtocol.swift */; };
+		8AEF72621E16D99700332FB5 /* NotificationsViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEF72611E16D99700332FB5 /* NotificationsViewControllerProtocol.swift */; };
 		FE9FD86F3619F02F115020EB /* Pods_socialMilk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C680469C18A3008203EE1E9 /* Pods_socialMilk.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +114,8 @@
 		8AE60E801E06FC1D00A9662F /* TweetPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetPost.swift; sourceTree = "<group>"; };
 		8AE60E821E06FC5700A9662F /* TweetPostRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetPostRealm.swift; sourceTree = "<group>"; };
 		8AEF725D1E16741F00332FB5 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		8AEF725F1E16D44300332FB5 /* ChooseViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseViewControllerProtocol.swift; sourceTree = "<group>"; };
+		8AEF72611E16D99700332FB5 /* NotificationsViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewControllerProtocol.swift; sourceTree = "<group>"; };
 		C8483424513B008EF6C051F9 /* Pods-socialMilk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialMilk.release.xcconfig"; path = "Pods/Target Support Files/Pods-socialMilk/Pods-socialMilk.release.xcconfig"; sourceTree = "<group>"; };
 		F6C580B4AE3B5A14E39255DD /* Pods-socialMilk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialMilk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-socialMilk/Pods-socialMilk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,6 +199,8 @@
 				7BF0F4531DF1F48500285298 /* MessageClass.swift */,
 				7B39A8481DF5FBB80077BBB6 /* Init.swift */,
 				8A0ACB7E1E0678D30071A7F6 /* Constants.swift */,
+				8AEF725F1E16D44300332FB5 /* ChooseViewControllerProtocol.swift */,
+				8AEF72611E16D99700332FB5 /* NotificationsViewControllerProtocol.swift */,
 			);
 			name = InitialClasses;
 			sourceTree = "<group>";
@@ -205,11 +211,11 @@
 				7BF0F43B1DF1E50B00285298 /* AppsViewController.swift */,
 				7BF0F44F1DF1EE9A00285298 /* NotificationsVKViewController.swift */,
 				8A02C61E1E15A5DC00DC4CB9 /* NotificationsTwitterViewController.swift */,
-				7BF0F44D1DF1EA9D00285298 /* SettingsViewController.swift */,
 				7BF0F4631DF3516A00285298 /* VKChooseViewController.swift */,
 				8A49B8ED1E0AF1C2008B6ECA /* TwitterChooseViewController.swift */,
-				8AE60E7C1E06EE2F00A9662F /* LoginViewController.swift */,
+				7BF0F44D1DF1EA9D00285298 /* SettingsViewController.swift */,
 				8AEF725D1E16741F00332FB5 /* SetupViewController.swift */,
+				8AE60E7C1E06EE2F00A9662F /* LoginViewController.swift */,
 				8A02C6181E14718600DC4CB9 /* WebViewController.swift */,
 			);
 			name = "View Controllers";
@@ -430,8 +436,10 @@
 				8A49B8F01E0AF3A9008B6ECA /* TwitterChooseGroupClass.swift in Sources */,
 				8A49B8F61E0B0189008B6ECA /* TweetCheckedPost.swift in Sources */,
 				8A49B8F41E0B0166008B6ECA /* WorkingTwitter.swift in Sources */,
+				8AEF72601E16D44300332FB5 /* ChooseViewControllerProtocol.swift in Sources */,
 				7BF0F43A1DF1E50B00285298 /* AppDelegate.swift in Sources */,
 				7BF0F46B1DF36B1F00285298 /* VKChooseGroupClass.swift in Sources */,
+				8AEF72621E16D99700332FB5 /* NotificationsViewControllerProtocol.swift in Sources */,
 				8A49B8EE1E0AF1C2008B6ECA /* TwitterChooseViewController.swift in Sources */,
 				7BF0F4541DF1F48500285298 /* MessageClass.swift in Sources */,
 				8A02C61C1E15836900DC4CB9 /* SettingsChooseTableViewCell.swift in Sources */,

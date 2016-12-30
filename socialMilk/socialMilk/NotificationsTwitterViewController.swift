@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotificationsTwitterViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+class NotificationsTwitterViewController: UIViewController, NotificationsViewControllerProtocol{
 
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var activityView: UIView!

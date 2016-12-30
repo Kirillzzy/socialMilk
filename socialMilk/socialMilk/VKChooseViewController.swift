@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class VKChooseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class VKChooseViewController: UIViewController, ChooseViewControllerProtocol {
     
     @IBOutlet weak var groupsTableView: UITableView!
     @IBOutlet weak var blackView: UIView!
@@ -35,7 +35,7 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        updatePeopleAndSources()
+        updatePlaces()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -106,7 +106,7 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
         _ = self.navigationController?.popViewController(animated: true)
     }
     
-    func updatePeopleAndSources(){
+    func updatePlaces(){
         showLoadingView()
         self.groupsAndPeople = VKManagerWorker.GroupsPeopleGet()
         let sources = WorkingVk.sources

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TwitterChooseViewController: UIViewController, ChooseViewControllerProtocol {
     
     @IBOutlet weak var peopleTableView: UITableView!
     @IBOutlet weak var blackView: UIView!
@@ -40,7 +40,7 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         lastCursor = defaultCursor
-        updatePeopleAndSources()
+        updatePlaces()
         numOfChecked = WorkingTwitter.sources.count
         backViewButton.isEnabled = false
     }
@@ -82,7 +82,7 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
         }
         
         if indexPath.row == people.count - 1 && lastCursor != "-1"{
-            updatePeopleAndSources()
+            updatePlaces()
         }
         
         return cell
@@ -137,7 +137,7 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
         WorkingTwitter.updateSources()
     }
     
-    func updatePeopleAndSources(){
+    func updatePlaces(){
         let sources = WorkingTwitter.sources
         showLoadingView()
         TwitterManager.loadLastFollowing(cursor: lastCursor, callback: { people, cursor in

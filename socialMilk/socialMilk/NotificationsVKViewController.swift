@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class NotificationsVKViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class NotificationsVKViewController: UIViewController, NotificationsViewControllerProtocol{
     
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var activityView: UIView!
