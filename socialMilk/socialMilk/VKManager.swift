@@ -14,10 +14,11 @@ class VKManager: VKDelegate{
     
     init(){
         VK.configure(withAppId: Constants.VKappID, delegate: self)
+        VK.logIn()
     }
     
     func vkWillAuthorize() -> Set<VK.Scope> {
-        return [.offline, .notifications, .wall, .friends]
+        return [.offline, .wall, .friends, .groups]
     }
     
     func vkDidAuthorizeWith(parameters: Dictionary<String, String>) {

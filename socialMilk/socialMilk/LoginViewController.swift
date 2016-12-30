@@ -13,6 +13,8 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        _ = VKManager.sharedInstance
+        TwitterManager.login()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -20,6 +22,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginVKButtonPressed(_ sender: Any) {
+        VKManagerWorker.logout()
         _ = VKManager.sharedInstance
     }
 

@@ -32,61 +32,43 @@ final class VKManagerWorker{
     
 
     
-    class func getNameAndPhotoLink(user: VKChooseGroupClass){
-        _ = VK.API.Users.get([
-            .userIDs: "\(user.id)",
-            .fields: "photo_100"]).send(
-                onSuccess:  { response in
-                    user.photoLink = response["photo_100"].stringValue
-                    user.title = response["first_name"].stringValue +  " " + response["last_name"].stringValue
-            },
-                onError: {
-                    error in print("SwiftyVK: FriendsGet fail \n \(error)")
-            })
-    }
+//    class func getNameAndPhotoLink(user: VKChooseGroupClass){
+//        _ = VK.API.Users.get([
+//            .userIDs: "\(user.id)",
+//            .fields: "photo_100"]).send(
+//                onSuccess:  { response in
+//                    user.photoLink = response["photo_100"].stringValue
+//                    user.title = response["first_name"].stringValue +  " " + response["last_name"].stringValue
+//            },
+//                onError: {
+//                    error in print("SwiftyVK: FriendsGet fail \n \(error)")
+//            })
+//    }
+//    
     
-    
-    
-    class func getNameAndPhotoLinkGroup(groups: [VKChooseGroupClass]){
-        var strGroups = ""
-        for group in groups{
-            strGroups += group.id + ","
-        }
-        _ = VK.API.Groups.getById([
-            .groupIds: strGroups]).send(
-                onSuccess:  { response in
-                    var ch = 0
-                    for group in response.arrayValue{
-                        groups[ch].photoLink = group["photo_100"].stringValue
-                        groups[ch].title = group["name"].stringValue
-                        ch += 1
-                    }
-            },
-                onError: {
-                    error in print("SwiftyVK: GroupsPhotoGet fail \n \(error)")
-            })
-    }
     
     
     
     class func GroupsPeopleGet() -> [VKChooseGroupClass]{
         var groupsAndPeople = [VKChooseGroupClass]()
-        var status = false
+        var status = 0
         /// ----- groups
-        _ = VK.API.Groups.get().send(
+        _ = VK.API.Groups.get([
+            VK.Arg.extended: "1"
+            ]).send(
             onSuccess:  { response in
-                var groups = [VKChooseGroupClass]()
                 for group in response["items"].arrayValue{
-                    let person = VKChooseGroupClass()
-                    person.id = group.stringValue
-                    groupsAndPeople.append(person)
-                    groups.append(person)
+                    groupsAndPeople.append(VKChooseGroupClass(title: group["name"].stringValue,
+                                                              photoLink: group["photo_100"].stringValue,
+                                                              id: group["id"].stringValue,
+                                                              isGroup: true))
                 }
-                self.getNameAndPhotoLinkGroup(groups: groups)
+                
+                status += 1
         },
             onError: {
                 error in print("SwiftyVK: GroupsGet fail \n \(error)")
-                status  = true
+                status += 1
         })
         
         
@@ -98,16 +80,17 @@ final class VKManagerWorker{
                     for group in response["items"].arrayValue{
                         groupsAndPeople.append(VKChooseGroupClass(title: group["first_name"].stringValue + " " + group["last_name"].stringValue,
                                                                 photoLink: group["photo_100"].stringValue,
-                                                                id: group["id"].stringValue, isGroup: false))
+                                                                id: group["id"].stringValue,
+                                                                isGroup: false))
                     }
-                    status = true
+                    status += 1
             },
                 onError: {
                     error in print("SwiftyVK: FriendsGet fail \n \(error)")
-                    status  = true
+                    status += 1
             })
         
-        while(!status){}
+        while(status < 2){}
         return groupsAndPeople
         
     }
