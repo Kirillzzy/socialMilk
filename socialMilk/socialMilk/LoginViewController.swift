@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadComponents()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -42,6 +43,13 @@ class LoginViewController: UIViewController {
     
     func gotoNext(){
         performSegue(withIdentifier: "fromLoginSegue", sender: true)
+    }
+    
+    func loadComponents(){
+        twitterButton.layer.masksToBounds = true
+        twitterButton.layer.cornerRadius = 5
+        vkButton.layer.masksToBounds = true
+        vkButton.layer.cornerRadius = 5
     }
 
 }

@@ -20,3 +20,16 @@ class VKCheckedPost{
     
     init(){}
 }
+
+extension VKCheckedPost: Hashable, Equatable{
+    static func ==(lhs: VKCheckedPost, rhs: VKCheckedPost) -> Bool {
+        return lhs.group.id == rhs.group.id
+    }
+    
+    
+    var hashValue: Int{
+        get{
+            return "\(group.id), \(group.title)".hashValue
+        }
+    }
+}

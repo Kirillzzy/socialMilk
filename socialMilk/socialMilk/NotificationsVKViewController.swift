@@ -12,7 +12,6 @@ import SDWebImage
 class NotificationsVKViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var messagesTableView: UITableView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var activityView: UIView!
 
     var chat = ChatClass()
@@ -31,7 +30,6 @@ class NotificationsVKViewController: UIViewController, UITableViewDelegate, UITa
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        activityIndicator.startAnimating()
     }
     
     func reloadTableView(){
@@ -90,9 +88,7 @@ class NotificationsVKViewController: UIViewController, UITableViewDelegate, UITa
         DispatchQueue.global(qos: .background).async {
             self.chat.messages = WorkingVk.createChatByMessages()
             DispatchQueue.main.async {
-                self.activityIndicator.hidesWhenStopped = true
                 self.activityView.isHidden = true
-                self.activityIndicator.stopAnimating()
                 self.reloadTableView()
             }
         }

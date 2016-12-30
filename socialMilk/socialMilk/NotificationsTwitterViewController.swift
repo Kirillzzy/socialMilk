@@ -12,7 +12,6 @@ class NotificationsTwitterViewController: UIViewController,UITableViewDelegate, 
 
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var activityView: UIView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var chat = ChatClass()
     
@@ -30,7 +29,6 @@ class NotificationsTwitterViewController: UIViewController,UITableViewDelegate, 
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        activityIndicator.startAnimating()
     }
     
     func reloadTableView(){
@@ -90,9 +88,7 @@ class NotificationsTwitterViewController: UIViewController,UITableViewDelegate, 
         DispatchQueue.global(qos: .background).async {
             self.chat.messages = WorkingTwitter.createChatByMessages()
             DispatchQueue.main.async {
-                self.activityIndicator.hidesWhenStopped = true
                 self.activityView.isHidden = true
-                self.activityIndicator.stopAnimating()
                 self.reloadTableView()
             }
         }

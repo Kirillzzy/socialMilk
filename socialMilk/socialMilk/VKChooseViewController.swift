@@ -12,13 +12,14 @@ import SDWebImage
 class VKChooseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var groupsTableView: UITableView!
+    @IBOutlet weak var blackView: UIView!
     @IBOutlet weak var activityView: UIView!
     @IBOutlet weak var backViewButton: UIBarButtonItem!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var groupsAndPeople = [VKChooseGroupClass]()
     var checked = [String: VKChooseGroupClass?]()
-    var checkedItems = [VKCheckedPost]()
+    var checkedItems = Set<VKCheckedPost>()
 
     override func loadView() {
         super.loadView()
@@ -27,11 +28,19 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         groupsTableView.rowHeight = CGFloat(60)
+        blackView.layer.masksToBounds = true
+        blackView.layer.cornerRadius = 5
+        groupsTableView.register(UINib(nibName: "GroupsTableViewCell", bundle: nil), forCellReuseIdentifier: "GroupCell")
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         updatePeopleAndSources()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        backViewButton.isEnabled = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -41,7 +50,6 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     func reloadTableView(){
-        self.groupsTableView.register(UINib(nibName: "GroupsTableViewCell", bundle: nil), forCellReuseIdentifier: "GroupCell")
         self.reloadUI()
     }
     
@@ -78,18 +86,13 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
             self.checked[String(indexPath.row)] = self.groupsAndPeople[indexPath.row]
         } else{
             cell.checkButton.setImage(nil, for: .normal)
-            for i in 0..<self.checkedItems.count{
-                if self.checkedItems[i].group.id == self.checked[String(indexPath.row)]??.id{
-                    self.checkedItems.remove(at: i)
+            for i in self.checkedItems{
+                if i.group.id == self.checked[String(indexPath.row)]??.id{
+                    self.checkedItems.remove(i)
                     break
                 }
             }
             self.checked.removeValue(forKey: String(indexPath.row))
-        }
-        if self.checked.count > 10{
-            backViewButton.isEnabled = false
-        }else{
-            backViewButton.isEnabled = true
         }
         updateSelfTitle()
     }
@@ -104,7 +107,7 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func updatePeopleAndSources(){
-        self.activityIndicator.startAnimating()
+        showLoadingView()
         self.groupsAndPeople = VKManagerWorker.GroupsPeopleGet()
         let sources = WorkingVk.sources
         for source in sources{
@@ -119,15 +122,14 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
                     break
                 }
             }
-            self.checkedItems.append(source)
+            self.checkedItems.insert(source)
         }
         let when = DispatchTime.now() + 0.5
         DispatchQueue.main.asyncAfter(deadline: when) {
-            self.activityIndicator.hidesWhenStopped = true
-            self.activityView.isHidden = true
-            self.activityIndicator.stopAnimating()
+            self.hideLoadingView()
             self.reloadTableView()
             self.updateSelfTitle()
+            self.backViewButton.isEnabled = true
         }
     }
     
@@ -135,11 +137,15 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
         for item in checked{
             if item.value != nil{
                 if (checkedItems.filter({$0.group.id == item.value?.id})).count == 0{
-                    checkedItems.append(VKCheckedPost(lastCheckedPostId: "0", group: item.value!))
+                    checkedItems.insert(VKCheckedPost(lastCheckedPostId: "0", group: item.value!))
                 }
             }
         }
-        WorkingVk.sources = checkedItems
+        var newCheckedItems = [VKCheckedPost]()
+        for i in checkedItems{
+            newCheckedItems.append(i)
+        }
+        WorkingVk.sources = newCheckedItems
         DispatchQueue.global(qos: .background).async {
             _ = WorkingVk.checkNewPosts()
         }
@@ -148,6 +154,22 @@ class VKChooseViewController: UIViewController, UITableViewDelegate, UITableView
     
     func updateSelfTitle(){
         self.title = "Checked: \(checked.count)"
+        if self.checked.count > 10{
+            backViewButton.isEnabled = false
+        }else{
+            backViewButton.isEnabled = true
+        }
     }
+    
+    
 
+    func showLoadingView(){
+        activityIndicator.startAnimating()
+    }
+    
+    func hideLoadingView(){
+        self.activityView.isHidden = true
+        activityIndicator.stopAnimating()
+    }
+    
 }

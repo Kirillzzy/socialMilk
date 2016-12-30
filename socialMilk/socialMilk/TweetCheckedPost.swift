@@ -20,3 +20,17 @@ class TweetCheckedPost{
     init(){}
 
 }
+
+// MARK: - Hashable, Equatable
+extension TweetCheckedPost: Hashable, Equatable{
+    static func ==(lhs: TweetCheckedPost, rhs: TweetCheckedPost) -> Bool {
+        return lhs.user.id == rhs.user.id
+    }
+    
+    
+    var hashValue: Int{
+        get{
+            return "\(user.id), \(user.screenName)".hashValue
+        }
+    }
+}

@@ -11,6 +11,7 @@ import UIKit
 class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var peopleTableView: UITableView!
+    @IBOutlet weak var blackView: UIView!
     @IBOutlet weak var activityView: UIView!
     @IBOutlet weak var backViewButton: UIBarButtonItem!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -18,7 +19,7 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
     
     var people = [TwitterChooseGroupClass]()
     var checked = [String: TwitterChooseGroupClass?]()
-    var checkedItems = [TweetCheckedPost]()
+    var checkedItems = Set<TweetCheckedPost>()
     let defaultCursor = "-1"
     var lastCursor: String = ""
     
@@ -31,6 +32,9 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         peopleTableView.rowHeight = CGFloat(60)
+        blackView.layer.masksToBounds = true
+        blackView.layer.cornerRadius = 5
+        peopleTableView.register(UINib(nibName: "GroupsTableViewCell", bundle: nil), forCellReuseIdentifier: "GroupCell")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,6 +42,12 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
         lastCursor = defaultCursor
         updatePeopleAndSources()
         numOfChecked = WorkingTwitter.sources.count
+        backViewButton.isEnabled = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        backViewButton.isEnabled = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -46,7 +56,6 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func reloadTableView(){
-        self.peopleTableView.register(UINib(nibName: "GroupsTableViewCell", bundle: nil), forCellReuseIdentifier: "GroupCell")
         self.reloadUI()
     }
     
@@ -88,9 +97,9 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
             numOfChecked += 1
         } else{
             cell.checkButton.setImage(nil, for: .normal)
-            for i in 0..<self.checkedItems.count{
-                if self.checkedItems[i].user.id == self.checked[String(indexPath.row)]??.id{
-                    self.checkedItems.remove(at: i)
+            for i in self.checkedItems{
+                if i.user.id == self.checked[String(indexPath.row)]??.id{
+                    self.checkedItems.remove(i)
                     break
                 }
             }
@@ -113,11 +122,15 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
         for item in checked{
             if item.value != nil{
                 if (checkedItems.filter({$0.user.id == item.value?.id})).count == 0{
-                    checkedItems.append(TweetCheckedPost(lastCheckedTweetId: "0", user: item.value!))
+                    checkedItems.insert(TweetCheckedPost(lastCheckedTweetId: "0", user: item.value!))
                 }
             }
         }
-        WorkingTwitter.sources = checkedItems
+        var newCheckedItems = [TweetCheckedPost]()
+        for i in checkedItems{
+            newCheckedItems.append(i)
+        }
+        WorkingTwitter.sources = newCheckedItems
         DispatchQueue.global(qos: .background).async {
             _ = WorkingTwitter.checkNewTweets()
         }
@@ -126,7 +139,7 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
     
     func updatePeopleAndSources(){
         let sources = WorkingTwitter.sources
-        activityIndicator.startAnimating()
+        showLoadingView()
         TwitterManager.loadLastFollowing(cursor: lastCursor, callback: { people, cursor in
             if let peo = people{
                 self.lastCursor = cursor!
@@ -143,29 +156,39 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
                             break
                         }
                     }
-                    self.checkedItems.append(source)
+                    self.checkedItems.insert(source)
+                    //self.checkedItems.append(source)
                 }
                 self.people.append(contentsOf: peo)
                 if peo.count < 200{
                     self.lastCursor = "-1"
                 }
             }
-            
-            self.activityIndicator.hidesWhenStopped = true
-            self.activityView.isHidden = true
-            self.activityIndicator.stopAnimating()
+            self.hideLoadingView()
             self.reloadTableView()
+            self.updateSelfTitle()
+            self.backViewButton.isEnabled = true
         })
     }
     
     func updateSelfTitle(){
         self.title = "Checked: \(numOfChecked)"
-        if self.checked.count > 10{
+        if numOfChecked > 10{
             backViewButton.isEnabled = false
         }else{
             backViewButton.isEnabled = true
         }
     }
+    
+    func showLoadingView(){
+        activityIndicator.startAnimating()
+    }
+    
+    func hideLoadingView(){
+        self.activityView.isHidden = true
+        activityIndicator.stopAnimating()
+    }
+
 
 
 }
