@@ -10,11 +10,15 @@ import UIKit
 
 
 class LoginViewController: UIViewController {
-
+    
+    @IBOutlet weak var twitterButton: UIButton!
+    @IBOutlet weak var vkButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    
+    static var loginedAt: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        _ = VKManager.sharedInstance
-        TwitterManager.login()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -22,7 +26,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginVKButtonPressed(_ sender: Any) {
-        VKManagerWorker.logout()
+        //VKManagerWorker.logout()
         _ = VKManager.sharedInstance
     }
 
@@ -31,7 +35,9 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
-        gotoNext()
+        if LoginViewController.loginedAt >= 2{
+            gotoNext()
+        }
     }
     
     func gotoNext(){

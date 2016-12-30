@@ -97,11 +97,6 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
             self.checked.removeValue(forKey: String(indexPath.row))
             numOfChecked -= 1
         }
-        if self.checked.count > 10{
-            backViewButton.isEnabled = false
-        }else{
-            backViewButton.isEnabled = true
-        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
@@ -165,6 +160,11 @@ class TwitterChooseViewController: UIViewController, UITableViewDelegate, UITabl
     
     func updateSelfTitle(){
         self.title = "Checked: \(numOfChecked)"
+        if self.checked.count > 10{
+            backViewButton.isEnabled = false
+        }else{
+            backViewButton.isEnabled = true
+        }
     }
 
 

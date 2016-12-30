@@ -21,6 +21,7 @@ final class TwitterManager{
                 print("signed in as \(session!.userName)");
                 userName = session!.userName
                 userID = session!.userID
+                LoginViewController.loginedAt += 1
             } else {
                 print("error: \(error?.localizedDescription)");
             }

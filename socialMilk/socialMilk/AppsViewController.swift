@@ -16,6 +16,8 @@ class AppsViewController: UIViewController, UIScrollViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        scrollVIew.contentSize = CGSize(width: 150, height: 150)
     }
     
     @IBAction func vkButtonPressed(_ sender: Any) {
@@ -24,8 +26,4 @@ class AppsViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func twitterButtonPressed(_ sender: Any) {
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        scrollVIew.contentSize = CGSize(width:10, height:10)
-    }
 }

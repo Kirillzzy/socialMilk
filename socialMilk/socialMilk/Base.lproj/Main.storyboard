@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nw7-hp-iPg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EAr-mN-JEu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -278,7 +278,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZZt-Ab-ozf">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZt-Ab-ozf">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qu8-01-UU8">
@@ -375,7 +375,29 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YfH-hq-n2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-553" y="-148"/>
+            <point key="canvasLocation" x="-487" y="-138"/>
+        </scene>
+        <!--Setup View Controller-->
+        <scene sceneID="8tW-Pj-imn">
+            <objects>
+                <viewController id="EAr-mN-JEu" customClass="SetupViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vri-lh-wMd"/>
+                        <viewControllerLayoutGuide type="bottom" id="dQZ-Nx-bYw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3nR-BI-DFJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="nw7-hp-iPg" kind="show" identifier="toLoginSegue" animates="NO" id="GP4-fX-RAM"/>
+                        <segue destination="AB3-Af-7pP" kind="show" identifier="toNextSegue" animates="NO" id="T83-dH-WqZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h9k-sw-g6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2175" y="-125"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="L9m-1t-Upq">
@@ -443,12 +465,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nextButton" destination="yok-6z-goa" id="YWp-fQ-tya"/>
+                        <outlet property="twitterButton" destination="KBO-KU-0kw" id="PHw-gW-yuh"/>
+                        <outlet property="vkButton" destination="Oua-gl-pst" id="sSG-85-VQZ"/>
                         <segue destination="AB3-Af-7pP" kind="show" identifier="fromLoginSegue" id="Btb-Ae-gja"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="47n-7h-pR5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1370.4000000000001" y="-149.77511244377811"/>
+            <point key="canvasLocation" x="-1310" y="-532"/>
         </scene>
         <!--Apps-->
         <scene sceneID="Sb6-XM-NLC">
@@ -553,6 +578,7 @@
         <image name="webIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="T83-dH-WqZ"/>
         <segue reference="yRV-U8-RYS"/>
     </inferredMetricsTieBreakers>
 </document>

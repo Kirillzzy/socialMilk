@@ -23,6 +23,7 @@ class VKManager: VKDelegate{
     
     func vkDidAuthorizeWith(parameters: Dictionary<String, String>) {
         print("Autorized")
+        LoginViewController.loginedAt += 1
     }
     
     func vkAutorizationFailedWith(error: AuthError) {

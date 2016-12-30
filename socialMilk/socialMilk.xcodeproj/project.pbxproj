@@ -55,6 +55,7 @@
 		8AE60E7F1E06F2CE00A9662F /* TwitterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60E7E1E06F2CE00A9662F /* TwitterManager.swift */; };
 		8AE60E811E06FC1D00A9662F /* TweetPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60E801E06FC1D00A9662F /* TweetPost.swift */; };
 		8AE60E831E06FC5700A9662F /* TweetPostRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60E821E06FC5700A9662F /* TweetPostRealm.swift */; };
+		8AEF725E1E16741F00332FB5 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEF725D1E16741F00332FB5 /* SetupViewController.swift */; };
 		FE9FD86F3619F02F115020EB /* Pods_socialMilk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C680469C18A3008203EE1E9 /* Pods_socialMilk.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +111,7 @@
 		8AE60E7E1E06F2CE00A9662F /* TwitterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterManager.swift; sourceTree = "<group>"; };
 		8AE60E801E06FC1D00A9662F /* TweetPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetPost.swift; sourceTree = "<group>"; };
 		8AE60E821E06FC5700A9662F /* TweetPostRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetPostRealm.swift; sourceTree = "<group>"; };
+		8AEF725D1E16741F00332FB5 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		C8483424513B008EF6C051F9 /* Pods-socialMilk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialMilk.release.xcconfig"; path = "Pods/Target Support Files/Pods-socialMilk/Pods-socialMilk.release.xcconfig"; sourceTree = "<group>"; };
 		F6C580B4AE3B5A14E39255DD /* Pods-socialMilk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialMilk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-socialMilk/Pods-socialMilk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,6 +209,7 @@
 				7BF0F4631DF3516A00285298 /* VKChooseViewController.swift */,
 				8A49B8ED1E0AF1C2008B6ECA /* TwitterChooseViewController.swift */,
 				8AE60E7C1E06EE2F00A9662F /* LoginViewController.swift */,
+				8AEF725D1E16741F00332FB5 /* SetupViewController.swift */,
 				8A02C6181E14718600DC4CB9 /* WebViewController.swift */,
 			);
 			name = "View Controllers";
@@ -417,6 +420,7 @@
 				7BF0F45E1DF3314F00285298 /* VKManager.swift in Sources */,
 				7BF0F4641DF3516A00285298 /* VKChooseViewController.swift in Sources */,
 				7BF0F45B1DF2038000285298 /* MessageTableViewCell.swift in Sources */,
+				8AEF725E1E16741F00332FB5 /* SetupViewController.swift in Sources */,
 				7B8A91811DFF298C0014D78D /* VKManagerWorker.swift in Sources */,
 				7BF0F4681DF35D2900285298 /* GroupsTableViewCell.swift in Sources */,
 				8AE60E811E06FC1D00A9662F /* TweetPost.swift in Sources */,
