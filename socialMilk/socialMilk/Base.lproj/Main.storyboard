@@ -32,27 +32,21 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0CF-sp-Ics">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gpp-h4-M9d">
-                                        <rect key="frame" x="152" y="298" width="70" height="70"/>
-                                        <subviews>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="N3p-Wj-drL">
-                                                <rect key="frame" x="17" y="17" width="37" height="37"/>
-                                            </activityIndicatorView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.47550302640091568" green="0.48021097715736039" blue="0.48021097715736039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="9UQ-Bf-1nk"/>
-                                            <constraint firstItem="N3p-Wj-drL" firstAttribute="centerY" secondItem="Gpp-h4-M9d" secondAttribute="centerY" id="Bvc-Fk-l2i"/>
-                                            <constraint firstAttribute="width" constant="70" id="FSv-mH-yqL"/>
-                                            <constraint firstItem="N3p-Wj-drL" firstAttribute="centerX" secondItem="Gpp-h4-M9d" secondAttribute="centerX" id="cBh-oN-x61"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gpp-h4-M9d">
+                                <rect key="frame" x="152" y="298" width="70" height="70"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="N3p-Wj-drL">
+                                        <rect key="frame" x="17" y="17" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.47550302640091568" green="0.48021097715736039" blue="0.48021097715736039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Gpp-h4-M9d" firstAttribute="centerY" secondItem="0CF-sp-Ics" secondAttribute="centerY" id="98g-2E-4Db"/>
-                                    <constraint firstItem="Gpp-h4-M9d" firstAttribute="centerX" secondItem="0CF-sp-Ics" secondAttribute="centerX" id="gxt-dK-vmO"/>
+                                    <constraint firstAttribute="height" constant="70" id="9UQ-Bf-1nk"/>
+                                    <constraint firstItem="N3p-Wj-drL" firstAttribute="centerY" secondItem="Gpp-h4-M9d" secondAttribute="centerY" id="Bvc-Fk-l2i"/>
+                                    <constraint firstAttribute="width" constant="70" id="FSv-mH-yqL"/>
+                                    <constraint firstItem="N3p-Wj-drL" firstAttribute="centerX" secondItem="Gpp-h4-M9d" secondAttribute="centerX" id="cBh-oN-x61"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -61,11 +55,13 @@
                             <constraint firstItem="Nsb-oE-qqd" firstAttribute="leading" secondItem="qfC-7K-V5p" secondAttribute="leading" id="79i-pV-Vqt"/>
                             <constraint firstAttribute="trailing" secondItem="0CF-sp-Ics" secondAttribute="trailing" id="7ld-Jh-iQf"/>
                             <constraint firstItem="Nsb-oE-qqd" firstAttribute="top" secondItem="qfC-7K-V5p" secondAttribute="top" id="Aap-dV-IuI"/>
+                            <constraint firstItem="Gpp-h4-M9d" firstAttribute="centerX" secondItem="0CF-sp-Ics" secondAttribute="centerX" id="Gz2-zC-td6"/>
                             <constraint firstAttribute="bottom" secondItem="Nsb-oE-qqd" secondAttribute="bottom" id="Nzh-Lh-Jof"/>
                             <constraint firstAttribute="bottom" secondItem="0CF-sp-Ics" secondAttribute="bottom" id="UAh-OO-ulr"/>
                             <constraint firstItem="0CF-sp-Ics" firstAttribute="top" secondItem="qfC-7K-V5p" secondAttribute="top" id="ZnA-DF-iuY"/>
                             <constraint firstAttribute="trailing" secondItem="Nsb-oE-qqd" secondAttribute="trailing" id="fvZ-s6-qg1"/>
                             <constraint firstItem="0CF-sp-Ics" firstAttribute="leading" secondItem="qfC-7K-V5p" secondAttribute="leading" id="srH-x2-PVm"/>
+                            <constraint firstItem="Gpp-h4-M9d" firstAttribute="centerY" secondItem="0CF-sp-Ics" secondAttribute="centerY" id="ukj-GB-0aU"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -111,36 +107,32 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rw-w5-Y72">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="id7-5m-nep">
-                                        <rect key="frame" x="152" y="298.5" width="70" height="70"/>
-                                        <subviews>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="5Be-h6-JKV">
-                                                <rect key="frame" x="17" y="16.5" width="37" height="37"/>
-                                            </activityIndicatorView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.47550302639999997" green="0.4802109772" blue="0.4802109772" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="4An-eh-awN"/>
-                                            <constraint firstItem="5Be-h6-JKV" firstAttribute="centerX" secondItem="id7-5m-nep" secondAttribute="centerX" id="AIa-TB-fyV"/>
-                                            <constraint firstItem="5Be-h6-JKV" firstAttribute="centerY" secondItem="id7-5m-nep" secondAttribute="centerY" id="m7p-W8-Jn5"/>
-                                            <constraint firstAttribute="height" constant="70" id="oCY-js-JJr"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="id7-5m-nep">
+                                <rect key="frame" x="152" y="298" width="70" height="70"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="5Be-h6-JKV">
+                                        <rect key="frame" x="17" y="16.5" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.47550302639999997" green="0.4802109772" blue="0.4802109772" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="id7-5m-nep" firstAttribute="centerY" secondItem="4rw-w5-Y72" secondAttribute="centerY" id="ZFK-6U-b4Y"/>
-                                    <constraint firstItem="id7-5m-nep" firstAttribute="centerX" secondItem="4rw-w5-Y72" secondAttribute="centerX" id="hsY-ST-dPv"/>
+                                    <constraint firstAttribute="width" constant="70" id="4An-eh-awN"/>
+                                    <constraint firstItem="5Be-h6-JKV" firstAttribute="centerX" secondItem="id7-5m-nep" secondAttribute="centerX" id="AIa-TB-fyV"/>
+                                    <constraint firstItem="5Be-h6-JKV" firstAttribute="centerY" secondItem="id7-5m-nep" secondAttribute="centerY" id="m7p-W8-Jn5"/>
+                                    <constraint firstAttribute="height" constant="70" id="oCY-js-JJr"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4rw-w5-Y72" firstAttribute="top" secondItem="NwX-2f-i4g" secondAttribute="top" id="36x-EV-2cY"/>
+                            <constraint firstItem="id7-5m-nep" firstAttribute="centerY" secondItem="4rw-w5-Y72" secondAttribute="centerY" id="72k-C5-UYG"/>
                             <constraint firstAttribute="trailing" secondItem="4rw-w5-Y72" secondAttribute="trailing" id="ABd-ZC-LYY"/>
                             <constraint firstAttribute="trailing" secondItem="5Wa-mw-hrV" secondAttribute="trailing" id="ARz-he-dz2"/>
                             <constraint firstAttribute="bottom" secondItem="5Wa-mw-hrV" secondAttribute="bottom" id="Aff-wY-sib"/>
+                            <constraint firstItem="id7-5m-nep" firstAttribute="centerX" secondItem="4rw-w5-Y72" secondAttribute="centerX" id="BDb-2C-ZMc"/>
                             <constraint firstItem="5Wa-mw-hrV" firstAttribute="leading" secondItem="NwX-2f-i4g" secondAttribute="leading" id="H15-oR-lj8"/>
                             <constraint firstItem="4rw-w5-Y72" firstAttribute="leading" secondItem="NwX-2f-i4g" secondAttribute="leading" id="NBU-rS-QVK"/>
                             <constraint firstItem="5Wa-mw-hrV" firstAttribute="top" secondItem="NwX-2f-i4g" secondAttribute="top" id="xKI-XY-UK2"/>
@@ -329,7 +321,7 @@
                                         <state key="normal" image="vkLogoBlackBig"/>
                                         <connections>
                                             <action selector="vkButtonPressed:" destination="b23-kG-7vb" eventType="touchUpInside" id="IUn-ek-iTB"/>
-                                            <segue destination="jn4-cn-3O4" kind="show" identifier="" id="wLc-RK-kzo"/>
+                                            <segue destination="jn4-cn-3O4" kind="show" identifier="fromVkSegue" id="Vra-iV-rVI"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5e-oo-pAY">
@@ -342,7 +334,7 @@
                                         <connections>
                                             <action selector="twitterButtonPressed:" destination="b23-kG-7vb" eventType="touchUpInside" id="Tlk-u2-gzY"/>
                                             <action selector="vkButtonPressed:" destination="b23-kG-7vb" eventType="touchUpInside" id="tfm-JE-DcH"/>
-                                            <segue destination="Jpa-GM-oIc" kind="show" id="jgc-6P-ffp"/>
+                                            <segue destination="Jpa-GM-oIc" kind="show" identifier="fromTwitterSegue" id="FKf-dW-82w"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRu-jD-6mp">

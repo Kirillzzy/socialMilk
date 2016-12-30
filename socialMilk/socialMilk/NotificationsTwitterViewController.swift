@@ -14,6 +14,7 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
     @IBOutlet weak var activityView: UIView!
     
     var chat = ChatClass()
+    var lastPerform: Constants.fromSegueShowView = Constants.fromSegueShowView.null
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,7 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
         let numberOfRows = messagesTableView.numberOfRows(inSection: numberOfSections - 1)
         if numberOfRows > 0 {
             let indexPath = IndexPath(row: numberOfRows - 1, section: numberOfSections - 1)
-            self.messagesTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: false)
+            scrollDownTableView(for: indexPath)
         }
     }
     
@@ -46,6 +47,11 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
         self.messagesTableView.reloadData()
     }
     
+    func scrollDownTableView(for indexPath: IndexPath) {
+        if lastPerform != Constants.fromSegueShowView.fromWeb{
+            self.messagesTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: false)
+        }
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -109,6 +115,7 @@ extension NotificationsTwitterViewController{
             if let www = sender as? URL{
                 let vc = segue.destination as! WebViewController
                 vc.url = www
+                self.lastPerform = Constants.fromSegueShowView.fromWeb
             }
         }
     }

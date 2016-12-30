@@ -27,3 +27,15 @@ class AppsViewController: UIViewController, UIScrollViewDelegate {
     }
 
 }
+
+extension AppsViewController{
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "fromVkSegue"{
+            let vc = segue.destination as! NotificationsVKViewController
+            vc.lastPerform = Constants.fromSegueShowView.fromApps
+        }else if segue.identifier == "fromTwitterSegue"{
+            let vc = segue.destination as! NotificationsTwitterViewController
+            vc.lastPerform = Constants.fromSegueShowView.fromApps
+        }
+    }
+}

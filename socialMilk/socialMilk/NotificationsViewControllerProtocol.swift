@@ -12,7 +12,9 @@ import UIKit
 protocol NotificationsViewControllerProtocol: UITableViewDelegate, UITableViewDataSource{
     weak var messagesTableView: UITableView! {get set}
     weak var activityView: UIView! {get set}
+    
     var chat: ChatClass {get set}
+    var lastPerform: Constants.fromSegueShowView {get set}
     
     //    func numberOfSections() -> Int
     //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -23,6 +25,7 @@ protocol NotificationsViewControllerProtocol: UITableViewDelegate, UITableViewDa
     func reloadTableView()
     func reloadUI()
     func loadNews()
+    func scrollDownTableView(for indexPath: IndexPath)
     func imageTapped(gesture: UITapGestureRecognizer)
     
 }

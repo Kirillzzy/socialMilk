@@ -165,10 +165,12 @@ class VKChooseViewController: UIViewController, ChooseViewControllerProtocol {
 
     func showLoadingView(){
         activityIndicator.startAnimating()
+        self.blackView.isHidden = false
     }
     
     func hideLoadingView(){
         self.activityView.isHidden = true
+        self.blackView.isHidden = true
         activityIndicator.stopAnimating()
     }
     

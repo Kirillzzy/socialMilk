@@ -16,8 +16,11 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
 
     var chat = ChatClass()
     
+    var lastPerform: Constants.fromSegueShowView = Constants.fromSegueShowView.null
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.messagesTableView.estimatedRowHeight = 80
         self.messagesTableView.rowHeight = UITableViewAutomaticDimension
         self.messagesTableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageCell")
@@ -32,13 +35,17 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
         super.viewDidAppear(animated)
     }
     
+    func refreshTableView(sender: AnyObject){
+        loadNews()
+    }
+    
     func reloadTableView(){
         self.reloadUI()
         let numberOfSections = messagesTableView.numberOfSections
         let numberOfRows = messagesTableView.numberOfRows(inSection: numberOfSections - 1)
         if numberOfRows > 0 {
             let indexPath = IndexPath(row: numberOfRows - 1, section: numberOfSections - 1)
-            messagesTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: false)
+            scrollDownTableView(for: indexPath)
         }
     }
     
@@ -46,7 +53,12 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
     func reloadUI(){
         self.messagesTableView.reloadData()
     }
-
+    
+    func scrollDownTableView(for indexPath: IndexPath) {
+        if lastPerform != Constants.fromSegueShowView.fromWeb{
+            messagesTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: false)
+        }
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -109,6 +121,7 @@ extension NotificationsVKViewController{
             if let www = sender as? URL{
                 let vc = segue.destination as! WebViewController
                 vc.url = www
+                self.lastPerform = Constants.fromSegueShowView.fromWeb
             }
         }
     }
