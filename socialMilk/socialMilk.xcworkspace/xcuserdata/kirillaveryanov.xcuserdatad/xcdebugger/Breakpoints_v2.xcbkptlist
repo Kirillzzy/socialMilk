@@ -236,11 +236,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "socialMilk/NotificationsVKViewController.swift"
-            timestampString = "504894564.286135"
+            timestampString = "504908318.012764"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -252,11 +252,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "socialMilk/NotificationsVKViewController.swift"
-            timestampString = "504894564.286135"
+            timestampString = "504908318.012764"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "loadNews()"
             landmarkType = "7">
             <Locations>

@@ -218,8 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				7BF0F43B1DF1E50B00285298 /* AppsViewController.swift */,
-				7BF0F44F1DF1EE9A00285298 /* NotificationsVKViewController.swift */,
 				8A02C61E1E15A5DC00DC4CB9 /* NotificationsTwitterViewController.swift */,
+				7BF0F44F1DF1EE9A00285298 /* NotificationsVKViewController.swift */,
 				7BF0F4631DF3516A00285298 /* VKChooseViewController.swift */,
 				8A49B8ED1E0AF1C2008B6ECA /* TwitterChooseViewController.swift */,
 				7BF0F44D1DF1EA9D00285298 /* SettingsViewController.swift */,

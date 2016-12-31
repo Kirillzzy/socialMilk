@@ -42,13 +42,17 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
     
     func reloadTableView(){
         self.reloadUI()
-        let numberOfSections = messagesTableView.numberOfSections
-        let numberOfRows = messagesTableView.numberOfRows(inSection: numberOfSections - 1)
+        //let numberOfSections = messagesTableView.numberOfSections
+        let numberOfRows = messagesTableView.numberOfRows(inSection: 1)
         if numberOfRows > 0 {
-            let indexPath = IndexPath(row: numberOfRows - 1, section: numberOfSections - 1)
+            let indexPath = IndexPath(row: 0, section: 1)
+            scrollDownTableView(for: indexPath)
+        }else if messagesTableView.numberOfRows(inSection: 0) > 0{
+            let indexPath = IndexPath(row: numberOfRows - 1, section: 0)
             scrollDownTableView(for: indexPath)
         }
     }
+
     
     
     func reloadUI(){
@@ -57,7 +61,7 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
     
     func scrollDownTableView(for indexPath: IndexPath) {
         if lastPerform != Constants.fromSegueShowView.fromWeb{
-            messagesTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: false)
+            self.messagesTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: false)
         }
     }
     
