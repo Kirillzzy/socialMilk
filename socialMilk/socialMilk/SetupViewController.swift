@@ -21,7 +21,6 @@ class SetupViewController: UIViewController {
             TwitterManager.login()
             performSegue(withIdentifier: "toNextSegue", sender: true)
         }else{
-            UserDefaults.standard.set(true, forKey: "isFirstSetupEver")
             performSegue(withIdentifier: "toLoginSegue", sender: true)
         }
     }

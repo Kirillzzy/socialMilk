@@ -207,6 +207,7 @@
                             <constraint firstAttribute="bottom" secondItem="jGs-2w-7ix" secondAttribute="bottom" id="v6Q-me-X2U"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="CIc-au-sfh"/>
                     <connections>
                         <outlet property="activityView" destination="jGs-2w-7ix" id="jrq-H3-UGy"/>
                         <outlet property="messagesTableView" destination="tMV-lA-fk0" id="jTa-cV-s9l"/>
@@ -215,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c1s-rk-KiA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2573.5999999999999" y="-840.62968515742136"/>
+            <point key="canvasLocation" x="2574" y="-761"/>
         </scene>
         <!--Page-->
         <scene sceneID="O2F-Aq-MeW">
@@ -309,81 +310,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZt-Ab-ozf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qu8-01-UU8">
-                                        <rect key="frame" x="8" y="8" width="150" height="150"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="Izj-tE-AmV"/>
-                                            <constraint firstAttribute="width" constant="150" id="oX0-hq-sL5"/>
-                                        </constraints>
-                                        <state key="normal" image="vkLogoBlackBig"/>
-                                        <connections>
-                                            <action selector="vkButtonPressed:" destination="b23-kG-7vb" eventType="touchUpInside" id="IUn-ek-iTB"/>
-                                            <segue destination="jn4-cn-3O4" kind="show" identifier="fromVkSegue" id="Vra-iV-rVI"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5e-oo-pAY">
-                                        <rect key="frame" x="217" y="8" width="150" height="150"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="ZRu-CC-2qd"/>
-                                            <constraint firstAttribute="height" constant="150" id="pm1-bq-KOs"/>
-                                        </constraints>
-                                        <state key="normal" image="twitterLogo"/>
-                                        <connections>
-                                            <action selector="twitterButtonPressed:" destination="b23-kG-7vb" eventType="touchUpInside" id="Tlk-u2-gzY"/>
-                                            <action selector="vkButtonPressed:" destination="b23-kG-7vb" eventType="touchUpInside" id="tfm-JE-DcH"/>
-                                            <segue destination="Jpa-GM-oIc" kind="show" identifier="fromTwitterSegue" id="FKf-dW-82w"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRu-jD-6mp">
-                                        <rect key="frame" x="8" y="137" width="150" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="bEm-S3-XfD"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uY8-UP-Ygs">
-                                        <rect key="frame" x="217" y="137" width="150" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="JDk-tm-dge"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="sRu-jD-6mp" secondAttribute="bottom" constant="445" id="4x9-79-FDd"/>
-                                    <constraint firstItem="uY8-UP-Ygs" firstAttribute="top" secondItem="F5e-oo-pAY" secondAttribute="bottom" constant="-21" id="SbQ-f8-k9V"/>
-                                    <constraint firstItem="F5e-oo-pAY" firstAttribute="top" secondItem="ZZt-Ab-ozf" secondAttribute="top" constant="8" id="UVw-Xd-rlH"/>
-                                    <constraint firstItem="uY8-UP-Ygs" firstAttribute="leading" secondItem="sRu-jD-6mp" secondAttribute="trailing" constant="59" id="Z1f-TI-Yiz"/>
-                                    <constraint firstAttribute="trailing" secondItem="uY8-UP-Ygs" secondAttribute="trailing" constant="8" id="jGM-5l-pAb"/>
-                                    <constraint firstAttribute="trailing" secondItem="F5e-oo-pAY" secondAttribute="trailing" constant="8" id="kTl-3D-Wc6"/>
-                                    <constraint firstItem="Qu8-01-UU8" firstAttribute="top" secondItem="ZZt-Ab-ozf" secondAttribute="top" constant="8" id="mbn-89-XAJ"/>
-                                    <constraint firstItem="sRu-jD-6mp" firstAttribute="top" secondItem="Qu8-01-UU8" secondAttribute="bottom" constant="-21" id="uyx-aA-hYC"/>
-                                    <constraint firstItem="sRu-jD-6mp" firstAttribute="leading" secondItem="ZZt-Ab-ozf" secondAttribute="leading" constant="8" id="xj3-v1-6We"/>
-                                    <constraint firstItem="Qu8-01-UU8" firstAttribute="leading" secondItem="ZZt-Ab-ozf" secondAttribute="leading" constant="8" id="zVh-JS-SfM"/>
-                                </constraints>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MkU-QO-H7F">
+                                <rect key="frame" x="8" y="0.0" width="359" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jfg-wS-mb7">
+                                    <size key="itemSize" width="100" height="130"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
                                 <connections>
-                                    <outlet property="delegate" destination="b23-kG-7vb" id="HWc-0n-J45"/>
+                                    <outlet property="dataSource" destination="b23-kG-7vb" id="g7V-n7-AMh"/>
+                                    <outlet property="delegate" destination="b23-kG-7vb" id="6N6-ZA-cdW"/>
                                 </connections>
-                            </scrollView>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZZt-Ab-ozf" firstAttribute="leading" secondItem="oi4-1d-Be7" secondAttribute="leading" id="Tue-ic-SsR"/>
-                            <constraint firstAttribute="trailing" secondItem="ZZt-Ab-ozf" secondAttribute="trailing" id="cSx-XV-435"/>
-                            <constraint firstItem="ZZt-Ab-ozf" firstAttribute="top" secondItem="oi4-1d-Be7" secondAttribute="top" id="f8q-Wl-zLr"/>
-                            <constraint firstAttribute="bottom" secondItem="ZZt-Ab-ozf" secondAttribute="bottom" id="yDX-UM-uZi"/>
+                            <constraint firstItem="MkU-QO-H7F" firstAttribute="top" secondItem="oi4-1d-Be7" secondAttribute="top" id="7iT-G5-UXQ"/>
+                            <constraint firstItem="MkU-QO-H7F" firstAttribute="leading" secondItem="oi4-1d-Be7" secondAttribute="leading" constant="8" id="kCS-sQ-T5f"/>
+                            <constraint firstAttribute="bottom" secondItem="MkU-QO-H7F" secondAttribute="bottom" id="wHw-oQ-Txk"/>
+                            <constraint firstAttribute="trailing" secondItem="MkU-QO-H7F" secondAttribute="trailing" constant="8" id="weB-NM-YAy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Apps" id="uut-pu-I0J"/>
                     <connections>
-                        <outlet property="scrollVIew" destination="ZZt-Ab-ozf" id="krx-m6-zXH"/>
+                        <outlet property="AppsCollectionView" destination="MkU-QO-H7F" id="UbK-gX-kEi"/>
+                        <segue destination="jn4-cn-3O4" kind="show" identifier="fromVkSegue" id="CIH-3H-K7o"/>
+                        <segue destination="Jpa-GM-oIc" kind="show" identifier="fromTwitterSegue" id="e8z-hT-DM1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cT-Pa-FjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -611,9 +566,7 @@
         <image name="loading" width="716" height="1054"/>
         <image name="navigateRight" width="25" height="25"/>
         <image name="settings" width="25" height="25"/>
-        <image name="twitterLogo" width="512" height="512"/>
         <image name="twitterlogoWhite" width="25" height="25"/>
-        <image name="vkLogoBlackBig" width="512" height="512"/>
         <image name="vkLogoRound" width="25" height="25"/>
         <image name="webIcon" width="25" height="25"/>
     </resources>

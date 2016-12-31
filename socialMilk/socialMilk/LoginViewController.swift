@@ -37,6 +37,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func nextButtonPressed(_ sender: Any) {
         if LoginViewController.loginedAt >= 2{
+            UserDefaults.standard.set(false, forKey: "isFirstSetupEver")
             gotoNext()
         }
     }
