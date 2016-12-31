@@ -62,37 +62,45 @@ class WorkingTwitter{
         for tweet in lastTweets{
             RealmManagerTwitter.saveNewTweetPost(tweet: RealmManagerTwitter.encodeTweetPostToRealm(tweet: tweet))
         }
+        lastTweets.sort(by: {tweet1, tweet2 in Int(tweet1.date)! < Int(tweet2.date)!})
         return lastTweets
     }
     
-    
-    static func getTweets() -> [TweetPost]{
+    static func getOldTweets() -> [TweetPost]{
         let oldRealmTweets = RealmManagerTwitter.getTweetPosts()
         var oldTweets = [TweetPost]()
         for tweet in oldRealmTweets{
             oldTweets.append(RealmManagerTwitter.encodeRealmTweetPostToJust(tweet: tweet))
         }
+        oldTweets.sort(by: {tweet1, tweet2 in Int(tweet1.date)! < Int(tweet2.date)!})
+        return oldTweets
+    }
+    
+    static func getTweets() -> [TweetPost]{
+        var oldTweets = getOldTweets()
         oldTweets.append(contentsOf: checkNewTweets())
         oldTweets.sort(by: {tweet1, tweet2 in Int(tweet1.date)! < Int(tweet2.date)!})
         return oldTweets
     }
     
     
-    
-    
-    static func createChatByMessages() -> [MessageClass]{
+    static func encodeTweetsToMessages(tweets: [TweetPost]) -> [MessageClass]{
         var mess = [MessageClass]()
-        let tweets = WorkingTwitter.getTweets()
         for tweet in tweets{
             let message = MessageClass(head: tweet.user.title,
                                        message: tweet.text,
                                        timeNSDate: WorkingVk.translateUnixTime(time: Int(tweet.date)!),
                                        url: tweet.url,
                                        tweet: tweet)
-
+            
             mess.append(message)
         }
         return mess
+    }
+    
+    
+    static func createChatByMessages() -> [MessageClass]{
+        return encodeTweetsToMessages(tweets: getTweets())
     }
 
     

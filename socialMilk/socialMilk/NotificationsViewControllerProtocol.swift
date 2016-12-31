@@ -13,7 +13,8 @@ protocol NotificationsViewControllerProtocol: UITableViewDelegate, UITableViewDa
     weak var messagesTableView: UITableView! {get set}
     weak var activityView: UIView! {get set}
     
-    var chat: ChatClass {get set}
+    var chat: [ChatClass] {get set}
+    var sectionsNames: [String] {get set}
     var lastPerform: Constants.fromSegueShowView {get set}
     
     //    func numberOfSections() -> Int

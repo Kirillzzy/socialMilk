@@ -13,7 +13,8 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var activityView: UIView!
     
-    var chat = ChatClass()
+    var chat = [ChatClass]()
+    var sectionsNames = ["Old Posts", "New Posts"]
     var lastPerform: Constants.fromSegueShowView = Constants.fromSegueShowView.null
     
     override func viewDidLoad() {
@@ -21,6 +22,8 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
         self.messagesTableView.estimatedRowHeight = 80
         self.messagesTableView.rowHeight = UITableViewAutomaticDimension
         self.messagesTableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageCell")
+        chat.append(ChatClass())
+        chat.append(ChatClass())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,24 +57,33 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        if chat[1].messages.count == 0{
+            return 1
+        }
+        return 2
     }
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chat.messages.count
+        return chat[section].messages.count
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionsNames[section]
+    }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = messagesTableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessageTableViewCell
         let heightOfImage: CGFloat = 350
-        cell.timeLabel.text = WorkingVk.translateNSDateToString(date: chat.messages[indexPath.row].timeNSDate)
-        cell.descriptionLabel.text = chat.messages[indexPath.row].message
-        cell.titleLabel.text = chat.messages[indexPath.row].head
-        cell.imageImageView.sd_setImage(with: URL(string: chat.messages[indexPath.row].tweet.user.photoLink))
-        if chat.messages[indexPath.row].tweet.hasPhoto{
+        cell.timeLabel.text = WorkingVk.translateNSDateToString(date: chat[indexPath.section].messages[indexPath.row].timeNSDate)
+        cell.descriptionLabel.text = chat[indexPath.section].messages[indexPath.row].message
+        cell.titleLabel.text = chat[indexPath.section].messages[indexPath.row].head
+        cell.imageImageView.sd_setImage(with: URL(string: chat[indexPath.section].messages[indexPath.row].tweet.user.photoLink))
+        if chat[indexPath.section].messages[indexPath.row].tweet.hasPhoto{
             cell.heightConstraint.constant = heightOfImage
-            cell.photoImageImageView.sd_setImage(with: URL(string: chat.messages[indexPath.row].tweet.photoLink)!)
+            cell.photoImageImageView.sd_setImage(with: URL(string: chat[indexPath.section].messages[indexPath.row].tweet.photoLink)!)
         }else{
             cell.heightConstraint.constant = 0
         }
@@ -84,7 +96,7 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         messagesTableView.deselectRow(at: indexPath, animated: true)
-        let url = URL(string: "https://" + chat.messages[indexPath.row].url)!
+        let url = URL(string: "https://" + chat[indexPath.section].messages[indexPath.row].url)!
         performSegue(withIdentifier: "gotoWeb", sender: url)
     }
     
@@ -92,7 +104,8 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
     func loadNews(){
         //self.activityView.isHidden = true
         DispatchQueue.global(qos: .background).async {
-            self.chat.messages = WorkingTwitter.createChatByMessages()
+            self.chat[0].messages = WorkingTwitter.encodeTweetsToMessages(tweets: WorkingTwitter.getOldTweets())
+            self.chat[1].messages = WorkingTwitter.encodeTweetsToMessages(tweets: WorkingTwitter.checkNewTweets())
             DispatchQueue.main.async {
                 self.activityView.isHidden = true
                 self.reloadTableView()

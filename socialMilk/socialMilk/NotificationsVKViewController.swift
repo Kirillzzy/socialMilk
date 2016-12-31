@@ -14,16 +14,17 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var activityView: UIView!
 
-    var chat = ChatClass()
-    
+    var chat = [ChatClass]()
+    var sectionsNames = ["Old Posts", "New Posts"]
     var lastPerform: Constants.fromSegueShowView = Constants.fromSegueShowView.null
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.messagesTableView.estimatedRowHeight = 80
         self.messagesTableView.rowHeight = UITableViewAutomaticDimension
         self.messagesTableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageCell")
+        chat.append(ChatClass())
+        chat.append(ChatClass())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,24 +62,32 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        if chat[1].messages.count == 0{
+            return 1
+        }
+        return 2
     }
+    
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chat.messages.count
+        return chat[section].messages.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionsNames[section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = messagesTableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessageTableViewCell
         let heightOfImage: CGFloat = 350
-        cell.timeLabel.text = WorkingVk.translateNSDateToString(date: chat.messages[indexPath.row].timeNSDate)
-        cell.descriptionLabel.text = chat.messages[indexPath.row].message
-        cell.titleLabel.text = chat.messages[indexPath.row].head
-        cell.imageImageView.sd_setImage(with: URL(string: chat.messages[indexPath.row].post.group.photoLink))
-        if chat.messages[indexPath.row].post.hasPhoto{
+        cell.timeLabel.text = WorkingVk.translateNSDateToString(date: chat[indexPath.section].messages[indexPath.row].timeNSDate)
+        cell.descriptionLabel.text = chat[indexPath.section].messages[indexPath.row].message
+        cell.titleLabel.text = chat[indexPath.section].messages[indexPath.row].head
+        cell.imageImageView.sd_setImage(with: URL(string: chat[indexPath.section].messages[indexPath.row].post.group.photoLink))
+        if chat[indexPath.section].messages[indexPath.row].post.hasPhoto{
             cell.heightConstraint.constant = heightOfImage
-            cell.photoImageImageView.sd_setImage(with: URL(string: chat.messages[indexPath.row].post.photoLink)!)
+            cell.photoImageImageView.sd_setImage(with: URL(string: chat[indexPath.section].messages[indexPath.row].post.photoLink)!)
         }else{
             cell.heightConstraint.constant = 0
         }
@@ -90,15 +99,25 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         messagesTableView.deselectRow(at: indexPath, animated: true)
-        let url = URL(string: "https://" + chat.messages[indexPath.row].url)!
+        let url = URL(string: "https://" + chat[indexPath.section].messages[indexPath.row].url)!
         performSegue(withIdentifier: "gotoWeb", sender: url)
     }
     
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let currentOffset = scrollView.contentOffset.y
+//        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+//        let deltaOffset = maximumOffset - currentOffset
+//        
+//        if deltaOffset <= 0 {
+//            //loadNews()
+//        }
+//    }
     
     func loadNews(){
         //self.activityView.isHidden = true
         DispatchQueue.global(qos: .background).async {
-            self.chat.messages = WorkingVk.createChatByMessages()
+            self.chat[0].messages = WorkingVk.encodePostsToMessages(posts: WorkingVk.getOldPosts())
+            self.chat[1].messages = WorkingVk.encodePostsToMessages(posts: WorkingVk.checkNewPosts())
             DispatchQueue.main.async {
                 self.activityView.isHidden = true
                 self.reloadTableView()

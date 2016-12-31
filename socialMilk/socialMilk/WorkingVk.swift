@@ -92,24 +92,30 @@ final class WorkingVk{
         for post in lastPosts{
             RealmManagerVk.saveNewVKPost(post: RealmManagerVk.encodeVKPostToRealm(post: post))
         }
+        lastPosts.sort(by: {post1, post2 in Int(post1.date)! < Int(post2.date)!})
         return lastPosts
     }
     
-    static func getPosts() -> [VKPost]{
+    
+    static func getOldPosts() -> [VKPost]{
         let oldRealmPosts = RealmManagerVk.getVKPosts()
         var oldPosts = [VKPost]()
         for post in oldRealmPosts{
             oldPosts.append(RealmManagerVk.encodeRealmVkPostToJust(post: post))
         }
+        oldPosts.sort(by: {post1, post2 in Int(post1.date)! < Int(post2.date)!})
+        return oldPosts
+    }
+    
+    static func getPosts() -> [VKPost]{
+        var oldPosts = getOldPosts()
         oldPosts.append(contentsOf: checkNewPosts())
         oldPosts.sort(by: {post1, post2 in Int(post1.date)! < Int(post2.date)!})
         return oldPosts
     }
     
-    
-    static func createChatByMessages() -> [MessageClass]{
+    static func encodePostsToMessages(posts: [VKPost]) -> [MessageClass]{
         var mess = [MessageClass]()
-        let posts = WorkingVk.getPosts()
         for post in posts{
             let message = MessageClass(head: post.group.title,
                                        message: post.text,
@@ -120,6 +126,11 @@ final class WorkingVk{
             mess.append(message)
         }
         return mess
+    }
+    
+    
+    static func createChatByMessages() -> [MessageClass]{
+        return encodePostsToMessages(posts: getPosts())
     }
     
     
