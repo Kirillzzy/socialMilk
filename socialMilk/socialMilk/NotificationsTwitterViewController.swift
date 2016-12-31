@@ -37,25 +37,31 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
     
     func reloadTableView(){
         self.reloadUI()
-        //let numberOfSections = messagesTableView.numberOfSections
-        let numberOfRows = messagesTableView.numberOfRows(inSection: 1)
-        if numberOfRows > 0 {
+        let numberOfRowsOld = chat[0].messages.count
+        let numberOfRowsNew = chat[1].messages.count
+        if numberOfRowsNew > 0 {
             let indexPath = IndexPath(row: 0, section: 1)
-            scrollDownTableView(for: indexPath)
-        }else if messagesTableView.numberOfRows(inSection: 0) > 0{
-            let indexPath = IndexPath(row: numberOfRows - 1, section: 0)
+            scrollTopTableView(for: indexPath)
+        }else if numberOfRowsOld > 0{
+            let indexPath = IndexPath(row: numberOfRowsOld - 1, section: 0)
             scrollDownTableView(for: indexPath)
         }
     }
-    
+
     
     func reloadUI(){
         self.messagesTableView.reloadData()
     }
     
-    func scrollDownTableView(for indexPath: IndexPath) {
+    func scrollTopTableView(for indexPath: IndexPath) {
         if lastPerform != Constants.fromSegueShowView.fromWeb{
             self.messagesTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: false)
+        }
+    }
+    
+    func scrollDownTableView(for indexPath: IndexPath) {
+        if lastPerform != Constants.fromSegueShowView.fromWeb{
+            self.messagesTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: false)
         }
     }
     
