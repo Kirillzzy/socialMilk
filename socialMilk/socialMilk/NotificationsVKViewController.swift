@@ -86,6 +86,9 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0{
+            return nil
+        }
         return sectionsNames[section]
     }
     
