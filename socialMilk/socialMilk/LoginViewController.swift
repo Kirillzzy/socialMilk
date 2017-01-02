@@ -28,7 +28,6 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginVKButtonPressed(_ sender: Any) {
-        //VKManagerWorker.logout()
         _ = VKManager.sharedInstance
     }
     @IBAction func loginFbButtonPressed(_ sender: Any) {
