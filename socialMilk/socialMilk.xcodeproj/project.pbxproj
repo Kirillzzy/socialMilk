@@ -61,6 +61,19 @@
 		8AEF72641E170C9100332FB5 /* AppClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEF72631E170C9100332FB5 /* AppClass.swift */; };
 		8AEF72671E1715B700332FB5 /* AppCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEF72651E1715B700332FB5 /* AppCollectionViewCell.swift */; };
 		8AEF72681E1715B700332FB5 /* AppCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AEF72661E1715B700332FB5 /* AppCollectionViewCell.xib */; };
+		8AEF727C1E195D4800332FB5 /* IKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEF727A1E195D4800332FB5 /* IKLoginViewController.m */; };
+		8AEF727D1E195D4800332FB5 /* InstagramManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEF727B1E195D4800332FB5 /* InstagramManager.swift */; };
+		8AEF72801E195D9E00332FB5 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEF727F1E195D9E00332FB5 /* AFNetworking.framework */; };
+		8AEF72821E195DA200332FB5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEF72811E195DA200332FB5 /* Alamofire.framework */; };
+		8AEF72841E195DA500332FB5 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEF72831E195DA500332FB5 /* Bolts.framework */; };
+		8AEF728C1E195DAE00332FB5 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEF72851E195DAE00332FB5 /* FacebookCore.framework */; };
+		8AEF728D1E195DAE00332FB5 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEF72861E195DAE00332FB5 /* FacebookLogin.framework */; };
+		8AEF728E1E195DAE00332FB5 /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEF72871E195DAE00332FB5 /* FacebookShare.framework */; };
+		8AEF728F1E195DAE00332FB5 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEF72881E195DAE00332FB5 /* FBSDKCoreKit.framework */; };
+		8AEF72901E195DAE00332FB5 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEF72891E195DAE00332FB5 /* FBSDKLoginKit.framework */; };
+		8AEF72911E195DAE00332FB5 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEF728A1E195DAE00332FB5 /* FBSDKShareKit.framework */; };
+		8AEF72921E195DAE00332FB5 /* InstagramKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEF728B1E195DAE00332FB5 /* InstagramKit.framework */; };
+		8AEF72951E19623C00332FB5 /* FBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEF72941E19623C00332FB5 /* FBManager.swift */; };
 		FE9FD86F3619F02F115020EB /* Pods_socialMilk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C680469C18A3008203EE1E9 /* Pods_socialMilk.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +135,21 @@
 		8AEF72631E170C9100332FB5 /* AppClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppClass.swift; sourceTree = "<group>"; };
 		8AEF72651E1715B700332FB5 /* AppCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCollectionViewCell.swift; sourceTree = "<group>"; };
 		8AEF72661E1715B700332FB5 /* AppCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppCollectionViewCell.xib; sourceTree = "<group>"; };
+		8AEF72781E195D4800332FB5 /* socialMilk-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "socialMilk-Bridging-Header.h"; sourceTree = "<group>"; };
+		8AEF72791E195D4800332FB5 /* IKLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKLoginViewController.h; sourceTree = "<group>"; };
+		8AEF727A1E195D4800332FB5 /* IKLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKLoginViewController.m; sourceTree = "<group>"; };
+		8AEF727B1E195D4800332FB5 /* InstagramManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramManager.swift; sourceTree = "<group>"; };
+		8AEF727F1E195D9E00332FB5 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
+		8AEF72811E195DA200332FB5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/socialMilk-efyrgjzfhqusodaldjlwejjisfes/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		8AEF72831E195DA500332FB5 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Pods/../build/Debug-iphoneos/Bolts/Bolts.framework"; sourceTree = "<group>"; };
+		8AEF72851E195DAE00332FB5 /* FacebookCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookCore.framework; path = "../../../../Library/Developer/Xcode/DerivedData/socialMilk-efyrgjzfhqusodaldjlwejjisfes/Build/Products/Debug-iphoneos/FacebookCore/FacebookCore.framework"; sourceTree = "<group>"; };
+		8AEF72861E195DAE00332FB5 /* FacebookLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookLogin.framework; path = "Pods/../build/Debug-iphoneos/FacebookLogin/FacebookLogin.framework"; sourceTree = "<group>"; };
+		8AEF72871E195DAE00332FB5 /* FacebookShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookShare.framework; path = "Pods/../build/Debug-iphoneos/FacebookShare/FacebookShare.framework"; sourceTree = "<group>"; };
+		8AEF72881E195DAE00332FB5 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKCoreKit/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		8AEF72891E195DAE00332FB5 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKLoginKit/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		8AEF728A1E195DAE00332FB5 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKShareKit/FBSDKShareKit.framework"; sourceTree = "<group>"; };
+		8AEF728B1E195DAE00332FB5 /* InstagramKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InstagramKit.framework; path = "Pods/../build/Debug-iphoneos/InstagramKit/InstagramKit.framework"; sourceTree = "<group>"; };
+		8AEF72941E19623C00332FB5 /* FBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBManager.swift; sourceTree = "<group>"; };
 		C8483424513B008EF6C051F9 /* Pods-socialMilk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialMilk.release.xcconfig"; path = "Pods/Target Support Files/Pods-socialMilk/Pods-socialMilk.release.xcconfig"; sourceTree = "<group>"; };
 		F6C580B4AE3B5A14E39255DD /* Pods-socialMilk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialMilk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-socialMilk/Pods-socialMilk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +159,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AEF728C1E195DAE00332FB5 /* FacebookCore.framework in Frameworks */,
+				8AEF728D1E195DAE00332FB5 /* FacebookLogin.framework in Frameworks */,
+				8AEF728E1E195DAE00332FB5 /* FacebookShare.framework in Frameworks */,
+				8AEF728F1E195DAE00332FB5 /* FBSDKCoreKit.framework in Frameworks */,
+				8AEF72901E195DAE00332FB5 /* FBSDKLoginKit.framework in Frameworks */,
+				8AEF72911E195DAE00332FB5 /* FBSDKShareKit.framework in Frameworks */,
+				8AEF72921E195DAE00332FB5 /* InstagramKit.framework in Frameworks */,
+				8AEF72841E195DA500332FB5 /* Bolts.framework in Frameworks */,
+				8AEF72821E195DA200332FB5 /* Alamofire.framework in Frameworks */,
+				8AEF72801E195D9E00332FB5 /* AFNetworking.framework in Frameworks */,
 				8AC326221E0716860014835D /* SwiftyJSON.framework in Frameworks */,
 				7B39A8411DF5C9550077BBB6 /* Realm.framework in Frameworks */,
 				7B39A83F1DF5C9510077BBB6 /* RealmSwift.framework in Frameworks */,
@@ -176,6 +214,8 @@
 				7BF0F46C1DF36BD800285298 /* InitialClasses */,
 				8A49B8EC1E0AF153008B6ECA /* Twitter */,
 				8A49B8EA1E0AF0EB008B6ECA /* VK */,
+				8AEF72931E195DD100332FB5 /* Facebook */,
+				8AEF727E1E195D5400332FB5 /* Instagram */,
 				7BF0F46D1DF36C2200285298 /* View Controllers */,
 				7BF0F43D1DF1E50B00285298 /* Main.storyboard */,
 				7BF0F4401DF1E50B00285298 /* Assets.xcassets */,
@@ -261,6 +301,25 @@
 			name = Twitter;
 			sourceTree = "<group>";
 		};
+		8AEF727E1E195D5400332FB5 /* Instagram */ = {
+			isa = PBXGroup;
+			children = (
+				8AEF72791E195D4800332FB5 /* IKLoginViewController.h */,
+				8AEF727A1E195D4800332FB5 /* IKLoginViewController.m */,
+				8AEF727B1E195D4800332FB5 /* InstagramManager.swift */,
+				8AEF72781E195D4800332FB5 /* socialMilk-Bridging-Header.h */,
+			);
+			name = Instagram;
+			sourceTree = "<group>";
+		};
+		8AEF72931E195DD100332FB5 /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				8AEF72941E19623C00332FB5 /* FBManager.swift */,
+			);
+			name = Facebook;
+			sourceTree = "<group>";
+		};
 		96830B9F6B487D8E27CE5D23 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +332,16 @@
 		C1DE064BC00740E057D27DE9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8AEF72851E195DAE00332FB5 /* FacebookCore.framework */,
+				8AEF72861E195DAE00332FB5 /* FacebookLogin.framework */,
+				8AEF72871E195DAE00332FB5 /* FacebookShare.framework */,
+				8AEF72881E195DAE00332FB5 /* FBSDKCoreKit.framework */,
+				8AEF72891E195DAE00332FB5 /* FBSDKLoginKit.framework */,
+				8AEF728A1E195DAE00332FB5 /* FBSDKShareKit.framework */,
+				8AEF728B1E195DAE00332FB5 /* InstagramKit.framework */,
+				8AEF72831E195DA500332FB5 /* Bolts.framework */,
+				8AEF72811E195DA200332FB5 /* Alamofire.framework */,
+				8AEF727F1E195D9E00332FB5 /* AFNetworking.framework */,
 				8AC326211E0716860014835D /* SwiftyJSON.framework */,
 				7B39A8401DF5C9550077BBB6 /* Realm.framework */,
 				7B39A83E1DF5C9510077BBB6 /* RealmSwift.framework */,
@@ -320,6 +389,7 @@
 					7BF0F4351DF1E50B00285298 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = KH2KDZEEE3;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -445,14 +515,17 @@
 				7B39A8451DF5CB8E0077BBB6 /* RealmManagerVk.swift in Sources */,
 				8AE60E7F1E06F2CE00A9662F /* TwitterManager.swift in Sources */,
 				8A49B8F01E0AF3A9008B6ECA /* TwitterChooseGroupClass.swift in Sources */,
+				8AEF727C1E195D4800332FB5 /* IKLoginViewController.m in Sources */,
 				8A49B8F61E0B0189008B6ECA /* TweetCheckedPost.swift in Sources */,
 				8A49B8F41E0B0166008B6ECA /* WorkingTwitter.swift in Sources */,
 				8AEF72601E16D44300332FB5 /* ChooseViewControllerProtocol.swift in Sources */,
 				7BF0F43A1DF1E50B00285298 /* AppDelegate.swift in Sources */,
 				7BF0F46B1DF36B1F00285298 /* VKChooseGroupClass.swift in Sources */,
 				8AEF72671E1715B700332FB5 /* AppCollectionViewCell.swift in Sources */,
+				8AEF727D1E195D4800332FB5 /* InstagramManager.swift in Sources */,
 				8AEF72621E16D99700332FB5 /* NotificationsViewControllerProtocol.swift in Sources */,
 				8A49B8EE1E0AF1C2008B6ECA /* TwitterChooseViewController.swift in Sources */,
+				8AEF72951E19623C00332FB5 /* FBManager.swift in Sources */,
 				7BF0F4541DF1F48500285298 /* MessageClass.swift in Sources */,
 				8A02C61C1E15836900DC4CB9 /* SettingsChooseTableViewCell.swift in Sources */,
 				7B39A83D1DF4A1500077BBB6 /* VKPost.swift in Sources */,
@@ -590,17 +663,28 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = KH2KDZEEE3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/RealmSwift",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Realm",
 					"$(PROJECT_DIR)/socialMilk",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Bolts",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FacebookLogin",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FacebookShare",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKCoreKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKLoginKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKShareKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/InstagramKit",
 				);
 				INFOPLIST_FILE = socialMilk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kirillzzy.socialMilk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "socialMilk/socialMilk-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -611,17 +695,27 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = KH2KDZEEE3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/RealmSwift",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Realm",
 					"$(PROJECT_DIR)/socialMilk",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Bolts",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FacebookLogin",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FacebookShare",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKCoreKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKLoginKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKShareKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/InstagramKit",
 				);
 				INFOPLIST_FILE = socialMilk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kirillzzy.socialMilk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "socialMilk/socialMilk-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

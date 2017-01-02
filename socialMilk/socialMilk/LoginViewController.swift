@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var twitterButton: UIButton!
     @IBOutlet weak var vkButton: UIButton!
+    @IBOutlet weak var fbButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
     static var loginedAt: Int = 0
@@ -30,13 +31,16 @@ class LoginViewController: UIViewController {
         //VKManagerWorker.logout()
         _ = VKManager.sharedInstance
     }
+    @IBAction func loginFbButtonPressed(_ sender: Any) {
+        FBManager.loginVc(vc: self)
+    }
 
     @IBAction func loginTwitterButtonPressed(_ sender: Any) {
         TwitterManager.login()
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
-        if LoginViewController.loginedAt >= 2{
+        if LoginViewController.loginedAt >= 3{
             UserDefaults.standard.set(false, forKey: "isFirstSetupEver")
             gotoNext()
         }
@@ -51,6 +55,10 @@ class LoginViewController: UIViewController {
         twitterButton.layer.cornerRadius = 5
         vkButton.layer.masksToBounds = true
         vkButton.layer.cornerRadius = 5
+        fbButton.layer.masksToBounds = true
+        fbButton.layer.cornerRadius = 5
+        nextButton.layer.masksToBounds = true
+        nextButton.layer.cornerRadius = 5
     }
 
 }

@@ -426,7 +426,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yok-6z-goa">
-                                <rect key="frame" x="16" y="403.5" width="343" height="45"/>
+                                <rect key="frame" x="16" y="498.5" width="343" height="45"/>
                                 <color key="backgroundColor" red="0.18439889268666743" green="0.53036974627505873" blue="0.94374459981918335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="OXi-1d-G6B"/>
@@ -439,6 +439,20 @@
                                     <action selector="nextButtonPressed:" destination="nw7-hp-iPg" eventType="touchUpInside" id="YpC-2W-J94"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkO-rO-llW">
+                                <rect key="frame" x="16" y="403.5" width="343" height="50"/>
+                                <color key="backgroundColor" red="0.22533366084098816" green="0.3471701443195343" blue="0.59202378988265991" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="l2Q-jq-zqu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Facebook" image="fbWhiteLogo">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginFbButtonPressed:" destination="nw7-hp-iPg" eventType="touchUpInside" id="qNG-Hp-DQJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -447,13 +461,17 @@
                             <constraint firstAttribute="trailingMargin" secondItem="KBO-KU-0kw" secondAttribute="trailing" id="CgS-3u-I1A"/>
                             <constraint firstItem="KBO-KU-0kw" firstAttribute="top" secondItem="Oua-gl-pst" secondAttribute="bottom" constant="45" id="D97-X5-lkn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Oua-gl-pst" secondAttribute="trailing" id="KgZ-Fq-e6A"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="dkO-rO-llW" secondAttribute="leading" id="ScP-nB-bHj"/>
                             <constraint firstAttribute="leadingMargin" secondItem="yok-6z-goa" secondAttribute="leading" id="adt-7x-0Yd"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Oua-gl-pst" secondAttribute="leading" id="e4o-3w-nyM"/>
-                            <constraint firstItem="yok-6z-goa" firstAttribute="top" secondItem="KBO-KU-0kw" secondAttribute="bottom" constant="45" id="plM-no-cM5"/>
+                            <constraint firstItem="yok-6z-goa" firstAttribute="top" secondItem="dkO-rO-llW" secondAttribute="bottom" constant="45" id="efs-2x-vAo"/>
+                            <constraint firstItem="dkO-rO-llW" firstAttribute="top" secondItem="KBO-KU-0kw" secondAttribute="bottom" constant="45" id="erq-C2-CYj"/>
                             <constraint firstAttribute="leadingMargin" secondItem="KBO-KU-0kw" secondAttribute="leading" id="pn3-mx-xvV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dkO-rO-llW" secondAttribute="trailing" id="y20-J4-IHo"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="fbButton" destination="dkO-rO-llW" id="ZCx-kq-aVk"/>
                         <outlet property="nextButton" destination="yok-6z-goa" id="YWp-fQ-tya"/>
                         <outlet property="twitterButton" destination="KBO-KU-0kw" id="PHw-gW-yuh"/>
                         <outlet property="vkButton" destination="Oua-gl-pst" id="sSG-85-VQZ"/>
@@ -462,7 +480,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="47n-7h-pR5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1310" y="-532"/>
+            <point key="canvasLocation" x="-1311.2" y="-532.0839580209896"/>
         </scene>
         <!--Apps-->
         <scene sceneID="Sb6-XM-NLC">
@@ -563,6 +581,7 @@
     </scenes>
     <resources>
         <image name="boxes" width="25" height="25"/>
+        <image name="fbWhiteLogo" width="25" height="25"/>
         <image name="loading" width="716" height="1054"/>
         <image name="navigateRight" width="25" height="25"/>
         <image name="settings" width="25" height="25"/>

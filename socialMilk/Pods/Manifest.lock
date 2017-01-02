@@ -1,4 +1,50 @@
 PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - Alamofire (4.2.0)
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
+  - FacebookCore (0.2.0):
+    - Bolts (~> 1.8)
+    - FBSDKCoreKit (~> 4.15)
+  - FacebookLogin (0.2.0):
+    - Bolts (~> 1.8)
+    - FacebookCore (~> 0.2)
+    - FBSDKCoreKit (~> 4.15)
+    - FBSDKLoginKit (~> 4.15)
+  - FacebookShare (0.2.0):
+    - Bolts (~> 1.8)
+    - FacebookCore (~> 0.2)
+    - FBSDKCoreKit (~> 4.15)
+    - FBSDKShareKit (~> 4.15)
+  - FBSDKCoreKit (4.18.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.18.0):
+    - FBSDKCoreKit
+  - FBSDKShareKit (4.18.0):
+    - FBSDKCoreKit
+  - InstagramKit (3.8):
+    - AFNetworking (~> 3.0)
+    - InstagramKit/Exclude-UICKeyChainStore (= 3.8)
+  - InstagramKit/Exclude-UICKeyChainStore (3.8):
+    - AFNetworking (~> 3.0)
   - Realm (2.1.1):
     - Realm/Headers (= 2.1.1)
   - Realm/Headers (2.1.1)
@@ -11,6 +57,11 @@ PODS:
   - SwiftyVK (2.0.1)
 
 DEPENDENCIES:
+  - Alamofire
+  - FacebookCore
+  - FacebookLogin
+  - FacebookShare
+  - InstagramKit
   - RealmSwift
   - SDWebImage (from `https://github.com/rs/SDWebImage.git`)
   - SwiftyJSON
@@ -31,12 +82,22 @@ CHECKOUT OPTIONS:
     :git: https://github.com/WE-St0r/SwiftyVK.git
 
 SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
+  FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
+  FacebookShare: 8e9ee8ea06505e6a1d3d719b0cc63e840fb8aaeb
+  FBSDKCoreKit: 15fef8804a4629f98c6f4e55e81a76c9d725d85e
+  FBSDKLoginKit: 6773073e970b2b15fb12e451ce7f11da0532b880
+  FBSDKShareKit: 0b8d6cc3f103c75297eb3c62caec284a2ccf1b9e
+  InstagramKit: 402d6bba375357b548039de08eea19a1b8716354
   Realm: a55959c0b171a5fe5267406d17f314fec3cefaae
   RealmSwift: 749fd955bf8d6471c21d218b9389a47aaeccfe3f
   SDWebImage: e379f33106cf8d6766f970c0ef1c3fb609c94d78
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
   SwiftyVK: 555c309aa25aaf24453117c977be85a7b7908075
 
-PODFILE CHECKSUM: '06138d6b5f8b424efc4d6286225b020b13e1bdbf'
+PODFILE CHECKSUM: b5930f274c77b403fa6adfef0910332e2c8581c5
 
 COCOAPODS: 1.2.0.beta.1

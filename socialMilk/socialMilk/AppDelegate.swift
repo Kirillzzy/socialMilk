@@ -10,6 +10,12 @@ import UIKit
 import SwiftyVK
 import Fabric
 import TwitterKit
+import FacebookLogin
+import FacebookCore
+import FBSDKCoreKit
+import FBSDKLoginKit
+import FacebookShare
+import FBSDKShareKit
 
 var vkDelegateReference: VKDelegate?
 
@@ -19,18 +25,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        let app = options[.sourceApplication] as? String
-        VK.process(url: url, sourceApplication: app)
-        return true
+        let appl = options[.sourceApplication] as? String
+        VK.process(url: url, sourceApplication: appl)
+        //return true
+        return FBSDKApplicationDelegate.sharedInstance().application(app, open: url as URL!, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
     }
+    
+    func applicationDidBecomeActive(application: UIApplication) {
+        // Call the 'activate' method to log an app event for use
+        // in analytics and advertising reporting.
+        AppEventsLogger.activate(application)
+        // ...
+    }
+
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         VK.process(url: url, sourceApplication: sourceApplication)
         return true
     }
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Twitter.self])
         Init.Init()
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         return true
     }
 
