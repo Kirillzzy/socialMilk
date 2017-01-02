@@ -103,6 +103,5 @@ class WorkingTwitter{
         return encodeTweetsToMessages(tweets: getTweets())
     }
 
-    
 
 }

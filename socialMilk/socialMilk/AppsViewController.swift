@@ -17,6 +17,7 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        FBManager.getUserGroups()
         addApps()
         AppsCollectionView.register(UINib(nibName: "AppCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AppCell")
     }
@@ -61,6 +62,8 @@ extension AppsViewController{
 }
 
 
+
+// MARK: - add default appps
 extension AppsViewController{
     func addApps(){
         apps.append(AppClass(AppManager: VKManager(),

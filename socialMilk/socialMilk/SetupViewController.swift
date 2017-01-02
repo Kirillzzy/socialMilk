@@ -12,7 +12,6 @@ class SetupViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -20,6 +19,7 @@ class SetupViewController: UIViewController {
         if let _ = UserDefaults.standard.object(forKey: "isFirstSetupEver"){
             _ = VKManager.sharedInstance
             TwitterManager.login()
+            FBManager.getMe()
             performSegue(withIdentifier: "toNextSegue", sender: true)
         }else{
             performSegue(withIdentifier: "toLoginSegue", sender: true)
