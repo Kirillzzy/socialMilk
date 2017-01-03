@@ -40,6 +40,7 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
         loadNews()
     }
     
+    
     func reloadTableView(){
         self.reloadUI()
         let numberOfRowsOld = chat[0].messages.count
@@ -108,6 +109,8 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(imageTapped(gesture:)))
         cell.photoImageImageView.isUserInteractionEnabled = true
         cell.photoImageImageView.addGestureRecognizer(tapGestureRecognizer)
+//        let longTap = UILongPressGestureRecognizer(target: self, action: Selector("longPressed"))
+//        cell.textLabel?.addGestureRecognizer(longTap)
         return cell
     }
     
@@ -138,6 +141,10 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
             }
         }
 
+    }
+    
+    func longPressed(){
+        print("long")
     }
     
     func imageTapped(gesture: UITapGestureRecognizer){
