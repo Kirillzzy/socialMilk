@@ -5,11 +5,11 @@ You should choose places from your social network and you will see new posts and
 
 In future Facebook and Instagram are planning.
 
-Now available:
+# Now available:
 - VK
 - Twitter
 
-Todo for beta test:
+# Todo for beta test:
 - Localization
 - The ability of like and repost a post
 - Fix bugs and some improves
