@@ -25,4 +25,6 @@ class FBPostRealm: Object{
     dynamic var groupId: String = ""
     dynamic var groupDescription: String = ""
     dynamic var groupScreenName: String = ""
+    dynamic var hasLike: Bool = false
+    dynamic var hasRepost: Bool = false
 }

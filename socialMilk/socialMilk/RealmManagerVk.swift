@@ -59,6 +59,8 @@ extension RealmManagerVk{
         newPost.linkLink = post.linkLink
         newPost.photoLink = post.photoLink
         newPost.videoLink = post.videoLink
+        newPost.hasLike = post.hasLike
+        newPost.hasRepost = post.hasRepost
         return newPost
     }
     
@@ -76,7 +78,9 @@ extension RealmManagerVk{
                       hasPhoto: post.hasPhoto,
                       linkLink: post.linkLink,
                       photoLink: post.photoLink,
-                      videoLink: post.videoLink)
+                      videoLink: post.videoLink,
+                      hasLike: post.hasLike,
+                      hasRepost: post.hasRepost)
     }
     
     

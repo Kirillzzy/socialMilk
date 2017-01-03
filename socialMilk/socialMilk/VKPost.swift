@@ -21,10 +21,12 @@ class VKPost{
     var linkLink: String = ""
     var photoLink: String = ""
     var videoLink: String = ""
+    var hasLike: Bool = false
+    var hasRepost: Bool = false
     
     
     init(id: String, text: String, date: String, group: VKChooseGroupClass, hasLink: Bool, hasVideo: Bool,
-         hasPhoto: Bool, linkLink: String, photoLink: String, videoLink: String){
+         hasPhoto: Bool, linkLink: String, photoLink: String, videoLink: String, hasLike: Bool = false, hasRepost: Bool = false){
         self.id = id
         self.text = text
         self.date = date
@@ -36,6 +38,8 @@ class VKPost{
         self.linkLink = linkLink
         self.photoLink = photoLink
         self.videoLink = videoLink
+        self.hasLike = hasLike
+        self.hasRepost = hasRepost
     }
     
     init(){}

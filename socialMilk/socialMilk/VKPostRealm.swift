@@ -25,4 +25,6 @@ class VKPostRealm: Object{
     dynamic var linkLink: String = ""
     dynamic var photoLink: String = ""
     dynamic var videoLink: String = ""
+    dynamic var hasLike: Bool = false
+    dynamic var hasRepost: Bool = false
 }

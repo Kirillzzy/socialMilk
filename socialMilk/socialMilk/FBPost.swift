@@ -21,9 +21,11 @@ class FBPost{
     var linkLink: String = ""
     var photoLink: String = ""
     var videoLink: String = ""
+    var hasLike: Bool = false
+    var hasRepost: Bool = false
     
     init(group: FBChooseGroupClass, text: String, date: String, id: String, hasLink: Bool, hasPhoto: Bool,
-         hasVideo: Bool, linkLink: String, photoLink: String, videoLink: String){
+         hasVideo: Bool, linkLink: String, photoLink: String, videoLink: String, hasLike: Bool = false, hasRepost: Bool = false){
         self.group = group
         self.text = text
         self.date = date
@@ -34,6 +36,8 @@ class FBPost{
         self.linkLink = linkLink
         self.videoLink = videoLink
         self.photoLink = photoLink
+        self.hasLike = hasLike
+        self.hasRepost = hasRepost
         // make url for post facebook !!!
     }
     

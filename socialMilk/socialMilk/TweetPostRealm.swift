@@ -25,4 +25,6 @@ class TweetPostRealm: Object{
     dynamic var userId: String = ""
     dynamic var userDescription: String = ""
     dynamic var userScreenName: String = ""
+    dynamic var hasLike: Bool = false
+    dynamic var hasRepost: Bool = false
 }

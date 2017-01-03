@@ -20,9 +20,11 @@ class TweetPost{
     var linkLink: String = ""
     var photoLink: String = ""
     var videoLink: String = ""
+    var hasLike: Bool = false
+    var hasRepost: Bool = false
     
     init(user: TwitterChooseGroupClass, text: String, date: String, id: String, hasLink: Bool, hasPhoto: Bool,
-         hasVideo: Bool, linkLink: String, photoLink: String, videoLink: String){
+         hasVideo: Bool, linkLink: String, photoLink: String, videoLink: String, hasLike: Bool = false, hasRepost: Bool = false){
         self.user = user
         self.text = text
         self.date = date
@@ -33,6 +35,8 @@ class TweetPost{
         self.linkLink = linkLink
         self.videoLink = videoLink
         self.photoLink = photoLink
+        self.hasLike = hasLike
+        self.hasRepost = hasRepost
         self.url = "twitter.com/\(self.user.screenName)/status/\(self.id)"
     }
     

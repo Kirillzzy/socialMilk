@@ -59,6 +59,8 @@ extension RealmManagerFB{
         newPost.groupPhotoLink = post.group.photoLink
         newPost.groupScreenName = post.group.screenName
         newPost.groupDescription = post.group.description
+        newPost.hasLike = post.hasLike
+        newPost.hasRepost = post.hasRepost
         return newPost
     }
     
@@ -77,7 +79,9 @@ extension RealmManagerFB{
                          hasVideo: post.hasVideo,
                          linkLink: post.linkLink,
                          photoLink: post.photoLink,
-                         videoLink: post.videoLink)
+                         videoLink: post.videoLink,
+                         hasLike: post.hasLike,
+                         hasRepost: post.hasRepost)
     }
     
     

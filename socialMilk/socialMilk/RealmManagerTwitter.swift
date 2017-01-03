@@ -59,6 +59,8 @@ extension RealmManagerTwitter{
         newTweet.userPhotoLink = tweet.user.photoLink
         newTweet.userScreenName = tweet.user.screenName
         newTweet.userDescription = tweet.user.description
+        newTweet.hasLike = tweet.hasLike
+        newTweet.hasRepost = tweet.hasRepost
         return newTweet
     }
     
@@ -77,7 +79,9 @@ extension RealmManagerTwitter{
                          hasVideo: tweet.hasVideo,
                          linkLink: tweet.linkLink,
                          photoLink: tweet.photoLink,
-                         videoLink: tweet.videoLink)
+                         videoLink: tweet.videoLink,
+                         hasLike: tweet.hasLike,
+                         hasRepost: tweet.hasRepost)
     }
     
     
