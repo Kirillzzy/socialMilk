@@ -28,6 +28,7 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        activityView.isHidden = false
         loadNews()
     }
     

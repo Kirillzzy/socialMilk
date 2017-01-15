@@ -13,7 +13,7 @@
         <!--Choose View Controller-->
         <scene sceneID="jEk-cd-hat">
             <objects>
-                <viewController id="iCl-Xp-tc4" customClass="VKChooseViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="iCl-Xp-tc4" customClass="VKChooseViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U6e-Kg-JgO"/>
                         <viewControllerLayoutGuide type="bottom" id="C8D-xw-DzR"/>
@@ -88,7 +88,7 @@
         <!--Twitter Choose View Controller-->
         <scene sceneID="WwU-46-jO8">
             <objects>
-                <viewController id="96q-IY-gn4" customClass="TwitterChooseViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="96q-IY-gn4" customClass="TwitterChooseViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ufl-tF-RRx"/>
                         <viewControllerLayoutGuide type="bottom" id="BIW-bM-gfN"/>
@@ -201,7 +201,7 @@
         <!--Notifications-->
         <scene sceneID="9ig-jW-ozb">
             <objects>
-                <viewController title="Notifications" id="jn4-cn-3O4" customClass="NotificationsVKViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Notifications" hidesBottomBarWhenPushed="YES" id="jn4-cn-3O4" customClass="NotificationsVKViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1oF-Gp-RpS"/>
                         <viewControllerLayoutGuide type="bottom" id="J9J-2W-bW4"/>
@@ -221,13 +221,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jGs-2w-7ix">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="cwG-VJ-0RB">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="cwG-VJ-0RB">
+                                        <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="cwG-VJ-0RB" firstAttribute="top" secondItem="jGs-2w-7ix" secondAttribute="top" id="5Fu-h2-4ee"/>
+                                    <constraint firstItem="cwG-VJ-0RB" firstAttribute="top" secondItem="jGs-2w-7ix" secondAttribute="top" constant="70" id="5Fu-h2-4ee"/>
                                     <constraint firstItem="cwG-VJ-0RB" firstAttribute="leading" secondItem="jGs-2w-7ix" secondAttribute="leading" id="P91-WA-60v"/>
                                     <constraint firstAttribute="bottom" secondItem="cwG-VJ-0RB" secondAttribute="bottom" id="Wnp-QC-88J"/>
                                     <constraint firstAttribute="trailing" secondItem="cwG-VJ-0RB" secondAttribute="trailing" id="euR-iy-Q0x"/>
@@ -246,7 +246,7 @@
                             <constraint firstAttribute="bottom" secondItem="jGs-2w-7ix" secondAttribute="bottom" id="v6Q-me-X2U"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="CIc-au-sfh"/>
+                    <navigationItem key="navigationItem" title="Notifications" id="CIc-au-sfh"/>
                     <connections>
                         <outlet property="activityView" destination="jGs-2w-7ix" id="jrq-H3-UGy"/>
                         <outlet property="messagesTableView" destination="tMV-lA-fk0" id="jTa-cV-s9l"/>
@@ -255,7 +255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c1s-rk-KiA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3492" y="-752"/>
+            <point key="canvasLocation" x="3492" y="-752.47376311844084"/>
         </scene>
         <!--Page-->
         <scene sceneID="O2F-Aq-MeW">
@@ -584,7 +584,7 @@
         <!--Notifications-->
         <scene sceneID="fYC-sH-PKa">
             <objects>
-                <viewController title="Notifications" id="Jpa-GM-oIc" customClass="NotificationsTwitterViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Notifications" hidesBottomBarWhenPushed="YES" id="Jpa-GM-oIc" customClass="NotificationsTwitterViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fqy-m2-d6j"/>
                         <viewControllerLayoutGuide type="bottom" id="BcZ-UN-E7D"/>
@@ -604,14 +604,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3I-PU-LKP">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="1dK-aF-bhS">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="1dK-aF-bhS">
+                                        <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="1dK-aF-bhS" firstAttribute="leading" secondItem="f3I-PU-LKP" secondAttribute="leading" id="DF9-9o-LVI"/>
-                                    <constraint firstItem="1dK-aF-bhS" firstAttribute="top" secondItem="f3I-PU-LKP" secondAttribute="top" id="NaI-2k-4if"/>
+                                    <constraint firstItem="1dK-aF-bhS" firstAttribute="top" secondItem="f3I-PU-LKP" secondAttribute="top" constant="70" id="NaI-2k-4if"/>
                                     <constraint firstAttribute="bottom" secondItem="1dK-aF-bhS" secondAttribute="bottom" id="QIj-b4-F9T"/>
                                     <constraint firstAttribute="trailing" secondItem="1dK-aF-bhS" secondAttribute="trailing" id="Qh7-kq-U4W"/>
                                 </constraints>
@@ -644,7 +644,7 @@
         <image name="back6" width="450" height="800"/>
         <image name="boxes" width="25" height="25"/>
         <image name="fbWhiteLogo" width="25" height="25"/>
-        <image name="loading" width="716" height="1054"/>
+        <image name="loading" width="1242" height="2208"/>
         <image name="navigateRight" width="25" height="25"/>
         <image name="settings" width="25" height="25"/>
         <image name="twitterlogoWhite" width="25" height="25"/>
@@ -652,9 +652,9 @@
         <image name="webIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zlY-w4-Jrc"/>
+        <segue reference="yRV-U8-RYS"/>
         <segue reference="Btb-Ae-gja"/>
-        <segue reference="UiE-wV-9Sp"/>
-        <segue reference="fbM-bV-SCz"/>
+        <segue reference="Q2k-Ac-kVa"/>
+        <segue reference="gaJ-YS-SSm"/>
     </inferredMetricsTieBreakers>
 </document>

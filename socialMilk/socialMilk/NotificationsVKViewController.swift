@@ -29,6 +29,7 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.activityView.isHidden = false
         loadNews()
     }
     
