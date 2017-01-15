@@ -42,12 +42,11 @@ class TwitterChooseViewController: UIViewController, ChooseViewControllerProtoco
         lastCursor = defaultCursor
         updatePlaces()
         numOfChecked = WorkingTwitter.sources.count
-        backViewButton.isEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        backViewButton.isEnabled = false
+        isEnabledBackButton(how: false)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -76,9 +75,9 @@ class TwitterChooseViewController: UIViewController, ChooseViewControllerProtoco
         cell.mainImageVIew.sd_setImage(with: URL(string: people[indexPath.row].photoLink))
         cell.titleLabel.text = people[indexPath.row].title
         if checked[String(indexPath.row)] != nil{
-            cell.checkButton.setImage(#imageLiteral(resourceName: "checkBoxSet"), for: .normal)
+            cell.setChecked(how: true)
         } else{
-            cell.checkButton.setImage(nil, for: .normal)
+            cell.setChecked(how: false)
         }
         
         if indexPath.row == people.count - 1 && lastCursor != "-1"{
@@ -91,12 +90,12 @@ class TwitterChooseViewController: UIViewController, ChooseViewControllerProtoco
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         peopleTableView.deselectRow(at: indexPath, animated: true)
         let cell = self.peopleTableView.cellForRow(at: indexPath) as! GroupsTableViewCell
-        if cell.checkButton.currentImage != #imageLiteral(resourceName: "checkBoxSet"){
-            cell.checkButton.setImage(#imageLiteral(resourceName: "checkBoxSet"), for: .normal)
+        if !cell.isChecked(){
+            cell.setChecked(how: true)
             self.checked[String(indexPath.row)] = self.people[indexPath.row]
             numOfChecked += 1
         } else{
-            cell.checkButton.setImage(nil, for: .normal)
+            cell.setChecked(how: false)
             for i in self.checkedItems{
                 if i.user.id == self.checked[String(indexPath.row)]??.id{
                     self.checkedItems.remove(i)
@@ -167,17 +166,22 @@ class TwitterChooseViewController: UIViewController, ChooseViewControllerProtoco
             self.hideLoadingView()
             self.reloadTableView()
             self.updateSelfTitle()
-            self.backViewButton.isEnabled = true
+            self.isEnabledBackButton(how: true)
         })
     }
     
     func updateSelfTitle(){
         self.title = "Checked: \(numOfChecked)"
         if numOfChecked > 10{
-            backViewButton.isEnabled = false
+            isEnabledBackButton(how: false)
         }else{
-            backViewButton.isEnabled = true
+            isEnabledBackButton(how: true)
         }
+    }
+    
+    
+    func isEnabledBackButton(how: Bool){
+        backViewButton.isEnabled = how
     }
     
     func showLoadingView(){

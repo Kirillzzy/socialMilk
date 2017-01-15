@@ -30,4 +30,19 @@ class GroupsTableViewCell: UITableViewCell {
         
     }
     
+    func setChecked(how: Bool){
+        if how{
+            checkButton.setImage(#imageLiteral(resourceName: "checkBoxSet"), for: .normal)
+        }else{
+            checkButton.setImage(nil, for: .normal)
+        }
+    }
+    
+    func isChecked() -> Bool{
+        if checkButton.currentImage == #imageLiteral(resourceName: "checkBoxSet"){
+            return true
+        }
+        return false
+    }
+    
 }

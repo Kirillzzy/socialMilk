@@ -18,8 +18,13 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         FBManager.getUserGroups()
-        addApps()
         AppsCollectionView.register(UINib(nibName: "AppCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AppCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        apps = AppsStaticClass.apps
+        AppsCollectionView.reloadData()
     }
     
     
@@ -61,34 +66,3 @@ extension AppsViewController{
     }
 }
 
-
-
-// MARK: - add default appps
-extension AppsViewController{
-    func addApps(){
-        apps.append(AppClass(AppManager: VKManager(),
-                             AppManagerSide: VKManagerWorker(),
-                             AppChooseGroupClass: VKChooseGroupClass(),
-                             AppPost: VKPost(),
-                             AppPostRealm: VKPostRealm(),
-                             AppCheckedPost: VKCheckedPost(),
-                             AppCheckedPostRealm: VKCheckedPostRealm(),
-                             AppRealmManager: RealmManagerVk(),
-                             AppWorking: WorkingVk(),
-                             AppIcon: #imageLiteral(resourceName: "vkLogoBlackBig"),
-                             AppName: "VK"))
-        
-        apps.append(AppClass(AppManager: TwitterManager(),
-                             AppManagerSide: nil,
-                             AppChooseGroupClass: TwitterChooseGroupClass(),
-                             AppPost: TweetPost(),
-                             AppPostRealm: TweetPostRealm(),
-                             AppCheckedPost: TweetCheckedPost(),
-                             AppCheckedPostRealm: TweetCheckedPostRealm(),
-                             AppRealmManager: RealmManagerTwitter(),
-                             AppWorking: WorkingTwitter(),
-                             AppIcon: #imageLiteral(resourceName: "twitterLogo"),
-                             AppName: "Twitter"))
-    }
-
-}

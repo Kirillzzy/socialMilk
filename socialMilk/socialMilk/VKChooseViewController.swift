@@ -40,7 +40,7 @@ class VKChooseViewController: UIViewController, ChooseViewControllerProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        backViewButton.isEnabled = false
+        isEnabledBackButton(how: false)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -71,9 +71,9 @@ class VKChooseViewController: UIViewController, ChooseViewControllerProtocol {
         cell.mainImageVIew.sd_setImage(with: URL(string: groupsAndPeople[indexPath.row].photoLink))
         cell.titleLabel.text = groupsAndPeople[indexPath.row].title
         if checked[String(indexPath.row)] != nil{
-            cell.checkButton.setImage(#imageLiteral(resourceName: "checkBoxSet"), for: .normal)
+            cell.setChecked(how: true)
         } else{
-            cell.checkButton.setImage(nil, for: .normal)
+            cell.setChecked(how: false)
         }
         return cell
     }
@@ -81,11 +81,11 @@ class VKChooseViewController: UIViewController, ChooseViewControllerProtocol {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         groupsTableView.deselectRow(at: indexPath, animated: true)
         let cell = groupsTableView.cellForRow(at: indexPath) as! GroupsTableViewCell
-        if cell.checkButton.currentImage != #imageLiteral(resourceName: "checkBoxSet"){
-            cell.checkButton.setImage(#imageLiteral(resourceName: "checkBoxSet"), for: .normal)
+        if !cell.isChecked(){
+            cell.setChecked(how: true)
             self.checked[String(indexPath.row)] = self.groupsAndPeople[indexPath.row]
         } else{
-            cell.checkButton.setImage(nil, for: .normal)
+            cell.setChecked(how: false)
             for i in self.checkedItems{
                 if i.group.id == self.checked[String(indexPath.row)]??.id{
                     self.checkedItems.remove(i)
@@ -129,7 +129,7 @@ class VKChooseViewController: UIViewController, ChooseViewControllerProtocol {
             self.hideLoadingView()
             self.reloadTableView()
             self.updateSelfTitle()
-            self.backViewButton.isEnabled = true
+            self.isEnabledBackButton(how: true)
         }
     }
     
@@ -155,14 +155,17 @@ class VKChooseViewController: UIViewController, ChooseViewControllerProtocol {
     func updateSelfTitle(){
         self.title = "Checked: \(checked.count)"
         if self.checked.count > 10{
-            backViewButton.isEnabled = false
+            isEnabledBackButton(how: false)
         }else{
-            backViewButton.isEnabled = true
+            isEnabledBackButton(how: true)
         }
     }
     
+    func isEnabledBackButton(how: Bool){
+        backViewButton.isEnabled = how
+    }
     
-
+    
     func showLoadingView(){
         activityIndicator.startAnimating()
         self.blackView.isHidden = false

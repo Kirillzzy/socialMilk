@@ -57,12 +57,16 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     func addFirstProperties(){
-        settingsArray.append(settings(image: #imageLiteral(resourceName: "vkLogoBlackBig"),
-                                      text: "Choose groups from VK",
-                                      nameOfSegue: "gotoChooseVK"))
-        settingsArray.append(settings(image: #imageLiteral(resourceName: "twitterLogo"),
-                                      text: "Choose people from Twitter",
-                                      nameOfSegue: "gotoChooseTwitter"))
+        if UserDefaults.standard.bool(forKey: AppsStaticClass.keyVK){
+            settingsArray.append(settings(image: #imageLiteral(resourceName: "vkLogoBlackBig"),
+                                          text: "Choose groups from VK",
+                                          nameOfSegue: "gotoChooseVK"))
+        }
+        if UserDefaults.standard.bool(forKey: AppsStaticClass.keyTwitter){
+            settingsArray.append(settings(image: #imageLiteral(resourceName: "twitterLogo"),
+                                          text: "Choose people from Twitter",
+                                          nameOfSegue: "gotoChooseTwitter"))
+        }
     }
 
 }
