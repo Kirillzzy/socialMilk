@@ -42,6 +42,16 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         self.settingsTableView.register(UINib(nibName: "SettingsChooseTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingsCell")
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        reloadUI()
+    }
+    
+    func reloadUI(){
+        addFirstProperties()
+        settingsTableView.reloadData()
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return sectionsNames.count
     }
@@ -73,6 +83,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     func addFirstProperties(){
+        settingsArray.removeAll()
         for _ in 0..<3{
             settingsArray.append([settings]())
         }
