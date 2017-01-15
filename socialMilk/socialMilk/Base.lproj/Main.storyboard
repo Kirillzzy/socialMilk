@@ -159,10 +159,10 @@
             </objects>
             <point key="canvasLocation" x="1892" y="1532"/>
         </scene>
-        <!--Add Apps View Controller-->
+        <!--Apps-->
         <scene sceneID="mjI-m6-1Kn">
             <objects>
-                <viewController id="Qpv-IX-h46" customClass="AddAppsViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Apps" id="Qpv-IX-h46" customClass="AddAppsViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G14-YQ-dB9"/>
                         <viewControllerLayoutGuide type="bottom" id="rFW-m6-0xj"/>
