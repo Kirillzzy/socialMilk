@@ -12,7 +12,7 @@ In future Facebook and Instagram are planning.
 # Todo for beta test:
 - Localization
 - The ability of like and repost a post
-- Fix bugs and some improves
+- Fix bugs and some improvements
 - Improve settings
 - Facebook(*)
 
