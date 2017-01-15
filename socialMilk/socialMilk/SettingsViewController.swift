@@ -25,6 +25,7 @@ struct settings{
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var settingsTableView: UITableView!
+    let sectionsNames = ["General", "Accounts", "Developer"]
     var settingsArray = [settings]()
     
     override func viewDidLoad() {
@@ -35,12 +36,19 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return sectionsNames.count
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionsNames[section]
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return settingsArray.count
+        if section == 1{
+            return settingsArray.count
+        }else{
+            return 0 // <- temporary
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,12 +67,12 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     func addFirstProperties(){
         if UserDefaults.standard.bool(forKey: AppsStaticClass.keyVK){
             settingsArray.append(settings(image: #imageLiteral(resourceName: "vkLogoBlackBig"),
-                                          text: "Choose groups from VK",
+                                          text: VKManagerWorker.userName,
                                           nameOfSegue: "gotoChooseVK"))
         }
         if UserDefaults.standard.bool(forKey: AppsStaticClass.keyTwitter){
             settingsArray.append(settings(image: #imageLiteral(resourceName: "twitterLogo"),
-                                          text: "Choose people from Twitter",
+                                          text: "@\(TwitterManager.userName)",
                                           nameOfSegue: "gotoChooseTwitter"))
         }
     }

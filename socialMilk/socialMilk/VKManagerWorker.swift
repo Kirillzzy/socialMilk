@@ -12,6 +12,8 @@ import SwiftyVK
 
 final class VKManagerWorker{
     
+    static var userName: String = ""
+    static var userID: String = ""
     
     class func authorize() {
         VK.logOut()
@@ -28,26 +30,19 @@ final class VKManagerWorker{
     class func logout() {
         VK.logOut()
         print("SwiftyVK: LogOut")
+    }    
+    
+    class func getMe(){
+        _ = VK.API.Users.get().send(
+            onSuccess: {
+                response in
+                self.userName = response[0, "first_name"].stringValue + " " + response[0, "last_name"].stringValue
+                self.userID = response[0, "id"].stringValue
+        },
+            onError: {
+                error in print("SwiftyVK: GetMe fail \n \(error)")
+        })
     }
-    
-
-    
-//    class func getNameAndPhotoLink(user: VKChooseGroupClass){
-//        _ = VK.API.Users.get([
-//            .userIDs: "\(user.id)",
-//            .fields: "photo_100"]).send(
-//                onSuccess:  { response in
-//                    user.photoLink = response["photo_100"].stringValue
-//                    user.title = response["first_name"].stringValue +  " " + response["last_name"].stringValue
-//            },
-//                onError: {
-//                    error in print("SwiftyVK: FriendsGet fail \n \(error)")
-//            })
-//    }
-//    
-    
-    
-    
     
     class func GroupsPeopleGet() -> [VKChooseGroupClass]{
         var groupsAndPeople = [VKChooseGroupClass]()

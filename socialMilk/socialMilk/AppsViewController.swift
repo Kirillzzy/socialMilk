@@ -36,6 +36,7 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return apps.count
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         AppsCollectionView.deselectItem(at: indexPath, animated: true)
         if apps[indexPath.row].AppName == "Twitter"{
