@@ -17,7 +17,7 @@ class AddAppsViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.appsTableView.estimatedRowHeight = 70
+        self.appsTableView.estimatedRowHeight = 40
         self.appsTableView.register(UINib(nibName: "GroupsTableViewCell", bundle: nil), forCellReuseIdentifier: "AppCell")
     }
     
@@ -70,22 +70,17 @@ class AddAppsViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-    {
-        return 70
-    }
 
     
 }
 
-// MARK: - segue
-extension AddAppsViewController{
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "fromAddToVKChooseSegue"{
-            let vc = segue.destination as! VKChooseViewController
-        }else if segue.identifier == "fromAddtoTwitterChooseSegue"{
-            let vc = segue.destination as! TwitterChooseViewController
-        }
-    }
-}
+//// MARK: - segue
+//extension AddAppsViewController{
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "fromAddToVKChooseSegue"{
+//            let vc = segue.destination as! VKChooseViewController
+//        }else if segue.identifier == "fromAddtoTwitterChooseSegue"{
+//            let vc = segue.destination as! TwitterChooseViewController
+//        }
+//    }
+//}

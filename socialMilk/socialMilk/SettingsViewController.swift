@@ -32,12 +32,12 @@ struct settings{
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var settingsTableView: UITableView!
-    let sectionsNames = ["General", "Accounts", "Developer"]
+    let sectionsNames = ["General", "Accounts", "Feedback"]
     var settingsArray = [[settings]()]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.settingsTableView.estimatedRowHeight = 50
+        self.settingsTableView.estimatedRowHeight = 40
         addFirstProperties()
         self.settingsTableView.register(UINib(nibName: "SettingsChooseTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingsCell")
     }

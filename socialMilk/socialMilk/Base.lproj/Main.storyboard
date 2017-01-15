@@ -66,7 +66,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="lu5-r4-hqw">
-                        <barButtonItem key="leftBarButtonItem" title="&lt; Apps" id="w7i-x9-OYp">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="w7i-x9-OYp">
                             <connections>
                                 <action selector="backViewButtonPressed:" destination="iCl-Xp-tc4" id="zJp-OP-3IN"/>
                             </connections>
@@ -140,7 +140,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="h3L-MQ-PtU">
-                        <barButtonItem key="leftBarButtonItem" title="&lt; Apps" id="RET-gA-yJh">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="RET-gA-yJh">
                             <connections>
                                 <action selector="backViewButtonPressed:" destination="96q-IY-gn4" id="WBF-lD-ZH0"/>
                             </connections>
