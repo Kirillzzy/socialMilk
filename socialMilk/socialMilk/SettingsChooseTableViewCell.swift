@@ -12,6 +12,7 @@ class SettingsChooseTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imageImageView: UIImageView!
     @IBOutlet weak var settingsTextLabel: UILabel!
+    @IBOutlet weak var imageWidthConstraint: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()

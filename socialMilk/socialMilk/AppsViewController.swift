@@ -53,6 +53,9 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return cell
     }
 
+    @IBAction func editButtonPressed(_ sender: Any) {
+        
+    }
 }
 
 extension AppsViewController{
