@@ -76,7 +76,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         for _ in 0..<3{
             settingsArray.append([settings]())
         }
-        settingsArray[0].append(settings(image: nil, text: "Internet", nameOfSegue: "gotoInternetSettings"))
+        settingsArray[0].append(settings(image: nil, text: "Browser", nameOfSegue: "gotoInternetSettings"))
         settingsArray[0].append(settings(image: nil, text: "Background Image", nameOfSegue: "gotoBackgroundImageSettings"))
         if UserDefaults.standard.bool(forKey: AppsStaticClass.keyVK){
             settingsArray[1].append(settings(image: #imageLiteral(resourceName: "vkLogoBlackBig"),

@@ -383,7 +383,7 @@
                                 <action selector="editButtonPressed:" destination="b23-kG-7vb" id="lSF-bu-CtO"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Add App" id="QDH-rf-27a">
+                        <barButtonItem key="rightBarButtonItem" image="plusRound" id="QDH-rf-27a">
                             <connections>
                                 <segue destination="Qpv-IX-h46" kind="show" id="PPU-rh-cZX"/>
                             </connections>
@@ -646,15 +646,16 @@
         <image name="fbWhiteLogo" width="25" height="25"/>
         <image name="loading" width="1242" height="2208"/>
         <image name="navigateRight" width="25" height="25"/>
+        <image name="plusRound" width="25" height="25"/>
         <image name="settings" width="25" height="25"/>
         <image name="twitterlogoWhite" width="25" height="25"/>
         <image name="vkLogoRound" width="25" height="25"/>
         <image name="webIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yRV-U8-RYS"/>
         <segue reference="Btb-Ae-gja"/>
         <segue reference="Q2k-Ac-kVa"/>
         <segue reference="gaJ-YS-SSm"/>
+        <segue reference="zlY-w4-Jrc"/>
     </inferredMetricsTieBreakers>
 </document>
