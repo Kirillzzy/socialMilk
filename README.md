@@ -5,6 +5,10 @@ You should choose places from your social network and you will see new posts and
 
 In future Facebook and Instagram are planning.
 
+# Instructions:
+- Choose Social networks you want to get new posts(VK/Twitter)
+- Check out new posts!
+
 # Now available:
 - VK
 - Twitter
@@ -15,6 +19,7 @@ In future Facebook and Instagram are planning.
 - Fix bugs and some improvements
 - Improve settings
 - Facebook(*)
+- Instagram(*)
 
 -------------------
 
