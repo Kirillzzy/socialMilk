@@ -13,6 +13,7 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
     
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var activityView: UIView!
+    @IBOutlet weak var backViewButton: UIBarButtonItem!
 
     var chat = [ChatClass]()
     var sectionsNames = ["Old Posts", "New Posts"]
@@ -29,6 +30,7 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        isEnabledBackButton(how: false)
         self.activityView.isHidden = false
         loadNews()
     }
@@ -139,9 +141,13 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
             DispatchQueue.main.async {
                 self.activityView.isHidden = true
                 self.reloadTableView()
+                self.isEnabledBackButton(how: true)
             }
         }
 
+    }
+    @IBAction func backViewButtonPressed(_ sender: Any) {
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     func longPressed(){
@@ -152,6 +158,10 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
         if gesture.state == .ended{
             
         }
+    }
+    
+    func isEnabledBackButton(how: Bool){
+        backViewButton.isEnabled = how
     }
 
 }

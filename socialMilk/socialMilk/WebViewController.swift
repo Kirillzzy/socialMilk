@@ -11,6 +11,7 @@ import UIKit
 class WebViewController: UIViewController {
 
     @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var backViewButton: UIBarButtonItem!
     
     var url: URL?
     
@@ -35,6 +36,10 @@ class WebViewController: UIViewController {
         } else {
             UIApplication.shared.openURL(url!)
         }
+    }
+    
+    @IBAction func backViewButtonPressed(_ sender: Any) {
+        _ = self.navigationController?.popViewController(animated: true)
     }
 
 }

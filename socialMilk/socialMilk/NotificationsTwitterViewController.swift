@@ -12,6 +12,7 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
 
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var activityView: UIView!
+    @IBOutlet weak var backViewButton: UIBarButtonItem!
     
     var chat = [ChatClass]()
     var sectionsNames = ["Old Posts", "New Posts"]
@@ -28,6 +29,7 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        isEnabledBackButton(how: false)
         activityView.isHidden = false
         loadNews()
     }
@@ -113,6 +115,9 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
         performSegue(withIdentifier: "gotoWeb", sender: url)
     }
     
+    @IBAction func backViewButtonPressed(_ sender: Any) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
     
     func loadNews(){
         //self.activityView.isHidden = true
@@ -122,6 +127,7 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
             DispatchQueue.main.async {
                 self.activityView.isHidden = true
                 self.reloadTableView()
+                self.isEnabledBackButton(how: true)
             }
         }
         
@@ -131,6 +137,10 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
         if gesture.state == .ended{
             
         }
+    }
+    
+    func isEnabledBackButton(how: Bool){
+        backViewButton.isEnabled = how
     }
     
 }

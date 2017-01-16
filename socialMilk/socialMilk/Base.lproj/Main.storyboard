@@ -66,7 +66,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="lu5-r4-hqw">
-                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="w7i-x9-OYp">
+                        <barButtonItem key="leftBarButtonItem" image="next" id="w7i-x9-OYp">
                             <connections>
                                 <action selector="backViewButtonPressed:" destination="iCl-Xp-tc4" id="zJp-OP-3IN"/>
                             </connections>
@@ -140,7 +140,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="h3L-MQ-PtU">
-                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="RET-gA-yJh">
+                        <barButtonItem key="leftBarButtonItem" image="next" id="RET-gA-yJh">
                             <connections>
                                 <action selector="backViewButtonPressed:" destination="96q-IY-gn4" id="WBF-lD-ZH0"/>
                             </connections>
@@ -246,9 +246,16 @@
                             <constraint firstAttribute="bottom" secondItem="jGs-2w-7ix" secondAttribute="bottom" id="v6Q-me-X2U"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Notifications" id="CIc-au-sfh"/>
+                    <navigationItem key="navigationItem" title="Notifications" id="CIc-au-sfh">
+                        <barButtonItem key="leftBarButtonItem" image="next" id="ZhD-2S-WuG">
+                            <connections>
+                                <action selector="backViewButtonPressed:" destination="jn4-cn-3O4" id="HY8-gB-rLi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityView" destination="jGs-2w-7ix" id="jrq-H3-UGy"/>
+                        <outlet property="backViewButton" destination="ZhD-2S-WuG" id="mB8-jo-4hq"/>
                         <outlet property="messagesTableView" destination="tMV-lA-fk0" id="jTa-cV-s9l"/>
                         <segue destination="BM4-Ae-fu7" kind="show" identifier="gotoWeb" id="zlY-w4-Jrc"/>
                     </connections>
@@ -283,6 +290,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Page" id="e33-KT-gUB">
+                        <barButtonItem key="leftBarButtonItem" image="next" id="3TY-t4-o0M">
+                            <connections>
+                                <action selector="backViewButtonPressed:" destination="BM4-Ae-fu7" id="NiT-Fr-5Ts"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="webIcon" id="DQc-H6-3R7">
                             <connections>
                                 <action selector="webButtonPressed:" destination="BM4-Ae-fu7" id="vu0-z8-Gog"/>
@@ -290,6 +302,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backViewButton" destination="3TY-t4-o0M" id="IY3-Ok-Izp"/>
                         <outlet property="webView" destination="fgC-2L-fSv" id="t5O-mn-xGT"/>
                     </connections>
                 </viewController>
@@ -629,8 +642,16 @@
                             <constraint firstAttribute="trailing" secondItem="f3I-PU-LKP" secondAttribute="trailing" id="h22-QO-65M"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Notifications" id="Nd1-wo-MrE">
+                        <barButtonItem key="leftBarButtonItem" image="next" id="Gia-zK-9hM">
+                            <connections>
+                                <action selector="backViewButtonPressed:" destination="Jpa-GM-oIc" id="qdC-jo-jOC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityView" destination="f3I-PU-LKP" id="J36-bh-e8S"/>
+                        <outlet property="backViewButton" destination="Gia-zK-9hM" id="rmD-CD-Sg5"/>
                         <outlet property="messagesTableView" destination="5Gh-2f-cac" id="pci-RT-hx4"/>
                         <segue destination="BM4-Ae-fu7" kind="show" identifier="gotoWeb" id="yRV-U8-RYS"/>
                     </connections>
@@ -646,6 +667,7 @@
         <image name="fbWhiteLogo" width="25" height="25"/>
         <image name="loading" width="1242" height="2208"/>
         <image name="navigateRight" width="25" height="25"/>
+        <image name="next" width="25" height="25"/>
         <image name="plusRound" width="25" height="25"/>
         <image name="settings" width="25" height="25"/>
         <image name="twitterlogoWhite" width="25" height="25"/>
@@ -654,8 +676,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Btb-Ae-gja"/>
-        <segue reference="Q2k-Ac-kVa"/>
+        <segue reference="yRV-U8-RYS"/>
         <segue reference="gaJ-YS-SSm"/>
-        <segue reference="zlY-w4-Jrc"/>
+        <segue reference="Q2k-Ac-kVa"/>
     </inferredMetricsTieBreakers>
 </document>
