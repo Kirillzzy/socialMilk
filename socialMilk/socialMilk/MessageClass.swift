@@ -16,6 +16,12 @@ class MessageClass {
     var url: String = ""
     var post = VKPost()
     var tweet = TweetPost()
+    var typeOfMessage: type
+    
+    enum type{
+        case twitter
+        case vk
+    }
     
     init(head: String, message: String, timeNSDate: NSDate, url: String, post: VKPost){
         self.head = head
@@ -23,6 +29,7 @@ class MessageClass {
         self.timeNSDate = timeNSDate
         self.url = url
         self.post = post
+        typeOfMessage = type.vk
     }
     
     init(head: String, message: String, timeNSDate: NSDate, url: String, tweet: TweetPost){
@@ -31,5 +38,6 @@ class MessageClass {
         self.timeNSDate = timeNSDate
         self.url = url
         self.tweet = tweet
+        typeOfMessage = type.twitter
     }
 }

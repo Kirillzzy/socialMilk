@@ -198,6 +198,72 @@
             </objects>
             <point key="canvasLocation" x="2415" y="260"/>
         </scene>
+        <!--All-->
+        <scene sceneID="CuR-Sc-0Cb">
+            <objects>
+                <viewController title="All" hidesBottomBarWhenPushed="YES" id="9qv-P2-8gA" customClass="NotificationsAllViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VNf-y3-5R8"/>
+                        <viewControllerLayoutGuide type="bottom" id="bDT-Rp-EcM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n8d-ke-Mar">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xUI-kr-tcf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9qv-P2-8gA" id="WRZ-Zg-Ghj"/>
+                                    <outlet property="delegate" destination="9qv-P2-8gA" id="gt5-sz-IWG"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xct-Dl-V3x">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="pBi-kG-UMm">
+                                        <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="pBi-kG-UMm" secondAttribute="bottom" id="75n-oq-8aM"/>
+                                    <constraint firstAttribute="trailing" secondItem="pBi-kG-UMm" secondAttribute="trailing" id="I1L-Xf-8rs"/>
+                                    <constraint firstItem="pBi-kG-UMm" firstAttribute="leading" secondItem="xct-Dl-V3x" secondAttribute="leading" id="P6Z-XY-0cC"/>
+                                    <constraint firstItem="pBi-kG-UMm" firstAttribute="top" secondItem="xct-Dl-V3x" secondAttribute="top" constant="70" id="Zt2-HK-jHN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="xct-Dl-V3x" secondAttribute="bottom" id="2GF-RK-lqQ"/>
+                            <constraint firstItem="xct-Dl-V3x" firstAttribute="leading" secondItem="n8d-ke-Mar" secondAttribute="leading" id="6hO-lP-pof"/>
+                            <constraint firstAttribute="trailing" secondItem="xUI-kr-tcf" secondAttribute="trailing" id="DtP-fu-Iql"/>
+                            <constraint firstAttribute="trailing" secondItem="xct-Dl-V3x" secondAttribute="trailing" id="HYd-OG-E2j"/>
+                            <constraint firstItem="xUI-kr-tcf" firstAttribute="top" secondItem="n8d-ke-Mar" secondAttribute="top" id="IbG-mr-ey5"/>
+                            <constraint firstItem="bDT-Rp-EcM" firstAttribute="top" secondItem="xUI-kr-tcf" secondAttribute="bottom" id="R4m-N2-bk2"/>
+                            <constraint firstItem="xct-Dl-V3x" firstAttribute="top" secondItem="n8d-ke-Mar" secondAttribute="top" id="V4Y-lg-Ehd"/>
+                            <constraint firstItem="xUI-kr-tcf" firstAttribute="leading" secondItem="n8d-ke-Mar" secondAttribute="leading" id="Z8T-bC-6ka"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="All" id="tan-x6-UmF">
+                        <barButtonItem key="leftBarButtonItem" image="next" id="KKJ-5k-hh0">
+                            <connections>
+                                <action selector="backViewButtonPressed:" destination="9qv-P2-8gA" id="xnS-92-8dW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityView" destination="xct-Dl-V3x" id="wf1-dU-Ejz"/>
+                        <outlet property="backViewButton" destination="KKJ-5k-hh0" id="vtZ-eR-IcF"/>
+                        <outlet property="messagesTableView" destination="xUI-kr-tcf" id="rV4-k2-luJ"/>
+                        <segue destination="BM4-Ae-fu7" kind="show" identifier="gotoWeb" id="RQw-9d-ybA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fIG-xJ-Rmp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3492" y="-1466.7166416791606"/>
+        </scene>
         <!--Notifications-->
         <scene sceneID="9ig-jW-ozb">
             <objects>
@@ -406,6 +472,7 @@
                         <outlet property="AppsCollectionView" destination="MkU-QO-H7F" id="UbK-gX-kEi"/>
                         <segue destination="jn4-cn-3O4" kind="show" identifier="fromVkSegue" id="CIH-3H-K7o"/>
                         <segue destination="Jpa-GM-oIc" kind="show" identifier="fromTwitterSegue" id="e8z-hT-DM1"/>
+                        <segue destination="9qv-P2-8gA" kind="show" identifier="fromAllSegue" id="Gsl-Tq-IWU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cT-Pa-FjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -678,6 +745,6 @@
         <segue reference="Btb-Ae-gja"/>
         <segue reference="gaJ-YS-SSm"/>
         <segue reference="Q2k-Ac-kVa"/>
-        <segue reference="yRV-U8-RYS"/>
+        <segue reference="RQw-9d-ybA"/>
     </inferredMetricsTieBreakers>
 </document>

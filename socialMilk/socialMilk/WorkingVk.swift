@@ -24,6 +24,7 @@ final class WorkingVk{
         return NSDate(timeIntervalSince1970: TimeInterval(time))
     }
     
+    
     static func translateNSDateToString(date: NSDate) -> String{
         let calendar = NSCalendar.current
         var hour = String(calendar.component(.hour, from: date as Date))

@@ -43,6 +43,8 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
             performSegue(withIdentifier: "fromTwitterSegue", sender: self)
         }else if apps[indexPath.row].AppName == "VK"{
             performSegue(withIdentifier: "fromVkSegue", sender: self)
+        }else if apps[indexPath.row].AppName == "All"{
+            performSegue(withIdentifier: "fromAllSegue", sender: self)
         }
     }
     
@@ -65,6 +67,9 @@ extension AppsViewController{
             vc.lastPerform = Constants.fromSegueShowView.fromApps
         }else if segue.identifier == "fromTwitterSegue"{
             let vc = segue.destination as! NotificationsTwitterViewController
+            vc.lastPerform = Constants.fromSegueShowView.fromApps
+        }else if segue.identifier == "fromAllSegue"{
+            let vc = segue.destination as! NotificationsAllViewController
             vc.lastPerform = Constants.fromSegueShowView.fromApps
         }
     }

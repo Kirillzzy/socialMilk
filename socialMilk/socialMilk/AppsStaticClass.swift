@@ -20,6 +20,7 @@ final class AppsStaticClass{
 
     
     class func initial(){
+        addAllAppsAppToAvailableApps()
         addVKToAvailableApps()
         addTwitterToAvailableApps()
         loadApps()
@@ -28,11 +29,12 @@ final class AppsStaticClass{
     
     class func loadApps(){
         apps.removeAll()
+        apps.append(allAvailableApps[0])
         if defaults.bool(forKey: keyVK){
-            apps.append(allAvailableApps[0])
+            apps.append(allAvailableApps[1])
         }
         if defaults.bool(forKey: keyTwitter){
-            apps.append(allAvailableApps[1])
+            apps.append(allAvailableApps[2])
         }
         if defaults.bool(forKey: keyFB){
 //            addFBToApps()
@@ -85,6 +87,20 @@ final class AppsStaticClass{
                              AppWorking: WorkingTwitter(),
                              AppIcon: #imageLiteral(resourceName: "twitterLogo"),
                              AppName: "Twitter"))
+    }
+    
+    private class func addAllAppsAppToAvailableApps(){
+        allAvailableApps.append(AppClass(AppManager: nil,
+                             AppManagerSide: nil,
+                             AppChooseGroupClass: nil,
+                             AppPost: nil,
+                             AppPostRealm: nil,
+                             AppCheckedPost: nil,
+                             AppCheckedPostRealm: nil,
+                             AppRealmManager: nil,
+                             AppWorking: nil,
+                             AppIcon: #imageLiteral(resourceName: "socialMediaFull"),
+                             AppName: "All"))
     }
     
     private class func addFBToApps(){
