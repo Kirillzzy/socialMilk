@@ -17,6 +17,7 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "back6"))
         FBManager.getUserGroups()
         AppsCollectionView.register(UINib(nibName: "AppCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AppCell")
     }
@@ -24,6 +25,9 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         apps = AppsStaticClass.apps
+        for _ in 0 ..< 8{
+            apps.append(AppClass())
+        }
         AppsCollectionView.reloadData()
     }
     
@@ -52,10 +56,16 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppCell", for: indexPath) as! AppCollectionViewCell
         cell.AppImageView.image = apps[indexPath.row].AppIcon
         cell.AppNameLabel.text = apps[indexPath.row].AppName
+        let longTap = UILongPressGestureRecognizer(target: self, action: #selector(AppsViewController.longPressed))
+        cell.addGestureRecognizer(longTap)
         return cell
     }
 
     @IBAction func editButtonPressed(_ sender: Any) {
+        
+    }
+    
+    func longPressed(){
         
     }
 }

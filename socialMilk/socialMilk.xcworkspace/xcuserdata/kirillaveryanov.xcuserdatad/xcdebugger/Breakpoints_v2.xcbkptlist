@@ -396,11 +396,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "socialMilk/AppsViewController.swift"
-            timestampString = "506189610.971991"
+            timestampString = "506302883.117478"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>

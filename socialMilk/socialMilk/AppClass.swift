@@ -43,4 +43,6 @@ class AppClass{
         self.AppName = AppName
     }
     
+    init(){}
+    
 }
