@@ -246,7 +246,7 @@
                             <constraint firstAttribute="bottom" secondItem="jGs-2w-7ix" secondAttribute="bottom" id="v6Q-me-X2U"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Notifications" id="CIc-au-sfh">
+                    <navigationItem key="navigationItem" title="VK" id="CIc-au-sfh">
                         <barButtonItem key="leftBarButtonItem" image="next" id="ZhD-2S-WuG">
                             <connections>
                                 <action selector="backViewButtonPressed:" destination="jn4-cn-3O4" id="HY8-gB-rLi"/>
@@ -642,7 +642,7 @@
                             <constraint firstAttribute="trailing" secondItem="f3I-PU-LKP" secondAttribute="trailing" id="h22-QO-65M"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Notifications" id="Nd1-wo-MrE">
+                    <navigationItem key="navigationItem" title="Twitter" id="Nd1-wo-MrE">
                         <barButtonItem key="leftBarButtonItem" image="next" id="Gia-zK-9hM">
                             <connections>
                                 <action selector="backViewButtonPressed:" destination="Jpa-GM-oIc" id="qdC-jo-jOC"/>
@@ -676,8 +676,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Btb-Ae-gja"/>
-        <segue reference="zlY-w4-Jrc"/>
-        <segue reference="Q2k-Ac-kVa"/>
         <segue reference="gaJ-YS-SSm"/>
+        <segue reference="Q2k-Ac-kVa"/>
+        <segue reference="yRV-U8-RYS"/>
     </inferredMetricsTieBreakers>
 </document>
