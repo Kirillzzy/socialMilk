@@ -89,6 +89,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         }
         settingsArray[0].append(settings(image: nil, text: "Browser", nameOfSegue: "gotoInternetSettings"))
         settingsArray[0].append(settings(image: nil, text: "Background Image", nameOfSegue: "gotoBackgroundImageSettings"))
+        settingsArray[0].append(settings(image: nil, text: "Timeline Colors", nameOfSegue: "gotoTimelineColors"))
         if UserDefaults.standard.bool(forKey: AppsStaticClass.keyVK){
             settingsArray[1].append(settings(image: #imageLiteral(resourceName: "vkLogoBlackBig"),
                                           text: VKManagerWorker.userName,

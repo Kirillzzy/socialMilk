@@ -15,6 +15,7 @@ class MessageTableViewCell: UITableViewCell {
     @IBOutlet weak var imageImageView: UIImageView!
     @IBOutlet weak var photoImageImageView: UIImageView!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bubbleIcon: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,6 +29,10 @@ class MessageTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func changeViewColor(color: UIColor){
+        self.contentView.backgroundColor = color
     }
     
 }

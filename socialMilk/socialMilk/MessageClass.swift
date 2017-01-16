@@ -17,6 +17,7 @@ class MessageClass {
     var post = VKPost()
     var tweet = TweetPost()
     var typeOfMessage: type
+    var colorBubble: UIImage = UIImage()
     
     enum type{
         case twitter
@@ -29,7 +30,8 @@ class MessageClass {
         self.timeNSDate = timeNSDate
         self.url = url
         self.post = post
-        typeOfMessage = type.vk
+        self.typeOfMessage = type.vk
+        self.colorBubble = #imageLiteral(resourceName: "vkCircle")
     }
     
     init(head: String, message: String, timeNSDate: NSDate, url: String, tweet: TweetPost){
@@ -38,6 +40,7 @@ class MessageClass {
         self.timeNSDate = timeNSDate
         self.url = url
         self.tweet = tweet
-        typeOfMessage = type.twitter
+        self.typeOfMessage = type.twitter
+        self.colorBubble = #imageLiteral(resourceName: "twitterCircle")
     }
 }

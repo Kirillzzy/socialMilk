@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="349" height="260"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="349" height="259.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="349" height="259"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDM-74-Ox7">
@@ -53,10 +53,20 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71n-6V-e1g">
                         <rect key="frame" x="51" y="30" width="290" height="63"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="BT0-us-fl8"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iPz-4O-A8x">
+                        <rect key="frame" x="18" y="51" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="aPO-zM-v7U"/>
+                            <constraint firstAttribute="width" constant="15" id="j3H-aT-t2T"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="R4U-1J-zYc" firstAttribute="leading" secondItem="3Ur-af-htB" secondAttribute="trailing" constant="8" id="3S5-wO-zaK"/>
@@ -66,7 +76,9 @@
                     <constraint firstItem="LDM-74-Ox7" firstAttribute="leading" secondItem="3Ur-af-htB" secondAttribute="trailing" constant="8" id="6qG-go-oNM"/>
                     <constraint firstAttribute="topMargin" secondItem="LDM-74-Ox7" secondAttribute="top" id="HsE-Is-kFg"/>
                     <constraint firstItem="71n-6V-e1g" firstAttribute="top" secondItem="oqr-pr-56u" secondAttribute="bottom" constant="2" id="VYa-XT-TSl"/>
+                    <constraint firstItem="iPz-4O-A8x" firstAttribute="top" secondItem="3Ur-af-htB" secondAttribute="bottom" constant="8" id="bIp-xG-kHC"/>
                     <constraint firstAttribute="trailingMargin" secondItem="71n-6V-e1g" secondAttribute="trailing" id="fFS-Uq-1xh"/>
+                    <constraint firstItem="iPz-4O-A8x" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="hj4-dY-9e2"/>
                     <constraint firstAttribute="trailingMargin" secondItem="oqr-pr-56u" secondAttribute="trailing" id="jrc-W8-uNN"/>
                     <constraint firstAttribute="topMargin" secondItem="oqr-pr-56u" secondAttribute="top" id="lrP-Hh-XWt"/>
                     <constraint firstAttribute="bottomMargin" secondItem="R4U-1J-zYc" secondAttribute="bottom" constant="0.5" id="qma-Ov-HFs"/>
@@ -77,6 +89,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="bubbleIcon" destination="iPz-4O-A8x" id="Kq4-Lg-EUL"/>
                 <outlet property="descriptionLabel" destination="71n-6V-e1g" id="DjR-kI-61I"/>
                 <outlet property="heightConstraint" destination="goz-7C-bbk" id="3e9-9R-zR4"/>
                 <outlet property="imageImageView" destination="3Ur-af-htB" id="Dhc-ct-1iy"/>

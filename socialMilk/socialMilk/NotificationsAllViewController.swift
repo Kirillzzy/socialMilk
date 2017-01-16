@@ -21,7 +21,7 @@ class NotificationsAllViewController: UIViewController, NotificationsViewControl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.messagesTableView.estimatedRowHeight = 80
+        self.messagesTableView.estimatedRowHeight = 90
         self.messagesTableView.rowHeight = UITableViewAutomaticDimension
         self.messagesTableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageCell")
         chat.append(ChatClass())
@@ -102,7 +102,8 @@ class NotificationsAllViewController: UIViewController, NotificationsViewControl
         cell.timeLabel.text = WorkingVk.translateNSDateToString(date: chat[indexPath.section].messages[indexPath.row].timeNSDate)
         cell.descriptionLabel.text = chat[indexPath.section].messages[indexPath.row].message
         cell.titleLabel.text = chat[indexPath.section].messages[indexPath.row].head
-        
+        cell.bubbleIcon.image = chat[indexPath.section].messages[indexPath.row].colorBubble
+
         if chat[indexPath.section].messages[indexPath.row].typeOfMessage == MessageClass.type.vk{
             cell.imageImageView.sd_setImage(with: URL(string: chat[indexPath.section].messages[indexPath.row].post.group.photoLink))
             if chat[indexPath.section].messages[indexPath.row].post.hasPhoto{
