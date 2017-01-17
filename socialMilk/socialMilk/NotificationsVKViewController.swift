@@ -14,6 +14,7 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var activityView: UIView!
     @IBOutlet weak var backViewButton: UIBarButtonItem!
+    @IBOutlet weak var progressProgressView: UIProgressView!
 
     var chat = [ChatClass]()
     var sectionsNames = ["Old Posts", "New Posts"]
@@ -32,6 +33,8 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
         super.viewWillAppear(animated)
         isEnabledBackButton(how: false)
         self.activityView.isHidden = false
+        progressProgressView.isHidden = false
+        updateProgressView(val: 0)
         loadNews()
     }
     
@@ -141,11 +144,18 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
         //self.activityView.isHidden = true
         DispatchQueue.global(qos: .background).async {
             self.chat[0].messages = WorkingVk.encodePostsToMessages(posts: WorkingVk.getOldPosts())
+            DispatchQueue.main.async {
+                self.updateProgressView(val: 50.0)
+            }
             self.chat[1].messages = WorkingVk.encodePostsToMessages(posts: WorkingVk.checkNewPosts())
+            DispatchQueue.main.async {
+                self.updateProgressView(val: 100.0)
+            }
             DispatchQueue.main.async {
                 self.activityView.isHidden = true
                 self.reloadTableView()
                 self.isEnabledBackButton(how: true)
+                self.progressProgressView.isHidden = true
             }
         }
 
@@ -174,6 +184,10 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
         } else {
             UIApplication.shared.openURL(url)
         }
+    }
+    
+    func updateProgressView(val: Float){
+        progressProgressView.setProgress(val / 100.0, animated: true)
     }
 
 }

@@ -13,6 +13,7 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var activityView: UIView!
     @IBOutlet weak var backViewButton: UIBarButtonItem!
+    @IBOutlet weak var progressProgressView: UIProgressView!
     
     var chat = [ChatClass]()
     var sectionsNames = ["Old Posts", "New Posts"]
@@ -31,6 +32,8 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
         super.viewWillAppear(animated)
         isEnabledBackButton(how: false)
         activityView.isHidden = false
+        progressProgressView.isHidden = false
+        updateProgressView(val: 0)
         loadNews()
     }
     
@@ -127,11 +130,18 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
         //self.activityView.isHidden = true
         DispatchQueue.global(qos: .background).async {
             self.chat[0].messages = WorkingTwitter.encodeTweetsToMessages(tweets: WorkingTwitter.getOldTweets())
+            DispatchQueue.main.async {
+                self.updateProgressView(val: 50.0)
+            }
             self.chat[1].messages = WorkingTwitter.encodeTweetsToMessages(tweets: WorkingTwitter.checkNewTweets())
+            DispatchQueue.main.async {
+                self.updateProgressView(val: 100.0)
+            }
             DispatchQueue.main.async {
                 self.activityView.isHidden = true
                 self.reloadTableView()
                 self.isEnabledBackButton(how: true)
+                self.progressProgressView.isHidden = true
             }
         }
         
@@ -153,6 +163,10 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
         } else {
             UIApplication.shared.openURL(url)
         }
+    }
+    
+    func updateProgressView(val: Float){
+        progressProgressView.setProgress(val / 100.0, animated: true)
     }
     
 }

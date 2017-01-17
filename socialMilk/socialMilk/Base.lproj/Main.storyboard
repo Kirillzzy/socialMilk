@@ -289,11 +289,18 @@
                                 <action selector="backViewButtonPressed:" destination="9qv-P2-8gA" id="xnS-92-8dW"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="MkK-Gh-t6y">
+                            <progressView key="customView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" id="o4u-xS-Mt4">
+                                <rect key="frame" x="276" y="21" width="83" height="3"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="activityView" destination="xct-Dl-V3x" id="wf1-dU-Ejz"/>
                         <outlet property="backViewButton" destination="KKJ-5k-hh0" id="vtZ-eR-IcF"/>
                         <outlet property="messagesTableView" destination="xUI-kr-tcf" id="rV4-k2-luJ"/>
+                        <outlet property="progressProgressView" destination="o4u-xS-Mt4" id="Mkl-Br-nod"/>
                         <segue destination="BM4-Ae-fu7" kind="show" identifier="gotoWeb" id="RQw-9d-ybA"/>
                     </connections>
                 </viewController>
@@ -355,11 +362,18 @@
                                 <action selector="backViewButtonPressed:" destination="jn4-cn-3O4" id="HY8-gB-rLi"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="wdL-f1-QUD">
+                            <progressView key="customView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" id="kro-cz-n0D">
+                                <rect key="frame" x="276" y="21" width="83" height="3"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="activityView" destination="jGs-2w-7ix" id="jrq-H3-UGy"/>
                         <outlet property="backViewButton" destination="ZhD-2S-WuG" id="mB8-jo-4hq"/>
                         <outlet property="messagesTableView" destination="tMV-lA-fk0" id="jTa-cV-s9l"/>
+                        <outlet property="progressProgressView" destination="kro-cz-n0D" id="V4S-jq-aCQ"/>
                         <segue destination="BM4-Ae-fu7" kind="show" identifier="gotoWeb" id="zlY-w4-Jrc"/>
                     </connections>
                 </viewController>
@@ -753,11 +767,18 @@
                                 <action selector="backViewButtonPressed:" destination="Jpa-GM-oIc" id="qdC-jo-jOC"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="ac9-1U-suu">
+                            <progressView key="customView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" id="2tR-Sb-yAh">
+                                <rect key="frame" x="276" y="21" width="83" height="3"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="activityView" destination="f3I-PU-LKP" id="J36-bh-e8S"/>
                         <outlet property="backViewButton" destination="Gia-zK-9hM" id="rmD-CD-Sg5"/>
                         <outlet property="messagesTableView" destination="5Gh-2f-cac" id="pci-RT-hx4"/>
+                        <outlet property="progressProgressView" destination="2tR-Sb-yAh" id="amN-WC-Z4k"/>
                         <segue destination="BM4-Ae-fu7" kind="show" identifier="gotoWeb" id="yRV-U8-RYS"/>
                     </connections>
                 </viewController>

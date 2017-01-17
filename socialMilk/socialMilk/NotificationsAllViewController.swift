@@ -13,6 +13,7 @@ class NotificationsAllViewController: UIViewController, NotificationsViewControl
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var activityView: UIView!
     @IBOutlet weak var backViewButton: UIBarButtonItem!
+    @IBOutlet weak var progressProgressView: UIProgressView!
     
     var apps = AppsStaticClass.apps
     var chat = [ChatClass]()
@@ -32,6 +33,8 @@ class NotificationsAllViewController: UIViewController, NotificationsViewControl
         super.viewWillAppear(animated)
         isEnabledBackButton(how: false)
         self.activityView.isHidden = false
+        progressProgressView.isHidden = false
+        updateProgressView(val: 0)
         loadNews()
     }
     
@@ -144,17 +147,33 @@ class NotificationsAllViewController: UIViewController, NotificationsViewControl
         //self.activityView.isHidden = true
         DispatchQueue.global(qos: .background).async {
             self.chat[0].messages = WorkingVk.encodePostsToMessages(posts: WorkingVk.getOldPosts())
+            DispatchQueue.main.async {
+                self.updateProgressView(val: 20.0)
+            }
             self.chat[1].messages = WorkingVk.encodePostsToMessages(posts: WorkingVk.checkNewPosts())
+            DispatchQueue.main.async {
+                self.updateProgressView(val: 40.0)
+            }
             self.chat[0].messages.append(contentsOf: WorkingTwitter.encodeTweetsToMessages(tweets: WorkingTwitter.getOldTweets()))
+            DispatchQueue.main.async {
+                self.updateProgressView(val: 60.0)
+            }
             self.chat[1].messages.append(contentsOf: WorkingTwitter.encodeTweetsToMessages(tweets: WorkingTwitter.checkNewTweets()))
+            DispatchQueue.main.async {
+                self.updateProgressView(val: 80.0)
+            }
             self.chat[0].messages.sort(by: {message1, message2 in
                 message1.timeNSDate.isLessThanDate(dateToCompare: message2.timeNSDate)})
             self.chat[1].messages.sort(by: {message1, message2 in
                 message1.timeNSDate.isLessThanDate(dateToCompare: message2.timeNSDate)})
             DispatchQueue.main.async {
+                self.updateProgressView(val: 99.0)
+            }
+            DispatchQueue.main.async {
                 self.activityView.isHidden = true
                 self.reloadTableView()
                 self.isEnabledBackButton(how: true)
+                self.progressProgressView.isHidden = true
             }
         }
         
@@ -183,6 +202,10 @@ class NotificationsAllViewController: UIViewController, NotificationsViewControl
         } else {
             UIApplication.shared.openURL(url)
         }
+    }
+    
+    func updateProgressView(val: Float){
+        progressProgressView.setProgress(val / 100.0, animated: true)
     }
     
 }
