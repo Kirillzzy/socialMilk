@@ -133,7 +133,11 @@ class NotificationsAllViewController: UIViewController, NotificationsViewControl
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         messagesTableView.deselectRow(at: indexPath, animated: true)
         let url = URL(string: "https://" + chat[indexPath.section].messages[indexPath.row].url)!
-        performSegue(withIdentifier: "gotoWeb", sender: url)
+        if WorkingDefaults.getBrowser() == WorkingDefaults.Browser.my{
+            performSegue(withIdentifier: "gotoWeb", sender: url)
+        }else{
+            goWeb(url: url)
+        }
     }
     
     func loadNews(){
@@ -173,6 +177,13 @@ class NotificationsAllViewController: UIViewController, NotificationsViewControl
         backViewButton.isEnabled = how
     }
     
+    func goWeb(url: URL){
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:])
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
     
 }
 

@@ -14,9 +14,6 @@ final class AppsStaticClass{
     static var allAvailableApps = [AppClass]()
     static var soonApps = [(UIImage, String)]()
     private static let defaults = UserDefaults.standard
-    static let keyVK = "haveVK"
-    static let keyTwitter = "haveTwitter"
-    static let keyFB = "haveFB"
 
     
     class func initial(){
@@ -30,13 +27,13 @@ final class AppsStaticClass{
     class func loadApps(){
         apps.removeAll()
         apps.append(allAvailableApps[0])
-        if defaults.bool(forKey: keyVK){
+        if WorkingDefaults.isHaveVk(){
             apps.append(allAvailableApps[1])
         }
-        if defaults.bool(forKey: keyTwitter){
+        if WorkingDefaults.isHaveTwitter(){
             apps.append(allAvailableApps[2])
         }
-        if defaults.bool(forKey: keyFB){
+        if WorkingDefaults.isHaveFb(){
 //            addFBToApps()
         }
     }
@@ -44,21 +41,6 @@ final class AppsStaticClass{
     private class func addSoonApps(){
         soonApps.append((#imageLiteral(resourceName: "facebookLogoBig"), "Facebook"))
         soonApps.append((#imageLiteral(resourceName: "instagramLogo"), "Instagram"))
-    }
-    
-    class func saveVK(how: Bool){
-        defaults.set(how, forKey: keyVK)
-        loadApps()
-    }
-    
-    class func saveTwitter(how: Bool){
-        defaults.set(how, forKey: keyTwitter)
-        loadApps()
-    }
-    
-    private class func saveFB(how: Bool){
-        defaults.set(how, forKey: keyFB)
-        loadApps()
     }
     
     private class func addVKToAvailableApps(){

@@ -10,6 +10,43 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Brwoser Settings View Controller-->
+        <scene sceneID="Qd6-qb-81m">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="9b5-PB-ngZ" customClass="BrwoserSettingsViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DjH-sT-QSr"/>
+                        <viewControllerLayoutGuide type="bottom" id="8SF-8k-H6W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dxu-v4-5Tc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="BuS-IS-EC6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9b5-PB-ngZ" id="XJA-aS-Mjx"/>
+                                    <outlet property="delegate" destination="9b5-PB-ngZ" id="6VG-rF-otQ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="BuS-IS-EC6" secondAttribute="bottom" id="ENw-fl-0Mw"/>
+                            <constraint firstItem="BuS-IS-EC6" firstAttribute="leading" secondItem="Dxu-v4-5Tc" secondAttribute="leading" id="TA6-AB-n5q"/>
+                            <constraint firstItem="BuS-IS-EC6" firstAttribute="top" secondItem="Dxu-v4-5Tc" secondAttribute="top" id="nh7-52-QBt"/>
+                            <constraint firstAttribute="trailing" secondItem="BuS-IS-EC6" secondAttribute="trailing" id="pmP-R1-4Gq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="settingsTableView" destination="BuS-IS-EC6" id="wAk-kc-Rmd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Si4-Pl-E5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-529" y="1015"/>
+        </scene>
         <!--Choose View Controller-->
         <scene sceneID="jEk-cd-hat">
             <objects>
@@ -410,6 +447,7 @@
                         <outlet property="settingsTableView" destination="ICl-zB-hHp" id="5ZQ-tZ-mjS"/>
                         <segue destination="iCl-Xp-tc4" kind="show" identifier="gotoChooseVK" id="Q2k-Ac-kVa"/>
                         <segue destination="96q-IY-gn4" kind="show" identifier="gotoChooseTwitter" id="gaJ-YS-SSm"/>
+                        <segue destination="9b5-PB-ngZ" kind="show" identifier="gotoBrowserSettings" id="N3Y-Mw-0LL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgl-4c-84l" userLabel="First Responder" sceneMemberID="firstResponder"/>

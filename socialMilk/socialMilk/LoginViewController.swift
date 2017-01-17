@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func nextButtonPressed(_ sender: Any) {
         if LoginViewController.loginedAt >= 3{
-            UserDefaults.standard.set(false, forKey: "isFirstSetupEver")
+            WorkingDefaults.setFirstSetupEver(how: false)
             gotoNext()
         }
         if !SetupViewController.isInternetAvailable(){
@@ -74,10 +74,3 @@ class LoginViewController: UIViewController {
     }
 }
 
-
-extension LoginViewController{
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "fromLoginSegue"{
-        }
-    }
-}

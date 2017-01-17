@@ -43,12 +43,14 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         AppsCollectionView.deselectItem(at: indexPath, animated: true)
-        if apps[indexPath.row].AppName == "Twitter"{
-            performSegue(withIdentifier: "fromTwitterSegue", sender: self)
-        }else if apps[indexPath.row].AppName == "VK"{
-            performSegue(withIdentifier: "fromVkSegue", sender: self)
-        }else if apps[indexPath.row].AppName == "All"{
-            performSegue(withIdentifier: "fromAllSegue", sender: self)
+        if let appName = apps[indexPath.row].AppName{
+            if appName == "Twitter"{
+                performSegue(withIdentifier: "fromTwitterSegue", sender: self)
+            }else if appName == "VK"{
+                performSegue(withIdentifier: "fromVkSegue", sender: self)
+            }else if appName == "All"{
+                performSegue(withIdentifier: "fromAllSegue", sender: self)
+            }
         }
     }
     
@@ -56,8 +58,8 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppCell", for: indexPath) as! AppCollectionViewCell
         cell.AppImageView.image = apps[indexPath.row].AppIcon
         cell.AppNameLabel.text = apps[indexPath.row].AppName
-        let longTap = UILongPressGestureRecognizer(target: self, action: #selector(AppsViewController.longPressed))
-        cell.addGestureRecognizer(longTap)
+//        let longTap = UITapGestureRecognizer(target:self, action:#selector(longPressed(gesture:)))
+//        cell.addGestureRecognizer(longTap)
         return cell
     }
 
@@ -65,7 +67,7 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
     }
     
-    func longPressed(){
+    func longPressed(gesture: UILongPressGestureRecognizer){
         
     }
 }

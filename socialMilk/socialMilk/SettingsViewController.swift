@@ -9,27 +9,7 @@
 import UIKit
 
 
-struct settings{
-    var image: UIImage?
-    var text: String
-    var nameOfSegue: String
-    var hasImage: Bool
-    
-    init(image: UIImage?, text: String, nameOfSegue: String){
-        self.image = image
-        self.text = text
-        self.nameOfSegue = nameOfSegue
-        if image == nil{
-            self.hasImage = false
-        }else{
-            self.hasImage = true
-        }
-    }
-    
-}
-
-
-class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SettingsViewController: UIViewController, SettingsProtocol{
 
     @IBOutlet weak var settingsTableView: UITableView!
     let sectionsNames = ["General", "Accounts", "Feedback"]
@@ -76,7 +56,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         settingsTableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.section == 1{
+        if (indexPath.section == 0 && indexPath.row == 0) || indexPath.section == 1{
             performSegue(withIdentifier: settingsArray[indexPath.section][indexPath.row].nameOfSegue, sender: true)
         }
     }
@@ -87,15 +67,15 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         for _ in 0..<3{
             settingsArray.append([settings]())
         }
-        settingsArray[0].append(settings(image: nil, text: "Browser", nameOfSegue: "gotoInternetSettings"))
+        settingsArray[0].append(settings(image: nil, text: "Browser", nameOfSegue: "gotoBrowserSettings"))
         settingsArray[0].append(settings(image: nil, text: "Background Image", nameOfSegue: "gotoBackgroundImageSettings"))
         settingsArray[0].append(settings(image: nil, text: "Timeline Colors", nameOfSegue: "gotoTimelineColors"))
-        if UserDefaults.standard.bool(forKey: AppsStaticClass.keyVK){
+        if WorkingDefaults.isHaveVk(){
             settingsArray[1].append(settings(image: #imageLiteral(resourceName: "vkLogoBlackBig"),
                                           text: VKManagerWorker.userName,
                                           nameOfSegue: "gotoChooseVK"))
         }
-        if UserDefaults.standard.bool(forKey: AppsStaticClass.keyTwitter){
+        if WorkingDefaults.isHaveTwitter(){
             settingsArray[1].append(settings(image: #imageLiteral(resourceName: "twitterLogo"),
                                           text: "@\(TwitterManager.userName)",
             nameOfSegue: "gotoChooseTwitter"))
@@ -106,4 +86,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
 }
+
+
 

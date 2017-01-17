@@ -17,7 +17,7 @@ class SetupViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if (UserDefaults.standard.object(forKey: "isFirstSetupEver") != nil) && SetupViewController.isInternetAvailable(){
+        if !WorkingDefaults.isFirstSetupEver() && SetupViewController.isInternetAvailable(){
             _ = VKManager.sharedInstance
             TwitterManager.login()
             FBManager.getMe()

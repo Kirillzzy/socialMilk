@@ -62,26 +62,14 @@ class AddAppsViewController: UIViewController, UITableViewDelegate, UITableViewD
         appsTableView.deselectRow(at: indexPath, animated: true)
         if indexPath.section == 0{
             if indexPath.row == 0{
-                AppsStaticClass.saveVK(how: true)
+                WorkingDefaults.setVK(how: true)
                 (appsTableView.cellForRow(at: indexPath)as! GroupsTableViewCell).setChecked(how: true)
                 performSegue(withIdentifier: "fromAddToVKChooseSegue", sender: self)
             }else if indexPath.row == 1{
-                AppsStaticClass.saveTwitter(how: true)
+                WorkingDefaults.setTwitter(how: true)
                 performSegue(withIdentifier: "fromAddtoTwitterChooseSegue", sender: self)
             }
         }
     }
-
-    
 }
 
-//// MARK: - segue
-//extension AddAppsViewController{
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "fromAddToVKChooseSegue"{
-//            let vc = segue.destination as! VKChooseViewController
-//        }else if segue.identifier == "fromAddtoTwitterChooseSegue"{
-//            let vc = segue.destination as! TwitterChooseViewController
-//        }
-//    }
-//}
