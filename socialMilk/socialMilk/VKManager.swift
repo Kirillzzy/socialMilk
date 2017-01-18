@@ -17,28 +17,28 @@ class VKManager: VKDelegate{
         VK.logIn()
     }
     
-    func vkWillAuthorize() -> Set<VK.Scope> {
+    internal func vkWillAuthorize() -> Set<VK.Scope> {
         return [.offline, .wall, .friends, .groups]
     }
     
-    func vkDidAuthorizeWith(parameters: Dictionary<String, String>) {
+    internal func vkDidAuthorizeWith(parameters: Dictionary<String, String>) {
         print("Autorized")
         LoginViewController.loginedAt += 1
         VKManagerWorker.getMe()
     }
     
-    func vkAutorizationFailedWith(error: AuthError) {
+    internal func vkAutorizationFailedWith(error: AuthError) {
         print("Autorization failed with error: \n\(error)")
     }
     
-    func vkDidUnauthorize() {
+    internal func vkDidUnauthorize() {
     }
     
-    func vkShouldUseTokenPath() -> String? {
+    internal func vkShouldUseTokenPath() -> String? {
         return nil
     }
     
-    func vkWillPresentView() -> UIViewController {
+    internal func vkWillPresentView() -> UIViewController {
         return UIApplication.shared.delegate!.window!!.rootViewController!
     }
     

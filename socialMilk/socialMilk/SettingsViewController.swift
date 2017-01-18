@@ -12,7 +12,7 @@ import UIKit
 class SettingsViewController: UIViewController, SettingsProtocol{
 
     @IBOutlet weak var settingsTableView: UITableView!
-    let sectionsNames = ["General", "Accounts", "Feedback"]
+    private let sectionsNames = ["General", "Accounts", "Feedback"]
     var settingsArray = [[settings]()]
     
     override func viewDidLoad() {

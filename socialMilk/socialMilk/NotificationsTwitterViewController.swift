@@ -15,9 +15,9 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
     @IBOutlet weak var backViewButton: UIBarButtonItem!
     @IBOutlet weak var progressProgressView: UIProgressView!
     
-    var chat = [ChatClass]()
-    var sectionsNames = ["Old Posts", "New Posts"]
-    var lastPerform: Constants.fromSegueShowView = Constants.fromSegueShowView.null
+    internal var chat = [ChatClass]()
+    internal var sectionsNames = ["Old Posts", "New Posts"]
+    internal var lastPerform: Constants.fromSegueShowView = Constants.fromSegueShowView.null
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,7 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
         super.viewDidAppear(animated)
     }
     
-    func reloadTableView(){
+    internal func reloadTableView(){
         self.reloadUI()
         let numberOfRowsOld = chat[0].messages.count
         let numberOfRowsNew = chat[1].messages.count
@@ -55,7 +55,7 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
     }
 
     
-    func reloadUI(){
+    internal func reloadUI(){
         self.messagesTableView.reloadData()
     }
     
@@ -153,11 +153,11 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
         }
     }
     
-    func isEnabledBackButton(how: Bool){
+    internal func isEnabledBackButton(how: Bool){
         backViewButton.isEnabled = how
     }
     
-    func goWeb(url: URL){
+    internal func goWeb(url: URL){
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(url, options: [:])
         } else {
@@ -165,7 +165,7 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
         }
     }
     
-    func updateProgressView(val: Float){
+    internal func updateProgressView(val: Float){
         progressProgressView.setProgress(val / 100.0, animated: true)
     }
     

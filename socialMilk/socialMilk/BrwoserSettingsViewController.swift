@@ -11,9 +11,10 @@ import UIKit
 
 class BrwoserSettingsViewController: UIViewController, SettingsProtocol {
     @IBOutlet weak var settingsTableView: UITableView!
+    
     var settingsArray = [browserSettings]()
-    let sectionsNames = ["Open links in"]
-    var browserType: WorkingDefaults.Browser = WorkingDefaults.Browser.my
+    private let sectionsNames = ["Open links in"]
+    private var browserType: WorkingDefaults.Browser = WorkingDefaults.Browser.my
     
     override func viewDidLoad() {
         super.viewDidLoad()

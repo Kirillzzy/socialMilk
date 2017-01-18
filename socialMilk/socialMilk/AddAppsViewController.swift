@@ -11,9 +11,9 @@ import UIKit
 class AddAppsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var appsTableView: UITableView!
-    var availableApps = AppsStaticClass.allAvailableApps
-    var soonApps = AppsStaticClass.soonApps
-    let sectionsNames: [String] = ["Now available", "Soon"]
+    private var availableApps = AppsStaticClass.allAvailableApps
+    private var soonApps = AppsStaticClass.soonApps
+    private let sectionsNames: [String] = ["Now available", "Soon"]
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -13,7 +13,7 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBOutlet weak var AppsCollectionView: UICollectionView!
     
-    var apps = [AppClass]()
+    private var apps = [AppClass]()
 
     override func viewDidLoad() {
         super.viewDidLoad()

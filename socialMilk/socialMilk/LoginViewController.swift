@@ -48,7 +48,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func gotoNext(){
+    private func gotoNext(){
         if SetupViewController.isInternetAvailable(){
             performSegue(withIdentifier: "fromLoginSegue", sender: true)
         }else{
@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func loadComponents(){
+    private func loadComponents(){
         twitterButton.layer.masksToBounds = true
         twitterButton.layer.cornerRadius = 5
         vkButton.layer.masksToBounds = true
@@ -67,7 +67,7 @@ class LoginViewController: UIViewController {
         nextButton.layer.cornerRadius = 5
     }
     
-    func showErrorAlert(){
+    private func showErrorAlert(){
         let alert = UIAlertController(title: "Error", message: "No internet connection", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)

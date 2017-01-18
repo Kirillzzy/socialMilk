@@ -24,7 +24,7 @@ final class AppsStaticClass{
         addSoonApps()
     }
     
-    class func loadApps(){
+    private class func loadApps(){
         apps.removeAll()
         apps.append(allAvailableApps[0])
         if WorkingDefaults.isHaveVk(){

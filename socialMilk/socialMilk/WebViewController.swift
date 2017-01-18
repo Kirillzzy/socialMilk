@@ -24,7 +24,7 @@ class WebViewController: UIViewController {
         loadWeb()
     }
     
-    func loadWeb(){
+    private func loadWeb(){
         if let url = url{
             let req = URLRequest(url: url)
             webView.loadRequest(req)
