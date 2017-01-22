@@ -80,7 +80,7 @@ class SettingsViewController: UIViewController, SettingsProtocol{
                                           text: "@\(TwitterManager.userName)",
             nameOfSegue: "gotoChooseTwitter"))
         }
-        settingsArray[2].append(settings(image: nil, text: "Rate Us", nameOfSegue: "gotoRateUs"))
+        settingsArray[2].append(settings(image: nil, text: "Rate this app", nameOfSegue: "gotoRateUs"))
         settingsArray[2].append(settings(image: nil, text: "Contact Developer", nameOfSegue: "gotoContactDev"))
         settingsArray[2].append(settings(image: nil, text: "About Social Milk", nameOfSegue: "gotoProductInfo"))
     }

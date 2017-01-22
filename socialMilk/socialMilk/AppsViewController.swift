@@ -12,25 +12,28 @@ import SwiftyVK
 class AppsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
     @IBOutlet weak var AppsCollectionView: UICollectionView!
+    @IBOutlet weak var editButton: UIBarButtonItem!
     
     private var apps = [AppClass]()
+    var isEdit = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "back6"))
-        FBManager.getUserGroups()
+//        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "back6"))
         AppsCollectionView.register(UINib(nibName: "AppCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AppCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        apps = AppsStaticClass.apps
-        for _ in 0 ..< 8{
-            apps.append(AppClass())
-        }
-        AppsCollectionView.reloadData()
+        goToNull()
+        refreshCollectionView()
     }
     
+    func refreshCollectionView(){
+        AppsStaticClass.loadApps()
+        apps = AppsStaticClass.apps
+        AppsCollectionView.reloadData()
+    }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -41,15 +44,25 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         AppsCollectionView.deselectItem(at: indexPath, animated: true)
         if let appName = apps[indexPath.row].AppName{
-            if appName == "Twitter"{
-                performSegue(withIdentifier: "fromTwitterSegue", sender: self)
-            }else if appName == "VK"{
-                performSegue(withIdentifier: "fromVkSegue", sender: self)
-            }else if appName == "All"{
-                performSegue(withIdentifier: "fromAllSegue", sender: self)
+            if !isEdit{
+                if appName == "Twitter"{
+                    performSegue(withIdentifier: "fromTwitterSegue", sender: self)
+                }else if appName == "VK"{
+                    performSegue(withIdentifier: "fromVkSegue", sender: self)
+                }else if appName == "All"{
+                    performSegue(withIdentifier: "fromAllSegue", sender: self)
+                }
+            }else{
+                if appName == "Twitter"{
+                    WorkingDefaults.setTwitter(how: false)
+                }else if appName == "VK"{
+                    WorkingDefaults.setVK(how: false)
+                }
+                self.refreshCollectionView()
             }
         }
     }
@@ -58,13 +71,34 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppCell", for: indexPath) as! AppCollectionViewCell
         cell.AppImageView.image = apps[indexPath.row].AppIcon
         cell.AppNameLabel.text = apps[indexPath.row].AppName
+        if isEdit && apps[indexPath.row].AppIcon != nil && apps[indexPath.row].AppName != "All"{
+            cell.setDeleteToDelete()
+        }else{
+            cell.setDeleteToNil()
+        }
 //        let longTap = UITapGestureRecognizer(target:self, action:#selector(longPressed(gesture:)))
 //        cell.addGestureRecognizer(longTap)
         return cell
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: 140, height: 140)
+    }
+    
     @IBAction func editButtonPressed(_ sender: Any) {
-        
+        isEdit = !isEdit
+        if isEdit{
+            editButton.title = "Done"
+        }else{
+            editButton.title = "Edit"
+        }
+        AppsCollectionView.reloadData()
+    }
+    
+    func goToNull(){
+        isEdit = false
+        editButton.title = "Edit"
     }
     
     func longPressed(gesture: UILongPressGestureRecognizer){

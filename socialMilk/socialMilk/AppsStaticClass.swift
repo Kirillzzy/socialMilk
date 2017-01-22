@@ -24,7 +24,7 @@ final class AppsStaticClass{
         addSoonApps()
     }
     
-    private class func loadApps(){
+    class func loadApps(){
         apps.removeAll()
         apps.append(allAvailableApps[0])
         if WorkingDefaults.isHaveVk(){
@@ -81,7 +81,7 @@ final class AppsStaticClass{
                              AppCheckedPostRealm: nil,
                              AppRealmManager: nil,
                              AppWorking: nil,
-                             AppIcon: #imageLiteral(resourceName: "socialMediaFull"),
+                             AppIcon: #imageLiteral(resourceName: "SocialMilkIconPng"),
                              AppName: "All"))
     }
     

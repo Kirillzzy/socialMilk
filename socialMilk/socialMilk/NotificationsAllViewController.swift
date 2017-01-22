@@ -18,6 +18,8 @@ class NotificationsAllViewController: UIViewController, NotificationsViewControl
     internal var chat = [ChatClass]()
     internal var sectionsNames = ["Old Posts", "New Posts"]
     internal var lastPerform: Constants.fromSegueShowView = Constants.fromSegueShowView.null
+    internal var isWentToWeb = false
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +32,15 @@ class NotificationsAllViewController: UIViewController, NotificationsViewControl
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        isEnabledBackButton(how: false)
-        self.activityView.isHidden = false
-        progressProgressView.isHidden = false
-        updateProgressView(val: 0)
-        loadNews()
+        if !isWentToWeb{
+            isEnabledBackButton(how: false)
+            self.activityView.isHidden = false
+            progressProgressView.isHidden = false
+            updateProgressView(val: 0)
+            loadNews()
+        }else{
+            isWentToWeb = true
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -213,6 +219,7 @@ extension NotificationsAllViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "gotoWeb"{
             if let www = sender as? URL{
+                self.isWentToWeb = true
                 let vc = segue.destination as! WebViewController
                 vc.url = www
                 self.lastPerform = Constants.fromSegueShowView.fromWeb
