@@ -104,6 +104,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="lu5-r4-hqw">
                         <barButtonItem key="leftBarButtonItem" image="next" id="w7i-x9-OYp">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="backViewButtonPressed:" destination="iCl-Xp-tc4" id="zJp-OP-3IN"/>
                             </connections>
@@ -178,6 +179,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="h3L-MQ-PtU">
                         <barButtonItem key="leftBarButtonItem" image="next" id="RET-gA-yJh">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="backViewButtonPressed:" destination="96q-IY-gn4" id="WBF-lD-ZH0"/>
                             </connections>
@@ -285,6 +287,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="All" id="tan-x6-UmF">
                         <barButtonItem key="leftBarButtonItem" image="next" id="KKJ-5k-hh0">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="backViewButtonPressed:" destination="9qv-P2-8gA" id="xnS-92-8dW"/>
                             </connections>
@@ -294,6 +297,7 @@
                                 <rect key="frame" x="276" y="21" width="83" height="3"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -358,6 +362,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="VK" id="CIc-au-sfh">
                         <barButtonItem key="leftBarButtonItem" image="next" id="ZhD-2S-WuG">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="backViewButtonPressed:" destination="jn4-cn-3O4" id="HY8-gB-rLi"/>
                             </connections>
@@ -367,6 +372,7 @@
                                 <rect key="frame" x="276" y="21" width="83" height="3"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -408,11 +414,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Page" id="e33-KT-gUB">
                         <barButtonItem key="leftBarButtonItem" image="next" id="3TY-t4-o0M">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="backViewButtonPressed:" destination="BM4-Ae-fu7" id="NiT-Fr-5Ts"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="webIcon" id="DQc-H6-3R7">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="webButtonPressed:" destination="BM4-Ae-fu7" id="vu0-z8-Gog"/>
                             </connections>
@@ -510,11 +518,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Apps" id="uut-pu-I0J">
                         <barButtonItem key="leftBarButtonItem" title="Edit" id="EZc-wR-QNc">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="editButtonPressed:" destination="b23-kG-7vb" id="lSF-bu-CtO"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="plusRound" id="QDH-rf-27a">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="Qpv-IX-h46" kind="show" id="PPU-rh-cZX"/>
                             </connections>
@@ -681,9 +691,15 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="34g-LE-XB5" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Apps" image="boxes" id="aXu-wL-Yat"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="atR-7E-1nd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="atR-7E-1nd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.22533366084098816" green="0.3471701443195343" blue="0.59202378988265991" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -700,9 +716,15 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TeR-g5-h1k" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" id="TaP-LA-EDn"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nD6-Hf-o65">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="nD6-Hf-o65">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.2253336608" green="0.34717014429999998" blue="0.59202378990000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -763,6 +785,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Twitter" id="Nd1-wo-MrE">
                         <barButtonItem key="leftBarButtonItem" image="next" id="Gia-zK-9hM">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="backViewButtonPressed:" destination="Jpa-GM-oIc" id="qdC-jo-jOC"/>
                             </connections>
@@ -772,6 +795,7 @@
                                 <rect key="frame" x="276" y="21" width="83" height="3"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -801,9 +825,9 @@
         <image name="webIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Btb-Ae-gja"/>
         <segue reference="gaJ-YS-SSm"/>
+        <segue reference="Btb-Ae-gja"/>
+        <segue reference="yRV-U8-RYS"/>
         <segue reference="Q2k-Ac-kVa"/>
-        <segue reference="RQw-9d-ybA"/>
     </inferredMetricsTieBreakers>
 </document>
