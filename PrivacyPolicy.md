@@ -8,7 +8,7 @@ This privacy policy has been compiled to better serve those who are concerned wi
 
 What personal information do we collect from the people that visit our app?
 
-We do not collect information from visitors of our site.
+We do not collect information from visitors of our app.
 Groups, friends or other details to help you with your experience.
 
 When do we collect information?
@@ -18,7 +18,7 @@ We collect information from you when you respond to a survey or enter informatio
 
 How do we use your information?
 
-We may use the information we collect from you when you register, make a purchase, sign up for our newsletter, respond to a survey or marketing communication, surf the app, or use certain other site features in the following ways:
+We may use the information we collect from you when you register, make a purchase, sign up for our newsletter, respond to a survey or marketing communication, surf the app, or use certain other app features in the following ways:
 
       • To personalize your experience and to allow us to deliver the type of content and product offerings in which you are most interested.
       • To quickly process your transactions.
@@ -37,7 +37,7 @@ All transactions are processed through a gateway provider and are not stored or 
 
 Do we use 'cookies'?
 
-Yes. Cookies are small files that an app or its service provider transfers to your computer's hard drive through your Web browser (if you allow) that enables the site's or service provider's systems to recognize your browser and capture and remember certain information. For instance, we use cookies to help us remember and process the items in your shopping cart. They are also used to help us understand your preferences based on previous or current site activity, which enables us to provide you with improved services. We also use cookies to help us compile aggregate data about site traffic and site interaction so that we can offer better site experiences and tools in the future.
+Yes. Cookies are small files that an app or its service provider transfers to your computer's hard drive through your app (if you allow) that enables the app's or service provider's systems to recognize your browser and capture and remember certain information. For instance, we use cookies to help us remember and process the items in your shopping cart. They are also used to help us understand your preferences based on previous or current app activity, which enables us to provide you with improved services. We also use cookies to help us compile aggregate data about app traffic and app interaction so that we can offer better app experiences and tools in the future.
 
 We use cookies to:
       • Understand and save user's preferences for future visits.
