@@ -14,6 +14,9 @@ class NotificationsAllViewController: UIViewController, NotificationsViewControl
     @IBOutlet weak var activityView: UIView!
     @IBOutlet weak var backViewButton: UIBarButtonItem!
     @IBOutlet weak var progressProgressView: UIProgressView!
+    @IBOutlet weak var loadingImageView: UIImageView!
+    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var infoLabel2: UILabel!
     
     internal var chat = [ChatClass]()
     internal var sectionsNames = ["Old Posts", "New Posts"]
@@ -36,6 +39,8 @@ class NotificationsAllViewController: UIViewController, NotificationsViewControl
             isEnabledBackButton(how: false)
             self.activityView.isHidden = false
             progressProgressView.isHidden = false
+            infoLabel.isHidden = true
+            infoLabel2.isHidden = true
             updateProgressView(val: 0)
             loadNews()
         }else{
@@ -175,8 +180,15 @@ class NotificationsAllViewController: UIViewController, NotificationsViewControl
                 self.updateProgressView(val: 99.0)
             }
             DispatchQueue.main.async {
-                self.activityView.isHidden = true
-                self.reloadTableView()
+                if self.chat[0].messages.count > 0 || self.chat[1].messages.count > 0{
+                    self.activityView.isHidden = true
+                    self.infoLabel.isHidden = true
+                    self.reloadTableView()
+                }else{
+                    self.loadingImageView.image = nil
+                    self.infoLabel.isHidden = false
+                    self.infoLabel2.isHidden = false
+                }
                 self.isEnabledBackButton(how: true)
                 self.progressProgressView.isHidden = true
             }

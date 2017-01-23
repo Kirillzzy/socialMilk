@@ -263,13 +263,42 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="pBi-kG-UMm">
                                         <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4U3-JU-XSf">
+                                        <rect key="frame" x="37.5" y="349" width="300" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="eIj-Ei-A9X"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="You should wait new posts                    from chosen places">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.64425058300648386" green="0.64884417714661413" blue="0.66262495956700507" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="17" name=".SFNSText"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No posts right now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szE-aO-dB2">
+                                        <rect key="frame" x="87.5" y="313" width="200" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="gq6-bt-hWC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="pBi-kG-UMm" secondAttribute="bottom" id="75n-oq-8aM"/>
                                     <constraint firstAttribute="trailing" secondItem="pBi-kG-UMm" secondAttribute="trailing" id="I1L-Xf-8rs"/>
+                                    <constraint firstItem="4U3-JU-XSf" firstAttribute="centerY" secondItem="pBi-kG-UMm" secondAttribute="centerY" id="JFJ-2o-bYF"/>
                                     <constraint firstItem="pBi-kG-UMm" firstAttribute="leading" secondItem="xct-Dl-V3x" secondAttribute="leading" id="P6Z-XY-0cC"/>
+                                    <constraint firstItem="4U3-JU-XSf" firstAttribute="centerX" secondItem="pBi-kG-UMm" secondAttribute="centerX" id="YU9-1N-UVO"/>
                                     <constraint firstItem="pBi-kG-UMm" firstAttribute="top" secondItem="xct-Dl-V3x" secondAttribute="top" constant="70" id="Zt2-HK-jHN"/>
+                                    <constraint firstItem="4U3-JU-XSf" firstAttribute="top" secondItem="szE-aO-dB2" secondAttribute="bottom" constant="15" id="inA-22-wfA"/>
+                                    <constraint firstItem="szE-aO-dB2" firstAttribute="centerX" secondItem="pBi-kG-UMm" secondAttribute="centerX" id="zoK-Gl-QeP"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -303,6 +332,9 @@
                     <connections>
                         <outlet property="activityView" destination="xct-Dl-V3x" id="wf1-dU-Ejz"/>
                         <outlet property="backViewButton" destination="KKJ-5k-hh0" id="vtZ-eR-IcF"/>
+                        <outlet property="infoLabel" destination="4U3-JU-XSf" id="Gud-Ka-8zN"/>
+                        <outlet property="infoLabel2" destination="szE-aO-dB2" id="Ml7-Eo-sCW"/>
+                        <outlet property="loadingImageView" destination="pBi-kG-UMm" id="7nl-Lz-DJa"/>
                         <outlet property="messagesTableView" destination="xUI-kr-tcf" id="rV4-k2-luJ"/>
                         <outlet property="progressProgressView" destination="o4u-xS-Mt4" id="Mkl-Br-nod"/>
                         <segue destination="BM4-Ae-fu7" kind="show" identifier="gotoWeb" id="RQw-9d-ybA"/>
@@ -338,13 +370,42 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="cwG-VJ-0RB">
                                         <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nV-XR-eos">
+                                        <rect key="frame" x="37" y="348" width="300" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="nZa-4k-COU"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="You should wait new posts                    from chosen places">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.64425058300000004" green="0.64884417709999997" blue="0.66262495960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="17" name=".SFNSText"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No posts right now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7y-LT-l4K">
+                                        <rect key="frame" x="87.5" y="310" width="200" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="E1s-yA-aFP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="cwG-VJ-0RB" firstAttribute="top" secondItem="jGs-2w-7ix" secondAttribute="top" constant="70" id="5Fu-h2-4ee"/>
                                     <constraint firstItem="cwG-VJ-0RB" firstAttribute="leading" secondItem="jGs-2w-7ix" secondAttribute="leading" id="P91-WA-60v"/>
+                                    <constraint firstItem="6nV-XR-eos" firstAttribute="top" secondItem="U7y-LT-l4K" secondAttribute="bottom" constant="17" id="WiN-0v-bcj"/>
                                     <constraint firstAttribute="bottom" secondItem="cwG-VJ-0RB" secondAttribute="bottom" id="Wnp-QC-88J"/>
+                                    <constraint firstItem="U7y-LT-l4K" firstAttribute="centerX" secondItem="cwG-VJ-0RB" secondAttribute="centerX" id="Z8E-dM-rV5"/>
                                     <constraint firstAttribute="trailing" secondItem="cwG-VJ-0RB" secondAttribute="trailing" id="euR-iy-Q0x"/>
+                                    <constraint firstItem="6nV-XR-eos" firstAttribute="centerX" secondItem="cwG-VJ-0RB" secondAttribute="centerX" id="rTa-lc-eHu"/>
+                                    <constraint firstItem="6nV-XR-eos" firstAttribute="centerY" secondItem="cwG-VJ-0RB" secondAttribute="centerY" id="u6g-Wn-tEg"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -378,6 +439,9 @@
                     <connections>
                         <outlet property="activityView" destination="jGs-2w-7ix" id="jrq-H3-UGy"/>
                         <outlet property="backViewButton" destination="ZhD-2S-WuG" id="mB8-jo-4hq"/>
+                        <outlet property="infoLabel" destination="6nV-XR-eos" id="3mT-mI-ugm"/>
+                        <outlet property="infoLabel2" destination="U7y-LT-l4K" id="iYB-5M-0xO"/>
+                        <outlet property="loadingImageView" destination="cwG-VJ-0RB" id="2tp-iJ-yjm"/>
                         <outlet property="messagesTableView" destination="tMV-lA-fk0" id="jTa-cV-s9l"/>
                         <outlet property="progressProgressView" destination="kro-cz-n0D" id="V4S-jq-aCQ"/>
                         <segue destination="BM4-Ae-fu7" kind="show" identifier="gotoWeb" id="zlY-w4-Jrc"/>
@@ -489,7 +553,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MkU-QO-H7F">
-                                <rect key="frame" x="15" y="15" width="345" height="637"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jfg-wS-mb7">
                                     <size key="itemSize" width="100" height="130"/>
@@ -498,7 +562,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Kwb-AP-aMw">
-                                    <rect key="frame" x="0.0" y="-64" width="345" height="637"/>
+                                    <rect key="frame" x="0.0" y="-64" width="375" height="667"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <cells/>
@@ -510,10 +574,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="MkU-QO-H7F" firstAttribute="top" secondItem="oi4-1d-Be7" secondAttribute="top" constant="15" id="7iT-G5-UXQ"/>
-                            <constraint firstItem="MkU-QO-H7F" firstAttribute="leading" secondItem="oi4-1d-Be7" secondAttribute="leading" constant="15" id="kCS-sQ-T5f"/>
-                            <constraint firstAttribute="bottom" secondItem="MkU-QO-H7F" secondAttribute="bottom" constant="15" id="wHw-oQ-Txk"/>
-                            <constraint firstAttribute="trailing" secondItem="MkU-QO-H7F" secondAttribute="trailing" constant="15" id="weB-NM-YAy"/>
+                            <constraint firstItem="MkU-QO-H7F" firstAttribute="top" secondItem="oi4-1d-Be7" secondAttribute="top" id="7iT-G5-UXQ"/>
+                            <constraint firstItem="MkU-QO-H7F" firstAttribute="leading" secondItem="oi4-1d-Be7" secondAttribute="leading" id="kCS-sQ-T5f"/>
+                            <constraint firstAttribute="bottom" secondItem="MkU-QO-H7F" secondAttribute="bottom" id="wHw-oQ-Txk"/>
+                            <constraint firstAttribute="trailing" secondItem="MkU-QO-H7F" secondAttribute="trailing" id="weB-NM-YAy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Apps" id="uut-pu-I0J">
@@ -692,7 +756,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="34g-LE-XB5" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Apps" image="boxes" id="aXu-wL-Yat"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="atR-7E-1nd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="atR-7E-1nd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -717,7 +781,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TeR-g5-h1k" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" id="TaP-LA-EDn"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="nD6-Hf-o65">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nD6-Hf-o65">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -762,13 +826,42 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="1dK-aF-bhS">
                                         <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfe-BY-bdR">
+                                        <rect key="frame" x="37" y="348" width="300" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="oLS-AZ-R2W"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="You should wait new posts                    from chosen places">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.64425058300000004" green="0.64884417709999997" blue="0.66262495960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="17" name=".SFNSText"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No posts right now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8Q-Ad-KYM">
+                                        <rect key="frame" x="87.5" y="312" width="200" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="7z0-qE-fSl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="1dK-aF-bhS" firstAttribute="leading" secondItem="f3I-PU-LKP" secondAttribute="leading" id="DF9-9o-LVI"/>
+                                    <constraint firstItem="mfe-BY-bdR" firstAttribute="centerY" secondItem="1dK-aF-bhS" secondAttribute="centerY" id="HQW-8N-YlP"/>
                                     <constraint firstItem="1dK-aF-bhS" firstAttribute="top" secondItem="f3I-PU-LKP" secondAttribute="top" constant="70" id="NaI-2k-4if"/>
+                                    <constraint firstItem="mfe-BY-bdR" firstAttribute="centerX" secondItem="1dK-aF-bhS" secondAttribute="centerX" id="OF8-0h-WAG"/>
                                     <constraint firstAttribute="bottom" secondItem="1dK-aF-bhS" secondAttribute="bottom" id="QIj-b4-F9T"/>
                                     <constraint firstAttribute="trailing" secondItem="1dK-aF-bhS" secondAttribute="trailing" id="Qh7-kq-U4W"/>
+                                    <constraint firstItem="mfe-BY-bdR" firstAttribute="top" secondItem="j8Q-Ad-KYM" secondAttribute="bottom" constant="15" id="Z66-Zp-dXb"/>
+                                    <constraint firstItem="j8Q-Ad-KYM" firstAttribute="centerX" secondItem="1dK-aF-bhS" secondAttribute="centerX" id="bKM-vB-UxF"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -802,6 +895,9 @@
                     <connections>
                         <outlet property="activityView" destination="f3I-PU-LKP" id="J36-bh-e8S"/>
                         <outlet property="backViewButton" destination="Gia-zK-9hM" id="rmD-CD-Sg5"/>
+                        <outlet property="infoLabel" destination="mfe-BY-bdR" id="114-KJ-L4I"/>
+                        <outlet property="infoLabel2" destination="j8Q-Ad-KYM" id="iQt-Fe-oPp"/>
+                        <outlet property="loadingImageView" destination="1dK-aF-bhS" id="wnq-L8-yVL"/>
                         <outlet property="messagesTableView" destination="5Gh-2f-cac" id="pci-RT-hx4"/>
                         <outlet property="progressProgressView" destination="2tR-Sb-yAh" id="amN-WC-Z4k"/>
                         <segue destination="BM4-Ae-fu7" kind="show" identifier="gotoWeb" id="yRV-U8-RYS"/>
@@ -826,9 +922,9 @@
         <image name="webIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gaJ-YS-SSm"/>
         <segue reference="Btb-Ae-gja"/>
-        <segue reference="yRV-U8-RYS"/>
         <segue reference="Q2k-Ac-kVa"/>
+        <segue reference="gaJ-YS-SSm"/>
+        <segue reference="yRV-U8-RYS"/>
     </inferredMetricsTieBreakers>
 </document>
