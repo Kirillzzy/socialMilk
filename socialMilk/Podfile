@@ -10,4 +10,5 @@ pod 'InstagramKit'
 pod 'FacebookCore'
 pod 'FacebookLogin'
 pod 'FacebookShare'
+pod 'CCBottomRefreshControl'
 end

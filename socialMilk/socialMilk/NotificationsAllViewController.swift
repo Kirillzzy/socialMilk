@@ -22,12 +22,14 @@ class NotificationsAllViewController: UIViewController, NotificationsViewControl
     internal var sectionsNames = ["Old Posts", "New Posts"]
     internal var lastPerform: Constants.fromSegueShowView = Constants.fromSegueShowView.null
     internal var isWentToWeb = false
-
+    internal let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshControl.addTarget(self, action: #selector(refreshTableViewByPulling(sender:)), for: .valueChanged)
         self.messagesTableView.estimatedRowHeight = 90
         self.messagesTableView.rowHeight = UITableViewAutomaticDimension
+        self.messagesTableView.bottomRefreshControl = refreshControl
         self.messagesTableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageCell")
         chat.append(ChatClass())
         chat.append(ChatClass())
@@ -70,6 +72,10 @@ class NotificationsAllViewController: UIViewController, NotificationsViewControl
         }
     }
     
+    
+    internal func refreshTableViewByPulling(sender: AnyObject){
+        loadNewsForPull()
+    }
     
     
     internal func reloadUI(){
@@ -193,8 +199,27 @@ class NotificationsAllViewController: UIViewController, NotificationsViewControl
                 self.progressProgressView.isHidden = true
             }
         }
-        
     }
+    
+    func loadNewsForPull(){
+        DispatchQueue.global(qos: .background).async {
+            var mes0 = WorkingVk.encodePostsToMessages(posts: WorkingVk.getOldPosts())
+            var mes1 = WorkingVk.encodePostsToMessages(posts: WorkingVk.checkNewPosts())
+            mes0.append(contentsOf: WorkingTwitter.encodeTweetsToMessages(tweets: WorkingTwitter.getOldTweets()))
+            mes1.append(contentsOf: WorkingTwitter.encodeTweetsToMessages(tweets: WorkingTwitter.checkNewTweets()))
+            mes0.sort(by: {message1, message2 in
+                message1.timeNSDate.isLessThanDate(dateToCompare: message2.timeNSDate)})
+            mes1.sort(by: {message1, message2 in
+                message1.timeNSDate.isLessThanDate(dateToCompare: message2.timeNSDate)})
+            DispatchQueue.main.async {
+                self.chat[0].messages = mes0
+                self.chat[1].messages = mes1
+                self.reloadTableView()
+                self.refreshControl.endRefreshing()
+            }
+        }
+    }
+    
     @IBAction func backViewButtonPressed(_ sender: Any) {
         _ = self.navigationController?.popViewController(animated: true)
     }

@@ -39,6 +39,7 @@
 		8A02C61C1E15836900DC4CB9 /* SettingsChooseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A02C61A1E15836900DC4CB9 /* SettingsChooseTableViewCell.swift */; };
 		8A02C61D1E15836900DC4CB9 /* SettingsChooseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A02C61B1E15836900DC4CB9 /* SettingsChooseTableViewCell.xib */; };
 		8A02C61F1E15A5DC00DC4CB9 /* NotificationsTwitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A02C61E1E15A5DC00DC4CB9 /* NotificationsTwitterViewController.swift */; };
+		8A09B81D1E36838F00AEB12B /* CCBottomRefreshControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A09B81C1E36838F00AEB12B /* CCBottomRefreshControl.framework */; };
 		8A0ACB7F1E0678D30071A7F6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0ACB7E1E0678D30071A7F6 /* Constants.swift */; };
 		8A151C0C1E2E260700EABF13 /* SettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A151C0B1E2E260700EABF13 /* SettingsProtocol.swift */; };
 		8A151C111E2E298B00EABF13 /* SettingsBoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A151C0F1E2E298B00EABF13 /* SettingsBoolTableViewCell.swift */; };
@@ -129,6 +130,7 @@
 		8A02C61A1E15836900DC4CB9 /* SettingsChooseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsChooseTableViewCell.swift; sourceTree = "<group>"; };
 		8A02C61B1E15836900DC4CB9 /* SettingsChooseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsChooseTableViewCell.xib; sourceTree = "<group>"; };
 		8A02C61E1E15A5DC00DC4CB9 /* NotificationsTwitterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsTwitterViewController.swift; sourceTree = "<group>"; };
+		8A09B81C1E36838F00AEB12B /* CCBottomRefreshControl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CCBottomRefreshControl.framework; path = "Pods/../build/Debug-iphoneos/CCBottomRefreshControl/CCBottomRefreshControl.framework"; sourceTree = "<group>"; };
 		8A0ACB7E1E0678D30071A7F6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8A151C0B1E2E260700EABF13 /* SettingsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsProtocol.swift; sourceTree = "<group>"; };
 		8A151C0F1E2E298B00EABF13 /* SettingsBoolTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsBoolTableViewCell.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A09B81D1E36838F00AEB12B /* CCBottomRefreshControl.framework in Frameworks */,
 				8AEF728C1E195DAE00332FB5 /* FacebookCore.framework in Frameworks */,
 				8AEF728D1E195DAE00332FB5 /* FacebookLogin.framework in Frameworks */,
 				8AEF728E1E195DAE00332FB5 /* FacebookShare.framework in Frameworks */,
@@ -238,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				7BF0F4391DF1E50B00285298 /* AppDelegate.swift */,
+				8AEF72781E195D4800332FB5 /* socialMilk-Bridging-Header.h */,
 				8AE60E741E06DD1600A9662F /* Fabric.framework */,
 				8AE60E751E06DD1600A9662F /* TwitterKit.framework */,
 				8AE60E761E06DD1600A9662F /* TwitterKitResources.bundle */,
@@ -348,7 +352,6 @@
 				8AEF72791E195D4800332FB5 /* IKLoginViewController.h */,
 				8AEF727A1E195D4800332FB5 /* IKLoginViewController.m */,
 				8AEF727B1E195D4800332FB5 /* InstagramManager.swift */,
-				8AEF72781E195D4800332FB5 /* socialMilk-Bridging-Header.h */,
 			);
 			name = Instagram;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 		C1DE064BC00740E057D27DE9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8A09B81C1E36838F00AEB12B /* CCBottomRefreshControl.framework */,
 				8AEF72851E195DAE00332FB5 /* FacebookCore.framework */,
 				8AEF72861E195DAE00332FB5 /* FacebookLogin.framework */,
 				8AEF72871E195DAE00332FB5 /* FacebookShare.framework */,
@@ -742,6 +746,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKLoginKit",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKShareKit",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/InstagramKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/CCBottomRefreshControl",
 				);
 				INFOPLIST_FILE = socialMilk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -774,6 +779,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKLoginKit",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKShareKit",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/InstagramKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/CCBottomRefreshControl",
 				);
 				INFOPLIST_FILE = socialMilk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

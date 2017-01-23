@@ -69,7 +69,6 @@ class SettingsViewController: UIViewController, SettingsProtocol{
         }
         settingsArray[0].append(settings(image: nil, text: "Browser", nameOfSegue: "gotoBrowserSettings"))
         settingsArray[0].append(settings(image: nil, text: "Background Image", nameOfSegue: "gotoBackgroundImageSettings"))
-        settingsArray[0].append(settings(image: nil, text: "Timeline Colors", nameOfSegue: "gotoTimelineColors"))
         if WorkingDefaults.isHaveVk(){
             settingsArray[1].append(settings(image: #imageLiteral(resourceName: "vkLogoBlackBig"),
                                           text: VKManagerWorker.userName,
@@ -83,6 +82,7 @@ class SettingsViewController: UIViewController, SettingsProtocol{
         settingsArray[2].append(settings(image: nil, text: "Rate this app", nameOfSegue: "gotoRateUs"))
         settingsArray[2].append(settings(image: nil, text: "Contact Developer", nameOfSegue: "gotoContactDev"))
         settingsArray[2].append(settings(image: nil, text: "About Social Milk", nameOfSegue: "gotoProductInfo"))
+        settingsArray[2].append(settings(image: nil, text: "Clear Data", nameOfSegue: ""))
     }
 
 }

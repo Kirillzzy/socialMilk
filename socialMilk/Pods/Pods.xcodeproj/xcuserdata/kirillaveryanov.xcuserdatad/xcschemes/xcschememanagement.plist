@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>CCBottomRefreshControl.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -50,6 +55,11 @@
 			<false/>
 		</dict>
 		<key>InstagramKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -87,12 +97,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2D877264C0780613BBC156A123821A87</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>30C3788C3373AEA1D6BEDC15D2AC57CE</key>
+		<key>075F11A6AC7F1050256A102C7AB415DC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,6 +112,16 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>515D2FFA40535DF69A6A5A941459FBA3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52C19ED8216382B5AF6661C050C67C70</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>593E9479C06FB200807D11AB29EB50BD</key>
 		<dict>
 			<key>primary</key>
@@ -117,12 +132,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5C69EA6AC041CD16890CB2F1107DEC57</key>
+		<key>5B7E0FF729FFDD009C9DC79698A7A923</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6ED80DBEB790732C5D7893AF8E1CDA7B</key>
+		<key>5C69EA6AC041CD16890CB2F1107DEC57</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,17 +152,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>9236B102F9D28B8A8D73696431C300EB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A7FEAA14E89971698ACA148F7F7202F2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AEE55D2E9B24E6CA9A92B23075C729D1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B91670424C2829D0218FD8CA000B3F1C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -157,12 +167,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DA422A07E24328E9CE0CC359BA36EE92</key>
+		<key>D2CB5E711C6626A6C1C5E95A8DD5FA30</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>DDBCFDE490CDFDABF6F16A26F346932D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E140B8CF3D7306394C81D06FBFD8FE24</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E3DD3C6BEC8FB21238A31DFE0265073C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
