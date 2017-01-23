@@ -68,7 +68,7 @@ class SettingsViewController: UIViewController, SettingsProtocol{
             settingsArray.append([settings]())
         }
         settingsArray[0].append(settings(image: nil, text: "Browser", nameOfSegue: "gotoBrowserSettings"))
-        settingsArray[0].append(settings(image: nil, text: "Background Image", nameOfSegue: "gotoBackgroundImageSettings"))
+//        settingsArray[0].append(settings(image: nil, text: "Background Image", nameOfSegue: "gotoBackgroundImageSettings"))
         if WorkingDefaults.isHaveVk(){
             settingsArray[1].append(settings(image: #imageLiteral(resourceName: "vkLogoBlackBig"),
                                           text: VKManagerWorker.userName,

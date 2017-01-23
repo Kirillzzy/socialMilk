@@ -83,7 +83,7 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: 150, height: 150)
+        return CGSize(width: 110, height: 110)
     }
     
     @IBAction func editButtonPressed(_ sender: Any) {

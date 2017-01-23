@@ -19,23 +19,20 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUY-8J-eA2">
-                        <rect key="frame" x="0.0" y="101" width="150" height="61"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="150" id="bk8-uv-xho"/>
-                        </constraints>
+                        <rect key="frame" x="0.0" y="78" width="150" height="84"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Gm-1s-57r">
-                        <rect key="frame" x="25" y="0.0" width="100" height="100"/>
+                        <rect key="frame" x="40" y="0.0" width="70" height="70"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="100" id="YDw-JO-h1E"/>
-                            <constraint firstAttribute="width" constant="100" id="oEZ-bt-mHc"/>
+                            <constraint firstAttribute="height" constant="70" id="YDw-JO-h1E"/>
+                            <constraint firstAttribute="width" constant="70" id="oEZ-bt-mHc"/>
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEV-Sq-dKk">
-                        <rect key="frame" x="127" y="0.0" width="15" height="15"/>
+                        <rect key="frame" x="112" y="0.0" width="15" height="15"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="15" id="1q9-pi-j07"/>
                             <constraint firstAttribute="height" constant="15" id="gwe-87-0nt"/>
@@ -48,7 +45,7 @@
             </view>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="cUY-8J-eA2" secondAttribute="bottom" constant="8" id="1Ta-Oj-vse"/>
-                <constraint firstItem="cUY-8J-eA2" firstAttribute="top" secondItem="7Gm-1s-57r" secondAttribute="bottom" constant="1" id="Dkj-kK-HPr"/>
+                <constraint firstItem="cUY-8J-eA2" firstAttribute="top" secondItem="7Gm-1s-57r" secondAttribute="bottom" constant="8" id="Dkj-kK-HPr"/>
                 <constraint firstItem="7Gm-1s-57r" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="MnU-bG-3Ah"/>
                 <constraint firstItem="7Gm-1s-57r" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Uf0-6e-1pc"/>
                 <constraint firstItem="tEV-Sq-dKk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gyb-9p-wk0"/>
