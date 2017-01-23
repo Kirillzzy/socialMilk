@@ -9,7 +9,7 @@ This privacy policy has been compiled to better serve those who are concerned wi
 What personal information do we collect from the people that visit our app?
 
 We do not collect information from visitors of our app.
-Groups, friends or other details to help you with your experience.
+Your page information, groups, friends or other details to help you with your experience.
 
 When do we collect information?
 
