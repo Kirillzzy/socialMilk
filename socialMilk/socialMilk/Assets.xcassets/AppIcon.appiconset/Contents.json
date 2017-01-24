@@ -143,9 +143,8 @@
       "scale" : "2x"
     },
     {
-      "size" : "60x60",
       "idiom" : "car",
-      "filename" : "Icon-App-60x60@2x.png",
+      "size" : "60x60",
       "scale" : "2x"
     },
     {
@@ -185,7 +184,6 @@
     {
       "size" : "40x40",
       "idiom" : "watch",
-      "filename" : "Icon-App-40x40@2x.png",
       "scale" : "2x",
       "role" : "appLauncher",
       "subtype" : "38mm"
