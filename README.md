@@ -26,8 +26,7 @@ In future Facebook and Instagram are planning.
 
 
 ![alt tag](https://github.com/Kirillzzy/socialMilk/blob/master/screenshots/apps.png)
-![alt tag](https://github.com/Kirillzzy/socialMilk/blob/master/screenshots/chooseApps.png)
 ![alt tag](https://github.com/Kirillzzy/socialMilk/blob/master/screenshots/allTimeline.png)
 ![alt tag](https://github.com/Kirillzzy/socialMilk/blob/master/screenshots/webView.png)
-![alt tag](https://github.com/Kirillzzy/socialMilk/blob/master/screenshots/settings.png)
 ![alt tag](https://github.com/Kirillzzy/socialMilk/blob/master/screenshots/groupsVK.png)
+![alt tag](https://github.com/Kirillzzy/socialMilk/blob/master/screenshots/settings.png)
