@@ -21,6 +21,8 @@ In future Facebook and Instagram are planning.
 - Instagram(*)
 
 -------------------
+![alt tag](https://github.com/Kirillzzy/socialMilk/blob/master/screenshots/millk.png)
+
 
 
 ![alt tag](https://github.com/Kirillzzy/socialMilk/blob/master/screenshots/apps.png)
