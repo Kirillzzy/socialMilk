@@ -23,9 +23,9 @@ extension RealmManagerTwitter{
     static func saveNewTweetPost(tweet: TweetPostRealm){
         let realm = try! Realm()
         let tweets = realm.objects(TweetPostRealm.self).filter({$0.userId == tweet.userId})
-        if tweets.count >= 2000 && tweets.count > 0{
+        if tweets.count >= 1000 && tweets.count > 0{
             let minTweets = tweets.sorted(by: {$0.date < $1.date})
-            for i in 0..<1000{
+            for i in 0 ..< 500{
                 try! realm.write {
                     realm.delete(minTweets[i])
                 }

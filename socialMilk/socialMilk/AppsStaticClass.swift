@@ -81,7 +81,7 @@ final class AppsStaticClass{
                              AppCheckedPostRealm: nil,
                              AppRealmManager: nil,
                              AppWorking: nil,
-                             AppIcon: #imageLiteral(resourceName: "SocialMilkIconPng"),
+                             AppIcon: #imageLiteral(resourceName: "socialMediaFull"),
                              AppName: "All"))
     }
     

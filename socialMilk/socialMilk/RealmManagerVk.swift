@@ -24,9 +24,9 @@ extension RealmManagerVk{
     static func saveNewVKPost(post: VKPostRealm){
         let realm = try! Realm()
         let posts = realm.objects(VKPostRealm.self).filter({$0.groupId == post.groupId})
-        if posts.count >= 2000 && posts.count > 0{
+        if posts.count >= 1000{
             let minPosts = posts.sorted(by: {$0.date < $1.date})
-            for i in 0..<1000{
+            for i in 0 ..< 500{
                 try! realm.write {
                     realm.delete(minPosts[i])
                 }
