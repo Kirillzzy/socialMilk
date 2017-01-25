@@ -36,11 +36,19 @@ final class AppsStaticClass{
         if WorkingDefaults.isHaveFb(){
 //            addFBToApps()
         }
+        apps.append(allAvailableApps[3])
+        apps.append(allAvailableApps[4])
+        apps.append(allAvailableApps[5])
+        apps.append(allAvailableApps[6])
+        apps.append(allAvailableApps[7])
     }
     
     private class func addSoonApps(){
         soonApps.append((#imageLiteral(resourceName: "facebookLogoBig"), "Facebook"))
         soonApps.append((#imageLiteral(resourceName: "instagramLogo"), "Instagram"))
+        soonApps.append((#imageLiteral(resourceName: "mail"), "Mail"))
+        soonApps.append((#imageLiteral(resourceName: "linkedInlogoBig"), "LinkedIn"))
+        soonApps.append((#imageLiteral(resourceName: "snapchatLogoBig"), "SnapChat"))
     }
     
     private class func addVKToAvailableApps(){
@@ -69,6 +77,66 @@ final class AppsStaticClass{
                              AppWorking: WorkingTwitter(),
                              AppIcon: #imageLiteral(resourceName: "twitterLogo"),
                              AppName: "Twitter"))
+        
+        allAvailableApps.append(AppClass(AppManager: nil,
+                                         AppManagerSide: nil,
+                                         AppChooseGroupClass: nil,
+                                         AppPost: nil,
+                                         AppPostRealm: nil,
+                                         AppCheckedPost: nil,
+                                         AppCheckedPostRealm: nil,
+                                         AppRealmManager: nil,
+                                         AppWorking: nil,
+                                         AppIcon: #imageLiteral(resourceName: "facebookLogoBig"),
+                                         AppName: "Facebook"))
+        
+        allAvailableApps.append(AppClass(AppManager: nil,
+                                         AppManagerSide: nil,
+                                         AppChooseGroupClass: nil,
+                                         AppPost: nil,
+                                         AppPostRealm: nil,
+                                         AppCheckedPost: nil,
+                                         AppCheckedPostRealm: nil,
+                                         AppRealmManager: nil,
+                                         AppWorking: nil,
+                                         AppIcon: #imageLiteral(resourceName: "instagramLogoBig"),
+                                         AppName: "Instagram"))
+        
+        allAvailableApps.append(AppClass(AppManager: nil,
+                                         AppManagerSide: nil,
+                                         AppChooseGroupClass: nil,
+                                         AppPost: nil,
+                                         AppPostRealm: nil,
+                                         AppCheckedPost: nil,
+                                         AppCheckedPostRealm: nil,
+                                         AppRealmManager: nil,
+                                         AppWorking: nil,
+                                         AppIcon: #imageLiteral(resourceName: "mail"),
+                                         AppName: "Mail"))
+        
+        allAvailableApps.append(AppClass(AppManager: nil,
+                                         AppManagerSide: nil,
+                                         AppChooseGroupClass: nil,
+                                         AppPost: nil,
+                                         AppPostRealm: nil,
+                                         AppCheckedPost: nil,
+                                         AppCheckedPostRealm: nil,
+                                         AppRealmManager: nil,
+                                         AppWorking: nil,
+                                         AppIcon: #imageLiteral(resourceName: "linkedInlogoBig"),
+                                         AppName: "LinkedIn"))
+        
+        allAvailableApps.append(AppClass(AppManager: nil,
+                                         AppManagerSide: nil,
+                                         AppChooseGroupClass: nil,
+                                         AppPost: nil,
+                                         AppPostRealm: nil,
+                                         AppCheckedPost: nil,
+                                         AppCheckedPostRealm: nil,
+                                         AppRealmManager: nil,
+                                         AppWorking: nil,
+                                         AppIcon: #imageLiteral(resourceName: "snapchatLogoBig"),
+                                         AppName: "SnapChat"))
     }
     
     private class func addAllAppsAppToAvailableApps(){

@@ -59,12 +59,20 @@ class LoginViewController: UIViewController {
     private func loadComponents(){
         twitterButton.layer.masksToBounds = true
         twitterButton.layer.cornerRadius = 5
+        twitterButton.layer.borderWidth = 1
+        twitterButton.layer.borderColor = UIColor.white.cgColor
         vkButton.layer.masksToBounds = true
         vkButton.layer.cornerRadius = 5
+        vkButton.layer.borderWidth = 1
+        vkButton.layer.borderColor = UIColor.white.cgColor
         fbButton.layer.masksToBounds = true
         fbButton.layer.cornerRadius = 5
+        fbButton.layer.borderWidth = 1
+        fbButton.layer.borderColor = UIColor.white.cgColor
         nextButton.layer.masksToBounds = true
         nextButton.layer.cornerRadius = 5
+        nextButton.layer.borderWidth = 1
+        nextButton.layer.borderColor = UIColor.white.cgColor
     }
     
     private func showErrorAlert(){

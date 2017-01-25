@@ -658,10 +658,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back6" translatesAutoresizingMaskIntoConstraints="NO" id="yA2-mB-F53">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="millk" translatesAutoresizingMaskIntoConstraints="NO" id="yA2-mB-F53">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oua-gl-pst">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oua-gl-pst">
                                 <rect key="frame" x="20" y="248" width="374" height="50"/>
                                 <color key="backgroundColor" red="0.31560885906219482" green="0.45912373065948486" blue="0.64600986242294312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -703,7 +703,7 @@
                                     <action selector="nextButtonPressed:" destination="nw7-hp-iPg" eventType="touchUpInside" id="YpC-2W-J94"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkO-rO-llW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkO-rO-llW">
                                 <rect key="frame" x="20" y="438" width="374" height="50"/>
                                 <color key="backgroundColor" red="0.22533366084098816" green="0.3471701443195343" blue="0.59202378988265991" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -909,10 +909,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back6" width="450" height="800"/>
         <image name="boxes" width="25" height="25"/>
         <image name="fbWhiteLogo" width="25" height="25"/>
         <image name="loading" width="1242" height="2208"/>
+        <image name="millk" width="2048" height="2048"/>
         <image name="navigateRight" width="25" height="25"/>
         <image name="next" width="25" height="25"/>
         <image name="plusRound" width="25" height="25"/>
