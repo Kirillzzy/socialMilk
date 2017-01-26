@@ -20,6 +20,8 @@ final class AppsStaticClass{
         addAllAppsAppToAvailableApps()
         addVKToAvailableApps()
         addTwitterToAvailableApps()
+        addFBToAvailableApps()
+        addTemplates()
         loadApps()
         addSoonApps()
     }
@@ -34,9 +36,8 @@ final class AppsStaticClass{
             apps.append(allAvailableApps[2])
         }
         if WorkingDefaults.isHaveFb(){
-//            addFBToApps()
+            apps.append(allAvailableApps[3])
         }
-        apps.append(allAvailableApps[3])
         apps.append(allAvailableApps[4])
         apps.append(allAvailableApps[5])
         apps.append(allAvailableApps[6])
@@ -46,7 +47,6 @@ final class AppsStaticClass{
     }
     
     private class func addSoonApps(){
-        soonApps.append((#imageLiteral(resourceName: "facebookLogoBig"), "Facebook"))
         soonApps.append((#imageLiteral(resourceName: "instagramLogo"), "Instagram"))
         soonApps.append((#imageLiteral(resourceName: "mail"), "Mail"))
         soonApps.append((#imageLiteral(resourceName: "linkedInlogoBig"), "LinkedIn"))
@@ -69,6 +69,20 @@ final class AppsStaticClass{
                              AppName: "VK"))
     }
     
+    private class func addFBToAvailableApps(){
+        allAvailableApps.append(AppClass(AppManager: FBManager(),
+                                         AppManagerSide: nil,
+                                         AppChooseGroupClass: FBChooseGroupClass(),
+                                         AppPost: FBPost(),
+                                         AppPostRealm: FBPostRealm(),
+                                         AppCheckedPost: FBCheckedPost(),
+                                         AppCheckedPostRealm: FBCheckedPostRealm(),
+                                         AppRealmManager: RealmManagerFB(),
+                                         AppWorking: WorkingFB(),
+                                         AppIcon: #imageLiteral(resourceName: "facebookLogoBig"),
+                                         AppName: "Facebook"))
+    }
+    
     private class func addTwitterToAvailableApps(){
         allAvailableApps.append(AppClass(AppManager: TwitterManager(),
                              AppManagerSide: nil,
@@ -81,19 +95,11 @@ final class AppsStaticClass{
                              AppWorking: WorkingTwitter(),
                              AppIcon: #imageLiteral(resourceName: "twitterLogo"),
                              AppName: "Twitter"))
+
         
-        allAvailableApps.append(AppClass(AppManager: nil,
-                                         AppManagerSide: nil,
-                                         AppChooseGroupClass: nil,
-                                         AppPost: nil,
-                                         AppPostRealm: nil,
-                                         AppCheckedPost: nil,
-                                         AppCheckedPostRealm: nil,
-                                         AppRealmManager: nil,
-                                         AppWorking: nil,
-                                         AppIcon: #imageLiteral(resourceName: "facebookLogoBig"),
-                                         AppName: "Facebook"))
-        
+    }
+    
+    private class func addTemplates(){
         allAvailableApps.append(AppClass(AppManager: nil,
                                          AppManagerSide: nil,
                                          AppChooseGroupClass: nil,
@@ -164,6 +170,7 @@ final class AppsStaticClass{
                                          AppWorking: nil,
                                          AppIcon: #imageLiteral(resourceName: "slackLogoBig"),
                                          AppName: "Slack"))
+
     }
     
     private class func addAllAppsAppToAvailableApps(){
@@ -178,10 +185,6 @@ final class AppsStaticClass{
                              AppWorking: nil,
                              AppIcon: #imageLiteral(resourceName: "socialMediaFull"),
                              AppName: "All"))
-    }
-    
-    private class func addFBToApps(){
-        // in fututre
     }
     
 }

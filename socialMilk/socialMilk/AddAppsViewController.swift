@@ -23,6 +23,7 @@ class AddAppsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        availableApps = AppsStaticClass.allAvailableApps
         availableApps.removeFirst()
     }
     
@@ -68,6 +69,9 @@ class AddAppsViewController: UIViewController, UITableViewDelegate, UITableViewD
             }else if indexPath.row == 1{
                 WorkingDefaults.setTwitter(how: true)
                 performSegue(withIdentifier: "fromAddtoTwitterChooseSegue", sender: self)
+            }else if indexPath.row == 2{
+                WorkingDefaults.setFB(how: true)
+                performSegue(withIdentifier: "fromAddToFBChooseSegue", sender: self)
             }
         }
     }

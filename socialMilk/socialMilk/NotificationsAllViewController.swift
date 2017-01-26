@@ -139,6 +139,14 @@ class NotificationsAllViewController: UIViewController, NotificationsViewControl
             }else{
                 cell.heightConstraint.constant = 0
             }
+        }else if chat[indexPath.section].messages[indexPath.row].typeOfMessage == MessageClass.type.fb{
+            cell.imageImageView.sd_setImage(with: URL(string: chat[indexPath.section].messages[indexPath.row].postFb.group.photoLink))
+            if chat[indexPath.section].messages[indexPath.row].postFb.hasPhoto{
+                cell.heightConstraint.constant = heightOfImage
+                cell.photoImageImageView.sd_setImage(with: URL(string: chat[indexPath.section].messages[indexPath.row].postFb.photoLink)!)
+            }else{
+                cell.heightConstraint.constant = 0
+            }
         }
         
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(imageTapped(gesture:)))
@@ -151,11 +159,13 @@ class NotificationsAllViewController: UIViewController, NotificationsViewControl
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         messagesTableView.deselectRow(at: indexPath, animated: true)
-        let url = URL(string: "https://" + chat[indexPath.section].messages[indexPath.row].url)!
-        if WorkingDefaults.getBrowser() == WorkingDefaults.Browser.my{
-            performSegue(withIdentifier: "gotoWeb", sender: url)
-        }else{
-            goWeb(url: url)
+        if chat[indexPath.section].messages[indexPath.row].url != ""{
+            let url = URL(string: "https://" + chat[indexPath.section].messages[indexPath.row].url)!
+            if WorkingDefaults.getBrowser() == WorkingDefaults.Browser.my{
+                performSegue(withIdentifier: "gotoWeb", sender: url)
+            }else{
+                goWeb(url: url)
+            }
         }
     }
     
@@ -168,15 +178,23 @@ class NotificationsAllViewController: UIViewController, NotificationsViewControl
             }
             self.chat[1].messages = WorkingVk.encodePostsToMessages(posts: WorkingVk.checkNewPosts())
             DispatchQueue.main.async {
-                self.updateProgressView(val: 40.0)
+                self.updateProgressView(val: 30.0)
             }
             self.chat[0].messages.append(contentsOf: WorkingTwitter.encodeTweetsToMessages(tweets: WorkingTwitter.getOldTweets()))
             DispatchQueue.main.async {
-                self.updateProgressView(val: 60.0)
+                self.updateProgressView(val: 50.0)
             }
             self.chat[1].messages.append(contentsOf: WorkingTwitter.encodeTweetsToMessages(tweets: WorkingTwitter.checkNewTweets()))
             DispatchQueue.main.async {
+                self.updateProgressView(val: 60.0)
+            }
+            self.chat[0].messages.append(contentsOf: WorkingFB.encodePostsToMessages(posts: WorkingFB.getOldPosts()))
+            DispatchQueue.main.async {
                 self.updateProgressView(val: 80.0)
+            }
+            self.chat[1].messages.append(contentsOf: WorkingFB.encodePostsToMessages(posts: WorkingFB.checkNewPosts()))
+            DispatchQueue.main.async {
+                self.updateProgressView(val: 90.0)
             }
             self.chat[0].messages.sort(by: {message1, message2 in
                 message1.timeNSDate.isLessThanDate(dateToCompare: message2.timeNSDate)})
@@ -207,6 +225,8 @@ class NotificationsAllViewController: UIViewController, NotificationsViewControl
             var mes1 = WorkingVk.encodePostsToMessages(posts: WorkingVk.checkNewPosts())
             mes0.append(contentsOf: WorkingTwitter.encodeTweetsToMessages(tweets: WorkingTwitter.getOldTweets()))
             mes1.append(contentsOf: WorkingTwitter.encodeTweetsToMessages(tweets: WorkingTwitter.checkNewTweets()))
+            mes0.append(contentsOf: WorkingFB.encodePostsToMessages(posts: WorkingFB.getOldPosts()))
+            mes1.append(contentsOf: WorkingFB.encodePostsToMessages(posts: WorkingFB.checkNewPosts()))
             mes0.sort(by: {message1, message2 in
                 message1.timeNSDate.isLessThanDate(dateToCompare: message2.timeNSDate)})
             mes1.sort(by: {message1, message2 in

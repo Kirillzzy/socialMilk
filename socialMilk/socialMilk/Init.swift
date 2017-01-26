@@ -16,6 +16,7 @@ final class Init{
         RealmManagerVk.printRealmPath()
         WorkingVk.sources = RealmManagerVk.getVKCheckedPosts()
         WorkingTwitter.sources = RealmManagerTwitter.getTweetCheckedPosts()
+        WorkingFB.sources = RealmManagerFB.getFBCheckedPosts()
         AppsStaticClass.initial()
     }
 }

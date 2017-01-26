@@ -41,6 +41,7 @@
 		8A02C61F1E15A5DC00DC4CB9 /* NotificationsTwitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A02C61E1E15A5DC00DC4CB9 /* NotificationsTwitterViewController.swift */; };
 		8A09B81D1E36838F00AEB12B /* CCBottomRefreshControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A09B81C1E36838F00AEB12B /* CCBottomRefreshControl.framework */; };
 		8A0ACB7F1E0678D30071A7F6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0ACB7E1E0678D30071A7F6 /* Constants.swift */; };
+		8A108E9B1E3A4A4F00A4335B /* FBChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A108E9A1E3A4A4F00A4335B /* FBChooseViewController.swift */; };
 		8A151C0C1E2E260700EABF13 /* SettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A151C0B1E2E260700EABF13 /* SettingsProtocol.swift */; };
 		8A151C111E2E298B00EABF13 /* SettingsBoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A151C0F1E2E298B00EABF13 /* SettingsBoolTableViewCell.swift */; };
 		8A151C121E2E298B00EABF13 /* SettingsBoolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A151C101E2E298B00EABF13 /* SettingsBoolTableViewCell.xib */; };
@@ -51,6 +52,7 @@
 		8A49B8F61E0B0189008B6ECA /* TweetCheckedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49B8F51E0B0189008B6ECA /* TweetCheckedPost.swift */; };
 		8A49B8F81E0B01FB008B6ECA /* TweetCheckedPostRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49B8F71E0B01FB008B6ECA /* TweetCheckedPostRealm.swift */; };
 		8A79F7061E2EC34E0005FEA7 /* WorkingDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79F7051E2EC34E0005FEA7 /* WorkingDefaults.swift */; };
+		8A857B281E3A6F4B004B6435 /* NotificationsFBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A857B271E3A6F4B004B6435 /* NotificationsFBViewController.swift */; };
 		8A8BF31E1E2AB73A00D756FC /* AppsStaticClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8BF31D1E2AB73A00D756FC /* AppsStaticClass.swift */; };
 		8A8BF3201E2B7FFE00D756FC /* AddAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8BF31F1E2B7FFE00D756FC /* AddAppsViewController.swift */; };
 		8A8BF3221E2D628500D756FC /* NotificationsAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8BF3211E2D628500D756FC /* NotificationsAllViewController.swift */; };
@@ -132,6 +134,7 @@
 		8A02C61E1E15A5DC00DC4CB9 /* NotificationsTwitterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsTwitterViewController.swift; sourceTree = "<group>"; };
 		8A09B81C1E36838F00AEB12B /* CCBottomRefreshControl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CCBottomRefreshControl.framework; path = "Pods/../build/Debug-iphoneos/CCBottomRefreshControl/CCBottomRefreshControl.framework"; sourceTree = "<group>"; };
 		8A0ACB7E1E0678D30071A7F6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8A108E9A1E3A4A4F00A4335B /* FBChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBChooseViewController.swift; sourceTree = "<group>"; };
 		8A151C0B1E2E260700EABF13 /* SettingsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsProtocol.swift; sourceTree = "<group>"; };
 		8A151C0F1E2E298B00EABF13 /* SettingsBoolTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsBoolTableViewCell.swift; sourceTree = "<group>"; };
 		8A151C101E2E298B00EABF13 /* SettingsBoolTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsBoolTableViewCell.xib; sourceTree = "<group>"; };
@@ -142,6 +145,7 @@
 		8A49B8F51E0B0189008B6ECA /* TweetCheckedPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCheckedPost.swift; sourceTree = "<group>"; };
 		8A49B8F71E0B01FB008B6ECA /* TweetCheckedPostRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCheckedPostRealm.swift; sourceTree = "<group>"; };
 		8A79F7051E2EC34E0005FEA7 /* WorkingDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingDefaults.swift; sourceTree = "<group>"; };
+		8A857B271E3A6F4B004B6435 /* NotificationsFBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsFBViewController.swift; sourceTree = "<group>"; };
 		8A8BF31D1E2AB73A00D756FC /* AppsStaticClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsStaticClass.swift; sourceTree = "<group>"; };
 		8A8BF31F1E2B7FFE00D756FC /* AddAppsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAppsViewController.swift; sourceTree = "<group>"; };
 		8A8BF3211E2D628500D756FC /* NotificationsAllViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsAllViewController.swift; sourceTree = "<group>"; };
@@ -304,8 +308,10 @@
 				8A8BF3211E2D628500D756FC /* NotificationsAllViewController.swift */,
 				7BF0F44F1DF1EE9A00285298 /* NotificationsVKViewController.swift */,
 				8A02C61E1E15A5DC00DC4CB9 /* NotificationsTwitterViewController.swift */,
+				8A857B271E3A6F4B004B6435 /* NotificationsFBViewController.swift */,
 				7BF0F4631DF3516A00285298 /* VKChooseViewController.swift */,
 				8A49B8ED1E0AF1C2008B6ECA /* TwitterChooseViewController.swift */,
+				8A108E9A1E3A4A4F00A4335B /* FBChooseViewController.swift */,
 				7BF0F44D1DF1EA9D00285298 /* SettingsViewController.swift */,
 				8A8BF3271E2E240A00D756FC /* BrwoserSettingsViewController.swift */,
 				8AEF725D1E16741F00332FB5 /* SetupViewController.swift */,
@@ -568,6 +574,7 @@
 				8AEF725E1E16741F00332FB5 /* SetupViewController.swift in Sources */,
 				7B8A91811DFF298C0014D78D /* VKManagerWorker.swift in Sources */,
 				8A8BF31E1E2AB73A00D756FC /* AppsStaticClass.swift in Sources */,
+				8A108E9B1E3A4A4F00A4335B /* FBChooseViewController.swift in Sources */,
 				7BF0F4681DF35D2900285298 /* GroupsTableViewCell.swift in Sources */,
 				8AE60E811E06FC1D00A9662F /* TweetPost.swift in Sources */,
 				7B39A8491DF5FBB80077BBB6 /* Init.swift in Sources */,
@@ -579,6 +586,7 @@
 				8AEF727C1E195D4800332FB5 /* IKLoginViewController.m in Sources */,
 				8A49B8F61E0B0189008B6ECA /* TweetCheckedPost.swift in Sources */,
 				8A151C0C1E2E260700EABF13 /* SettingsProtocol.swift in Sources */,
+				8A857B281E3A6F4B004B6435 /* NotificationsFBViewController.swift in Sources */,
 				8AA223431E1B02A50055E39A /* FBCheckedPostRealm.swift in Sources */,
 				8A8BF3261E2D71C900D756FC /* ExtensionNSDate.swift in Sources */,
 				8A49B8F41E0B0166008B6ECA /* WorkingTwitter.swift in Sources */,

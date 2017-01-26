@@ -16,12 +16,14 @@ class MessageClass {
     var url: String = ""
     var post = VKPost()
     var tweet = TweetPost()
+    var postFb = FBPost()
     var typeOfMessage: type
     var colorBubble: UIImage = UIImage()
     
     enum type{
         case twitter
         case vk
+        case fb
     }
     
     init(head: String, message: String, timeNSDate: NSDate, url: String, post: VKPost){
@@ -32,6 +34,16 @@ class MessageClass {
         self.post = post
         self.typeOfMessage = type.vk
         self.colorBubble = #imageLiteral(resourceName: "vkCircle")
+    }
+    
+    init(head: String, message: String, timeNSDate: NSDate, url: String, postFb: FBPost){
+        self.head = head
+        self.message = message
+        self.timeNSDate = timeNSDate
+        self.url = url
+        self.postFb = postFb
+        self.typeOfMessage = type.fb
+        self.colorBubble = #imageLiteral(resourceName: "circle")
     }
     
     init(head: String, message: String, timeNSDate: NSDate, url: String, tweet: TweetPost){

@@ -1,15 +1,15 @@
 //
-//  NotificationsTwitterViewController.swift
+//  NotificationsFBViewController.swift
 //  socialMilk
 //
-//  Created by Kirill Averyanov on 29/12/2016.
-//  Copyright © 2016 Kirill Averyanov. All rights reserved.
+//  Created by Kirill Averyanov on 26/01/2017.
+//  Copyright © 2017 Kirill Averyanov. All rights reserved.
 //
 
 import UIKit
 
-class NotificationsTwitterViewController: UIViewController, NotificationsViewControllerProtocol{
-
+class NotificationsFBViewController: UIViewController, NotificationsViewControllerProtocol{
+    
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var activityView: UIView!
     @IBOutlet weak var backViewButton: UIBarButtonItem!
@@ -66,7 +66,7 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
             scrollDownTableView(for: indexPath)
         }
     }
-
+    
     
     internal func reloadUI(){
         self.messagesTableView.reloadData()
@@ -115,14 +115,14 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
         cell.timeLabel.text = WorkingVk.translateNSDateToString(date: chat[indexPath.section].messages[indexPath.row].timeNSDate)
         cell.descriptionLabel.text = chat[indexPath.section].messages[indexPath.row].message
         cell.titleLabel.text = chat[indexPath.section].messages[indexPath.row].head
-        cell.imageImageView.sd_setImage(with: URL(string: chat[indexPath.section].messages[indexPath.row].tweet.user.photoLink))
-        if chat[indexPath.section].messages[indexPath.row].tweet.hasPhoto{
+        cell.imageImageView.sd_setImage(with: URL(string: chat[indexPath.section].messages[indexPath.row].postFb.group.photoLink))
+        if chat[indexPath.section].messages[indexPath.row].postFb.hasPhoto{
             cell.heightConstraint.constant = heightOfImage
-            cell.photoImageImageView.sd_setImage(with: URL(string: chat[indexPath.section].messages[indexPath.row].tweet.photoLink)!)
+            cell.photoImageImageView.sd_setImage(with: URL(string: chat[indexPath.section].messages[indexPath.row].postFb.photoLink)!)
         }else{
             cell.heightConstraint.constant = 0
         }
-    
+        
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(imageTapped(gesture:)))
         cell.photoImageImageView.isUserInteractionEnabled = true
         cell.photoImageImageView.addGestureRecognizer(tapGestureRecognizer)
@@ -148,11 +148,11 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
     func loadNews(){
         //self.activityView.isHidden = true
         DispatchQueue.global(qos: .background).async {
-            self.chat[0].messages = WorkingTwitter.encodeTweetsToMessages(tweets: WorkingTwitter.getOldTweets())
+            self.chat[0].messages = WorkingFB.encodePostsToMessages(posts: WorkingFB.getOldPosts())
             DispatchQueue.main.async {
                 self.updateProgressView(val: 50.0)
             }
-            self.chat[1].messages = WorkingTwitter.encodeTweetsToMessages(tweets: WorkingTwitter.checkNewTweets())
+            self.chat[1].messages = WorkingFB.encodePostsToMessages(posts: WorkingFB.checkNewPosts())
             DispatchQueue.main.async {
                 self.updateProgressView(val: 100.0)
             }
@@ -177,8 +177,8 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
         DispatchQueue.global(qos: .background).async {
             var mes0 = [MessageClass]()
             var mes1 = [MessageClass]()
-            mes0.append(contentsOf: WorkingTwitter.encodeTweetsToMessages(tweets: WorkingTwitter.getOldTweets()))
-            mes1.append(contentsOf: WorkingTwitter.encodeTweetsToMessages(tweets: WorkingTwitter.checkNewTweets()))
+            mes0.append(contentsOf: WorkingFB.encodePostsToMessages(posts: WorkingFB.getOldPosts()))
+            mes1.append(contentsOf: WorkingFB.encodePostsToMessages(posts: WorkingFB.checkNewPosts()))
             mes0.sort(by: {message1, message2 in
                 message1.timeNSDate.isLessThanDate(dateToCompare: message2.timeNSDate)})
             mes1.sort(by: {message1, message2 in
@@ -216,7 +216,7 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
     
 }
 
-extension NotificationsTwitterViewController{
+extension NotificationsFBViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "gotoWeb"{
             if let www = sender as? URL{

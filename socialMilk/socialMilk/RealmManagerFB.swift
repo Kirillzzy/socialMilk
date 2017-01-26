@@ -74,6 +74,7 @@ extension RealmManagerFB{
                          text: post.text,
                          date: post.date,
                          id: post.id,
+                         url: post.url,
                          hasLink: post.hasLink,
                          hasPhoto: post.hasPhoto,
                          hasVideo: post.hasVideo,

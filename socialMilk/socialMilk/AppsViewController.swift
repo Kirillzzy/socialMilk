@@ -55,12 +55,16 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
                     performSegue(withIdentifier: "fromVkSegue", sender: self)
                 }else if appName == "All"{
                     performSegue(withIdentifier: "fromAllSegue", sender: self)
+                }else if appName == "Facebook"{
+                    performSegue(withIdentifier: "fromFBSegue", sender: self)
                 }
             }else{
                 if appName == "Twitter"{
                     WorkingDefaults.setTwitter(how: false)
                 }else if appName == "VK"{
                     WorkingDefaults.setVK(how: false)
+                }else if appName == "Facebook"{
+                    WorkingDefaults.setFB(how: false)
                 }
                 self.refreshCollectionView()
             }
@@ -116,6 +120,9 @@ extension AppsViewController{
             vc.lastPerform = Constants.fromSegueShowView.fromApps
         }else if segue.identifier == "fromAllSegue"{
             let vc = segue.destination as! NotificationsAllViewController
+            vc.lastPerform = Constants.fromSegueShowView.fromApps
+        }else if segue.identifier == "fromFBSegue"{
+            let vc = segue.destination as! NotificationsFBViewController
             vc.lastPerform = Constants.fromSegueShowView.fromApps
         }
     }

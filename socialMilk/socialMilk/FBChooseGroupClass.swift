@@ -15,7 +15,7 @@ class FBChooseGroupClass{
     var description: String = ""
     var screenName: String = ""
     
-    init(title: String, id: String, photoLink: String, description: String, screenName: String){
+    init(title: String, id: String, photoLink: String, description: String = "", screenName: String = ""){
         self.title = title
         self.id = id
         self.photoLink = photoLink

@@ -231,6 +231,7 @@
                         <outlet property="appsTableView" destination="oOs-OU-F7z" id="t2x-7U-M8M"/>
                         <segue destination="iCl-Xp-tc4" kind="show" identifier="fromAddToVKChooseSegue" id="fbM-bV-SCz"/>
                         <segue destination="96q-IY-gn4" kind="show" identifier="fromAddtoTwitterChooseSegue" id="UiE-wV-9Sp"/>
+                        <segue destination="M3X-mU-Rqn" kind="show" identifier="fromAddToFBChooseSegue" id="Mej-hG-QAC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkv-T9-P99" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -342,7 +343,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fIG-xJ-Rmp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3492" y="-1466.7166416791606"/>
+            <point key="canvasLocation" x="4304" y="-2013"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="9ig-jW-ozb">
@@ -430,7 +431,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="wdL-f1-QUD">
                             <progressView key="customView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" id="kro-cz-n0D">
-                                <rect key="frame" x="311" y="21" width="83" height="3"/>
+                                <rect key="frame" x="311" y="21" width="83" height="2.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -449,7 +450,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c1s-rk-KiA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3492" y="-752.47376311844084"/>
+            <point key="canvasLocation" x="4304" y="-1299"/>
         </scene>
         <!--Page-->
         <scene sceneID="O2F-Aq-MeW">
@@ -497,7 +498,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1gZ-2e-GAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4558" y="-404"/>
+            <point key="canvasLocation" x="5371" y="-950"/>
         </scene>
         <!--Settings-->
         <scene sceneID="7bm-R3-hUZ">
@@ -534,6 +535,7 @@
                         <segue destination="iCl-Xp-tc4" kind="show" identifier="gotoChooseVK" id="Q2k-Ac-kVa"/>
                         <segue destination="96q-IY-gn4" kind="show" identifier="gotoChooseTwitter" id="gaJ-YS-SSm"/>
                         <segue destination="9b5-PB-ngZ" kind="show" identifier="gotoBrowserSettings" id="N3Y-Mw-0LL"/>
+                        <segue destination="M3X-mU-Rqn" kind="show" identifier="gotoChooseFB" id="uf5-d3-uPr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgl-4c-84l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -600,6 +602,7 @@
                         <segue destination="jn4-cn-3O4" kind="show" identifier="fromVkSegue" id="CIH-3H-K7o"/>
                         <segue destination="Jpa-GM-oIc" kind="show" identifier="fromTwitterSegue" id="e8z-hT-DM1"/>
                         <segue destination="9qv-P2-8gA" kind="show" identifier="fromAllSegue" id="Gsl-Tq-IWU"/>
+                        <segue destination="SMM-tz-zzS" kind="show" identifier="fromFBSegue" id="hFy-fe-gtW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cT-Pa-FjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -886,7 +889,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="ac9-1U-suu">
                             <progressView key="customView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" id="2tR-Sb-yAh">
-                                <rect key="frame" x="311" y="21" width="83" height="3"/>
+                                <rect key="frame" x="311" y="21" width="83" height="2.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -905,7 +908,188 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLk-xS-sWk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3492" y="-45"/>
+            <point key="canvasLocation" x="4304" y="-591"/>
+        </scene>
+        <!--Choose View Controller-->
+        <scene sceneID="XcS-eC-4aA">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="M3X-mU-Rqn" customClass="FBChooseViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="29g-qc-ctY"/>
+                        <viewControllerLayoutGuide type="bottom" id="FVo-O5-YZk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X7y-qB-MgD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MlF-0d-BFB">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="M3X-mU-Rqn" id="1zF-dF-RxG"/>
+                                    <outlet property="delegate" destination="M3X-mU-Rqn" id="GdJ-Il-0Wc"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GyA-04-xPt">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a36-X8-vrS">
+                                <rect key="frame" x="172" y="333" width="70" height="70"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="vdl-Wg-FRQ">
+                                        <rect key="frame" x="17" y="16" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.47550302639999997" green="0.4802109772" blue="0.4802109772" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="4Mg-Tq-DV0"/>
+                                    <constraint firstItem="vdl-Wg-FRQ" firstAttribute="centerY" secondItem="a36-X8-vrS" secondAttribute="centerY" id="5mr-gB-2SN"/>
+                                    <constraint firstAttribute="height" constant="70" id="WYo-vQ-mPX"/>
+                                    <constraint firstItem="vdl-Wg-FRQ" firstAttribute="centerX" secondItem="a36-X8-vrS" secondAttribute="centerX" id="g8Y-pN-cJK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MlF-0d-BFB" firstAttribute="top" secondItem="X7y-qB-MgD" secondAttribute="top" id="6Hu-75-hcS"/>
+                            <constraint firstItem="a36-X8-vrS" firstAttribute="centerX" secondItem="GyA-04-xPt" secondAttribute="centerX" id="6yR-ov-M71"/>
+                            <constraint firstItem="GyA-04-xPt" firstAttribute="leading" secondItem="X7y-qB-MgD" secondAttribute="leading" id="NeV-3w-KHp"/>
+                            <constraint firstItem="GyA-04-xPt" firstAttribute="top" secondItem="X7y-qB-MgD" secondAttribute="top" id="Wff-3F-9XO"/>
+                            <constraint firstAttribute="bottom" secondItem="MlF-0d-BFB" secondAttribute="bottom" id="k3P-yx-f4D"/>
+                            <constraint firstAttribute="bottom" secondItem="GyA-04-xPt" secondAttribute="bottom" id="kNM-DV-N4T"/>
+                            <constraint firstItem="MlF-0d-BFB" firstAttribute="leading" secondItem="X7y-qB-MgD" secondAttribute="leading" id="ng6-oo-f9C"/>
+                            <constraint firstAttribute="trailing" secondItem="GyA-04-xPt" secondAttribute="trailing" id="rvw-wa-5wX"/>
+                            <constraint firstItem="a36-X8-vrS" firstAttribute="centerY" secondItem="GyA-04-xPt" secondAttribute="centerY" id="rxy-Mg-DWr"/>
+                            <constraint firstAttribute="trailing" secondItem="MlF-0d-BFB" secondAttribute="trailing" id="tOj-dY-FCZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bgZ-aH-VoN">
+                        <barButtonItem key="leftBarButtonItem" image="next" id="QEH-ye-Vaj">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="backViewButtonPressed:" destination="M3X-mU-Rqn" id="FKV-vH-Mcz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="vdl-Wg-FRQ" id="vZt-5R-BJ8"/>
+                        <outlet property="activityView" destination="GyA-04-xPt" id="QqY-ig-bp4"/>
+                        <outlet property="backViewButton" destination="QEH-ye-Vaj" id="4gK-wQ-LgT"/>
+                        <outlet property="blackView" destination="a36-X8-vrS" id="nAq-9a-y2y"/>
+                        <outlet property="groupsTableView" destination="MlF-0d-BFB" id="ejp-w6-OcH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Yj-s2-rUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2970" y="1531"/>
+        </scene>
+        <!--Notifications-->
+        <scene sceneID="brh-y5-euM">
+            <objects>
+                <viewController title="Notifications" hidesBottomBarWhenPushed="YES" id="SMM-tz-zzS" customClass="NotificationsFBViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="H3v-0Z-MqV"/>
+                        <viewControllerLayoutGuide type="bottom" id="D0w-b9-lqH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H5G-Nk-SZ2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1FM-AV-JPn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="SMM-tz-zzS" id="CRU-n3-8lo"/>
+                                    <outlet property="delegate" destination="SMM-tz-zzS" id="31r-uE-TSg"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHh-HS-ucG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="rFL-vc-oOg">
+                                        <rect key="frame" x="0.0" y="70" width="414" height="666"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJV-FL-va4">
+                                        <rect key="frame" x="57" y="383.33333333333326" width="300" height="39.666666666666686"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="nBy-j0-ooP"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="You should wait new posts                    from chosen places">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.64425058300648386" green="0.64884417714661413" blue="0.66262495956700507" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="17" name=".SFNSText"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No posts right now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmy-LK-6oS">
+                                        <rect key="frame" x="107" y="347.33333333333331" width="200" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="phO-2l-r40"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="rFL-vc-oOg" secondAttribute="trailing" id="2Kp-EU-KWh"/>
+                                    <constraint firstItem="rJV-FL-va4" firstAttribute="centerX" secondItem="rFL-vc-oOg" secondAttribute="centerX" id="EKj-YX-7Eg"/>
+                                    <constraint firstAttribute="bottom" secondItem="rFL-vc-oOg" secondAttribute="bottom" id="Isg-Af-3hI"/>
+                                    <constraint firstItem="rFL-vc-oOg" firstAttribute="top" secondItem="dHh-HS-ucG" secondAttribute="top" constant="70" id="KH8-cj-qnM"/>
+                                    <constraint firstItem="rFL-vc-oOg" firstAttribute="leading" secondItem="dHh-HS-ucG" secondAttribute="leading" id="NE5-IL-6sj"/>
+                                    <constraint firstItem="rJV-FL-va4" firstAttribute="centerY" secondItem="rFL-vc-oOg" secondAttribute="centerY" id="ZUc-Sv-hgA"/>
+                                    <constraint firstItem="rJV-FL-va4" firstAttribute="top" secondItem="pmy-LK-6oS" secondAttribute="bottom" constant="15" id="mdW-PQ-gU5"/>
+                                    <constraint firstItem="pmy-LK-6oS" firstAttribute="centerX" secondItem="rFL-vc-oOg" secondAttribute="centerX" id="tU5-yt-BTm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1FM-AV-JPn" firstAttribute="leading" secondItem="H5G-Nk-SZ2" secondAttribute="leading" id="5w0-MF-lkk"/>
+                            <constraint firstAttribute="trailing" secondItem="1FM-AV-JPn" secondAttribute="trailing" id="IOV-zi-rbz"/>
+                            <constraint firstItem="1FM-AV-JPn" firstAttribute="top" secondItem="H5G-Nk-SZ2" secondAttribute="top" id="WVZ-5L-JhZ"/>
+                            <constraint firstItem="dHh-HS-ucG" firstAttribute="top" secondItem="H5G-Nk-SZ2" secondAttribute="top" id="e4M-uj-lpT"/>
+                            <constraint firstItem="dHh-HS-ucG" firstAttribute="leading" secondItem="H5G-Nk-SZ2" secondAttribute="leading" id="fqA-D4-Kwk"/>
+                            <constraint firstAttribute="bottom" secondItem="dHh-HS-ucG" secondAttribute="bottom" id="iJq-I0-G26"/>
+                            <constraint firstAttribute="trailing" secondItem="dHh-HS-ucG" secondAttribute="trailing" id="nkW-hN-unC"/>
+                            <constraint firstAttribute="bottom" secondItem="1FM-AV-JPn" secondAttribute="bottom" id="sN0-c5-24u"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Facebook" id="ers-HL-Mbg">
+                        <barButtonItem key="leftBarButtonItem" image="next" id="B32-jc-DLr">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="backViewButtonPressed:" destination="SMM-tz-zzS" id="MHN-Jh-awV"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="sMm-Ia-qy4">
+                            <progressView key="customView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" id="7yy-Ds-ah9">
+                                <rect key="frame" x="311" y="21" width="83" height="2.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityView" destination="dHh-HS-ucG" id="2X4-KO-DHm"/>
+                        <outlet property="backViewButton" destination="B32-jc-DLr" id="Pz2-JZ-bRv"/>
+                        <outlet property="infoLabel" destination="rJV-FL-va4" id="G63-dt-o1r"/>
+                        <outlet property="infoLabel2" destination="pmy-LK-6oS" id="vgS-if-gdR"/>
+                        <outlet property="loadingImageView" destination="rFL-vc-oOg" id="hRw-Pd-m9j"/>
+                        <outlet property="messagesTableView" destination="1FM-AV-JPn" id="0eh-Jp-P19"/>
+                        <outlet property="progressProgressView" destination="7yy-Ds-ah9" id="qwl-bk-0Zx"/>
+                        <segue destination="BM4-Ae-fu7" kind="show" identifier="gotoWeb" id="uJ8-Gk-npP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7qD-0J-IAf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4303" y="99"/>
         </scene>
     </scenes>
     <resources>
@@ -922,9 +1106,10 @@
         <image name="webIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RQw-9d-ybA"/>
         <segue reference="Btb-Ae-gja"/>
+        <segue reference="gaJ-YS-SSm"/>
+        <segue reference="uf5-d3-uPr"/>
         <segue reference="fbM-bV-SCz"/>
-        <segue reference="UiE-wV-9Sp"/>
+        <segue reference="uJ8-Gk-npP"/>
     </inferredMetricsTieBreakers>
 </document>

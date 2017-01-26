@@ -138,11 +138,13 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         messagesTableView.deselectRow(at: indexPath, animated: true)
-        let url = URL(string: "https://" + chat[indexPath.section].messages[indexPath.row].url)!
-        if WorkingDefaults.getBrowser() == WorkingDefaults.Browser.my{
-            performSegue(withIdentifier: "gotoWeb", sender: url)
-        }else{
-            goWeb(url: url)
+        if chat[indexPath.section].messages[indexPath.row].url != ""{
+            let url = URL(string: "https://" + chat[indexPath.section].messages[indexPath.row].url)!
+            if WorkingDefaults.getBrowser() == WorkingDefaults.Browser.my{
+                performSegue(withIdentifier: "gotoWeb", sender: url)
+            }else{
+                goWeb(url: url)
+            }
         }
     }
     
@@ -177,8 +179,8 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
     
     func loadNewsForPull(){
         DispatchQueue.global(qos: .background).async {
-            var mes0 = WorkingVk.encodePostsToMessages(posts: WorkingVk.getOldPosts())
-            var mes1 = WorkingVk.encodePostsToMessages(posts: WorkingVk.checkNewPosts())
+            var mes0 = [MessageClass]()
+            var mes1 = [MessageClass]()
             mes0.append(contentsOf: WorkingTwitter.encodeTweetsToMessages(tweets: WorkingTwitter.getOldTweets()))
             mes1.append(contentsOf: WorkingTwitter.encodeTweetsToMessages(tweets: WorkingTwitter.checkNewTweets()))
             mes0.sort(by: {message1, message2 in

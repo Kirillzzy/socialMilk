@@ -24,7 +24,7 @@ class FBPost{
     var hasLike: Bool = false
     var hasRepost: Bool = false
     
-    init(group: FBChooseGroupClass, text: String, date: String, id: String, hasLink: Bool, hasPhoto: Bool,
+    init(group: FBChooseGroupClass, text: String, date: String, id: String, url: String, hasLink: Bool, hasPhoto: Bool,
          hasVideo: Bool, linkLink: String, photoLink: String, videoLink: String, hasLike: Bool = false, hasRepost: Bool = false){
         self.group = group
         self.text = text
@@ -38,7 +38,8 @@ class FBPost{
         self.photoLink = photoLink
         self.hasLike = hasLike
         self.hasRepost = hasRepost
-        // make url for post facebook !!!
+        self.url = url
+        self.url = self.url.replacingOccurrences(of: "https://", with: "")
     }
     
     init(){}

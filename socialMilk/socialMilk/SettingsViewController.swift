@@ -79,6 +79,11 @@ class SettingsViewController: UIViewController, SettingsProtocol{
                                           text: "@\(TwitterManager.userName)",
             nameOfSegue: "gotoChooseTwitter"))
         }
+        if WorkingDefaults.isHaveFb(){
+            settingsArray[1].append(settings(image: #imageLiteral(resourceName: "facebookLogoBig"),
+                                             text: FBManager.userName,
+                nameOfSegue: "gotoChooseFB"))
+        }
         settingsArray[2].append(settings(image: nil, text: "Rate this app", nameOfSegue: "gotoRateUs"))
         settingsArray[2].append(settings(image: nil, text: "Contact Developer", nameOfSegue: "gotoContactDev"))
         settingsArray[2].append(settings(image: nil, text: "Clear Data", nameOfSegue: ""))

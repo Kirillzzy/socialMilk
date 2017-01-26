@@ -14,7 +14,7 @@ final class WorkingDefaults{
     
     private static let keyVK = "haveVK"
     private static let keyTwitter = "haveTwitter"
-    private static let keyFB = "haveFB"
+    private static let keyFB = "haveFacebook"
     private static let firstSetup = "isFirstSetupEver"
     private static let browserType = "browserType"
     
