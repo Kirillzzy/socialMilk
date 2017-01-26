@@ -98,6 +98,12 @@ final class FBManager{
                                             var posts = [FBPost]()
                                             for post in json["data"].arrayValue{
                                                 var text = ""
+                                                var hasLink = false
+                                                var hasVideo = false
+                                                var hasPhoto = false
+                                                var linkLink = ""
+                                                var photoLink = ""
+                                                var videoLink = ""
                                                 if post["story"].stringValue == ""{
                                                     text = post["message"].stringValue
                                                 }else if post["story"].stringValue == ""{
@@ -105,17 +111,29 @@ final class FBManager{
                                                 }else{
                                                     text = post["story"].stringValue + "\n" + post["message"].stringValue
                                                 }
+                                                for media in post["attachments"]["data"].arrayValue{
+                                                    if media["type"].stringValue == "share" && !hasLink{
+                                                        hasLink = true
+                                                        linkLink = media["url"].stringValue
+                                                    }else if media["type"].stringValue == "photo" && !hasPhoto{
+                                                        hasPhoto = true
+                                                        photoLink = media["media"]["image"]["src"].stringValue
+                                                    }else if media["type"].stringValue == "video" && !hasVideo{
+                                                        hasVideo = true
+                                                        videoLink = media["media"]["video"]["src"].stringValue
+                                                    }
+                                                }
                                                 posts.append(FBPost(group: group,
                                                                     text: text,
                                                                     date: WorkingFB.translateFBTimeToUnix(time: post["updated_time"].stringValue),
                                                                     id: post["id"].stringValue,
                                                                     url: post["permalink_url"].stringValue,
-                                                                    hasLink: false, // <-- temporary
-                                                                    hasPhoto: false,
-                                                                    hasVideo: false,
-                                                                    linkLink: "",
-                                                                    photoLink: "",
-                                                                    videoLink: ""))
+                                                                    hasLink: hasLink,
+                                                                    hasPhoto: hasPhoto,
+                                                                    hasVideo: hasVideo,
+                                                                    linkLink: linkLink,
+                                                                    photoLink: photoLink,
+                                                                    videoLink: videoLink))
                                             }
                                             callback(posts)
                                         case .failed(let error):
