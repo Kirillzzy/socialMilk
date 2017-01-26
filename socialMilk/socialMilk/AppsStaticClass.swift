@@ -41,6 +41,8 @@ final class AppsStaticClass{
         apps.append(allAvailableApps[5])
         apps.append(allAvailableApps[6])
         apps.append(allAvailableApps[7])
+        apps.append(allAvailableApps[8])
+        apps.append(allAvailableApps[9])
     }
     
     private class func addSoonApps(){
@@ -49,6 +51,8 @@ final class AppsStaticClass{
         soonApps.append((#imageLiteral(resourceName: "mail"), "Mail"))
         soonApps.append((#imageLiteral(resourceName: "linkedInlogoBig"), "LinkedIn"))
         soonApps.append((#imageLiteral(resourceName: "snapchatLogoBig"), "SnapChat"))
+        soonApps.append((#imageLiteral(resourceName: "g+LogoBig"), "Google+"))
+        soonApps.append((#imageLiteral(resourceName: "slackLogoBig"), "Slack"))
     }
     
     private class func addVKToAvailableApps(){
@@ -137,6 +141,29 @@ final class AppsStaticClass{
                                          AppWorking: nil,
                                          AppIcon: #imageLiteral(resourceName: "snapchatLogoBig"),
                                          AppName: "SnapChat"))
+        
+        allAvailableApps.append(AppClass(AppManager: nil,
+                                         AppManagerSide: nil,
+                                         AppChooseGroupClass: nil,
+                                         AppPost: nil,
+                                         AppPostRealm: nil,
+                                         AppCheckedPost: nil,
+                                         AppCheckedPostRealm: nil,
+                                         AppRealmManager: nil,
+                                         AppWorking: nil,
+                                         AppIcon: #imageLiteral(resourceName: "g+LogoBig"),
+                                         AppName: "Google+"))
+        allAvailableApps.append(AppClass(AppManager: nil,
+                                         AppManagerSide: nil,
+                                         AppChooseGroupClass: nil,
+                                         AppPost: nil,
+                                         AppPostRealm: nil,
+                                         AppCheckedPost: nil,
+                                         AppCheckedPostRealm: nil,
+                                         AppRealmManager: nil,
+                                         AppWorking: nil,
+                                         AppIcon: #imageLiteral(resourceName: "slackLogoBig"),
+                                         AppName: "Slack"))
     }
     
     private class func addAllAppsAppToAvailableApps(){

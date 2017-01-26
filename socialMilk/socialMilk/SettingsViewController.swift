@@ -81,7 +81,6 @@ class SettingsViewController: UIViewController, SettingsProtocol{
         }
         settingsArray[2].append(settings(image: nil, text: "Rate this app", nameOfSegue: "gotoRateUs"))
         settingsArray[2].append(settings(image: nil, text: "Contact Developer", nameOfSegue: "gotoContactDev"))
-        settingsArray[2].append(settings(image: nil, text: "About Social Milk", nameOfSegue: "gotoProductInfo"))
         settingsArray[2].append(settings(image: nil, text: "Clear Data", nameOfSegue: ""))
     }
 
