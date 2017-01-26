@@ -17,14 +17,14 @@ class SetupViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        if !WorkingDefaults.isFirstSetupEver() && SetupViewController.isInternetAvailable(){
-//            _ = VKManager.sharedInstance
-//            TwitterManager.login()
-//            FBManager.loginVc(vc: self)
-//            performSegue(withIdentifier: "toNextSegue", sender: true)
-//        }else{
+        if !WorkingDefaults.isFirstSetupEver() && SetupViewController.isInternetAvailable(){
+            _ = VKManager.sharedInstance
+            TwitterManager.login()
+            FBManager.getMe()
+            performSegue(withIdentifier: "toNextSegue", sender: true)
+        }else{
             performSegue(withIdentifier: "toLoginSegue", sender: true)
-//        }
+        }
     }
 
     static func isInternetAvailable() -> Bool

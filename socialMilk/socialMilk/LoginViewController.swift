@@ -30,6 +30,7 @@ class LoginViewController: UIViewController {
     @IBAction func loginVKButtonPressed(_ sender: Any) {
         _ = VKManager.sharedInstance
     }
+    
     @IBAction func loginFbButtonPressed(_ sender: Any) {
         FBManager.loginVc(vc: self)
     }

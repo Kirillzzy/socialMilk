@@ -55,6 +55,7 @@ class AddAppsViewController: UIViewController, UITableViewDelegate, UITableViewD
         }else if indexPath.section == 1{
             cell.mainImageVIew.image = soonApps[indexPath.row].0
             cell.titleLabel.text = soonApps[indexPath.row].1
+            cell.setChecked(how: false)
         }
         return cell
     }
