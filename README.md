@@ -1,5 +1,5 @@
 # Social Milk
-An app is getting notifications and posts from different social networks and interacting with different API's.
+An app is getting notifications and posts from different social networks and interacting with their API's.
 
 You should choose places(groups or people for example) from your social network(s) and after that you will see new posts/tweets in merged(or not) timeline only from chosen places.
 
@@ -12,13 +12,7 @@ In future Facebook and Instagram are planning.
 # Now available:
 - VK
 - Twitter
-
-# Todo for beta test:
-- Localization
-- The ability of like and repost a post
-- Improve settings
-- Facebook(*)
-- Instagram(*)
+- Facebook
 
 -------------------
 ![alt tag](https://github.com/Kirillzzy/socialMilk/blob/master/screenshots/millk.png)
