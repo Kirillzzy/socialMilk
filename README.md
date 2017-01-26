@@ -18,7 +18,7 @@ In future Facebook and Instagram are planning.
 - Add more social networks
 - Localization
 - In-App
-- The ability to write in soctial networks
+- The ability of writting in social networks
 
 -------------------
 ![alt tag](https://github.com/Kirillzzy/socialMilk/blob/master/screenshots/millk.png)
