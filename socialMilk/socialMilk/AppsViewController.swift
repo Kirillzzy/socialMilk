@@ -21,6 +21,7 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
 //        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "back6"))
         AppsCollectionView.register(UINib(nibName: "AppCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AppCell")
+        FBManager.loginVc(vc: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,6 +29,7 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
         goToNull()
         refreshCollectionView()
     }
+    
     
     func refreshCollectionView(){
         AppsStaticClass.loadApps()
