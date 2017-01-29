@@ -12,11 +12,11 @@ import Foundation
 final class WorkingDefaults{
     private static let defaults = UserDefaults.standard
     
-    private static let keyVK = "haveVK"
-    private static let keyTwitter = "haveTwitter"
-    private static let keyFB = "haveFacebook"
-    private static let firstSetup = "isFirstSetupEver"
-    private static let browserType = "browserType"
+    static let keyVK = "haveVK"
+    static let keyTwitter = "haveTwitter"
+    static let keyFB = "haveFacebook"
+    static let firstSetup = "isFirstSetupEver"
+    static let browserType = "browserType"
     
     enum Browser{
         case my

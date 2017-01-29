@@ -20,7 +20,8 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
     @IBOutlet weak var infoLabel2: UILabel!
 
     internal var chat = [ChatClass]()
-    internal var sectionsNames = ["Old Posts", "New Posts"]
+    internal var sectionsNames = [NSLocalizedString("OldPosts", comment: "OldPostsLabel"),
+                                  NSLocalizedString("NewPosts", comment: "NewPostsLabel")]
     internal var lastPerform: Constants.fromSegueShowView = Constants.fromSegueShowView.null
     internal var isWentToWeb = false
     internal let refreshControl = UIRefreshControl()

@@ -21,10 +21,10 @@ class WorkingFB{
     
     static func translateFBTimeToUnix(time: String) -> String{
         let dateFormatter = DateFormatter()
-        let times = time.replacingOccurrences(of: "T", with: " ")
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ssZ"
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        let date: Date = dateFormatter.date(from: times)!
+//        let times = time.replacingOccurrences(of: "T", with: " ")
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let date: Date = dateFormatter.date(from: time)!
         return String(Int(date.timeIntervalSince1970))
     }
     

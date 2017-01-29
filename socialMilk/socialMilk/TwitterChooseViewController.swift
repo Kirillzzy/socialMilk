@@ -171,7 +171,7 @@ class TwitterChooseViewController: UIViewController, ChooseViewControllerProtoco
     }
     
     func updateSelfTitle(){
-        self.title = "Checked: \(numOfChecked)"
+        self.title = "\(NSLocalizedString("Checked", comment: "CheckedLabel")): \(numOfChecked)"
         if numOfChecked > 10{
             isEnabledBackButton(how: false)
         }else{

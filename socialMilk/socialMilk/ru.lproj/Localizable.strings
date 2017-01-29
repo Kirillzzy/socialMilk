@@ -1,0 +1,38 @@
+/*
+  Localizable.strings
+  socialMilk
+
+  Created by Kirill Averyanov on 29/01/2017.
+  Copyright © 2017 Kirill Averyanov. All rights reserved.
+*/
+
+"Done" = "Готово";
+"Edit" = "Изменить";
+"NowAvailable" = "Сейчас доступно";
+"Soon" = "Скоро";
+"OldPosts" = "Старые Посты";
+"NewPosts" = "Новые Посты";
+"Checked" = "Выбрано";
+"GeneralSettings" = "Главные";
+"AccountsSettings" = "Аккаунты";
+"FeedbackSettings" = "Фидбэк";
+"BrowserSettings" = "Браузер";
+"RateThisAppSettings" = "Оценить приложение";
+"ContactDeveloperSettings" = "Связаться с разработчиком";
+"ClearDataSettings" = "Очистить данные";
+"OpenLinksInSettings" = "Открывать ссылки в";
+"SocialMilkBrowserSettings" = "Social Milk Браузер";
+"Safari" = "Safari";
+"ErrorError" = "Ошибка";
+"NoInternetError" = "Нет подключения к интернету";
+"OK" = "Окей";
+"VK" = "ВК";
+"Twitter" = "Твиттер";
+"FB" = "Фейсбук";
+"Insta" = "Инстаграм";
+"Mail" = "Мэйл";
+"LinkedIn" = "Линкедин";
+"SnapChat" = "Снэпчат";
+"Google" = "Гугл+";
+"Slack" = "Слэк";
+"All" = "Все";

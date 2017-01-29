@@ -152,7 +152,7 @@ class FBChooseViewController: UIViewController, ChooseViewControllerProtocol {
     }
     
     func updateSelfTitle(){
-        self.title = "Checked: \(checked.count)"
+        self.title = "\(NSLocalizedString("Checked", comment: "CheckedLabel")): \(checked.count)"
         if self.checked.count > 10{
             isEnabledBackButton(how: false)
         }else{

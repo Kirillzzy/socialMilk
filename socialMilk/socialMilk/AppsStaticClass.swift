@@ -47,12 +47,12 @@ final class AppsStaticClass{
     }
     
     private class func addSoonApps(){
-        soonApps.append((#imageLiteral(resourceName: "instagramLogo"), "Instagram"))
-        soonApps.append((#imageLiteral(resourceName: "mail"), "Mail"))
-        soonApps.append((#imageLiteral(resourceName: "linkedInlogoBig"), "LinkedIn"))
-        soonApps.append((#imageLiteral(resourceName: "snapchatLogoBig"), "SnapChat"))
-        soonApps.append((#imageLiteral(resourceName: "g+LogoBig"), "Google+"))
-        soonApps.append((#imageLiteral(resourceName: "slackLogoBig"), "Slack"))
+        soonApps.append((#imageLiteral(resourceName: "instagramLogo"), NSLocalizedString("Insta", comment: "InstagramInscription")))
+        soonApps.append((#imageLiteral(resourceName: "mail"), NSLocalizedString("Mail", comment: "MailInscription")))
+        soonApps.append((#imageLiteral(resourceName: "linkedInlogoBig"), NSLocalizedString("LinkedIn", comment: "LinkedInInscription")))
+        soonApps.append((#imageLiteral(resourceName: "snapchatLogoBig"), NSLocalizedString("SnapChat", comment: "SnapChatInscription")))
+        soonApps.append((#imageLiteral(resourceName: "g+LogoBig"), NSLocalizedString("Google", comment: "Google+Inscription")))
+        soonApps.append((#imageLiteral(resourceName: "slackLogoBig"), NSLocalizedString("Slack", comment: "SlackInscription")))
     }
     
     private class func addVKToAvailableApps(){
@@ -66,7 +66,8 @@ final class AppsStaticClass{
                              AppRealmManager: RealmManagerVk(),
                              AppWorking: WorkingVk(),
                              AppIcon: #imageLiteral(resourceName: "vkLogoBlackBig"),
-                             AppName: "VK"))
+                             AppTag: 1,
+                             AppName: NSLocalizedString("VK", comment: "VKInscription")))
     }
     
     private class func addFBToAvailableApps(){
@@ -80,7 +81,8 @@ final class AppsStaticClass{
                                          AppRealmManager: RealmManagerFB(),
                                          AppWorking: WorkingFB(),
                                          AppIcon: #imageLiteral(resourceName: "facebookLogoBig"),
-                                         AppName: "Facebook"))
+                                         AppTag: 3,
+                                         AppName: NSLocalizedString("FB", comment: "FBInscription")))
     }
     
     private class func addTwitterToAvailableApps(){
@@ -94,7 +96,8 @@ final class AppsStaticClass{
                              AppRealmManager: RealmManagerTwitter(),
                              AppWorking: WorkingTwitter(),
                              AppIcon: #imageLiteral(resourceName: "twitterLogo"),
-                             AppName: "Twitter"))
+                             AppTag: 2,
+                             AppName: NSLocalizedString("Twitter", comment: "TwitterInscription")))
 
         
     }
@@ -110,7 +113,8 @@ final class AppsStaticClass{
                                          AppRealmManager: nil,
                                          AppWorking: nil,
                                          AppIcon: #imageLiteral(resourceName: "instagramLogoBig"),
-                                         AppName: "Instagram"))
+                                         AppTag: nil,
+                                         AppName: NSLocalizedString("Insta", comment: "InstagramInscription")))
         
         allAvailableApps.append(AppClass(AppManager: nil,
                                          AppManagerSide: nil,
@@ -122,7 +126,8 @@ final class AppsStaticClass{
                                          AppRealmManager: nil,
                                          AppWorking: nil,
                                          AppIcon: #imageLiteral(resourceName: "mail"),
-                                         AppName: "Mail"))
+                                         AppTag: nil,
+                                         AppName: NSLocalizedString("Mail", comment: "MailInscription")))
         
         allAvailableApps.append(AppClass(AppManager: nil,
                                          AppManagerSide: nil,
@@ -134,7 +139,8 @@ final class AppsStaticClass{
                                          AppRealmManager: nil,
                                          AppWorking: nil,
                                          AppIcon: #imageLiteral(resourceName: "linkedInlogoBig"),
-                                         AppName: "LinkedIn"))
+                                         AppTag: nil,
+                                         AppName: NSLocalizedString("LinkedIn", comment: "LinkedInInscription")))
         
         allAvailableApps.append(AppClass(AppManager: nil,
                                          AppManagerSide: nil,
@@ -146,7 +152,8 @@ final class AppsStaticClass{
                                          AppRealmManager: nil,
                                          AppWorking: nil,
                                          AppIcon: #imageLiteral(resourceName: "snapchatLogoBig"),
-                                         AppName: "SnapChat"))
+                                         AppTag: nil,
+                                         AppName: NSLocalizedString("SnapChat", comment: "SnapChatInscription")))
         
         allAvailableApps.append(AppClass(AppManager: nil,
                                          AppManagerSide: nil,
@@ -158,7 +165,8 @@ final class AppsStaticClass{
                                          AppRealmManager: nil,
                                          AppWorking: nil,
                                          AppIcon: #imageLiteral(resourceName: "g+LogoBig"),
-                                         AppName: "Google+"))
+                                         AppTag: nil,
+                                         AppName: NSLocalizedString("Google", comment: "Google+Inscription")))
         allAvailableApps.append(AppClass(AppManager: nil,
                                          AppManagerSide: nil,
                                          AppChooseGroupClass: nil,
@@ -169,7 +177,8 @@ final class AppsStaticClass{
                                          AppRealmManager: nil,
                                          AppWorking: nil,
                                          AppIcon: #imageLiteral(resourceName: "slackLogoBig"),
-                                         AppName: "Slack"))
+                                         AppTag: nil,
+                                         AppName: NSLocalizedString("Slack", comment: "SlackInscription")))
 
     }
     
@@ -184,7 +193,8 @@ final class AppsStaticClass{
                              AppRealmManager: nil,
                              AppWorking: nil,
                              AppIcon: #imageLiteral(resourceName: "socialMediaFull"),
-                             AppName: "All"))
+                             AppTag: 0,
+                             AppName: NSLocalizedString("All", comment: "AllInscription")))
     }
     
 }

@@ -1,0 +1,69 @@
+
+/* Class = "UIViewController"; title = "All"; ObjectID = "9qv-P2-8gA"; */
+"9qv-P2-8gA.title" = "Все";
+
+/* Class = "UINavigationItem"; title = "VK"; ObjectID = "CIc-au-sfh"; */
+"CIc-au-sfh.title" = "ВК";
+
+/* Class = "UIBarButtonItem"; title = "Edit"; ObjectID = "EZc-wR-QNc"; */
+"EZc-wR-QNc.title" = "Изменить";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "Ejk-8I-xJv"; */
+"Ejk-8I-xJv.title" = "Настройки";
+
+/* Class = "UIViewController"; title = "Notifications"; ObjectID = "Jpa-GM-oIc"; */
+"Jpa-GM-oIc.title" = "Уведомления";
+
+/* Class = "UIButton"; normalTitle = "Login Twitter"; ObjectID = "KBO-KU-0kw"; */
+"KBO-KU-0kw.normalTitle" = "Войти в Твиттер";
+
+/* Class = "UINavigationItem"; title = "Twitter"; ObjectID = "Nd1-wo-MrE"; */
+"Nd1-wo-MrE.title" = "Твиттер";
+
+/* Class = "UIButton"; normalTitle = "Login VK"; ObjectID = "Oua-gl-pst"; */
+"Oua-gl-pst.normalTitle" = "Войти в ВК";
+
+/* Class = "UIViewController"; title = "Apps"; ObjectID = "Qpv-IX-h46"; */
+"Qpv-IX-h46.title" = "Приложения";
+
+/* Class = "UIViewController"; title = "Notifications"; ObjectID = "SMM-tz-zzS"; */
+"SMM-tz-zzS.title" = "Уведомления";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "TaP-LA-EDn"; */
+"TaP-LA-EDn.title" = "Настройки";
+
+/* Class = "UILabel"; text = "No posts right now"; ObjectID = "U7y-LT-l4K"; */
+"U7y-LT-l4K.text" = "Нет постов прямо сейчас";
+
+/* Class = "UITabBarItem"; title = "Apps"; ObjectID = "aXu-wL-Yat"; */
+"aXu-wL-Yat.title" = "Приложения";
+
+/* Class = "UIButton"; normalTitle = "Facebook"; ObjectID = "dkO-rO-llW"; */
+"dkO-rO-llW.normalTitle" = "Фейсбук";
+
+/* Class = "UINavigationItem"; title = "Page"; ObjectID = "e33-KT-gUB"; */
+"e33-KT-gUB.title" = "Страница";
+
+/* Class = "UINavigationItem"; title = "Facebook"; ObjectID = "ers-HL-Mbg"; */
+"ers-HL-Mbg.title" = "Фейсбук";
+
+/* Class = "UILabel"; text = "No posts right now"; ObjectID = "j8Q-Ad-KYM"; */
+"j8Q-Ad-KYM.text" = "Нет постов прямо сейчас";
+
+/* Class = "UIViewController"; title = "Notifications"; ObjectID = "jn4-cn-3O4"; */
+"jn4-cn-3O4.title" = "Уведомления";
+
+/* Class = "UILabel"; text = "No posts right now"; ObjectID = "pmy-LK-6oS"; */
+"pmy-LK-6oS.text" = "Нет постов прямо сейчас";
+
+/* Class = "UILabel"; text = "No posts right now"; ObjectID = "szE-aO-dB2"; */
+"szE-aO-dB2.text" = "Нет постов прямо сейчас";
+
+/* Class = "UINavigationItem"; title = "All"; ObjectID = "tan-x6-UmF"; */
+"tan-x6-UmF.title" = "Все";
+
+/* Class = "UINavigationItem"; title = "Apps"; ObjectID = "uut-pu-I0J"; */
+"uut-pu-I0J.title" = "Приложения";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "yok-6z-goa"; */
+"yok-6z-goa.normalTitle" = "Дальше";

@@ -77,8 +77,10 @@ class LoginViewController: UIViewController {
     }
     
     private func showErrorAlert(){
-        let alert = UIAlertController(title: "Error", message: "No internet connection", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        let alert = UIAlertController(title: NSLocalizedString("ErrorError", comment: "ErrorMessage"),
+                                      message: NSLocalizedString("NoInternetError", comment: "ErrorMessage"),
+                                      preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OKMessage"), style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 }

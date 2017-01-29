@@ -23,12 +23,13 @@ class AppClass{
     var AppWorking: Any!
     var AppIcon: UIImage!
     var AppName: String!
+    var AppTag: Int?
     
     init(AppManager: Any!, AppManagerSide: Any?, AppChooseGroupClass: Any!,
          AppPost: Any!, AppPostRealm: Any!,
          AppCheckedPost: Any!, AppCheckedPostRealm: Any!,
          AppRealmManager: Any!, AppWorking: Any!,
-         AppIcon: UIImage, AppName: String){
+         AppIcon: UIImage, AppTag: Int?, AppName: String){
         
         self.AppManager = AppManager
         self.AppManagerSide = AppManagerSide
@@ -40,6 +41,7 @@ class AppClass{
         self.AppRealmManager = AppRealmManager
         self.AppWorking = AppWorking
         self.AppIcon = AppIcon
+        self.AppTag = AppTag
         self.AppName = AppName
     }
     

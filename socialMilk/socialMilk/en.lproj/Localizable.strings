@@ -1,0 +1,38 @@
+/*
+  Localizable.strings
+  socialMilk
+
+  Created by Kirill Averyanov on 29/01/2017.
+  Copyright © 2017 Kirill Averyanov. All rights reserved.
+*/
+
+"Done" = "Done";
+"Edit" = "Edit";
+"NowAvailable" = "Now Available";
+"Soon" = "Soon";
+"OldPosts" = "Old Posts";
+"NewPosts" = "New Posts";
+"Checked" = "Checked";
+"GeneralSettings" = "General";
+"AccountsSettings" = "Accounts";
+"FeedbackSettings" = "Feedback";
+"BrowserSettings" = "Browser";
+"RateThisAppSettings" = "Rate this app";
+"ContactDeveloperSettings" = "Contact Developer";
+"ClearDataSettings" = "Clear Data";
+"OpenLinksInSettings" = "Open links in";
+"SocialMilkBrowserSettings" = "Social Milk Browser";
+"Safari" = "Safari";
+"ErrorError" = "Error";
+"NoInternetError" = "No internet connection";
+"OK" = "OK";
+"VK" = "VK";
+"Twitter" = "Twitter";
+"FB" = "Facebook";
+"Insta" = "Instagram";
+"Mail" = "Mail";
+"LinkedIn" = "LinkedIn";
+"SnapChat" = "SnapChat";
+"Google" = "Google+";
+"Slack" = "Slack";
+"All" = "All";

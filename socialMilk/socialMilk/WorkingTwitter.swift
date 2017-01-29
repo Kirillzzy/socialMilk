@@ -22,8 +22,8 @@ class WorkingTwitter{
     
     static func translateTwitterTimeToUnix(time: String) -> String{
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "E MMM d HH:mm:ss Z yyyy"
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
+        dateFormatter.dateFormat = "EEE MMM dd HH:mm:ss Z yyyy"
         let date: Date = dateFormatter.date(from: time)!
         return String(Int(date.timeIntervalSince1970))
     }

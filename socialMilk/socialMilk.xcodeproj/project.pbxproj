@@ -45,6 +45,7 @@
 		8A151C0C1E2E260700EABF13 /* SettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A151C0B1E2E260700EABF13 /* SettingsProtocol.swift */; };
 		8A151C111E2E298B00EABF13 /* SettingsBoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A151C0F1E2E298B00EABF13 /* SettingsBoolTableViewCell.swift */; };
 		8A151C121E2E298B00EABF13 /* SettingsBoolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A151C101E2E298B00EABF13 /* SettingsBoolTableViewCell.xib */; };
+		8A44BD711E3E032A002695F9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A44BD731E3E032A002695F9 /* Localizable.strings */; };
 		8A49B8EE1E0AF1C2008B6ECA /* TwitterChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49B8ED1E0AF1C2008B6ECA /* TwitterChooseViewController.swift */; };
 		8A49B8F01E0AF3A9008B6ECA /* TwitterChooseGroupClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49B8EF1E0AF3A9008B6ECA /* TwitterChooseGroupClass.swift */; };
 		8A49B8F21E0B0146008B6ECA /* RealmManagerTwitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49B8F11E0B0146008B6ECA /* RealmManagerTwitter.swift */; };
@@ -138,6 +139,10 @@
 		8A151C0B1E2E260700EABF13 /* SettingsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsProtocol.swift; sourceTree = "<group>"; };
 		8A151C0F1E2E298B00EABF13 /* SettingsBoolTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsBoolTableViewCell.swift; sourceTree = "<group>"; };
 		8A151C101E2E298B00EABF13 /* SettingsBoolTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsBoolTableViewCell.xib; sourceTree = "<group>"; };
+		8A44BD6C1E3E002B002695F9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		8A44BD6D1E3E002B002695F9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		8A44BD721E3E032A002695F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8A44BD751E3E088C002695F9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8A49B8ED1E0AF1C2008B6ECA /* TwitterChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterChooseViewController.swift; sourceTree = "<group>"; };
 		8A49B8EF1E0AF3A9008B6ECA /* TwitterChooseGroupClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterChooseGroupClass.swift; sourceTree = "<group>"; };
 		8A49B8F11E0B0146008B6ECA /* RealmManagerTwitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManagerTwitter.swift; sourceTree = "<group>"; };
@@ -244,6 +249,7 @@
 		7BF0F4381DF1E50B00285298 /* socialMilk */ = {
 			isa = PBXGroup;
 			children = (
+				8A44BD701E3E0231002695F9 /* Localize-Swift */,
 				7BF0F4391DF1E50B00285298 /* AppDelegate.swift */,
 				8AEF72781E195D4800332FB5 /* socialMilk-Bridging-Header.h */,
 				8AE60E741E06DD1600A9662F /* Fabric.framework */,
@@ -261,6 +267,7 @@
 				7BF0F4401DF1E50B00285298 /* Assets.xcassets */,
 				7BF0F4421DF1E50B00285298 /* LaunchScreen.storyboard */,
 				7BF0F4451DF1E50B00285298 /* Info.plist */,
+				8A44BD731E3E032A002695F9 /* Localizable.strings */,
 			);
 			path = socialMilk;
 			sourceTree = "<group>";
@@ -319,6 +326,13 @@
 				8A02C6181E14718600DC4CB9 /* WebViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		8A44BD701E3E0231002695F9 /* Localize-Swift */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Localize-Swift";
 			sourceTree = "<group>";
 		};
 		8A49B8EA1E0AF0EB008B6ECA /* VK */ = {
@@ -459,6 +473,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 7BF0F42D1DF1E50B00285298;
 			productRefGroup = 7BF0F4371DF1E50B00285298 /* Products */;
@@ -480,6 +495,7 @@
 				8AE60E7A1E06DD1600A9662F /* TwitterKitResources.bundle in Resources */,
 				8AEF72681E1715B700332FB5 /* AppCollectionViewCell.xib in Resources */,
 				7BF0F4691DF35D2900285298 /* GroupsTableViewCell.xib in Resources */,
+				8A44BD711E3E032A002695F9 /* Localizable.strings in Resources */,
 				7BF0F45C1DF2038000285298 /* MessageTableViewCell.xib in Resources */,
 				8A02C61D1E15836900DC4CB9 /* SettingsChooseTableViewCell.xib in Resources */,
 				7BF0F4411DF1E50B00285298 /* Assets.xcassets in Resources */,
@@ -623,6 +639,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7BF0F43E1DF1E50B00285298 /* Base */,
+				8A44BD6C1E3E002B002695F9 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -631,8 +648,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				7BF0F4431DF1E50B00285298 /* Base */,
+				8A44BD6D1E3E002B002695F9 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8A44BD731E3E032A002695F9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A44BD721E3E032A002695F9 /* en */,
+				8A44BD751E3E088C002695F9 /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -642,6 +669,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -693,6 +721,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

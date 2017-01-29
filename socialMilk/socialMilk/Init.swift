@@ -13,7 +13,7 @@ import Social
 
 final class Init{
     static func Init(){
-        RealmManagerVk.printRealmPath()
+//        RealmManagerVk.printRealmPath()
         WorkingVk.sources = RealmManagerVk.getVKCheckedPosts()
         WorkingTwitter.sources = RealmManagerTwitter.getTweetCheckedPosts()
         WorkingFB.sources = RealmManagerFB.getFBCheckedPosts()

@@ -13,7 +13,7 @@ class BrwoserSettingsViewController: UIViewController, SettingsProtocol {
     @IBOutlet weak var settingsTableView: UITableView!
     
     var settingsArray = [browserSettings]()
-    private let sectionsNames = ["Open links in"]
+    private let sectionsNames = [NSLocalizedString("OpenLinksInSettings", comment: "WhereOpenLinksLabel")]
     private var browserType: WorkingDefaults.Browser = WorkingDefaults.Browser.my
     
     override func viewDidLoad() {
@@ -75,8 +75,9 @@ class BrwoserSettingsViewController: UIViewController, SettingsProtocol {
     
     func addFirstProperties(){
         settingsArray.removeAll()
-        settingsArray.append(browserSettings(text: "Social Milk Browser"))
-        settingsArray.append(browserSettings(text: "Safari", browserType: WorkingDefaults.Browser.safari))
+        settingsArray.append(browserSettings(text: NSLocalizedString("SocialMilkBrowserSettings", comment: "KindOfBrowserLabel")))
+        settingsArray.append(browserSettings(text: NSLocalizedString("Safari", comment: "kindOfBrowserLabel"),
+                                             browserType: WorkingDefaults.Browser.safari))
     }
 }
 

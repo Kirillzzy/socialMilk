@@ -13,7 +13,8 @@ class AddAppsViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var appsTableView: UITableView!
     private var availableApps = AppsStaticClass.allAvailableApps
     private var soonApps = AppsStaticClass.soonApps
-    private let sectionsNames: [String] = ["Now available", "Soon"]
+    private let sectionsNames: [String] = [NSLocalizedString("NowAvailable", comment: "NowAvailableLabel"),
+                                           NSLocalizedString("Soon", comment: "SoonLabel")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,9 +49,20 @@ class AddAppsViewController: UIViewController, UITableViewDelegate, UITableViewD
         if indexPath.section == 0{
             cell.mainImageVIew.image = availableApps[indexPath.row].AppIcon
             cell.titleLabel.text = availableApps[indexPath.row].AppName
-            let keyName = "have\(availableApps[indexPath.row].AppName!)"
-            if UserDefaults.standard.bool(forKey: keyName){
-                cell.setChecked(how: true)
+            if let AppName = availableApps[indexPath.row].AppTag{
+                var keyName = ""
+                if AppName == 1{
+                    keyName = WorkingDefaults.keyVK
+                }else if AppName == 2{
+                    keyName = WorkingDefaults.keyTwitter
+                }else if AppName == 3{
+                    keyName = WorkingDefaults.keyFB
+                }
+                if keyName != ""{
+                    if UserDefaults.standard.bool(forKey: keyName){
+                        cell.setChecked(how: true)
+                    }
+                }
             }
         }else if indexPath.section == 1{
             cell.mainImageVIew.image = soonApps[indexPath.row].0
@@ -62,15 +74,16 @@ class AddAppsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         appsTableView.deselectRow(at: indexPath, animated: true)
+        
         if indexPath.section == 0{
-            if indexPath.row == 0{
+            if availableApps[indexPath.row].AppTag == 1{
                 WorkingDefaults.setVK(how: true)
                 (appsTableView.cellForRow(at: indexPath)as! GroupsTableViewCell).setChecked(how: true)
                 performSegue(withIdentifier: "fromAddToVKChooseSegue", sender: self)
-            }else if indexPath.row == 1{
+            }else if availableApps[indexPath.row].AppTag == 2{
                 WorkingDefaults.setTwitter(how: true)
                 performSegue(withIdentifier: "fromAddtoTwitterChooseSegue", sender: self)
-            }else if indexPath.row == 2{
+            }else if availableApps[indexPath.row].AppTag == 3{
                 WorkingDefaults.setFB(how: true)
                 performSegue(withIdentifier: "fromAddToFBChooseSegue", sender: self)
             }

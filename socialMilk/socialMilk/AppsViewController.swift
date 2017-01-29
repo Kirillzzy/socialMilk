@@ -21,7 +21,7 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
 //        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "back6"))
         AppsCollectionView.register(UINib(nibName: "AppCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AppCell")
-        FBManager.loginVc(vc: self)
+//        FBManager.loginVc(vc: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,23 +49,23 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         AppsCollectionView.deselectItem(at: indexPath, animated: true)
-        if let appName = apps[indexPath.row].AppName{
+        if let appName = apps[indexPath.row].AppTag{
             if !isEdit{
-                if appName == "Twitter"{
+                if appName == 2{
                     performSegue(withIdentifier: "fromTwitterSegue", sender: self)
-                }else if appName == "VK"{
+                }else if appName == 1{
                     performSegue(withIdentifier: "fromVkSegue", sender: self)
-                }else if appName == "All"{
+                }else if appName == 0{
                     performSegue(withIdentifier: "fromAllSegue", sender: self)
-                }else if appName == "Facebook"{
+                }else if appName == 3{
                     performSegue(withIdentifier: "fromFBSegue", sender: self)
                 }
             }else{
-                if appName == "Twitter"{
+                if appName == 2{
                     WorkingDefaults.setTwitter(how: false)
-                }else if appName == "VK"{
+                }else if appName == 1{
                     WorkingDefaults.setVK(how: false)
-                }else if appName == "Facebook"{
+                }else if appName == 3{
                     WorkingDefaults.setFB(how: false)
                 }
                 self.refreshCollectionView()
@@ -77,7 +77,7 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppCell", for: indexPath) as! AppCollectionViewCell
         cell.AppImageView.image = apps[indexPath.row].AppIcon
         cell.AppNameLabel.text = apps[indexPath.row].AppName
-        if isEdit && apps[indexPath.row].AppIcon != nil && apps[indexPath.row].AppName != "All"{
+        if isEdit && apps[indexPath.row].AppIcon != nil && apps[indexPath.row].AppName != NSLocalizedString("All", comment: "AllInscription"){
             cell.setDeleteToDelete()
         }else{
             cell.setDeleteToNil()
@@ -95,16 +95,16 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBAction func editButtonPressed(_ sender: Any) {
         isEdit = !isEdit
         if isEdit{
-            editButton.title = "Done"
+            editButton.title = NSLocalizedString("Done", comment: "DoneButton")
         }else{
-            editButton.title = "Edit"
+            editButton.title = NSLocalizedString("Edit", comment: "EditButton")
         }
         AppsCollectionView.reloadData()
     }
     
     func goToNull(){
         isEdit = false
-        editButton.title = "Edit"
+        editButton.title = NSLocalizedString("Edit", comment: "EditButton")
     }
     
     func longPressed(gesture: UILongPressGestureRecognizer){

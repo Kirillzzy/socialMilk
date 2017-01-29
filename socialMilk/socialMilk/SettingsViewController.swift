@@ -12,7 +12,9 @@ import UIKit
 class SettingsViewController: UIViewController, SettingsProtocol{
 
     @IBOutlet weak var settingsTableView: UITableView!
-    private let sectionsNames = ["General", "Accounts", "Feedback"]
+    private let sectionsNames = [NSLocalizedString("GeneralSettings", comment: "GeneralLabel"),
+                                 NSLocalizedString("AccountsSettings", comment: "AccountsLabel"),
+                                 NSLocalizedString("FeedbackSettings", comment: "FeedbackLabel")]
     var settingsArray = [[settings]()]
     
     override func viewDidLoad() {
@@ -67,7 +69,8 @@ class SettingsViewController: UIViewController, SettingsProtocol{
         for _ in 0..<3{
             settingsArray.append([settings]())
         }
-        settingsArray[0].append(settings(image: nil, text: "Browser", nameOfSegue: "gotoBrowserSettings"))
+        settingsArray[0].append(settings(image: nil, text: NSLocalizedString("BrowserSettings", comment: "BrowserLabel"),
+                                         nameOfSegue: "gotoBrowserSettings"))
 //        settingsArray[0].append(settings(image: nil, text: "Background Image", nameOfSegue: "gotoBackgroundImageSettings"))
         if WorkingDefaults.isHaveVk(){
             settingsArray[1].append(settings(image: #imageLiteral(resourceName: "vkLogoBlackBig"),
@@ -84,9 +87,11 @@ class SettingsViewController: UIViewController, SettingsProtocol{
                                              text: FBManager.userName,
                 nameOfSegue: "gotoChooseFB"))
         }
-        settingsArray[2].append(settings(image: nil, text: "Rate this app", nameOfSegue: "gotoRateUs"))
-        settingsArray[2].append(settings(image: nil, text: "Contact Developer", nameOfSegue: "gotoContactDev"))
-        settingsArray[2].append(settings(image: nil, text: "Clear Data", nameOfSegue: ""))
+        settingsArray[2].append(settings(image: nil, text: NSLocalizedString("RateThisAppSettings", comment: "RateLabel"),
+                                         nameOfSegue: "gotoRateUs"))
+        settingsArray[2].append(settings(image: nil, text: NSLocalizedString("ContactDeveloperSettings", comment: "ContactLabel"),
+                                         nameOfSegue: "gotoContactDev"))
+        settingsArray[2].append(settings(image: nil, text: NSLocalizedString("ClearDataSettings", comment: "ClearDataLabel"), nameOfSegue: ""))
     }
 
 }
