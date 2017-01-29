@@ -143,6 +143,7 @@
 		8A44BD6D1E3E002B002695F9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		8A44BD721E3E032A002695F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8A44BD751E3E088C002695F9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8A44BD771E3E28A8002695F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		8A49B8ED1E0AF1C2008B6ECA /* TwitterChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterChooseViewController.swift; sourceTree = "<group>"; };
 		8A49B8EF1E0AF3A9008B6ECA /* TwitterChooseGroupClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterChooseGroupClass.swift; sourceTree = "<group>"; };
 		8A49B8F11E0B0146008B6ECA /* RealmManagerTwitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManagerTwitter.swift; sourceTree = "<group>"; };
@@ -640,6 +641,7 @@
 			children = (
 				7BF0F43E1DF1E50B00285298 /* Base */,
 				8A44BD6C1E3E002B002695F9 /* ru */,
+				8A44BD771E3E28A8002695F9 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

@@ -72,7 +72,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gpp-h4-M9d">
-                                <rect key="frame" x="171.66666666666666" y="332.66666666666669" width="70" height="70"/>
+                                <rect key="frame" x="172" y="333" width="70" height="70"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="N3p-Wj-drL">
                                         <rect key="frame" x="17" y="17" width="37" height="37"/>
@@ -148,10 +148,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="id7-5m-nep">
-                                <rect key="frame" x="171.66666666666666" y="332.66666666666669" width="70" height="70"/>
+                                <rect key="frame" x="172" y="333" width="70" height="70"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="5Be-h6-JKV">
-                                        <rect key="frame" x="17" y="16.333333333333314" width="37" height="37"/>
+                                        <rect key="frame" x="17" y="16" width="37" height="37"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.47550302639999997" green="0.4802109772" blue="0.4802109772" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -265,7 +265,7 @@
                                         <rect key="frame" x="0.0" y="70" width="414" height="666"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4U3-JU-XSf">
-                                        <rect key="frame" x="57" y="383.66666666666669" width="300" height="39.666666666666629"/>
+                                        <rect key="frame" x="57" y="383.33333333333326" width="300" height="39.666666666666686"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="eIj-Ei-A9X"/>
                                         </constraints>
@@ -281,7 +281,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No posts right now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szE-aO-dB2">
-                                        <rect key="frame" x="107" y="347.66666666666669" width="200" height="21"/>
+                                        <rect key="frame" x="107" y="347.33333333333331" width="200" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="gq6-bt-hWC"/>
                                         </constraints>
@@ -372,7 +372,7 @@
                                         <rect key="frame" x="0.0" y="70" width="414" height="666"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nV-XR-eos">
-                                        <rect key="frame" x="56.666666666666657" y="382.66666666666669" width="300" height="39.666666666666629"/>
+                                        <rect key="frame" x="57" y="383.33333333333326" width="300" height="39.666666666666686"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="nZa-4k-COU"/>
                                         </constraints>
@@ -388,7 +388,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No posts right now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7y-LT-l4K">
-                                        <rect key="frame" x="107" y="344.66666666666669" width="200" height="21"/>
+                                        <rect key="frame" x="107" y="345.33333333333331" width="200" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="E1s-yA-aFP"/>
                                         </constraints>
@@ -431,7 +431,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="wdL-f1-QUD">
                             <progressView key="customView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" id="kro-cz-n0D">
-                                <rect key="frame" x="311" y="21" width="83" height="2.5"/>
+                                <rect key="frame" x="311" y="21" width="83" height="3"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -564,7 +564,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Kwb-AP-aMw">
-                                    <rect key="frame" x="0.0" y="-64" width="384" height="706"/>
+                                    <rect key="frame" x="0.0" y="-64" width="570" height="570"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <cells/>
@@ -830,7 +830,7 @@
                                         <rect key="frame" x="0.0" y="70" width="414" height="666"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfe-BY-bdR">
-                                        <rect key="frame" x="56.666666666666657" y="382.66666666666669" width="300" height="39.666666666666629"/>
+                                        <rect key="frame" x="57" y="383.33333333333326" width="300" height="39.666666666666686"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="oLS-AZ-R2W"/>
                                         </constraints>
@@ -846,7 +846,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No posts right now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8Q-Ad-KYM">
-                                        <rect key="frame" x="107" y="346.66666666666669" width="200" height="21"/>
+                                        <rect key="frame" x="107" y="347.33333333333331" width="200" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="7z0-qE-fSl"/>
                                         </constraints>
@@ -889,7 +889,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="ac9-1U-suu">
                             <progressView key="customView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" id="2tR-Sb-yAh">
-                                <rect key="frame" x="311" y="21" width="83" height="2.5"/>
+                                <rect key="frame" x="311" y="21" width="83" height="3"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1110,6 +1110,6 @@
         <segue reference="gaJ-YS-SSm"/>
         <segue reference="uf5-d3-uPr"/>
         <segue reference="fbM-bV-SCz"/>
-        <segue reference="uJ8-Gk-npP"/>
+        <segue reference="zlY-w4-Jrc"/>
     </inferredMetricsTieBreakers>
 </document>
