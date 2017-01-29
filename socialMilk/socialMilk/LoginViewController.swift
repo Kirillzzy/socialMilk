@@ -40,10 +40,10 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
-        if LoginViewController.loginedAt >= 3{
+//        if LoginViewController.loginedAt >= 3{
             WorkingDefaults.setFirstSetupEver(how: false)
             gotoNext()
-        }
+//        }
         if !SetupViewController.isInternetAvailable(){
             showErrorAlert()
         }

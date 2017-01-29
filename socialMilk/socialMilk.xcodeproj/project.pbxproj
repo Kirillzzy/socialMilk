@@ -463,7 +463,7 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = KH2KDZEEE3;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -771,6 +771,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = KH2KDZEEE3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -791,6 +792,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kirillzzy.socialMilk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "28849dec-068e-4e50-9c25-3b6634051316";
+				PROVISIONING_PROFILE_SPECIFIER = SocialMilkProfile;
 				SWIFT_OBJC_BRIDGING_HEADER = "socialMilk/socialMilk-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -804,6 +807,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = KH2KDZEEE3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -824,6 +828,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kirillzzy.socialMilk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "28849dec-068e-4e50-9c25-3b6634051316";
+				PROVISIONING_PROFILE_SPECIFIER = SocialMilkProfile;
 				SWIFT_OBJC_BRIDGING_HEADER = "socialMilk/socialMilk-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
