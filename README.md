@@ -1,10 +1,9 @@
 # Social Milk
-An app is getting notifications and posts from different social networks and interacting with their API's.
+An iOS app that gets notifications and posts from different social networks and interacts with their API's.
 
 You should choose places(groups or people for example) from your social network(s) and after that you will see new posts/tweets in merged(or not) timeline only from chosen places.
 
-In future Facebook and Instagram are planning.
-
+The short idea of the app is 'Aggregator of social networks'
 # Instructions:
 - Choose Social networks you want to get new posts(VK/Twitter)
 - Check out new posts!
@@ -15,6 +14,7 @@ In future Facebook and Instagram are planning.
 - Facebook
 
 # Todo:
+- Make backend
 - Add more social networks
 - Localization
 - In-App
