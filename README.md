@@ -1,5 +1,8 @@
 # Social Milk
-Social Milk website: http://kirillaveryanov.tilda.ws/socialmilk \n
+Social Milk website: http://kirillaveryanov.tilda.ws/socialmilk 
+
+
+
 Get notifications and posts from different social networks. Read posts from different people and groups in one place. The short idea of the app is 'Aggregator of social networks'
 
 You should choose places(groups or people for example) from your social network(s) and after that you will see new posts/tweets in merged(or not) timeline only from chosen places.
