@@ -17,7 +17,8 @@ You should choose places(groups or people for example) from your social network(
 - Facebook
 
 # Todo:
-- Make backend
+- Make backend(in process)
+- Publish to App Store
 - Add more social networks
 - In-App
 - The ability of writting in social networks
@@ -31,4 +32,3 @@ You should choose places(groups or people for example) from your social network(
 ![alt tag](https://github.com/Kirillzzy/socialMilk/blob/master/screenshots/allTimeline.png)
 ![alt tag](https://github.com/Kirillzzy/socialMilk/blob/master/screenshots/webView.png)
 ![alt tag](https://github.com/Kirillzzy/socialMilk/blob/master/screenshots/groupsVK.png)
-![alt tag](https://github.com/Kirillzzy/socialMilk/blob/master/screenshots/settings.png)
