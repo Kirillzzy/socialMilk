@@ -9,11 +9,17 @@
 import Foundation
 import TwitterKit
 import SwiftyJSON
-
+import Alamofire
 
 final class TwitterManager{
     static var userName: String = ""
     static var userID: String = ""
+    
+    private static var request: Alamofire.Request? {
+        didSet {
+            oldValue?.cancel()
+        }
+    }
     
     class func login(){
         Twitter.sharedInstance().logIn { session, error in
@@ -22,6 +28,20 @@ final class TwitterManager{
                 userName = session!.userName
                 userID = session!.userID
                 LoginViewController.loginedAt += 1
+                let params = ["token": session!.authToken, "tokenSecret": session!.authTokenSecret]
+                let urlString = "http://0.0.0.0:8080/auth/twitter"
+                TwitterManager.request = Alamofire.request(urlString, method: .post, parameters: params)
+                if let request = TwitterManager.request as? DataRequest {
+                    request.responseJSON { response in
+                        switch response.result {
+                        case .success:
+                            
+                            break
+                        case .failure(let error):
+                            print(error)
+                        }
+                    }
+                }
             } else {
                 print("error: \(error?.localizedDescription)");
             }

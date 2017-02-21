@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AFNetworking.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -34,27 +29,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>FBSDKShareKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>FacebookCore.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>FacebookLogin.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>FacebookShare.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>InstagramKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -69,17 +49,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Realm.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>RealmSwift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -97,27 +72,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>075F11A6AC7F1050256A102C7AB415DC</key>
+		<key>2D26AE238DFB723207945ED284B413EC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>332F91393FB1DE033D370B4CEDDD5FCF</key>
+		<key>3C3152B4949570D5358AF72A79255FDF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>44CAD6CE523055ED339E87154473A254</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>515D2FFA40535DF69A6A5A941459FBA3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>52C19ED8216382B5AF6661C050C67C70</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -132,16 +97,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5B7E0FF729FFDD009C9DC79698A7A923</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5C69EA6AC041CD16890CB2F1107DEC57</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>7335E9C9689F3B8A16F063A884748533</key>
 		<dict>
 			<key>primary</key>
@@ -152,17 +107,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9236B102F9D28B8A8D73696431C300EB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A7FEAA14E89971698ACA148F7F7202F2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CF671F7E57B92905F1CC91D036D6B4A7</key>
+		<key>C33EF17AE7E4A832089208C3426EF840</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -172,12 +117,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>DB68105056478C9A0E12E648D88A39FA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>DDBCFDE490CDFDABF6F16A26F346932D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E140B8CF3D7306394C81D06FBFD8FE24</key>
+		<key>DF521E265FB372CC59C123A73FE65022</key>
 		<dict>
 			<key>primary</key>
 			<true/>

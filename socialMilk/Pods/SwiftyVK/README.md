@@ -149,11 +149,10 @@ For authorization with official VK application for iOS, you need:
 
 * Set `App Bundle ID for iOS` to your `App Bundle` in Xcode -> Target -> Bundle Identifier (e.g. com.developer.applicationName)
 
-*3. Add this code to AppDelegate*
+*3. Add this code to appDelegate*
 ```swift
 func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-    let app = options[.sourceApplication] as? String
-    VK.process(url: url, sourceApplication: app)
+    VK.process(url: url, options: options)
     return true
 }
 ```

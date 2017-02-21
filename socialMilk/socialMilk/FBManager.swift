@@ -10,7 +10,7 @@ import Foundation
 import FacebookCore
 import FacebookLogin
 import SwiftyJSON
-
+import Alamofire
 
 final class FBManager{
     static var userName: String = ""
@@ -29,10 +29,14 @@ final class FBManager{
                 print(error)
             case .cancelled:
                 print("User cancelled login.")
-            case .success( _, _, _):
+            case .success( _, _, let accessToken):
                 print("Logged in!")
                 LoginViewController.loginedAt += 1
                 getMe()
+                print(accessToken.authenticationToken)
+                Alamofire.request("http://0.0.0.0:8080/auth/facebook/\(accessToken.authenticationToken)").responseString{response in
+                
+                }
             }
         })
     }
