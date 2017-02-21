@@ -14,9 +14,7 @@ class MessageClass {
     var message: String = ""
     var timeNSDate: NSDate!
     var url: String = ""
-    var post = VKPost()
-    var tweet = TweetPost()
-    var postFb = FBPost()
+    var post = PostClass()
     var typeOfMessage: type
     var colorBubble: UIImage = UIImage()
     
@@ -26,7 +24,7 @@ class MessageClass {
         case fb
     }
     
-    init(head: String, message: String, timeNSDate: NSDate, url: String, post: VKPost){
+    init(head: String, message: String, timeNSDate: NSDate, url: String, post: PostClass){
         self.head = head
         self.message = message
         self.timeNSDate = timeNSDate
@@ -34,25 +32,5 @@ class MessageClass {
         self.post = post
         self.typeOfMessage = type.vk
         self.colorBubble = #imageLiteral(resourceName: "vkCircle")
-    }
-    
-    init(head: String, message: String, timeNSDate: NSDate, url: String, postFb: FBPost){
-        self.head = head
-        self.message = message
-        self.timeNSDate = timeNSDate
-        self.url = url
-        self.postFb = postFb
-        self.typeOfMessage = type.fb
-        self.colorBubble = #imageLiteral(resourceName: "circle")
-    }
-    
-    init(head: String, message: String, timeNSDate: NSDate, url: String, tweet: TweetPost){
-        self.head = head
-        self.message = message
-        self.timeNSDate = timeNSDate
-        self.url = url
-        self.tweet = tweet
-        self.typeOfMessage = type.twitter
-        self.colorBubble = #imageLiteral(resourceName: "twitterCircle")
     }
 }

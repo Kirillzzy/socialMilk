@@ -8,7 +8,7 @@
 
 import Foundation
 import SwiftyVK
-
+import Alamofire
 
 class VKManager: VKDelegate{
     
