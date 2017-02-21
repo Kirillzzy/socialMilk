@@ -8,6 +8,7 @@
 
 import UIKit
 import SystemConfiguration
+import SafariServices
 
 class Setup{
 

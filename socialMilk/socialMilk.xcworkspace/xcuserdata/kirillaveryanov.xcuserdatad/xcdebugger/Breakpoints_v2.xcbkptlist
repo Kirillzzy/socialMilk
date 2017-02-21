@@ -139,22 +139,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "socialMilk/TwitterManager.swift"
-            timestampString = "509201999.958081"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "loadTweetsByUser(user:callback:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "socialMilk/TwitterChooseViewController.swift"
             timestampString = "506874125.37096"
             startingColumnNumber = "9223372036854775807"
@@ -444,44 +428,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "socialMilk/FBManager.swift"
-            timestampString = "508717243.106614"
+            timestampString = "509400850.599238"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "getMe()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "socialMilk/FBManager.swift"
-            timestampString = "508717243.106614"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "getUserGroups(callback:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "socialMilk/NotificationsAllViewController.swift"
-            timestampString = "507384200.796862"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -529,118 +481,6 @@
                   startingLineNumber = "32"
                   endingLineNumber = "32"
                   offsetFromSymbolStart = "19">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "socialMilk/FBManager.swift"
-            timestampString = "508717243.106614"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "getFeedByGroup(group:callback:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "socialMilk/NotificationsAllViewController.swift"
-            timestampString = "507384200.796862"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
-            landmarkName = "loadNews()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "socialMilk.NotificationsAllViewController.(loadNews () -&gt; ()).(closure #1)"
-                  moduleName = "socialMilk"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kirillaveryanov/Documents/xcodeProjects/socialMilk/socialMilk/socialMilk/NotificationsAllViewController.swift"
-                  timestampString = "507152784.975967"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "192"
-                  endingLineNumber = "192"
-                  offsetFromSymbolStart = "2574">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "socialMilk.NotificationsAllViewController.(loadNews () -&gt; ()).(closure #1).(closure #5)"
-                  moduleName = "socialMilk"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kirillaveryanov/Documents/xcodeProjects/socialMilk/socialMilk/socialMilk/NotificationsAllViewController.swift"
-                  timestampString = "507152784.978144"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "193"
-                  endingLineNumber = "193"
-                  offsetFromSymbolStart = "27">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "socialMilk/NotificationsAllViewController.swift"
-            timestampString = "507384200.796862"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
-            landmarkName = "loadNews()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "socialMilk.NotificationsAllViewController.(loadNews () -&gt; ()).(closure #1)"
-                  moduleName = "socialMilk"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kirillaveryanov/Documents/xcodeProjects/socialMilk/socialMilk/socialMilk/NotificationsAllViewController.swift"
-                  timestampString = "507152784.982297"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "196"
-                  endingLineNumber = "196"
-                  offsetFromSymbolStart = "3213">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "socialMilk.NotificationsAllViewController.(loadNews () -&gt; ()).(closure #1).(closure #6)"
-                  moduleName = "socialMilk"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kirillaveryanov/Documents/xcodeProjects/socialMilk/socialMilk/socialMilk/NotificationsAllViewController.swift"
-                  timestampString = "507152784.984384"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "197"
-                  endingLineNumber = "197"
-                  offsetFromSymbolStart = "27">
                </Location>
             </Locations>
          </BreakpointContent>

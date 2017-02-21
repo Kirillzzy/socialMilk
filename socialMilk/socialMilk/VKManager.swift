@@ -12,12 +12,6 @@ import Alamofire
 
 class VKManager: VKDelegate{
     
-    private static var request: Alamofire.Request? {
-        didSet {
-            oldValue?.cancel()
-        }
-    }
-    
     init(){
         VK.configure(withAppId: Constants.VKappID, delegate: self)
         VK.logIn()
@@ -31,22 +25,6 @@ class VKManager: VKDelegate{
         print("Autorized")
         LoginViewController.loginedAt += 1
         VKManagerWorker.getMe()
-        let params = ["token": parameters["access_token"]!]
-        let urlString = "http://0.0.0.0:8080/auth/vk"
-        VKManager.request = Alamofire.request(urlString, method: .post, parameters: params)
-        if let request = VKManager.request as? DataRequest {
-            request.responseString { response in
-                switch response.result {
-                case .success:
-                    print("=----------------------=")
-                    print(response.result.value!)
-                    break
-                case .failure(let error):
-                    print(error)
-                }
-            }
-        }
-    
     }
     
     internal func vkAutorizationFailedWith(error: AuthError) {

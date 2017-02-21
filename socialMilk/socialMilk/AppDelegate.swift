@@ -14,8 +14,6 @@ import FacebookLogin
 import FacebookCore
 import FBSDKCoreKit
 import FBSDKLoginKit
-import FacebookShare
-import FBSDKShareKit
 
 var vkDelegateReference: VKDelegate?
 
@@ -47,7 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Twitter.self])
-        Init.Init()
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         return true
     }

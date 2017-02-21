@@ -45,7 +45,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Si4-Pl-E5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2387" y="259"/>
+            <point key="canvasLocation" x="2344" y="355"/>
         </scene>
         <!--All-->
         <scene sceneID="CuR-Sc-0Cb">
@@ -125,12 +125,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="All" id="tan-x6-UmF">
-                        <barButtonItem key="leftBarButtonItem" image="next" id="KKJ-5k-hh0">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="backViewButtonPressed:" destination="9qv-P2-8gA" id="xnS-92-8dW"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="MkK-Gh-t6y">
                             <progressView key="customView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" id="o4u-xS-Mt4">
                                 <rect key="frame" x="311" y="21" width="83" height="3"/>
@@ -141,7 +135,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityView" destination="xct-Dl-V3x" id="wf1-dU-Ejz"/>
-                        <outlet property="backViewButton" destination="KKJ-5k-hh0" id="vtZ-eR-IcF"/>
                         <outlet property="infoLabel" destination="4U3-JU-XSf" id="Gud-Ka-8zN"/>
                         <outlet property="infoLabel2" destination="szE-aO-dB2" id="Ml7-Eo-sCW"/>
                         <outlet property="loadingImageView" destination="pBi-kG-UMm" id="7nl-Lz-DJa"/>
@@ -151,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fIG-xJ-Rmp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1674" y="-477"/>
+            <point key="canvasLocation" x="1490" y="-477"/>
         </scene>
         <!--Settings-->
         <scene sceneID="7bm-R3-hUZ">
@@ -190,7 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgl-4c-84l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1532" y="260"/>
+            <point key="canvasLocation" x="1490" y="355"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VAJ-of-1NY">
@@ -203,6 +196,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="34g-LE-XB5" kind="relationship" relationship="viewControllers" id="yjH-sA-ee7"/>
+                        <segue destination="g0y-2S-IyE" kind="relationship" relationship="viewControllers" id="vva-Iw-9nu"/>
                         <segue destination="TeR-g5-h1k" kind="relationship" relationship="viewControllers" id="OO1-RB-oPS"/>
                     </connections>
                 </tabBarController>
@@ -332,7 +326,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="9qv-P2-8gA" kind="show" id="mIl-EG-d0B"/>
+                        <segue destination="9qv-P2-8gA" kind="relationship" relationship="rootViewController" id="YNJ-p2-Ydq"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sTt-f1-ghM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -362,7 +356,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dM4-LG-tjk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="593" y="260"/>
+            <point key="canvasLocation" x="592" y="355"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="K3s-dR-5tN">
+            <objects>
+                <viewController id="g0y-2S-IyE" customClass="AccountsViewController" customModule="socialMilk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M6g-OT-QGl"/>
+                        <viewControllerLayoutGuide type="bottom" id="t8i-eH-J8v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lnk-OJ-rkF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="zZu-LI-c3M"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Pl-79-XYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-488" y="763"/>
         </scene>
     </scenes>
     <resources>
@@ -371,7 +384,6 @@
         <image name="loading" width="1242" height="2208"/>
         <image name="millk" width="2048" height="2048"/>
         <image name="navigateRight" width="25" height="25"/>
-        <image name="next" width="25" height="25"/>
         <image name="settings" width="25" height="25"/>
         <image name="twitterlogoWhite" width="25" height="25"/>
         <image name="vkLogoRound" width="25" height="25"/>

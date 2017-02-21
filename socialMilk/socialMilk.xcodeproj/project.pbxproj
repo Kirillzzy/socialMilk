@@ -7,18 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B2EE7A41DF46E34009F6968 /* WorkingVk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2EE7A31DF46E34009F6968 /* WorkingVk.swift */; };
-		7B39A83D1DF4A1500077BBB6 /* VKPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B39A83C1DF4A1500077BBB6 /* VKPost.swift */; };
-		7B39A83F1DF5C9510077BBB6 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B39A83E1DF5C9510077BBB6 /* RealmSwift.framework */; };
-		7B39A8411DF5C9550077BBB6 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B39A8401DF5C9550077BBB6 /* Realm.framework */; };
-		7B39A8491DF5FBB80077BBB6 /* Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B39A8481DF5FBB80077BBB6 /* Init.swift */; };
 		7B8A91811DFF298C0014D78D /* VKManagerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8A91801DFF298C0014D78D /* VKManagerWorker.swift */; };
 		7BF0F43A1DF1E50B00285298 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF0F4391DF1E50B00285298 /* AppDelegate.swift */; };
 		7BF0F43F1DF1E50B00285298 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF0F43D1DF1E50B00285298 /* Main.storyboard */; };
 		7BF0F4411DF1E50B00285298 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BF0F4401DF1E50B00285298 /* Assets.xcassets */; };
 		7BF0F4441DF1E50B00285298 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF0F4421DF1E50B00285298 /* LaunchScreen.storyboard */; };
 		7BF0F44E1DF1EA9D00285298 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF0F44D1DF1EA9D00285298 /* SettingsViewController.swift */; };
-		7BF0F4521DF1F42400285298 /* ChatClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF0F4511DF1F42300285298 /* ChatClass.swift */; };
 		7BF0F4541DF1F48500285298 /* MessageClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF0F4531DF1F48500285298 /* MessageClass.swift */; };
 		7BF0F45B1DF2038000285298 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF0F4591DF2038000285298 /* MessageTableViewCell.swift */; };
 		7BF0F45C1DF2038000285298 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BF0F45A1DF2038000285298 /* MessageTableViewCell.xib */; };
@@ -34,15 +28,15 @@
 		8A151C0C1E2E260700EABF13 /* SettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A151C0B1E2E260700EABF13 /* SettingsProtocol.swift */; };
 		8A151C111E2E298B00EABF13 /* SettingsBoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A151C0F1E2E298B00EABF13 /* SettingsBoolTableViewCell.swift */; };
 		8A151C121E2E298B00EABF13 /* SettingsBoolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A151C101E2E298B00EABF13 /* SettingsBoolTableViewCell.xib */; };
+		8A3B15D31E5CCD5C008DD430 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B15D21E5CCD5C008DD430 /* AccountsViewController.swift */; };
+		8A3B15D51E5CCF3E008DD430 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3B15D41E5CCF3E008DD430 /* SVProgressHUD.framework */; };
+		8A3B15D71E5CD060008DD430 /* PostClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B15D61E5CD060008DD430 /* PostClass.swift */; };
+		8A3B15D91E5CD087008DD430 /* UserClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B15D81E5CD087008DD430 /* UserClass.swift */; };
 		8A44BD711E3E032A002695F9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A44BD731E3E032A002695F9 /* Localizable.strings */; };
-		8A49B8F01E0AF3A9008B6ECA /* TwitterChooseGroupClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49B8EF1E0AF3A9008B6ECA /* TwitterChooseGroupClass.swift */; };
-		8A49B8F41E0B0166008B6ECA /* WorkingTwitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49B8F31E0B0166008B6ECA /* WorkingTwitter.swift */; };
 		8A79F7061E2EC34E0005FEA7 /* WorkingDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79F7051E2EC34E0005FEA7 /* WorkingDefaults.swift */; };
 		8A8BF3221E2D628500D756FC /* NotificationsAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8BF3211E2D628500D756FC /* NotificationsAllViewController.swift */; };
 		8A8BF3261E2D71C900D756FC /* ExtensionNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8BF3251E2D71C900D756FC /* ExtensionNSDate.swift */; };
 		8A8BF3281E2E240A00D756FC /* BrwoserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8BF3271E2E240A00D756FC /* BrwoserSettingsViewController.swift */; };
-		8AA2233D1E1AFFB50055E39A /* FBPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2233C1E1AFFB50055E39A /* FBPost.swift */; };
-		8AA223471E1B0B7E0055E39A /* WorkingFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA223461E1B0B7E0055E39A /* WorkingFB.swift */; };
 		8AC326221E0716860014835D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC326211E0716860014835D /* SwiftyJSON.framework */; };
 		8AE60E781E06DD1600A9662F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE60E741E06DD1600A9662F /* Fabric.framework */; };
 		8AE60E791E06DD1600A9662F /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE60E751E06DD1600A9662F /* TwitterKit.framework */; };
@@ -50,31 +44,21 @@
 		8AE60E7B1E06DD1600A9662F /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE60E771E06DD1600A9662F /* TwitterCore.framework */; };
 		8AE60E7D1E06EE2F00A9662F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60E7C1E06EE2F00A9662F /* LoginViewController.swift */; };
 		8AE60E7F1E06F2CE00A9662F /* TwitterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60E7E1E06F2CE00A9662F /* TwitterManager.swift */; };
-		8AE60E811E06FC1D00A9662F /* TweetPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60E801E06FC1D00A9662F /* TweetPost.swift */; };
 		8AEF725E1E16741F00332FB5 /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEF725D1E16741F00332FB5 /* Setup.swift */; };
-		8AEF72671E1715B700332FB5 /* AppCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEF72651E1715B700332FB5 /* AppCollectionViewCell.swift */; };
-		8AEF72681E1715B700332FB5 /* AppCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AEF72661E1715B700332FB5 /* AppCollectionViewCell.xib */; };
-		8AEF72801E195D9E00332FB5 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEF727F1E195D9E00332FB5 /* AFNetworking.framework */; };
 		8AEF72821E195DA200332FB5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEF72811E195DA200332FB5 /* Alamofire.framework */; };
 		8AEF72841E195DA500332FB5 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEF72831E195DA500332FB5 /* Bolts.framework */; };
 		8AEF728C1E195DAE00332FB5 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEF72851E195DAE00332FB5 /* FacebookCore.framework */; };
 		8AEF728D1E195DAE00332FB5 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEF72861E195DAE00332FB5 /* FacebookLogin.framework */; };
-		8AEF728E1E195DAE00332FB5 /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEF72871E195DAE00332FB5 /* FacebookShare.framework */; };
 		8AEF728F1E195DAE00332FB5 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEF72881E195DAE00332FB5 /* FBSDKCoreKit.framework */; };
 		8AEF72901E195DAE00332FB5 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEF72891E195DAE00332FB5 /* FBSDKLoginKit.framework */; };
-		8AEF72911E195DAE00332FB5 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEF728A1E195DAE00332FB5 /* FBSDKShareKit.framework */; };
-		8AEF72921E195DAE00332FB5 /* InstagramKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEF728B1E195DAE00332FB5 /* InstagramKit.framework */; };
 		8AEF72951E19623C00332FB5 /* FBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEF72941E19623C00332FB5 /* FBManager.swift */; };
 		FE9FD86F3619F02F115020EB /* Pods_socialMilk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C680469C18A3008203EE1E9 /* Pods_socialMilk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3C680469C18A3008203EE1E9 /* Pods_socialMilk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_socialMilk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B2EE7A31DF46E34009F6968 /* WorkingVk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingVk.swift; sourceTree = "<group>"; };
-		7B39A83C1DF4A1500077BBB6 /* VKPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKPost.swift; sourceTree = "<group>"; };
 		7B39A83E1DF5C9510077BBB6 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Pods/../build/Debug-iphoneos/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
 		7B39A8401DF5C9550077BBB6 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Realm/Realm.framework"; sourceTree = "<group>"; };
-		7B39A8481DF5FBB80077BBB6 /* Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Init.swift; sourceTree = "<group>"; };
 		7B8A91801DFF298C0014D78D /* VKManagerWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKManagerWorker.swift; sourceTree = "<group>"; };
 		7BF0F4361DF1E50B00285298 /* socialMilk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = socialMilk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF0F4391DF1E50B00285298 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,7 +67,6 @@
 		7BF0F4431DF1E50B00285298 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7BF0F4451DF1E50B00285298 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BF0F44D1DF1EA9D00285298 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		7BF0F4511DF1F42300285298 /* ChatClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatClass.swift; sourceTree = "<group>"; };
 		7BF0F4531DF1F48500285298 /* MessageClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageClass.swift; sourceTree = "<group>"; };
 		7BF0F4591DF2038000285298 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		7BF0F45A1DF2038000285298 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
@@ -99,19 +82,19 @@
 		8A151C0B1E2E260700EABF13 /* SettingsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsProtocol.swift; sourceTree = "<group>"; };
 		8A151C0F1E2E298B00EABF13 /* SettingsBoolTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsBoolTableViewCell.swift; sourceTree = "<group>"; };
 		8A151C101E2E298B00EABF13 /* SettingsBoolTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsBoolTableViewCell.xib; sourceTree = "<group>"; };
+		8A3B15D21E5CCD5C008DD430 /* AccountsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
+		8A3B15D41E5CCF3E008DD430 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = "../../../../Library/Developer/Xcode/DerivedData/socialMilk-efyrgjzfhqusodaldjlwejjisfes/Build/Products/Debug-iphonesimulator/SVProgressHUD/SVProgressHUD.framework"; sourceTree = "<group>"; };
+		8A3B15D61E5CD060008DD430 /* PostClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostClass.swift; sourceTree = "<group>"; };
+		8A3B15D81E5CD087008DD430 /* UserClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserClass.swift; sourceTree = "<group>"; };
 		8A44BD6C1E3E002B002695F9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		8A44BD6D1E3E002B002695F9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		8A44BD721E3E032A002695F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8A44BD751E3E088C002695F9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8A44BD771E3E28A8002695F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		8A49B8EF1E0AF3A9008B6ECA /* TwitterChooseGroupClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterChooseGroupClass.swift; sourceTree = "<group>"; };
-		8A49B8F31E0B0166008B6ECA /* WorkingTwitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingTwitter.swift; sourceTree = "<group>"; };
 		8A79F7051E2EC34E0005FEA7 /* WorkingDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingDefaults.swift; sourceTree = "<group>"; };
 		8A8BF3211E2D628500D756FC /* NotificationsAllViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsAllViewController.swift; sourceTree = "<group>"; };
 		8A8BF3251E2D71C900D756FC /* ExtensionNSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionNSDate.swift; sourceTree = "<group>"; };
 		8A8BF3271E2E240A00D756FC /* BrwoserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrwoserSettingsViewController.swift; sourceTree = "<group>"; };
-		8AA2233C1E1AFFB50055E39A /* FBPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBPost.swift; sourceTree = "<group>"; };
-		8AA223461E1B0B7E0055E39A /* WorkingFB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingFB.swift; sourceTree = "<group>"; };
 		8AC326211E0716860014835D /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../Library/Developer/Xcode/DerivedData/socialMilk-efyrgjzfhqusodaldjlwejjisfes/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		8AE60E741E06DD1600A9662F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		8AE60E751E06DD1600A9662F /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
@@ -119,10 +102,7 @@
 		8AE60E771E06DD1600A9662F /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		8AE60E7C1E06EE2F00A9662F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8AE60E7E1E06F2CE00A9662F /* TwitterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterManager.swift; sourceTree = "<group>"; };
-		8AE60E801E06FC1D00A9662F /* TweetPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetPost.swift; sourceTree = "<group>"; };
 		8AEF725D1E16741F00332FB5 /* Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
-		8AEF72651E1715B700332FB5 /* AppCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCollectionViewCell.swift; sourceTree = "<group>"; };
-		8AEF72661E1715B700332FB5 /* AppCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppCollectionViewCell.xib; sourceTree = "<group>"; };
 		8AEF72781E195D4800332FB5 /* socialMilk-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "socialMilk-Bridging-Header.h"; sourceTree = "<group>"; };
 		8AEF727F1E195D9E00332FB5 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
 		8AEF72811E195DA200332FB5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/socialMilk-efyrgjzfhqusodaldjlwejjisfes/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
@@ -144,20 +124,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A3B15D51E5CCF3E008DD430 /* SVProgressHUD.framework in Frameworks */,
 				8A09B81D1E36838F00AEB12B /* CCBottomRefreshControl.framework in Frameworks */,
 				8AEF728C1E195DAE00332FB5 /* FacebookCore.framework in Frameworks */,
 				8AEF728D1E195DAE00332FB5 /* FacebookLogin.framework in Frameworks */,
-				8AEF728E1E195DAE00332FB5 /* FacebookShare.framework in Frameworks */,
 				8AEF728F1E195DAE00332FB5 /* FBSDKCoreKit.framework in Frameworks */,
 				8AEF72901E195DAE00332FB5 /* FBSDKLoginKit.framework in Frameworks */,
-				8AEF72911E195DAE00332FB5 /* FBSDKShareKit.framework in Frameworks */,
-				8AEF72921E195DAE00332FB5 /* InstagramKit.framework in Frameworks */,
 				8AEF72841E195DA500332FB5 /* Bolts.framework in Frameworks */,
 				8AEF72821E195DA200332FB5 /* Alamofire.framework in Frameworks */,
-				8AEF72801E195D9E00332FB5 /* AFNetworking.framework in Frameworks */,
 				8AC326221E0716860014835D /* SwiftyJSON.framework in Frameworks */,
-				7B39A8411DF5C9550077BBB6 /* Realm.framework in Frameworks */,
-				7B39A83F1DF5C9510077BBB6 /* RealmSwift.framework in Frameworks */,
 				7BF0F46F1DF3798900285298 /* SDWebImage.framework in Frameworks */,
 				7BF0F4601DF3316000285298 /* SwiftyVK.framework in Frameworks */,
 				FE9FD86F3619F02F115020EB /* Pods_socialMilk.framework in Frameworks */,
@@ -224,8 +199,6 @@
 				8A02C61B1E15836900DC4CB9 /* SettingsChooseTableViewCell.xib */,
 				8A151C0F1E2E298B00EABF13 /* SettingsBoolTableViewCell.swift */,
 				8A151C101E2E298B00EABF13 /* SettingsBoolTableViewCell.xib */,
-				8AEF72651E1715B700332FB5 /* AppCollectionViewCell.swift */,
-				8AEF72661E1715B700332FB5 /* AppCollectionViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -233,14 +206,14 @@
 		7BF0F46C1DF36BD800285298 /* InitialClasses */ = {
 			isa = PBXGroup;
 			children = (
-				7BF0F4511DF1F42300285298 /* ChatClass.swift */,
 				7BF0F4531DF1F48500285298 /* MessageClass.swift */,
-				7B39A8481DF5FBB80077BBB6 /* Init.swift */,
 				8A0ACB7E1E0678D30071A7F6 /* Constants.swift */,
 				8A151C0B1E2E260700EABF13 /* SettingsProtocol.swift */,
 				8A8BF3251E2D71C900D756FC /* ExtensionNSDate.swift */,
 				8A79F7051E2EC34E0005FEA7 /* WorkingDefaults.swift */,
 				8AEF725D1E16741F00332FB5 /* Setup.swift */,
+				8A3B15D61E5CD060008DD430 /* PostClass.swift */,
+				8A3B15D81E5CD087008DD430 /* UserClass.swift */,
 			);
 			name = InitialClasses;
 			sourceTree = "<group>";
@@ -252,6 +225,7 @@
 				7BF0F44D1DF1EA9D00285298 /* SettingsViewController.swift */,
 				8A8BF3271E2E240A00D756FC /* BrwoserSettingsViewController.swift */,
 				8AE60E7C1E06EE2F00A9662F /* LoginViewController.swift */,
+				8A3B15D21E5CCD5C008DD430 /* AccountsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -268,8 +242,6 @@
 			children = (
 				7BF0F45D1DF3314F00285298 /* VKManager.swift */,
 				7B8A91801DFF298C0014D78D /* VKManagerWorker.swift */,
-				7B39A83C1DF4A1500077BBB6 /* VKPost.swift */,
-				7B2EE7A31DF46E34009F6968 /* WorkingVk.swift */,
 			);
 			name = VK;
 			sourceTree = "<group>";
@@ -278,9 +250,6 @@
 			isa = PBXGroup;
 			children = (
 				8AE60E7E1E06F2CE00A9662F /* TwitterManager.swift */,
-				8A49B8EF1E0AF3A9008B6ECA /* TwitterChooseGroupClass.swift */,
-				8AE60E801E06FC1D00A9662F /* TweetPost.swift */,
-				8A49B8F31E0B0166008B6ECA /* WorkingTwitter.swift */,
 			);
 			name = Twitter;
 			sourceTree = "<group>";
@@ -289,8 +258,6 @@
 			isa = PBXGroup;
 			children = (
 				8AEF72941E19623C00332FB5 /* FBManager.swift */,
-				8AA2233C1E1AFFB50055E39A /* FBPost.swift */,
-				8AA223461E1B0B7E0055E39A /* WorkingFB.swift */,
 			);
 			name = Facebook;
 			sourceTree = "<group>";
@@ -307,6 +274,7 @@
 		C1DE064BC00740E057D27DE9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8A3B15D41E5CCF3E008DD430 /* SVProgressHUD.framework */,
 				8A09B81C1E36838F00AEB12B /* CCBottomRefreshControl.framework */,
 				8AEF72851E195DAE00332FB5 /* FacebookCore.framework */,
 				8AEF72861E195DAE00332FB5 /* FacebookLogin.framework */,
@@ -397,7 +365,6 @@
 				8A151C121E2E298B00EABF13 /* SettingsBoolTableViewCell.xib in Resources */,
 				7BF0F4441DF1E50B00285298 /* LaunchScreen.storyboard in Resources */,
 				8AE60E7A1E06DD1600A9662F /* TwitterKitResources.bundle in Resources */,
-				8AEF72681E1715B700332FB5 /* AppCollectionViewCell.xib in Resources */,
 				7BF0F4691DF35D2900285298 /* GroupsTableViewCell.xib in Resources */,
 				8A44BD711E3E032A002695F9 /* Localizable.strings in Resources */,
 				7BF0F45C1DF2038000285298 /* MessageTableViewCell.xib in Resources */,
@@ -485,25 +452,18 @@
 				8AEF725E1E16741F00332FB5 /* Setup.swift in Sources */,
 				7B8A91811DFF298C0014D78D /* VKManagerWorker.swift in Sources */,
 				7BF0F4681DF35D2900285298 /* GroupsTableViewCell.swift in Sources */,
-				8AE60E811E06FC1D00A9662F /* TweetPost.swift in Sources */,
-				7B39A8491DF5FBB80077BBB6 /* Init.swift in Sources */,
-				8AA2233D1E1AFFB50055E39A /* FBPost.swift in Sources */,
 				8AE60E7F1E06F2CE00A9662F /* TwitterManager.swift in Sources */,
-				8A49B8F01E0AF3A9008B6ECA /* TwitterChooseGroupClass.swift in Sources */,
 				8A151C0C1E2E260700EABF13 /* SettingsProtocol.swift in Sources */,
 				8A8BF3261E2D71C900D756FC /* ExtensionNSDate.swift in Sources */,
-				8A49B8F41E0B0166008B6ECA /* WorkingTwitter.swift in Sources */,
 				7BF0F43A1DF1E50B00285298 /* AppDelegate.swift in Sources */,
 				8A151C111E2E298B00EABF13 /* SettingsBoolTableViewCell.swift in Sources */,
-				8AEF72671E1715B700332FB5 /* AppCollectionViewCell.swift in Sources */,
 				8AEF72951E19623C00332FB5 /* FBManager.swift in Sources */,
+				8A3B15D31E5CCD5C008DD430 /* AccountsViewController.swift in Sources */,
 				7BF0F4541DF1F48500285298 /* MessageClass.swift in Sources */,
-				8AA223471E1B0B7E0055E39A /* WorkingFB.swift in Sources */,
 				8A02C61C1E15836900DC4CB9 /* SettingsChooseTableViewCell.swift in Sources */,
-				7B39A83D1DF4A1500077BBB6 /* VKPost.swift in Sources */,
-				7BF0F4521DF1F42400285298 /* ChatClass.swift in Sources */,
+				8A3B15D71E5CD060008DD430 /* PostClass.swift in Sources */,
 				7BF0F44E1DF1EA9D00285298 /* SettingsViewController.swift in Sources */,
-				7B2EE7A41DF46E34009F6968 /* WorkingVk.swift in Sources */,
+				8A3B15D91E5CD087008DD430 /* UserClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

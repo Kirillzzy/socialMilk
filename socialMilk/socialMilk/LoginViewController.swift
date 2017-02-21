@@ -44,13 +44,13 @@ class LoginViewController: UIViewController {
             WorkingDefaults.setFirstSetupEver(how: false)
             gotoNext()
 //        }
-        if !SetupViewController.isInternetAvailable(){
+        if !Setup.isInternetAvailable(){
             showErrorAlert()
         }
     }
     
     private func gotoNext(){
-        if SetupViewController.isInternetAvailable(){
+        if Setup.isInternetAvailable(){
             performSegue(withIdentifier: "fromLoginSegue", sender: true)
         }else{
             showErrorAlert()
