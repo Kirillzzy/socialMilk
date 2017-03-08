@@ -16,6 +16,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import FacebookShare
 import FBSDKShareKit
+import SafariServices
 
 var vkDelegateReference: VKDelegate?
 
@@ -76,5 +77,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+func showBrowser(view: UIViewController, url: URL) {
+  if WorkingDefaults.getBrowser() == WorkingDefaults.Browser.my {
+    let svc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+    view.present(svc, animated: true, completion: nil)
+  } else {
+    if #available(iOS 10.0, *) {
+      UIApplication.shared.open(url, options: [:])
+    } else {
+      UIApplication.shared.openURL(url)
+    }
+  }
 }
 

@@ -1,9 +1,9 @@
 import Foundation
 
 
-
-private let session = URLSession(configuration: .default, delegate: nil, delegateQueue: nil)
-
+private let sessionConfig = URLSessionConfiguration.default
+private let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
+private let sendTaskQueue = DispatchQueue(label: "SwiftyVK.SendTaskQueue")
 
 
 internal final class SendTask: Operation {
@@ -16,21 +16,14 @@ internal final class SendTask: Operation {
 
 
     override var description: String {
-        return "send task #\(delegate.id)-\(id)"
+        return "task #\(delegate.id)-\(id)"
     }
 
 
 
     static func createWith(id: Int, config: RequestConfig, delegate: RequestInstance) -> SendTask {
         let operation = SendTask(id: id, config: config, delegate: delegate)
-
-
-        if config.api {
-            SendQueue.queue.addApi(operation)
-        }
-        else {
-            SendQueue.queue.addNotApi(operation)
-        }
+        SendQueue.queue.add(task: operation, api: config.api)
         return operation
     }
 
@@ -44,7 +37,6 @@ internal final class SendTask: Operation {
         super.init()
 //        VK.Log.put("Life", "init \(self)")
     }
-
 
 
 
@@ -69,14 +61,20 @@ internal final class SendTask: Operation {
                 self.delegate.handle(error: RequestError.unexpectedResponse)
             }
         }
-
-        let urlRequest = UrlFabric.createWith(config: config)
-        self.task = session.dataTask(with: urlRequest, completionHandler: completeon)
-
-        task.addObserver(self, forKeyPath: #keyPath(URLSessionTask.countOfBytesReceived), options: .new, context: nil)
-        task.addObserver(self, forKeyPath: #keyPath(URLSessionTask.countOfBytesSent), options: .new, context: nil)
-
-        task.resume()
+        
+        sendTaskQueue.sync {
+            sessionConfig.timeoutIntervalForRequest = config.timeout
+            sessionConfig.timeoutIntervalForResource = config.timeout
+            
+            let urlRequest = UrlFabric.createWith(config: config)
+            self.task = session.dataTask(with: urlRequest, completionHandler: completeon)
+            
+            task.addObserver(self, forKeyPath: #keyPath(URLSessionTask.countOfBytesReceived), options: .new, context: nil)
+            task.addObserver(self, forKeyPath: #keyPath(URLSessionTask.countOfBytesSent), options: .new, context: nil)
+            
+            task.resume()
+        }
+        
         semaphore.wait()
     }
 

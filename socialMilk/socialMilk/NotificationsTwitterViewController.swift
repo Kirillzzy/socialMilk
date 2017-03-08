@@ -135,11 +135,7 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
         messagesTableView.deselectRow(at: indexPath, animated: true)
         if chat[indexPath.section].messages[indexPath.row].url != ""{
             let url = URL(string: "https://" + chat[indexPath.section].messages[indexPath.row].url)!
-            if WorkingDefaults.getBrowser() == WorkingDefaults.Browser.my{
-                showBrowser(view: self, url: url)
-            }else{
-                goWeb(url: url)
-            }
+            showBrowser(view: self, url: url)
         }
     }
     
@@ -204,29 +200,9 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
         backViewButton.isEnabled = how
     }
     
-    internal func goWeb(url: URL){
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url, options: [:])
-        } else {
-            UIApplication.shared.openURL(url)
-        }
-    }
-    
     internal func updateProgressView(val: Float){
         progressProgressView.setProgress(val / 100.0, animated: true)
     }
     
 }
 
-extension NotificationsTwitterViewController{
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "gotoWeb"{
-            if let www = sender as? URL{
-                self.isWentToWeb = true
-                let vc = segue.destination as! WebViewController
-                vc.url = www
-                self.lastPerform = Constants.fromSegueShowView.fromWeb
-            }
-        }
-    }
-}

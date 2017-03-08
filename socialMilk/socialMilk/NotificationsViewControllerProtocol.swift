@@ -29,6 +29,5 @@ protocol NotificationsViewControllerProtocol: UITableViewDelegate, UITableViewDa
     func scrollDownTableView(for indexPath: IndexPath)
     func imageTapped(gesture: UITapGestureRecognizer)
     func isEnabledBackButton(how: Bool)
-    func goWeb(url: URL)
     func updateProgressView(val:Float)
 }

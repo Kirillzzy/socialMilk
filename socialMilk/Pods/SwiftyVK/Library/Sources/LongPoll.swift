@@ -1,8 +1,7 @@
 import Foundation
 #if os(iOS)
     import UIKit
-#endif
-#if os(OSX)
+#elseif os(OSX)
     import Cocoa
 #endif
 
@@ -12,8 +11,8 @@ private var lpQueue = DispatchQueue(label: "VKLongPollQueue")
 
 
 
-private typealias VK_LongPool = VK
-extension VK_LongPool {
+private typealias VKLongPoll = VK
+extension VKLongPoll {
     /**
      Long pool client. More - https://vk.com/dev/using_longpoll
      * To start and stop the server, use the start() and stop() functions
@@ -27,91 +26,92 @@ extension VK_LongPool {
         private static var keyIsExpired = false
         private static var server = String()
         private static var ts = String()
-
-
+        
+        
         ///Starting receiving updates from the long pool server
         public static func start() {
             lpQueue.async {
                 guard VK.state == .authorized && !isActive else {
-                    // VK.Log.put("LongPool", "User is not authorized or LongPool is active yet")
-                    return}
+                    VK.Log.put("LongPoll", "User is not authorized or LongPoll is active yet")
+                    return
+                }
                 isActive = true
                 keyIsExpired = true
                 getServer()
                 observer = LPObserver()
-                // VK.Log.put("LongPool", "Stared")
+                VK.Log.put("LongPoll", "Stared")
             }
         }
-
-
-
+        
+        
+        
         ///Pause receiving updates from the long pool server
         public static func stop() {
             lpQueue.async {
                 observer = nil
                 isActive = false
-                // VK.Log.put("LongPool", "Stopped")
+                VK.Log.put("LongPoll", "Stopped")
             }
         }
-
-
-
+        
+        
+        
         private static func getServer() {
-            var req = VK.API.Messages.getLongPollServer([VK.Arg.useSsl : "0", VK.Arg.needPts : "1"])
+            var req = VK.API.Messages.getLongPollServer([VK.Arg.useSsl: "0", VK.Arg.needPts: "1"])
             req.catchErrors = false
             req.maxAttempts = 1
-
-            // VK.Log.put("LongPool", "Getting server with request \(req.id)")
+            
+            VK.Log.put("LongPoll", "Getting server with \(req)")
             req.send(
                 onSuccess: {response in
-                    // VK.Log.put("LongPool", "get server with request \(req.id)")
+                    VK.Log.put("LongPoll", "get server with \(req)")
                     lpKey = response["key"].stringValue
                     server = response["server"].stringValue
                     ts = response["ts"].stringValue
                     keyIsExpired = false
                     update()
             },
-                onError: {error in
-                    // VK.Log.put("LongPool", "Error get server with request \(req.id)")
+                onError: {_ in
+                    VK.Log.put("LongPoll", "Error get server with \(req)")
                     Thread.sleep(forTimeInterval: 10)
                     getServer()
             }
             )
         }
-
-
-
+        
+        
+        
         fileprivate static func update() {
             lpQueue.async {
                 guard isActive else {return}
-
+                
                 guard !keyIsExpired && !server.isEmpty && !lpKey.isEmpty && !ts.isEmpty else {
                     observer?.connectionLost()
                     getServer()
                     return
                 }
-
+                
                 var req = RequestConfig(url: "https://\(server)?act=a_check&key=\(lpKey)&ts=\(ts)&wait=25&mode=106")
                 req.catchErrors = false
                 req.timeout = 30
                 req.maxAttempts = 1
-
-                // VK.Log.put("LongPool", "Send with request \(req.id)")
+                
+                VK.Log.put("LongPoll", "Send with \(req)")
                 req.send(
                     onSuccess: {response in
-                        // VK.Log.put("LongPool", "Received response with request \(req.id)")
-
+                        VK.Log.put("LongPoll", "Received response with \(req)")
+                        
                         ts = response["ts"].stringValue
                         parse(response["updates"].array)
-
+                        
                         _ = (response["failed"].intValue > 0)
                             ? (keyIsExpired = true)
                             : observer?.connectionRestore()
                         update()
                 },
-                    onError: {error in
-                        // VK.Log.put("LongPool", "Received error with request \(req.id)")
-
+                    onError: {_ in
+                        VK.Log.put("LongPoll", "Received error with \(req)")
+                        
                         observer?.connectionLost()
                         Thread.sleep(forTimeInterval: 10)
                         update()
@@ -119,12 +119,12 @@ extension VK_LongPool {
                 )
             }
         }
-
-
+        
+        
         // swiftlint:disable cyclomatic_complexity
         private static func parse(_ updates: [JSON]?) {
             guard let updates = updates else {return}
-
+            
             var all = [JSON]()
             var updates0 = [JSON]()
             var updates1 = [JSON]()
@@ -140,7 +140,7 @@ extension VK_LongPool {
             var updates62 = [JSON]()
             var updates70 = [JSON]()
             var updates80 = [JSON]()
-
+            
             for update in updates {
                 all.append(update)
                 switch update[0].intValue {
@@ -176,7 +176,7 @@ extension VK_LongPool {
                     break
                 }
             }
-
+            
             !updates0.isEmpty ? NotificationCenter.default.post(name: notifications.type0, object: JSONWrapper(updates0)) : ()
             !updates1.isEmpty ? NotificationCenter.default.post(name: notifications.type1, object: JSONWrapper(updates1)) : ()
             !updates2.isEmpty ? NotificationCenter.default.post(name: notifications.type2, object: JSONWrapper(updates2)) : ()
@@ -194,8 +194,8 @@ extension VK_LongPool {
             !all.isEmpty ? NotificationCenter.default.post(name: notifications.typeAll, object: JSONWrapper(all)) : ()
         }
         // swiftlint:enable cyclomatic_complexity
-
-
+        
+        
         // swiftlint:disable type_name
         public enum notifications {
             // swiftlint:enable type_name
@@ -214,7 +214,7 @@ extension VK_LongPool {
             public static let type6 = Notification.Name("VKLPNotificationType6")
             ///7,$peer_id,$local_id — read all incoming messages with up to $peer_id $local_id inclusive
             public static let type7 = Notification.Name("VKLPNotificationType7")
-            ///8,-$user_id,$extra — each $user_id has become online, 
+            ///8,-$user_id,$extra — each $user_id has become online,
             ///$extra is not equal to 0 if the flag was handed over to mode 64, in the low byte (remainder of the division by 256) of $extra lying platform identifier
             public static let type8 = Notification.Name("VKLPNotificationType8")
             ///9,-$user_id,$flags — each $user_id has become offline ($flags is 0 if the user has left the site (for example, pulled out), and 1 if the offline timeout (eg, status away))
@@ -251,7 +251,7 @@ extension VK_LongPool {
 ///The wrapper for a variety of objects such as JSON to be compatible with NSObject. Access to the property is via an unwrap array
 public final class JSONWrapper {
     public let unwrap: [JSON]
-
+    
     public init(_ value: [JSON]) {
         self.unwrap = value
     }
@@ -268,18 +268,16 @@ public final class JSONWrapper {
 //
 internal final class LPObserver: NSObject {
     private var connected = true
-
+    
     internal override init() {
         super.init()
-
-        // VK.Log.put("LongPool", "Init observer")
-
+        
+        VK.Log.put("LongPoll", "Init observer")
+        
         #if os(OSX)
             NSWorkspace.shared().notificationCenter.addObserver(self, selector: #selector(connectionLostForce), name:NSNotification.Name.NSWorkspaceScreensDidSleep, object: nil)
             NSWorkspace.shared().notificationCenter.addObserver(self, selector: #selector(connectionRestoreForce), name:NSNotification.Name.NSWorkspaceScreensDidWake, object: nil)
-        #endif
-
-        #if os(iOS)
+        #elseif os(iOS)
             let reachability = Reachability()
             NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged), name: ReachabilityChangedNotification, object: nil)
             NotificationCenter.default.addObserver(self, selector: #selector(connectionLostForce), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
@@ -287,59 +285,61 @@ internal final class LPObserver: NSObject {
             _ = try? reachability?.startNotifier()
         #endif
     }
-
-
-
+    
+    
+    
     #if os(iOS)
-    @objc private func reachabilityChanged(note: NSNotification) {
+    @objc
+    private func reachabilityChanged(note: NSNotification) {
         if let reachability = note.object as? Reachability {
             reachability.isReachable ? connectionRestore() : connectionLost()
         }
     }
     #endif
-
-
-
-
-    @objc private func connectionRestoreForce() {
+    
+    
+    
+    @objc
+    private func connectionRestoreForce() {
         lpQueue.async {
             VK.LP.isActive = true
             VK.LP.update()
         }
     }
-
-
-    @objc private func connectionLostForce() {
+    
+    
+    @objc
+    private func connectionLostForce() {
         lpQueue.async {
             VK.LP.isActive = false
             self.connectionLost()
         }
     }
-
-
-
+    
+    
+    
     fileprivate func connectionLost() {
-
+        
         if connected == true {
             connected = false
-            // VK.Log.put("LongPool", "Connection lost")
+            VK.Log.put("LongPoll", "Connection lost")
             NotificationCenter.default.post(name: VK.LP.notifications.connectinDidLost, object: nil)
         }
     }
-
-
-
+    
+    
+    
     fileprivate func connectionRestore() {
-
+        
         if connected == false {
             connected = true
-            // VK.Log.put("LongPool", "Connection restored")
+            VK.Log.put("LongPoll", "Connection restored")
             NotificationCenter.default.post(name: VK.LP.notifications.connectinDidRestore, object: nil)
         }
     }
-
-
+    
+    
     deinit {
-        // VK.Log.put("LongPool", "Deinit observer")
+        VK.Log.put("LongPoll", "Deinit observer")
     }
 }
