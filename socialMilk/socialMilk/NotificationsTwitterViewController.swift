@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class NotificationsTwitterViewController: UIViewController, NotificationsViewControllerProtocol{
 
@@ -135,7 +136,7 @@ class NotificationsTwitterViewController: UIViewController, NotificationsViewCon
         if chat[indexPath.section].messages[indexPath.row].url != ""{
             let url = URL(string: "https://" + chat[indexPath.section].messages[indexPath.row].url)!
             if WorkingDefaults.getBrowser() == WorkingDefaults.Browser.my{
-                performSegue(withIdentifier: "gotoWeb", sender: url)
+                showBrowser(view: self, url: url)
             }else{
                 goWeb(url: url)
             }

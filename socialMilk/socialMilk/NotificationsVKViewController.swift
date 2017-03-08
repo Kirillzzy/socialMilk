@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import SafariServices
 
 class NotificationsVKViewController: UIViewController, NotificationsViewControllerProtocol{
     
@@ -142,7 +143,7 @@ class NotificationsVKViewController: UIViewController, NotificationsViewControll
         if chat[indexPath.section].messages[indexPath.row].url != ""{
             let url = URL(string: "https://" + chat[indexPath.section].messages[indexPath.row].url)!
             if WorkingDefaults.getBrowser() == WorkingDefaults.Browser.my{
-                performSegue(withIdentifier: "gotoWeb", sender: url)
+                showBrowser(view: self, url: url)
             }else{
                 goWeb(url: url)
             }
